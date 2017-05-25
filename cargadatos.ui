@@ -1,0 +1,940 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CargaDatos</class>
+ <widget class="QDialog" name="CargaDatos">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1220</width>
+    <height>320</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>320</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Cargar Archivo</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="images.qrc">
+    <normaloff>:/imagenes/Search.ico</normaloff>:/imagenes/Search.ico</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog{		
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(232, 239, 252, 255), stop:1 rgba(241, 248, 239, 255));
+}
+
+QPushButton {	
+	background-color: rgb(0, 158, 5);
+	border-radius: 2px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 8px 20px 10px 20px;
+}
+
+QPushButton:disabled {	
+	background-color: rgb(85, 170, 255);
+	border-radius: 2px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 8px 20px 10px 20px;
+}
+
+QPushButton:pressed{ 
+    color: #000000;
+	border: 2px solid rgb(15, 103, 0);
+	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(255, 0, 0, 255), stop:1 rgba(5, 0, 9, 118));
+}
+
+QPushButton:hover {
+  background-color: qlineargradient(spread:pad, x1:0.489, y1:1, x2:0.494, y2:0.0113636, stop:0 rgba(0, 117, 0, 255), stop:1 rgba(0, 255, 0, 255));	  
+  text-decoration: none;
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_10">
+   <item row="0" column="0">
+    <widget class="QListWidget" name="listWidget">
+     <property name="maximumSize">
+      <size>
+       <width>128</width>
+       <height>250</height>
+      </size>
+     </property>
+     <property name="currentRow">
+      <number>-1</number>
+     </property>
+     <item>
+      <property name="text">
+       <string>Txt</string>
+      </property>
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+      <property name="icon">
+       <iconset resource="images.qrc">
+        <normaloff>:/imagenes/txt.png</normaloff>:/imagenes/txt.png</iconset>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Csv</string>
+      </property>
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+      <property name="icon">
+       <iconset resource="images.qrc">
+        <normaloff>:/imagenes/csv.png</normaloff>:/imagenes/csv.png</iconset>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsEnabled</set>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="2">
+    <widget class="QStackedWidget" name="stackedPages">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="pageTxt">
+      <layout class="QGridLayout" name="gridLayout_6">
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="groupBoxTxt">
+         <property name="title">
+          <string>Carga de datos *.Txt</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="0">
+           <widget class="QPushButton" name="ButtonFileTxt">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {	
+	background-color: rgb(0, 158, 5);
+	border-radius: 2px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 5px 5px 5px 5px;
+
+}
+
+QPushButton:pressed{ 
+    color: #000000;
+	border: 2px solid rgb(15, 103, 0);
+	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(255, 0, 0, 255), stop:1 rgba(5, 0, 9, 118));
+}
+
+QPushButton:hover {
+  background-color: qlineargradient(spread:pad, x1:0.489, y1:1, x2:0.494, y2:0.0113636, stop:0 rgba(0, 117, 0, 255), stop:1 rgba(0, 255, 0, 255));	  
+  text-decoration: none;
+}</string>
+            </property>
+            <property name="text">
+             <string>Archivo</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="lineEditPathTxt">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QToolButton" name="btnVerTxt">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Abrir contenido del Archivo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="text">
+             <string>Ver</string>
+            </property>
+            <property name="icon">
+             <iconset resource="images.qrc">
+              <normaloff>:/imagenes/Media-Player.ico</normaloff>:/imagenes/Media-Player.ico</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="3">
+           <widget class="QGroupBox" name="groupBoxParamTxt">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="title">
+             <string>Parametros</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_9">
+             <item row="0" column="0">
+              <layout class="QGridLayout" name="gridLayout">
+               <item row="2" column="1">
+                <widget class="QComboBox" name="comboTxtChannels">
+                 <item>
+                  <property name="text">
+                   <string>1</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>2</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>3</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>4</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>5</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>6</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>7</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>8</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>9</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>10</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>11</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>12</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_2">
+                 <property name="text">
+                  <string>Canales</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="2">
+                <widget class="QLabel" name="label_9">
+                 <property name="text">
+                  <string>(Fila)</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_4">
+                 <property name="text">
+                  <string>Leer Desde</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label">
+                 <property name="text">
+                  <string>Frec. Muestreo</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QComboBox" name="comboTxtSep">
+                 <item>
+                  <property name="text">
+                   <string>Espacios</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="images.qrc">
+                    <normaloff>:/imagenes/Espacio.jpg</normaloff>:/imagenes/Espacio.jpg</iconset>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Comas</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="images.qrc">
+                    <normaloff>:/imagenes/C.jpg</normaloff>:/imagenes/C.jpg</iconset>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Puntos y Comas</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="images.qrc">
+                    <normaloff>:/imagenes/PyC.jpg</normaloff>:/imagenes/PyC.jpg</iconset>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Tabulacion</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="images.qrc">
+                    <normaloff>:/imagenes/Tab.jpg</normaloff>:/imagenes/Tab.jpg</iconset>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QLabel" name="label_5">
+                 <property name="text">
+                  <string>(Hz)</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="2">
+                <widget class="QLabel" name="label_7">
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="label_3">
+                 <property name="text">
+                  <string>Separador</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="2">
+                <widget class="QLabel" name="label_8">
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_17">
+                 <property name="text">
+                  <string>Nombre</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="lineEditTxtNombre">
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QSpinBox" name="TxtFs">
+                 <property name="maximum">
+                  <number>100000</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QSpinBox" name="TxtLeerDesde"/>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pageCsv">
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="groupBoxCsv">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="title">
+          <string>Carga de Datos *.Csv</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_7">
+          <item row="1" column="0" colspan="3">
+           <widget class="QGroupBox" name="groupBoxParamCsv">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="title">
+             <string>Parametros</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_8">
+             <item row="0" column="0">
+              <layout class="QGridLayout" name="gridLayout_2">
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_11">
+                 <property name="text">
+                  <string>Canales</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="2">
+                <widget class="QLabel" name="label_12">
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QComboBox" name="comboCsvSep">
+                 <item>
+                  <property name="text">
+                   <string>Espacios</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="images.qrc">
+                    <normaloff>:/imagenes/Espacio.jpg</normaloff>:/imagenes/Espacio.jpg</iconset>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Comas</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="images.qrc">
+                    <normaloff>:/imagenes/C.jpg</normaloff>:/imagenes/C.jpg</iconset>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Puntos y Comas</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="images.qrc">
+                    <normaloff>:/imagenes/PyC.jpg</normaloff>:/imagenes/PyC.jpg</iconset>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Tabulacion</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="images.qrc">
+                    <normaloff>:/imagenes/Tab.jpg</normaloff>:/imagenes/Tab.jpg</iconset>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QLabel" name="label_10">
+                 <property name="text">
+                  <string>(Hz)</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="2">
+                <widget class="QLabel" name="label_16">
+                 <property name="text">
+                  <string>(Fila)</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_6">
+                 <property name="text">
+                  <string>Frec. Muestreo</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_15">
+                 <property name="text">
+                  <string>Leer Desde</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="2">
+                <widget class="QLabel" name="label_14">
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QComboBox" name="comboCsvChannels">
+                 <item>
+                  <property name="text">
+                   <string>1</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>2</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>3</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>4</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>5</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>6</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>7</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>8</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>9</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>10</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>11</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>12</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="label_13">
+                 <property name="text">
+                  <string>Separador</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="lineEditCsvNombre">
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_18">
+                 <property name="text">
+                  <string>Nombre</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QSpinBox" name="CsvFs">
+                 <property name="maximum">
+                  <number>100000</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QSpinBox" name="CsvLeerDesde"/>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QPushButton" name="ButtonFileCsv">
+            <property name="styleSheet">
+             <string notr="true">QPushButton {	
+	background-color: rgb(0, 158, 5);
+	border-radius: 2px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 5px 5px 5px 5px;
+
+}
+
+QPushButton:pressed{ 
+    color: #000000;
+	border: 2px solid rgb(15, 103, 0);
+	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(255, 0, 0, 255), stop:1 rgba(5, 0, 9, 118));
+}
+
+QPushButton:hover {
+  background-color: qlineargradient(spread:pad, x1:0.489, y1:1, x2:0.494, y2:0.0113636, stop:0 rgba(0, 117, 0, 255), stop:1 rgba(0, 255, 0, 255));	  
+  text-decoration: none;
+}</string>
+            </property>
+            <property name="text">
+             <string>Archivo</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QToolButton" name="btnVerCsv">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Abrir contenido del archivo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="text">
+             <string>Ver</string>
+            </property>
+            <property name="icon">
+             <iconset resource="images.qrc">
+              <normaloff>:/imagenes/Media-Player.ico</normaloff>:/imagenes/Media-Player.ico</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="lineEditPathCsv">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QPushButton" name="ButtonAccept">
+     <property name="minimumSize">
+      <size>
+       <width>140</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>140</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>Aceptar</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QPushButton" name="ButtonCancelar">
+     <property name="minimumSize">
+      <size>
+       <width>140</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>140</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>Cancelar</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3" rowspan="2">
+    <widget class="QWidget" name="contenedorInfoArchivos" native="true">
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0" colspan="7">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="label_info_1">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Previsualizacion del contenido del archivo actual: IMPORTANTE</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_info_2">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel#label_info_2{
+	color: red;
+ }</string>
+            </property>
+            <property name="text">
+             <string>&quot;Solo se cargarán las primeras 100 lineas&quot;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="CodeEditor" name="PanelInfoArchivos">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAsNeeded</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAsNeeded</enum>
+          </property>
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+          </property>
+          <property name="tabStopWidth">
+           <number>150</number>
+          </property>
+          <property name="textInteractionFlags">
+           <set>Qt::TextSelectableByMouse</set>
+          </property>
+          <property name="maximumBlockCount">
+           <number>1000000000</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="labelFs">
+        <property name="text">
+         <string>Frecuencia de Muestreo (Hz):</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLabel" name="labelSep">
+        <property name="text">
+         <string>Separador de columnas:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLineEdit" name="fs">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QLineEdit" name="canales">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="separador">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLabel" name="labelCanales">
+        <property name="text">
+         <string>N° Canales:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3">
+       <widget class="QLineEdit" name="leerDesde">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QLabel" name="label_22">
+        <property name="text">
+         <string>Linea de Inicio (Datos):</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="4" rowspan="2" colspan="3">
+       <widget class="QToolButton" name="btnAceptarAA">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;¿Estos valores son correctos?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QToolButton {	
+	background-color: rgb(0, 158, 5);
+	border-radius: 2px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 5px 5px 5px 5px;
+}
+
+QToolButton:pressed{ 
+    color: #000000;
+	border: 2px solid rgb(15, 103, 0);
+	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(255, 0, 0, 255), stop:1 rgba(5, 0, 9, 118));
+}
+
+QToolButton:disabled{ 
+	background-color: rgb(22, 81, 22);
+	border-radius: 2px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 5px 5px 5px 5px;
+}
+
+QToolButton:hover {
+  background-color: qlineargradient(spread:pad, x1:0.489, y1:1, x2:0.494, y2:0.0113636, stop:0 rgba(0, 117, 0, 255), stop:1 rgba(0, 255, 0, 255));	  
+  text-decoration: none;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="images.qrc">
+          <normaloff>:/imagenes/023.png</normaloff>:/imagenes/023.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>30</width>
+          <height>40</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CodeEditor</class>
+   <extends>QPlainTextEdit</extends>
+   <header>codeeditor.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>lineEditPathTxt</tabstop>
+  <tabstop>lineEditTxtNombre</tabstop>
+  <tabstop>comboTxtChannels</tabstop>
+  <tabstop>comboTxtSep</tabstop>
+  <tabstop>ButtonFileTxt</tabstop>
+  <tabstop>btnVerTxt</tabstop>
+  <tabstop>ButtonAccept</tabstop>
+  <tabstop>ButtonCancelar</tabstop>
+  <tabstop>listWidget</tabstop>
+  <tabstop>lineEditPathCsv</tabstop>
+  <tabstop>lineEditCsvNombre</tabstop>
+  <tabstop>comboCsvChannels</tabstop>
+  <tabstop>comboCsvSep</tabstop>
+  <tabstop>ButtonFileCsv</tabstop>
+  <tabstop>btnVerCsv</tabstop>
+  <tabstop>PanelInfoArchivos</tabstop>
+ </tabstops>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>ButtonCancelar</sender>
+   <signal>clicked()</signal>
+   <receiver>CargaDatos</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>419</x>
+     <y>288</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>448</x>
+     <y>220</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

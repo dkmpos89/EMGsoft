@@ -1,0 +1,2863 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>976</width>
+    <height>717</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>EGMsoft® 2016</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="images.qrc">
+    <normaloff>:/imagenes/icono.ico</normaloff>:/imagenes/icono.ico</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{		
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(232, 239, 252, 255), stop:1 rgba(241, 248, 239, 255));
+}
+
+QPushButton {	
+	background-color: rgb(0, 158, 5);
+	border-radius: 2px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 5px 5px 5px 5px;
+
+}
+
+QPushButton:disabled {	
+	background-color: rgb(189, 189, 189);
+	border-radius: 2px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 5px 5px 5px 5px;
+}
+
+
+QPushButton:pressed{ 
+    color: #000000;
+	border: 2px solid rgb(15, 103, 0);
+	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(255, 0, 0, 255), stop:1 rgba(5, 0, 9, 118));
+}
+
+QPushButton:hover {
+  background-color: qlineargradient(spread:pad, x1:0.489, y1:1, x2:0.494, y2:0.0113636, stop:0 rgba(0, 117, 0, 255), stop:1 rgba(0, 255, 0, 255));	  
+  text-decoration: none;
+}</string>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <property name="dockNestingEnabled">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_10">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabPrincipal">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tabVP">
+       <attribute name="title">
+        <string>Ventana Principal</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_21">
+        <item row="0" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <property name="sizeConstraint">
+             <enum>QLayout::SetDefaultConstraint</enum>
+            </property>
+            <item>
+             <widget class="QWidget" name="InfoProyecto" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>250</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QWidget#InfoProyecto {
+     border: 1px solid gray;
+     border-radius: 2px;
+	 padding: 10px;
+ }</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_18">
+               <item row="3" column="0">
+                <widget class="QGroupBox" name="groupBox_3">
+                 <property name="title">
+                  <string/>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_19">
+                  <item row="0" column="0">
+                   <layout class="QGridLayout" name="gridLayout_11">
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label">
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Canal Actual : </string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QComboBox" name="comboChannel">
+                      <property name="enabled">
+                       <bool>false</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <widget class="QDoubleSpinBox" name="spinBoxInicio">
+                      <property name="enabled">
+                       <bool>false</bool>
+                      </property>
+                      <property name="decimals">
+                       <number>5</number>
+                      </property>
+                      <property name="maximum">
+                       <double>10000000.000000000000000</double>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="1">
+                     <widget class="QDoubleSpinBox" name="spinBoxFin">
+                      <property name="enabled">
+                       <bool>false</bool>
+                      </property>
+                      <property name="decimals">
+                       <number>5</number>
+                      </property>
+                      <property name="maximum">
+                       <double>10000000.000000000000000</double>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QGroupBox" name="groupBox">
+                 <property name="title">
+                  <string/>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_6">
+                  <item row="0" column="0">
+                   <layout class="QGridLayout" name="gridLayout_2">
+                    <item row="0" column="3" colspan="2">
+                     <widget class="QLabel" name="nombreProyectoActual">
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="autoFillBackground">
+                       <bool>false</bool>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLabel#nombreProyectoActual {
+	color: blue;
+ }</string>
+                      </property>
+                      <property name="inputMethodHints">
+                       <set>Qt::ImhNone</set>
+                      </property>
+                      <property name="text">
+                       <string> --------------- </string>
+                      </property>
+                      <property name="scaledContents">
+                       <bool>true</bool>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="3" colspan="2">
+                     <widget class="QLabel" name="informacionSesion">
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="autoFillBackground">
+                       <bool>false</bool>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLabel#informacionSesion {
+	color: red;
+ }</string>
+                      </property>
+                      <property name="text">
+                       <string>...</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="1">
+                     <widget class="QLabel" name="label_2">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Sesion :</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QLabel" name="label_19">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>60</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Proyecto</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="1">
+                     <widget class="QLabel" name="label_3">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>RUT</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="3" colspan="2">
+                     <widget class="QLabel" name="informacionRUT">
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="autoFillBackground">
+                       <bool>false</bool>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLabel#informacionRUT {
+	color: red;
+ }</string>
+                      </property>
+                      <property name="text">
+                       <string>No Iniciado...</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="2">
+                     <widget class="QLabel" name="label_20">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="text">
+                       <string>:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="2">
+                     <widget class="QLabel" name="label_18">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="text">
+                       <string>:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="2">
+                     <widget class="QLabel" name="label_21">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="text">
+                       <string>:</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_22">
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>INFORMACION:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_23">
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>RANGO:</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <layout class="QGridLayout" name="gridLayout_4">
+              <item row="1" column="1">
+               <widget class="QPushButton" name="ButtonReplot">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <property name="text">
+                 <string>Aplicar</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <widget class="QLabel" name="label_4">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>RANGO :</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="3" colspan="3">
+               <widget class="QxtSpanSlider" name="horizontalSlider">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="autoFillBackground">
+                 <bool>false</bool>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+                <property name="singleStep">
+                 <number>1</number>
+                </property>
+                <property name="pageStep">
+                 <number>10</number>
+                </property>
+                <property name="tracking">
+                 <bool>true</bool>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QPushButton" name="ButtonPlot">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <property name="text">
+                 <string>Restaurar</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0" colspan="10">
+               <widget class="QWidget" name="ContenedorGrafico1" native="true">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>260</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QWidget {
+     border: 1px solid gray;
+     border-radius: 2px;
+ }</string>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_9">
+                 <item row="2" column="0" colspan="2">
+                  <widget class="QCustomPlot" name="grafico1" native="true">
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="1" column="9">
+               <widget class="QToolButton" name="btnCloseG1">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>27</width>
+                  <height>27</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>27</width>
+                  <height>27</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Cerrar&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="text">
+                 <string>...</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="images.qrc">
+                  <normaloff>:/imagenes/closeAll.png</normaloff>:/imagenes/closeAll.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="6">
+               <widget class="QToolButton" name="btnOpenG1">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>27</width>
+                  <height>27</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>27</width>
+                  <height>27</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Abrir&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="layoutDirection">
+                 <enum>Qt::LeftToRight</enum>
+                </property>
+                <property name="text">
+                 <string>...</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="images.qrc">
+                  <normaloff>:/imagenes/open.ico</normaloff>:/imagenes/open.ico</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="autoRaise">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="8">
+               <widget class="QToolButton" name="btnSaveImageG1">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>27</width>
+                  <height>27</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Guardar&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="images.qrc">
+                  <normaloff>:/imagenes/save_as.ico</normaloff>:/imagenes/save_as.ico</iconset>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="7">
+               <widget class="QToolButton" name="btnExportarG1">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Exportar&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="text">
+                 <string>...</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="images.qrc">
+                  <normaloff>:/imagenes/guardar-archivo.ico</normaloff>:/imagenes/guardar-archivo.ico</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QStackedWidget" name="swSesion">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>300</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>250</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QStackedWidget {
+     border: 1px solid gray;
+     border-radius: 2px;
+ }</string>
+              </property>
+              <property name="currentIndex">
+               <number>0</number>
+              </property>
+              <widget class="QWidget" name="page">
+               <layout class="QGridLayout" name="gridLayout_3">
+                <item row="1" column="0">
+                 <widget class="QLabel" name="rutlabel">
+                  <property name="font">
+                   <font>
+                    <pointsize>10</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>RUT:</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0" colspan="2">
+                 <widget class="QLabel" name="label_6">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="images.qrc">:/imagenes/Task Manager.ico</pixmap>
+                  </property>
+                  <property name="scaledContents">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QPushButton" name="iniciarSession">
+                  <property name="font">
+                   <font>
+                    <family>Arial</family>
+                    <pointsize>-1</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Ingresar</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0" colspan="2">
+                 <widget class="QLineEdit" name="rutSesion">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ej: &amp;quot;11.222.333-K&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="maxLength">
+                   <number>12</number>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                  </property>
+                  <property name="placeholderText">
+                   <string>Ej: 10.999.888-7</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QToolButton" name="btnListaUsuarios">
+                  <property name="font">
+                   <font>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="images.qrc">
+                    <normaloff>:/imagenes/Search.ico</normaloff>:/imagenes/Search.ico</iconset>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="page_2">
+               <layout class="QFormLayout" name="formLayout">
+                <item row="0" column="0" colspan="2">
+                 <layout class="QGridLayout" name="gridLayoutPanleUsuario">
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="imagenUsuario">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="pixmap">
+                     <pixmap resource="images.qrc">:/imagenes/face_female.ico</pixmap>
+                    </property>
+                    <property name="scaledContents">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1" colspan="2">
+                   <widget class="QLabel" name="sesionNombre">
+                    <property name="font">
+                     <font>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QLabel#sesionNombre {
+	color: blue;
+ }</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_rut">
+                    <property name="font">
+                     <font>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>RUT:</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="0" colspan="3">
+                   <widget class="QListView" name="listaSesionesAnteriores"/>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_nombre">
+                    <property name="font">
+                     <font>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>NOMBRE:</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1" colspan="2">
+                   <widget class="QLabel" name="sesionRut">
+                    <property name="font">
+                     <font>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QLabel#sesionRut {
+	color: blue;
+ }</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1" colspan="2">
+                   <widget class="QLabel" name="sesionSexo">
+                    <property name="font">
+                     <font>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QLabel#sesionSexo {
+	color: blue;
+ }</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1" colspan="2">
+                   <widget class="QPushButton" name="logOut">
+                    <property name="text">
+                     <string>logOut</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_direccion">
+                    <property name="font">
+                     <font>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>DIRECCION:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="1" colspan="2">
+                   <widget class="QLabel" name="sesionDireccion">
+                    <property name="font">
+                     <font>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QLabel#sesionDireccion {
+	color: blue;
+ }</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_sexo">
+                    <property name="font">
+                     <font>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>SEXO:</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_Historial">
+                    <property name="font">
+                     <font>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Historial:</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QTabWidget" name="tabTiempoFrec">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>300</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QTabWidget#tabTiempoFrec 
+{
+		 padding-top: 30px;
+}</string>
+            </property>
+            <property name="currentIndex">
+             <number>0</number>
+            </property>
+            <widget class="QWidget" name="tabAB">
+             <attribute name="title">
+              <string>Analisis Visual</string>
+             </attribute>
+             <layout class="QGridLayout" name="gridLayout_13">
+              <item row="0" column="0">
+               <layout class="QHBoxLayout" name="horizontalLayout_3">
+                <item>
+                 <widget class="QToolBox" name="toolBoxGrafico2">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>210</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="autoFillBackground">
+                   <bool>false</bool>
+                  </property>
+                  <property name="currentIndex">
+                   <number>0</number>
+                  </property>
+                  <widget class="QWidget" name="page_10">
+                   <property name="geometry">
+                    <rect>
+                     <x>0</x>
+                     <y>0</y>
+                     <width>210</width>
+                     <height>197</height>
+                    </rect>
+                   </property>
+                   <attribute name="label">
+                    <string>Metodos</string>
+                   </attribute>
+                   <layout class="QGridLayout" name="gridLayout_8">
+                    <item row="0" column="0">
+                     <layout class="QVBoxLayout" name="verticalLayout_2">
+                      <item>
+                       <widget class="QComboBox" name="comboAnalisis2">
+                        <item>
+                         <property name="text">
+                          <string>Discrete Fourier Transform</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Fast Fourier Transform</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Gabor Transform</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Wavelet Transform</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Spectrogram</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Histogram (Fourier)</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Histogram (Normal)</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>MovingRms</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Mean Frequency</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Normalize</string>
+                         </property>
+                        </item>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="ButtonGraficar2">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true"/>
+                        </property>
+                        <property name="text">
+                         <string>Graficar</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                    <item row="1" column="0">
+                     <layout class="QGridLayout" name="gridLayout_15">
+                      <item row="1" column="0">
+                       <spacer name="horizontalSpacer">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>40</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
+                      <item row="0" column="0">
+                       <widget class="QLabel" name="label_SaveG2">
+                        <property name="text">
+                         <string>Exportar:</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="1" rowspan="2">
+                       <widget class="QToolButton" name="btnSaveImageG2">
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="images.qrc">
+                          <normaloff>:/imagenes/020.png</normaloff>:/imagenes/020.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>60</width>
+                          <height>60</height>
+                         </size>
+                        </property>
+                        <property name="autoRaise">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="3">
+                       <widget class="QCheckBox" name="in_enca_2">
+                        <property name="maximumSize">
+                         <size>
+                          <width>20</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="4">
+                       <spacer name="horizontalSpacer_4">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>40</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
+                      <item row="2" column="2">
+                       <spacer name="horizontalSpacer_6">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>40</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
+                      <item row="0" column="2" rowspan="2" colspan="3">
+                       <widget class="QToolButton" name="btnSaveDataG2">
+                        <property name="minimumSize">
+                         <size>
+                          <width>50</width>
+                          <height>50</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string>...</string>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="images.qrc">
+                          <normaloff>:/imagenes/csv_txt.png</normaloff>:/imagenes/csv_txt.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>60</width>
+                          <height>60</height>
+                         </size>
+                        </property>
+                        <property name="autoRepeat">
+                         <bool>false</bool>
+                        </property>
+                        <property name="autoRaise">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="0" colspan="2">
+                       <widget class="QLabel" name="label_16">
+                        <property name="text">
+                         <string>Incluir encabezado:</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="page_11">
+                   <property name="geometry">
+                    <rect>
+                     <x>0</x>
+                     <y>0</y>
+                     <width>210</width>
+                     <height>197</height>
+                    </rect>
+                   </property>
+                   <attribute name="label">
+                    <string>Filtros</string>
+                   </attribute>
+                   <layout class="QGridLayout" name="gridLayout_5">
+                    <item row="0" column="0">
+                     <widget class="QComboBox" name="comboFiltros_2">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>35</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                      <property name="duplicatesEnabled">
+                       <bool>false</bool>
+                      </property>
+                      <property name="frame">
+                       <bool>true</bool>
+                      </property>
+                      <item>
+                       <property name="text">
+                        <string>Pasa Bajo</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="images.qrc">
+                         <normaloff>:/imagenes/arrowApply.png</normaloff>:/imagenes/arrowApply.png</iconset>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Pasa Alto</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="images.qrc">
+                         <normaloff>:/imagenes/arrowApply.png</normaloff>:/imagenes/arrowApply.png</iconset>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Pasa Banda</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="images.qrc">
+                         <normaloff>:/imagenes/arrowApply.png</normaloff>:/imagenes/arrowApply.png</iconset>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Elimina Banda</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="images.qrc">
+                         <normaloff>:/imagenes/arrowApply.png</normaloff>:/imagenes/arrowApply.png</iconset>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Filtro Notch</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="images.qrc">
+                         <normaloff>:/imagenes/arrowApply.png</normaloff>:/imagenes/arrowApply.png</iconset>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Pasa Bajo - Butterworth  </string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="images.qrc">
+                         <normaloff>:/imagenes/arrowApply.png</normaloff>:/imagenes/arrowApply.png</iconset>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Filtro de Gabor</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="images.qrc">
+                         <normaloff>:/imagenes/arrowApply.png</normaloff>:/imagenes/arrowApply.png</iconset>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Filtro de Wavelet</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="images.qrc">
+                         <normaloff>:/imagenes/arrowApply.png</normaloff>:/imagenes/arrowApply.png</iconset>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <layout class="QHBoxLayout" name="horizontalLayout_6">
+                      <item>
+                       <widget class="QPushButton" name="btn_AplicarFiltro2">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>40</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string>Aplicar Filtro</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QToolButton" name="toolBtn_Filtros2">
+                        <property name="text">
+                         <string>...</string>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="images.qrc">
+                          <normaloff>:/imagenes/Gear.ico</normaloff>:/imagenes/Gear.ico</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>30</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="autoRaise">
+                         <bool>false</bool>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
+                  </widget>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_2">
+                  <item>
+                   <widget class="QWidget" name="ContenedorGrafico2" native="true">
+                    <property name="styleSheet">
+                     <string notr="true">QWidget#ContenedorGrafico2 {
+     border: 1px solid gray;
+     border-radius: 2px;
+ }</string>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_12">
+                     <item row="0" column="0">
+                      <widget class="QCustomPlot" name="grafico2" native="true">
+                       <property name="font">
+                        <font>
+                         <pointsize>8</pointsize>
+                        </font>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="ContenedorGrafico3" native="true">
+                    <property name="styleSheet">
+                     <string notr="true">QWidget#ContenedorGrafico3 {
+     border: 1px solid gray;
+     border-radius: 2px;
+ }</string>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_14">
+                     <item row="0" column="0">
+                      <widget class="QCustomPlot" name="grafico3" native="true">
+                       <property name="font">
+                        <font>
+                         <pointsize>8</pointsize>
+                        </font>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QToolBox" name="toolBoxGrafico3">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>210</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="currentIndex">
+                   <number>0</number>
+                  </property>
+                  <widget class="QWidget" name="page_17">
+                   <property name="geometry">
+                    <rect>
+                     <x>0</x>
+                     <y>0</y>
+                     <width>210</width>
+                     <height>197</height>
+                    </rect>
+                   </property>
+                   <attribute name="label">
+                    <string>Metodos</string>
+                   </attribute>
+                   <layout class="QGridLayout" name="gridLayout_7">
+                    <item row="0" column="0">
+                     <layout class="QVBoxLayout" name="verticalLayout_4">
+                      <item>
+                       <widget class="QComboBox" name="comboAnalisis3">
+                        <item>
+                         <property name="text">
+                          <string>Discrete Fourier Transform</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Fast Fourier Transform</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Gabor Transform</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Wavelet Transform</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Spectrogram</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Histogram (Fourier)</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Histogram (Normal)</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>MovingRms</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Mean Frequency</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Normalize</string>
+                         </property>
+                        </item>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="ButtonGraficar3">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true"/>
+                        </property>
+                        <property name="text">
+                         <string>Graficar</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                    <item row="1" column="0">
+                     <layout class="QGridLayout" name="gridLayout_16">
+                      <item row="3" column="4">
+                       <spacer name="horizontalSpacer_7">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>40</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
+                      <item row="1" column="0">
+                       <spacer name="horizontalSpacer_3">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>40</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
+                      <item row="0" column="0">
+                       <widget class="QLabel" name="label_SaveG3">
+                        <property name="text">
+                         <string>Exportar:</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="1" rowspan="2">
+                       <widget class="QToolButton" name="btnSaveImageG3">
+                        <property name="minimumSize">
+                         <size>
+                          <width>50</width>
+                          <height>50</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="images.qrc">
+                          <normaloff>:/imagenes/020.png</normaloff>:/imagenes/020.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>60</width>
+                          <height>60</height>
+                         </size>
+                        </property>
+                        <property name="autoRepeat">
+                         <bool>false</bool>
+                        </property>
+                        <property name="autoRaise">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="3" column="2">
+                       <spacer name="horizontalSpacer_8">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>40</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
+                      <item row="0" column="2" rowspan="2" colspan="3">
+                       <widget class="QToolButton" name="btnSaveDataG3">
+                        <property name="minimumSize">
+                         <size>
+                          <width>50</width>
+                          <height>50</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string>...</string>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="images.qrc">
+                          <normaloff>:/imagenes/csv_txt.png</normaloff>:/imagenes/csv_txt.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>60</width>
+                          <height>60</height>
+                         </size>
+                        </property>
+                        <property name="autoRepeat">
+                         <bool>false</bool>
+                        </property>
+                        <property name="autoRaise">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="3" column="3">
+                       <widget class="QCheckBox" name="in_enca_3">
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="3" column="0" colspan="2">
+                       <widget class="QLabel" name="label_17">
+                        <property name="text">
+                         <string>Incluir encabezado:</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="page_21">
+                   <property name="geometry">
+                    <rect>
+                     <x>0</x>
+                     <y>0</y>
+                     <width>210</width>
+                     <height>197</height>
+                    </rect>
+                   </property>
+                   <attribute name="label">
+                    <string>Filtros</string>
+                   </attribute>
+                   <layout class="QGridLayout" name="gridLayout_17">
+                    <item row="0" column="0">
+                     <widget class="QComboBox" name="comboFiltros_3">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>35</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                      <property name="duplicatesEnabled">
+                       <bool>false</bool>
+                      </property>
+                      <property name="frame">
+                       <bool>true</bool>
+                      </property>
+                      <item>
+                       <property name="text">
+                        <string>Pasa Bajo</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="images.qrc">
+                         <normaloff>:/imagenes/arrowApply.png</normaloff>:/imagenes/arrowApply.png</iconset>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Pasa Alto</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="images.qrc">
+                         <normaloff>:/imagenes/arrowApply.png</normaloff>:/imagenes/arrowApply.png</iconset>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Pasa Banda</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="images.qrc">
+                         <normaloff>:/imagenes/arrowApply.png</normaloff>:/imagenes/arrowApply.png</iconset>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Elimina Banda</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="images.qrc">
+                         <normaloff>:/imagenes/arrowApply.png</normaloff>:/imagenes/arrowApply.png</iconset>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Filtro Notch</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="images.qrc">
+                         <normaloff>:/imagenes/arrowApply.png</normaloff>:/imagenes/arrowApply.png</iconset>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Pasa Bajo - Butterworth</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="images.qrc">
+                         <normaloff>:/imagenes/arrowApply.png</normaloff>:/imagenes/arrowApply.png</iconset>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Filtro de Gabor</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="images.qrc">
+                         <normaloff>:/imagenes/arrowApply.png</normaloff>:/imagenes/arrowApply.png</iconset>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Filtro de Wavelet</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="images.qrc">
+                         <normaloff>:/imagenes/arrowApply.png</normaloff>:/imagenes/arrowApply.png</iconset>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <layout class="QHBoxLayout" name="horizontalLayout_7">
+                      <item>
+                       <widget class="QPushButton" name="btn_AplicarFiltro3">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>40</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string>Aplicar Filtro</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QToolButton" name="toolBtn_Filtros3">
+                        <property name="text">
+                         <string>...</string>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="images.qrc">
+                          <normaloff>:/imagenes/Gear.ico</normaloff>:/imagenes/Gear.ico</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>30</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="autoRaise">
+                         <bool>false</bool>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
+                  </widget>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="tabAE">
+             <attribute name="title">
+              <string>Analisis Estadistico</string>
+             </attribute>
+             <layout class="QGridLayout" name="gridLayout_24">
+              <item row="1" column="3" rowspan="2">
+               <widget class="QDockWidget" name="dockGraficosNorm">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                  <horstretch>1</horstretch>
+                  <verstretch>1</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="windowTitle">
+                 <string>Graficos - Señal Normalizada</string>
+                </property>
+                <widget class="QCustomPlot" name="graficoNorm"/>
+               </widget>
+              </item>
+              <item row="3" column="3">
+               <spacer name="horizontalSpacer_5">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="0" column="1" rowspan="4">
+               <widget class="QGroupBox" name="groupBox_5">
+                <property name="minimumSize">
+                 <size>
+                  <width>200</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>250</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>9</pointsize>
+                 </font>
+                </property>
+                <property name="title">
+                 <string>Normalized by:</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout">
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_11">
+                   <item>
+                    <widget class="QRadioButton" name="radioRms">
+                     <property name="text">
+                      <string>RMS</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="Line" name="line">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QRadioButton" name="radioEnergy">
+                     <property name="text">
+                      <string>ENERGY</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="Line" name="line_2">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QRadioButton" name="radioNorm">
+                     <property name="text">
+                      <string>NORM</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="Line" name="line_3">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="verticalSpacer">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>20</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="pushButton">
+                     <property name="text">
+                      <string>Apply</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="0" column="4" rowspan="4">
+               <widget class="QGroupBox" name="groupBox_4">
+                <property name="maximumSize">
+                 <size>
+                  <width>200</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>9</pointsize>
+                 </font>
+                </property>
+                <property name="title">
+                 <string>Stadistics</string>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_27">
+                 <item row="5" column="0">
+                  <widget class="QLabel" name="label_12">
+                   <property name="text">
+                    <string>MIN</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="1">
+                  <widget class="QLineEdit" name="statTab_min"/>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QLineEdit" name="statTab_std"/>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QLabel" name="label_11">
+                   <property name="text">
+                    <string>STD</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="0">
+                  <widget class="QLabel" name="label_10">
+                   <property name="text">
+                    <string>VAR</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="1">
+                  <widget class="QLineEdit" name="statTab_rms"/>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_8">
+                   <property name="text">
+                    <string>MEAN</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QLineEdit" name="statTab_mean"/>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="label_9">
+                   <property name="text">
+                    <string>MEDIAN</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="QLineEdit" name="statTab_var"/>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QLineEdit" name="statTab_median"/>
+                 </item>
+                 <item row="4" column="0">
+                  <widget class="QLabel" name="label_13">
+                   <property name="text">
+                    <string>RMS</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="7" column="1">
+                  <widget class="QLineEdit" name="statTab_range"/>
+                 </item>
+                 <item row="6" column="1">
+                  <widget class="QLineEdit" name="statTab_max"/>
+                 </item>
+                 <item row="6" column="0">
+                  <widget class="QLabel" name="label_14">
+                   <property name="text">
+                    <string>MAX</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="7" column="0">
+                  <widget class="QLabel" name="label_15">
+                   <property name="text">
+                    <string>RANGE</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="tab">
+             <attribute name="title">
+              <string>Tabla de Informacion</string>
+             </attribute>
+             <layout class="QGridLayout" name="gridLayout">
+              <item row="0" column="0">
+               <widget class="QDockWidget" name="dockTablaEstadisticas">
+                <property name="windowTitle">
+                 <string>Tabla de datos Estadísticos</string>
+                </property>
+                <widget class="QWidget" name="dockWidgetContents">
+                 <layout class="QGridLayout" name="gridLayout_23">
+                  <item row="0" column="0">
+                   <layout class="QVBoxLayout" name="verticalLayout_10">
+                    <item>
+                     <widget class="QTableWidget" name="tabla_deDatos">
+                      <property name="editTriggers">
+                       <set>QAbstractItemView::NoEditTriggers</set>
+                      </property>
+                      <property name="textElideMode">
+                       <enum>Qt::ElideMiddle</enum>
+                      </property>
+                      <property name="sortingEnabled">
+                       <bool>true</bool>
+                      </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
+                      </property>
+                      <property name="cornerButtonEnabled">
+                       <bool>true</bool>
+                      </property>
+                      <attribute name="horizontalHeaderCascadingSectionResizes">
+                       <bool>false</bool>
+                      </attribute>
+                      <attribute name="horizontalHeaderHighlightSections">
+                       <bool>true</bool>
+                      </attribute>
+                      <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                       <bool>true</bool>
+                      </attribute>
+                      <attribute name="horizontalHeaderStretchLastSection">
+                       <bool>false</bool>
+                      </attribute>
+                      <attribute name="verticalHeaderStretchLastSection">
+                       <bool>false</bool>
+                      </attribute>
+                      <column>
+                       <property name="text">
+                        <string>Name</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Time</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Mean</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Median</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Standard deviation</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Variance</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Root Mean Square</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Minimum</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Maximum</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Range</string>
+                       </property>
+                      </column>
+                     </widget>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_4">
+                      <item>
+                       <widget class="QPushButton" name="btnLimpiarTabla">
+                        <property name="minimumSize">
+                         <size>
+                          <width>100</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>100</width>
+                          <height>50</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string>Limpiar tabla</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="btnCalcularDatos">
+                        <property name="enabled">
+                         <bool>false</bool>
+                        </property>
+                        <property name="minimumSize">
+                         <size>
+                          <width>100</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>100</width>
+                          <height>50</height>
+                         </size>
+                        </property>
+                        <property name="layoutDirection">
+                         <enum>Qt::LeftToRight</enum>
+                        </property>
+                        <property name="text">
+                         <string>Calcular</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <spacer name="horizontalSpacer_2">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>40</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="btnGuardarTabla">
+                        <property name="enabled">
+                         <bool>false</bool>
+                        </property>
+                        <property name="text">
+                         <string>Guardar Datos</string>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="images.qrc">
+                          <normaloff>:/imagenes/save_as.ico</normaloff>:/imagenes/save_as.ico</iconset>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="tabInfo">
+             <attribute name="title">
+              <string>Log and Info</string>
+             </attribute>
+             <layout class="QGridLayout" name="gridLayout_25">
+              <item row="0" column="0">
+               <layout class="QVBoxLayout" name="verticalLayout_9">
+                <item>
+                 <widget class="QLabel" name="label_7">
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>16</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Log de eventos del sistema:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="CodeEditor" name="codeEditor_Log">
+                  <property name="minimumSize">
+                   <size>
+                    <width>400</width>
+                    <height>200</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="0" column="1">
+               <layout class="QVBoxLayout" name="verticalLayout_5">
+                <item>
+                 <widget class="QLabel" name="label_5">
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>16</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Contenido del archivo actual:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPlainTextEdit" name="TextoSalida">
+                  <property name="maximumSize">
+                   <size>
+                    <width>400</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="undoRedoEnabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabNYC">
+       <attribute name="title">
+        <string>Notas y Comentarios</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_22">
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <widget class="QLabel" name="infoComentarios">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string>* En esta seccion podras agregar Notas y Comentarios que se almacenaran automaticamente en la sesion actual.</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="infoComentarios_2">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string>* A la derecha se muestra un Historial de los comentarios previamente ingresados.</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="1" rowspan="3">
+         <layout class="QGridLayout" name="gridLayout_20">
+          <item row="2" column="2">
+           <widget class="QToolButton" name="btnSearchComents">
+            <property name="text">
+             <string>Buscar</string>
+            </property>
+            <property name="icon">
+             <iconset resource="images.qrc">
+              <normaloff>:/imagenes/magnifyingglass.ico</normaloff>:/imagenes/magnifyingglass.ico</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" colspan="3">
+           <widget class="QGroupBox" name="groupBox_2">
+            <property name="font">
+             <font>
+              <kerning>true</kerning>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QGroupBox {
+     border: 1px solid gray;
+     border-radius: 2px;
+ }</string>
+            </property>
+            <property name="title">
+             <string>Historial de Notas y Comentarios</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="SearchComents"/>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <widget class="QPlainTextEdit" name="notasComentarios">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="botonNotas">
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="text">
+             <string>Agregar Nota</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="2" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <item>
+           <widget class="QTableView" name="tVComentariosR">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="EliminarComentario">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Eliminar Comentario&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="images.qrc">
+              <normaloff>:/imagenes/Xion.ico</normaloff>:/imagenes/Xion.ico</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>25</width>
+              <height>25</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>976</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>Archivos</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="actionAdd_Edit_Remove_User"/>
+    <addaction name="actionSave"/>
+    <addaction name="separator"/>
+    <addaction name="actionCerrar_se_al"/>
+    <addaction name="actionCerrar"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuExport">
+    <property name="title">
+     <string>Proyectos</string>
+    </property>
+    <widget class="QMenu" name="menuAdministrar">
+     <property name="title">
+      <string>Administrar</string>
+     </property>
+     <property name="icon">
+      <iconset resource="images.qrc">
+       <normaloff>:/imagenes/graph.ico</normaloff>:/imagenes/graph.ico</iconset>
+     </property>
+     <addaction name="actionCrear"/>
+     <addaction name="actionAbrir_2"/>
+    </widget>
+    <addaction name="separator"/>
+    <addaction name="menuAdministrar"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Ayuda</string>
+    </property>
+    <widget class="QMenu" name="menuDesarrollador">
+     <property name="title">
+      <string>Desarrollador</string>
+     </property>
+     <addaction name="actionBase_de_Datos"/>
+     <addaction name="action_doTest"/>
+     <addaction name="separator"/>
+    </widget>
+    <widget class="QMenu" name="menu_Ejemplos">
+     <property name="title">
+      <string>&amp;Ejemplos</string>
+     </property>
+     <property name="icon">
+      <iconset resource="images.qrc">
+       <normaloff>:/imagenes/ejemplos.png</normaloff>:/imagenes/ejemplos.png</iconset>
+     </property>
+     <addaction name="actionDemo_Se_al_1_csv"/>
+     <addaction name="actionDemo_Se_al_2_txt"/>
+     <addaction name="actionDemo_Se_al_3_csv"/>
+     <addaction name="actionDemo_Se_al_Greasy_csv"/>
+     <addaction name="separator"/>
+    </widget>
+    <addaction name="menu_Ejemplos"/>
+    <addaction name="actionManual_de_Usuario"/>
+    <addaction name="separator"/>
+    <addaction name="actionReportar_Bug"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout_Qt_creator"/>
+    <addaction name="separator"/>
+    <addaction name="menuDesarrollador"/>
+   </widget>
+   <widget class="QMenu" name="menuExportar">
+    <property name="title">
+     <string>Exportar</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuConfigurac_on">
+    <property name="title">
+     <string>Configuracíon</string>
+    </property>
+    <addaction name="actionParametros_Generales"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuVer">
+    <property name="title">
+     <string>Ver</string>
+    </property>
+    <addaction name="actionAnalisis_Multiple"/>
+    <addaction name="separator"/>
+    <addaction name="actionRedoOriginal"/>
+    <addaction name="actionUndo"/>
+    <addaction name="separator"/>
+    <addaction name="action_informacion_actual_sig"/>
+    <addaction name="separator"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuVer"/>
+   <addaction name="menuExport"/>
+   <addaction name="menuExportar"/>
+   <addaction name="menuConfigurac_on"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/Search.ico</normaloff>:/imagenes/Search.ico</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Abrir Archivo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/database.ico</normaloff>:/imagenes/database.ico</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Guardar</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="actionAdd_Edit_Remove_User">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/ic_person_add_black_48dp.ico</normaloff>:/imagenes/ic_person_add_black_48dp.ico</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Usuarios</string>
+   </property>
+  </action>
+  <action name="actionCerrar">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/Xion.ico</normaloff>:/imagenes/Xion.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Cerrar todo</string>
+   </property>
+  </action>
+  <action name="actionCrear">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/Word-Processor.ico</normaloff>:/imagenes/Word-Processor.ico</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Crear</string>
+   </property>
+  </action>
+  <action name="actionManual_de_Usuario">
+   <property name="text">
+    <string>&amp;Manual de Usuario</string>
+   </property>
+  </action>
+  <action name="actionAbout_Qt_creator">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/qt.png</normaloff>:/imagenes/qt.png</iconset>
+   </property>
+   <property name="text">
+    <string>About Qt creator</string>
+   </property>
+  </action>
+  <action name="actionReportar_Bug">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/bug.png</normaloff>:/imagenes/bug.png</iconset>
+   </property>
+   <property name="text">
+    <string>Reportar Bug</string>
+   </property>
+  </action>
+  <action name="actionAbrir_2">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/3D-Design-Alt.ico</normaloff>:/imagenes/3D-Design-Alt.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Abrir / Eliminar</string>
+   </property>
+  </action>
+  <action name="actionBD">
+   <property name="text">
+    <string>Base de Datos</string>
+   </property>
+  </action>
+  <action name="actionOctave">
+   <property name="text">
+    <string>Octave</string>
+   </property>
+  </action>
+  <action name="actionFiltros">
+   <property name="text">
+    <string>Filtros</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/closeAll.png</normaloff>:/imagenes/closeAll.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="action_doTest">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/console.png</normaloff>:/imagenes/console.png</iconset>
+   </property>
+   <property name="text">
+    <string>doTest</string>
+   </property>
+  </action>
+  <action name="actionBase_de_Datos">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/logoSqlite.png</normaloff>:/imagenes/logoSqlite.png</iconset>
+   </property>
+   <property name="text">
+    <string>Base de Datos</string>
+   </property>
+  </action>
+  <action name="actionSpectrogram">
+   <property name="text">
+    <string>Spectrogram</string>
+   </property>
+  </action>
+  <action name="actionParametros_Generales">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/Gear.ico</normaloff>:/imagenes/Gear.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Parametros Generales</string>
+   </property>
+  </action>
+  <action name="actionCerrar_se_al">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/Task Manager.ico</normaloff>:/imagenes/Task Manager.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Cerrar señal</string>
+   </property>
+  </action>
+  <action name="actionDemo_Se_al_1_csv">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/1.png</normaloff>:/imagenes/1.png</iconset>
+   </property>
+   <property name="text">
+    <string>Demo Señal 1 (*.csv)</string>
+   </property>
+  </action>
+  <action name="actionDemo_Se_al_2_txt">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/2.png</normaloff>:/imagenes/2.png</iconset>
+   </property>
+   <property name="text">
+    <string>Demo Señal 2 (*.txt)</string>
+   </property>
+  </action>
+  <action name="actionAnalisis_Multiple">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/AnalisisMultiple.png</normaloff>:/imagenes/AnalisisMultiple.png</iconset>
+   </property>
+   <property name="text">
+    <string>Analisis Multiple</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/045.png</normaloff>:/imagenes/045.png</iconset>
+   </property>
+   <property name="text">
+    <string>Deshacer</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="actionRedoOriginal">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/026.png</normaloff>:/imagenes/026.png</iconset>
+   </property>
+   <property name="text">
+    <string>Restaurar Original</string>
+   </property>
+  </action>
+  <action name="actionDemo_Se_al_3_csv">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/3.png</normaloff>:/imagenes/3.png</iconset>
+   </property>
+   <property name="text">
+    <string>Demo Señal 3 - 50Hz (*.csv)</string>
+   </property>
+  </action>
+  <action name="action_informacion_actual_sig">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/graph_statistics.png</normaloff>:/imagenes/graph_statistics.png</iconset>
+   </property>
+   <property name="text">
+    <string>Informacion Señal Actual</string>
+   </property>
+  </action>
+  <action name="actionDemo_Se_al_Greasy_csv">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/4.png</normaloff>:/imagenes/4.png</iconset>
+   </property>
+   <property name="text">
+    <string>Demo Señal - Greasy (*.csv)</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>CodeEditor</class>
+   <extends>QPlainTextEdit</extends>
+   <header>codeeditor.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header location="global">qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QxtSpanSlider</class>
+   <extends>QSlider</extends>
+   <header location="global">qxtspanslider.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>649</x>
+     <y>362</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

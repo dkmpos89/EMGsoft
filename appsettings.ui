@@ -1,0 +1,1912 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>appSettings</class>
+ <widget class="QDockWidget" name="appSettings">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>545</width>
+    <height>426</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>520</width>
+    <height>426</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>524287</width>
+    <height>524287</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/imagenes/Gear.ico</normaloff>:/imagenes/Gear.ico</iconset>
+  </property>
+  <property name="windowTitle">
+   <string>Configuraciones</string>
+  </property>
+  <widget class="QWidget" name="dockWidgetContents">
+   <layout class="QGridLayout" name="gridLayout_7">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabConfig">
+      <property name="minimumSize">
+       <size>
+        <width>500</width>
+        <height>350</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="elideMode">
+       <enum>Qt::ElideNone</enum>
+      </property>
+      <property name="usesScrollButtons">
+       <bool>true</bool>
+      </property>
+      <property name="documentMode">
+       <bool>false</bool>
+      </property>
+      <property name="tabsClosable">
+       <bool>false</bool>
+      </property>
+      <property name="movable">
+       <bool>false</bool>
+      </property>
+      <property name="tabBarAutoHide">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="tab_octave">
+       <attribute name="title">
+        <string>Octave</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_10">
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_11">
+          <item>
+           <widget class="QLabel" name="Octave_lb_OctavePath">
+            <property name="text">
+             <string>Directorio Octave (bin)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="OctavePath">
+            <property name="maximumSize">
+             <size>
+              <width>300</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>C:/Octave/Octave-4.0.0/bin</string>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="btn_OctavePath">
+            <property name="text">
+             <string>...</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="Octave_lb_menuOctave">
+            <property name="text">
+             <string>menuOctave.m</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="Octave_dir_menuOctave">
+            <property name="maximumSize">
+             <size>
+              <width>300</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>../scripts/MenuOctave.m</string>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="Octave_btn_menuOctave">
+            <property name="text">
+             <string>...</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="2" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="Octave_lb_OctaveFourier">
+            <property name="text">
+             <string>OctaveFourier.m</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="Octave_dir_OctaveFourier">
+            <property name="maximumSize">
+             <size>
+              <width>300</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>../scripts/OctaveFourier.m</string>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="Octave_btn_OctaveFourier">
+            <property name="text">
+             <string>...</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="3" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QLabel" name="Octave_lb_OctaveSpectrogram">
+            <property name="text">
+             <string>OctaveSpectrogram.m</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="Octave_dir_OctaveSpectrogram">
+            <property name="maximumSize">
+             <size>
+              <width>300</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>../scripts/OctaveSpectrogram.m</string>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="Octave_btn_OctaveSpectrogram">
+            <property name="text">
+             <string>...</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="4" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QLabel" name="Octave_lb_OctaveGabor">
+            <property name="text">
+             <string>OctaveGabor.m</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="Octave_dir_OctaveGabor">
+            <property name="maximumSize">
+             <size>
+              <width>300</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>../scripts/OctaveGabor.m</string>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="Octave_btn_OctaveGabor">
+            <property name="text">
+             <string>...</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="5" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QLabel" name="Octave_lb_OctaveWavelets">
+            <property name="text">
+             <string>OctaveWavelets.m</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="Octave_dir_OctaveWavelets">
+            <property name="maximumSize">
+             <size>
+              <width>300</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>../scripts/OctaveWavelets.m</string>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+            <property name="placeholderText">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="Octave_btn_OctaveWavelets">
+            <property name="text">
+             <string>...</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="6" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <item>
+           <spacer name="verticalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_bsededatos">
+       <attribute name="title">
+        <string>Base de datos</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QPlainTextEdit" name="bd_scripts">
+          <property name="acceptDrops">
+           <bool>false</bool>
+          </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAsNeeded</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAsNeeded</enum>
+          </property>
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustToContents</enum>
+          </property>
+          <property name="documentTitle">
+           <string/>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+          <property name="plainText">
+           <string/>
+          </property>
+          <property name="textInteractionFlags">
+           <set>Qt::TextSelectableByMouse</set>
+          </property>
+          <property name="centerOnScroll">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_spectrogram">
+       <attribute name="title">
+        <string>Spectrogram</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0">
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="2" column="2">
+           <widget class="QLabel" name="labelWlen">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Window length. Specifies the length of the window measured in ms. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/imagenes/info.png</pixmap>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QCheckBox" name="sgram_tfr">
+            <property name="text">
+             <string>Ratio of time-frequency resolution</string>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+            <property name="tristate">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QCheckBox" name="sgram_wlen">
+            <property name="text">
+             <string>Window length (ms)</string>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QSpinBox" name="sgram_wlen_value">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="maximum">
+             <number>50000</number>
+            </property>
+            <property name="singleStep">
+             <number>10</number>
+            </property>
+            <property name="value">
+             <number>100</number>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QCheckBox" name="sgram_lin">
+            <property name="text">
+             <string>Show the energy of the coefficients</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QDoubleSpinBox" name="sgram_tfr_value">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximum">
+             <double>5.000000000000000</double>
+            </property>
+            <property name="singleStep">
+             <double>0.100000000000000</double>
+            </property>
+            <property name="value">
+             <double>1.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="labelLin">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show the energy of the coefficients on a linear scale.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/imagenes/info.png</pixmap>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="labelTfr">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the ratio of frequency resolution to time resolution. A value &lt;span style=&quot; color:#ff0000;&quot;&gt;v=1&lt;/span&gt; is the default. Setting &lt;span style=&quot; color:#ff0000;&quot;&gt;v&amp;gt;1&lt;/span&gt; will give better frequency resolution at the expense of a worse time resolution. A value of &lt;span style=&quot; color:#ff0000;&quot;&gt;0&amp;lt;v&amp;lt;1&lt;/span&gt; will do the opposite&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/imagenes/info.png</pixmap>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2">
+           <widget class="QLabel" name="label_6">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Limit the dynamical range to &lt;span style=&quot; color:#ff0000;&quot;&gt;r&lt;/span&gt; by using a colormap in the interval &lt;span style=&quot; color:#ff0000;&quot;&gt;[chigh−r,chigh]&lt;/span&gt;, where &lt;span style=&quot; color:#0000ff;&quot;&gt;chigh&lt;/span&gt; is the highest value in the plot. The default value is &lt;span style=&quot; color:#ff0000;&quot;&gt;100&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/imagenes/info.png</pixmap>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QCheckBox" name="sgram_dynr">
+            <property name="text">
+             <string>Dynamical range</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QSpinBox" name="sgram_dynr_value">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+            <property name="value">
+             <number>100</number>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>Información:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0" colspan="3">
+           <widget class="QTextEdit" name="infoSpectrogram"/>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_fourier">
+       <attribute name="title">
+        <string>Fourier / Histograma</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="Fourier_gb_Type">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>135</height>
+           </size>
+          </property>
+          <property name="title">
+           <string>Fourier:</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_6">
+           <item row="0" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_6">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_3">
+               <item>
+                <widget class="QRadioButton" name="Fourier_rb_Impulse">
+                 <property name="text">
+                  <string>Impulso</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="verticalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QLabel" name="logoImpluse">
+               <property name="minimumSize">
+                <size>
+                 <width>130</width>
+                 <height>100</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>130</width>
+                 <height>100</height>
+                </size>
+               </property>
+               <property name="autoFillBackground">
+                <bool>false</bool>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap>:/imagenes/iconoS_Pulso.png</pixmap>
+               </property>
+               <property name="scaledContents">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="0" column="1">
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_2">
+               <item>
+                <widget class="QRadioButton" name="Fourier_rb_Curve">
+                 <property name="text">
+                  <string>Curva</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QSpinBox" name="Fourier_sp_Curvevalue">
+                 <property name="maximumSize">
+                  <size>
+                   <width>100</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="maximum">
+                  <number>100000000</number>
+                 </property>
+                 <property name="singleStep">
+                  <number>10</number>
+                 </property>
+                 <property name="value">
+                  <number>10</number>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="Fourier_infoCurve">
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Éste valor indica cuantos puntos son considerados para el calculo de la curva promedio.&lt;/p&gt;&lt;p&gt;- No se puede sobrepasar el tamaño maximo de la señal.&lt;/p&gt;&lt;p&gt;- Si este valor es muy grande se tomará como referencia el valor &amp;quot;size(signal)&amp;quot; para todos los calculos necesarios.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="pixmap">
+                  <pixmap>:/imagenes/info.png</pixmap>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QLabel" name="logoCurve">
+               <property name="minimumSize">
+                <size>
+                 <width>130</width>
+                 <height>100</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>130</width>
+                 <height>100</height>
+                </size>
+               </property>
+               <property name="autoFillBackground">
+                <bool>false</bool>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap>:/imagenes/iconoS_Analoga.png</pixmap>
+               </property>
+               <property name="scaledContents">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QGroupBox" name="Fourier_gb_Histogram">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>135</height>
+           </size>
+          </property>
+          <property name="title">
+           <string>Histograma:</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_5">
+           <item row="0" column="0">
+            <spacer name="verticalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="0" column="3">
+            <spacer name="verticalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_tgabor">
+       <attribute name="title">
+        <string>Gabor Transform</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_9">
+        <item row="0" column="0">
+         <layout class="QGridLayout" name="gridLayout_8">
+          <item row="3" column="0">
+           <widget class="QCheckBox" name="gabor_cB_DownSam">
+            <property name="text">
+             <string>Downsamplig factor</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="2">
+           <widget class="QLabel" name="label_Modulation">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;El valor &amp;quot;&lt;span style=&quot; color:#ff0000;&quot;&gt;M&lt;/span&gt;&amp;quot; de modulaciones afectará el tamaño de la salida y la resolucion de los calculos realizados.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/imagenes/info.png</pixmap>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QCheckBox" name="gabor_cB_numberOfMod">
+            <property name="text">
+             <string>Number of modulations (M)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLabel" name="labelLengthTime">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;El valor por defecto es &amp;quot;&lt;span style=&quot; color:#ff0000;&quot;&gt;a=30&lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt;&amp;quot; pero puede ser cambiado en cualquier momento.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#000000;&quot;&gt;La resolucion de la salida y de los calculos realizados dependerán directamente de éste valor, por favor tenga en cuenta eso antes de modificarlo.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/imagenes/info.png</pixmap>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QSpinBox" name="gabor_numberModulations_value">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="maximum">
+             <number>5000</number>
+            </property>
+            <property name="singleStep">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <number>101</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="gabor_windowsString_value">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="placeholderText">
+             <string notr="true">Ej:  'hann' , 'gauss', etc</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="0">
+           <widget class="QLabel" name="label_infoGabor">
+            <property name="text">
+             <string>Información:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="labelWindowsG">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Si no se especifica una ventana se usará por defecto el tipo &amp;quot;gauss&amp;quot;.&lt;/p&gt;&lt;p&gt;Para mayor informacion sobre el tipo de ventanas disponibles revise &amp;quot;&lt;span style=&quot; color:#ff0000;&quot;&gt;GABWIN&lt;/span&gt;&amp;quot; en la documentacion.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/imagenes/info.png</pixmap>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QSpinBox" name="gabor_lengthTime_value">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="maximum">
+             <number>5000</number>
+            </property>
+            <property name="value">
+             <number>30</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QCheckBox" name="gabor_cB_GaborWind">
+            <property name="text">
+             <string>String for Window function (g)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="2" rowspan="3">
+           <spacer name="verticalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="0">
+           <widget class="QCheckBox" name="gabor_cB_LenghTime">
+            <property name="text">
+             <string>Length of time shift (a)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1" rowspan="4">
+           <spacer name="verticalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="0" colspan="2">
+           <widget class="QCheckBox" name="gabor_cB_typeOfTransform">
+            <property name="text">
+             <string>dgtreal (f , g, a, M);</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0" rowspan="3">
+           <spacer name="verticalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="10" column="0" colspan="3">
+           <widget class="QTextEdit" name="infoGaborTransform">
+            <property name="html">
+             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#000000;&quot;&gt;Input parameters:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#0000ff;&quot;&gt;f&lt;/span&gt;&lt;span style=&quot; color:#0000ff;&quot;&gt;  Input data&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#0000ff;&quot;&gt;g&lt;/span&gt;&lt;span style=&quot; color:#0000ff;&quot;&gt;  Window function.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#0000ff;&quot;&gt;a&lt;/span&gt;&lt;span style=&quot; color:#0000ff;&quot;&gt;  Length of time shift.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#0000ff;&quot;&gt;M&lt;/span&gt;&lt;span style=&quot; color:#0000ff;&quot;&gt;  Number of modulations.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#000000;&quot;&gt;Output parameters:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#0000ff;&quot;&gt;c&lt;/span&gt;&lt;span style=&quot; color:#0000ff;&quot;&gt;  M∗N array of coefficients.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#0000ff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#000000;&quot;&gt;Description&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;dgtreal(f,g,a,M)&lt;/span&gt;&lt;span style=&quot; color:#0000ff;&quot;&gt; computes the Gabor coefficients of the real-valued input signal &amp;quot;&lt;/span&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;f&lt;/span&gt;&lt;span style=&quot; color:#0000ff;&quot;&gt;&amp;quot; with respect to the real-valued windows &amp;quot;&lt;/span&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;g&lt;/span&gt;&lt;span style=&quot; color:#0000ff;&quot;&gt;&amp;quot; and parameters &amp;quot;&lt;/span&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;a&amp;quot;&lt;/span&gt;&lt;span style=&quot; color:#0000ff;&quot;&gt; and &amp;quot;&lt;/span&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;M&lt;/span&gt;&lt;span style=&quot; color:#0000ff;&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="label_dgtGaborReal">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Por defecto se usa &lt;span style=&quot; color:#ff0000;&quot;&gt;DGT(..)&lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt;,&lt;/span&gt;&lt;span style=&quot; color:#ff0000;&quot;/&gt;sin embargo si se marca esta casilla se realizará la &lt;span style=&quot; color:#ff0000;&quot;&gt;DGTREAL(...) &lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt;de los vaores de la señal actual.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>:/imagenes/info.png</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QCheckBox" name="gabor_cB_Dynrange">
+            <property name="text">
+             <string>Dynamical Range</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QSpinBox" name="gabor_DownSam_value">
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+            <property name="value">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QSpinBox" name="gabor_Dynrange_value">
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+            <property name="value">
+             <number>90</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_twavelets">
+       <attribute name="title">
+        <string>Wavelet Transform</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_11">
+        <item row="0" column="0" colspan="2">
+         <widget class="QCheckBox" name="sgram_lin_2">
+          <property name="text">
+           <string>Show the energy of the coefficients</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QLabel" name="labelLin_2">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show the energy of the coefficients on a linear scale.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>:/imagenes/info.png</pixmap>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="wav_fam">
+          <property name="text">
+           <string>Wavelet Family</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QComboBox" name="wav_fam_value">
+          <item>
+           <property name="text">
+            <string>db8</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>dden4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>hden3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>spline4:2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>qshifta3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>symorth2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>dden5</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QLabel" name="labelTfr_2">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the ratio of frequency resolution to time resolution. A value &lt;span style=&quot; color:#ff0000;&quot;&gt;v=1&lt;/span&gt; is the default. Setting &lt;span style=&quot; color:#ff0000;&quot;&gt;v&amp;gt;1&lt;/span&gt; will give better frequency resolution at the expense of a worse time resolution. A value of &lt;span style=&quot; color:#ff0000;&quot;&gt;0&amp;lt;v&amp;lt;1&lt;/span&gt; will do the opposite&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>:/imagenes/info.png</pixmap>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QCheckBox" name="wav_deepLlevel">
+          <property name="text">
+           <string>DeepLevel</string>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QSpinBox" name="wav_deepLlevel_value">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="maximum">
+           <number>15</number>
+          </property>
+          <property name="singleStep">
+           <number>1</number>
+          </property>
+          <property name="value">
+           <number>3</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="QLabel" name="labelWlen_2">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Window length. Specifies the length of the window measured in ms. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>:/imagenes/info.png</pixmap>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QCheckBox" name="wav_dynr">
+          <property name="text">
+           <string>Dynamical range</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QSpinBox" name="wav_dynr_value">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="maximum">
+           <number>1000</number>
+          </property>
+          <property name="value">
+           <number>50</number>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="3">
+         <widget class="QLabel" name="label_8">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Limit the dynamical range to &lt;span style=&quot; color:#ff0000;&quot;&gt;r&lt;/span&gt; by using a colormap in the interval &lt;span style=&quot; color:#ff0000;&quot;&gt;[chigh−r,chigh]&lt;/span&gt;, where &lt;span style=&quot; color:#0000ff;&quot;&gt;chigh&lt;/span&gt; is the highest value in the plot. The default value is &lt;span style=&quot; color:#ff0000;&quot;&gt;100&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>:/imagenes/info.png</pixmap>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="wav_type_value_2">
+          <property name="text">
+           <string>Type of Wavelet</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="2">
+         <widget class="QComboBox" name="wav_type_value">
+          <item>
+           <property name="text">
+            <string>fwt</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>wfbt</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>wpfbt</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>wpbest</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>dtwfb</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>dtwfbreal</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="4" column="3">
+         <widget class="QLabel" name="labelTfr_3">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the ratio of frequency resolution to time resolution. A value &lt;span style=&quot; color:#ff0000;&quot;&gt;v=1&lt;/span&gt; is the default. Setting &lt;span style=&quot; color:#ff0000;&quot;&gt;v&amp;gt;1&lt;/span&gt; will give better frequency resolution at the expense of a worse time resolution. A value of &lt;span style=&quot; color:#ff0000;&quot;&gt;0&amp;lt;v&amp;lt;1&lt;/span&gt; will do the opposite&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>:/imagenes/info.png</pixmap>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="coeff_scale_label">
+          <property name="text">
+           <string>Coefficients Scale</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="2">
+         <widget class="QComboBox" name="coeff_scale_value">
+          <item>
+           <property name="text">
+            <string>db</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>dbsq</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>lin</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>linabs</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="5" column="3">
+         <widget class="QLabel" name="labelTfr_4">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the ratio of frequency resolution to time resolution. A value &lt;span style=&quot; color:#ff0000;&quot;&gt;v=1&lt;/span&gt; is the default. Setting &lt;span style=&quot; color:#ff0000;&quot;&gt;v&amp;gt;1&lt;/span&gt; will give better frequency resolution at the expense of a worse time resolution. A value of &lt;span style=&quot; color:#ff0000;&quot;&gt;0&amp;lt;v&amp;lt;1&lt;/span&gt; will do the opposite&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>:/imagenes/info.png</pixmap>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="coeff_scale_label_2">
+          <property name="text">
+           <string>Cost Function</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="2">
+         <widget class="QComboBox" name="cost_func">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <item>
+           <property name="text">
+            <string>shannon</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>log</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="6" column="3">
+         <widget class="QLabel" name="labelTfr_6">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the ratio of frequency resolution to time resolution. A value &lt;span style=&quot; color:#ff0000;&quot;&gt;v=1&lt;/span&gt; is the default. Setting &lt;span style=&quot; color:#ff0000;&quot;&gt;v&amp;gt;1&lt;/span&gt; will give better frequency resolution at the expense of a worse time resolution. A value of &lt;span style=&quot; color:#ff0000;&quot;&gt;0&amp;lt;v&amp;lt;1&lt;/span&gt; will do the opposite&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>:/imagenes/info.png</pixmap>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="1">
+         <spacer name="verticalSpacer_8">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Otros</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_24">
+        <item row="1" column="0" colspan="2">
+         <widget class="QGroupBox" name="gbMeanFrequency">
+          <property name="title">
+           <string>Mean Frequency:</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_23">
+           <item row="0" column="5">
+            <layout class="QVBoxLayout" name="verticalLayout_11">
+             <item>
+              <widget class="QLabel" name="label_15">
+               <property name="text">
+                <string>Tipo de Grafico:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboTipo_MeanFreq">
+               <item>
+                <property name="text">
+                 <string>curva</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>colormap</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="0" column="1">
+            <layout class="QVBoxLayout" name="verticalLayout_10">
+             <item>
+              <widget class="QLabel" name="label_13">
+               <property name="text">
+                <string>Window Length:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_25">
+               <item>
+                <widget class="QDoubleSpinBox" name="MeanFreq_Length">
+                 <property name="minimumSize">
+                  <size>
+                   <width>140</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="minimum">
+                  <double>1.000000000000000</double>
+                 </property>
+                 <property name="value">
+                  <double>1.000000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_14">
+                 <property name="text">
+                  <string>(s)</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item row="0" column="2">
+            <spacer name="horizontalSpacer_10">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="0" column="3">
+            <layout class="QVBoxLayout" name="verticalLayout_9">
+             <item>
+              <widget class="QLabel" name="label_11">
+               <property name="text">
+                <string>Window Overlap:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_24">
+               <item>
+                <widget class="QDoubleSpinBox" name="MeanFreq_overlap">
+                 <property name="minimumSize">
+                  <size>
+                   <width>140</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="value">
+                  <double>0.500000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_12">
+                 <property name="text">
+                  <string>(s)</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item row="0" column="0">
+            <spacer name="horizontalSpacer_9">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="0" column="4">
+            <spacer name="horizontalSpacer_11">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="2">
+         <widget class="QGroupBox" name="gbMovingRMS">
+          <property name="title">
+           <string>Moving RMS:</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_12">
+           <item row="0" column="4">
+            <spacer name="horizontalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="0" column="2">
+            <spacer name="horizontalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="0" column="3">
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <item>
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string>Window Overlap:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_10">
+               <item>
+                <widget class="QDoubleSpinBox" name="RMS_overlap">
+                 <property name="minimumSize">
+                  <size>
+                   <width>140</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="minimum">
+                  <double>0.000000000000000</double>
+                 </property>
+                 <property name="maximum">
+                  <double>120.000000000000000</double>
+                 </property>
+                 <property name="singleStep">
+                  <double>0.100000000000000</double>
+                 </property>
+                 <property name="value">
+                  <double>0.500000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_4">
+                 <property name="text">
+                  <string>(s)</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item row="0" column="1">
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>Window Length:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_12">
+               <item>
+                <widget class="QDoubleSpinBox" name="RMS_Length">
+                 <property name="minimumSize">
+                  <size>
+                   <width>140</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximum">
+                  <double>120.000000000000000</double>
+                 </property>
+                 <property name="value">
+                  <double>1.000000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_2">
+                 <property name="text">
+                  <string>(s)</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item row="0" column="0">
+            <spacer name="horizontalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="2">
+         <widget class="QGroupBox" name="gbNormalize">
+          <property name="title">
+           <string>Normalize</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_13">
+           <item row="0" column="0">
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_8">
+               <item>
+                <widget class="QLabel" name="label_7">
+                 <property name="text">
+                  <string>By</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_9">
+                 <property name="text">
+                  <string>:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QComboBox" name="Normalize_value">
+                 <item>
+                  <property name="text">
+                   <string>null</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>rms</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>energy</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>area</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>inf</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>peak</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>s0</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>wav</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>1</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>2</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_9">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item row="0" column="1">
+            <widget class="QTextEdit" name="Normalize_Description">
+             <property name="font">
+              <font>
+               <pointsize>8</pointsize>
+              </font>
+             </property>
+             <property name="html">
+              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:10px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:40px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:x-large; font-weight:600; color:#333333; background-color:#ffffff;&quot;&gt;Description&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:14px; color:#333333;&quot;&gt;normalize(f,...)&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt; will normalize the signal &lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; font-style:italic; color:#333333;&quot;&gt;f&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt; by the specified norm.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:14px; color:#333333;&quot;&gt;[f,fnorm]=normalize(f,...)&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt; does the same thing, but in addition returns norm &lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; font-style:italic; color:#333333;&quot;&gt;fnorm&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt; of a signal &lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; font-style:italic; color:#333333;&quot;&gt;f&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:10px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333; background-color:#ffffff;&quot;&gt;The norm is specified as a string and may be one of:&lt;/span&gt;&lt;/p&gt;
+&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot; bgcolor=&quot;#ffffff&quot;&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:top;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:14px; color:#333333;&quot;&gt;'1'&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td style=&quot; vertical-align:top;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt;Normalize the l&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333; vertical-align:super;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt; norm to be &lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; font-style:italic; color:#333333;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:top;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:14px; color:#333333;&quot;&gt;'area'&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td style=&quot; vertical-align:top;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt;Normalize the area of the signal to be &lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; font-style:italic; color:#333333;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt;. This is exactly the same as &lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:14px; color:#333333;&quot;&gt;'1'&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:top;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:14px; color:#333333;&quot;&gt;'2'&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td style=&quot; vertical-align:top;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt;Normalize the l&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt; norm to be &lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; font-style:italic; color:#333333;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:top;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:14px; color:#333333;&quot;&gt;'energy'&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td style=&quot; vertical-align:top;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt;Normalize the energy of the signal to be &lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; font-style:italic; color:#333333;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt;. This is exactly the same as &lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:14px; color:#333333;&quot;&gt;'2'&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:top;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:14px; color:#333333;&quot;&gt;'inf'&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td style=&quot; vertical-align:top;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt;Normalize the l&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333; vertical-align:super;&quot;&gt;inf&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt; norm to be &lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; font-style:italic; color:#333333;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:top;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:14px; color:#333333;&quot;&gt;'peak'&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td style=&quot; vertical-align:top;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt;Normalize the peak value of the signal to be &lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; font-style:italic; color:#333333;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt;. This is exactly the same as &lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:14px; color:#333333;&quot;&gt;'inf'&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:top;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:14px; color:#333333;&quot;&gt;'rms'&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td style=&quot; vertical-align:top;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt;Normalize the Root Mean Square (RMS) norm of the signal to be &lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; font-style:italic; color:#333333;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:top;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:14px; color:#333333;&quot;&gt;'s0'&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td style=&quot; vertical-align:top;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt;Normalize the S0-norm to be &lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; font-style:italic; color:#333333;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:top;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:14px; color:#333333;&quot;&gt;'wav'&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td style=&quot; vertical-align:top;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt;Normalize to the &lt;/span&gt;&lt;a name=&quot;MathJax-Element-4-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:14px; color:#333333;&quot;&gt;l&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333; vertical-align:super;&quot;&gt;inf&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt; norm to be &lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; font-style:italic; color:#333333;&quot;&gt;0.99&lt;/span&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt; to avoid possible clipping introduced by the quantization procedure when saving as a wav file. This only works with floating point data types.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:top;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:14px; color:#333333;&quot;&gt;'null'&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td style=&quot; vertical-align:top;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;&quot;&gt;Do NOT normalize, output is identical to input.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>sgram_dynr</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>sgram_dynr_value</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>136</x>
+     <y>179</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>491</x>
+     <y>180</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>wav_deepLlevel</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>wav_deepLlevel_value</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>112</x>
+     <y>148</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>395</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>wav_dynr</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>wav_dynr_value</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>178</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>395</x>
+     <y>179</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>gabor_cB_DownSam</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>gabor_DownSam_value</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>139</x>
+     <y>166</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>254</x>
+     <y>170</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>gabor_cB_Dynrange</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>gabor_Dynrange_value</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>175</x>
+     <y>199</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>201</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

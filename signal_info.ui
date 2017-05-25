@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>signal_Info</class>
+ <widget class="QWidget" name="signal_Info">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>990</width>
+    <height>370</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>370</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Informacion de la señal</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="images.qrc">
+    <normaloff>:/imagenes/icono.ico</normaloff>:/imagenes/icono.ico</iconset>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="1" column="0">
+    <widget class="QGroupBox" name="gB_Estadisticas">
+     <property name="title">
+      <string>ULTIMAS ESTADISTICAS CALCULADAS:</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <widget class="QTableWidget" name="tabla_Estadisticas">
+        <column>
+         <property name="text">
+          <string>NOMBRE</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>MEAN</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>MEDIAN</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>STANDARD DESVIATION</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>VARIANCE</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>RMS</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>MIN</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>MAX</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>RANGE</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="btn_Guardar">
+         <property name="text">
+          <string>Guardar</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_Salir">
+         <property name="text">
+          <string>Cerrar</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <widget class="QGroupBox" name="gB_Caracteristicas">
+     <property name="title">
+      <string>ULTIMO SET DE CARACTERISTICAS CALCULADO:</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_4">
+      <item row="1" column="0">
+       <widget class="QTableView" name="tabal_Caracteristicas"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="gB_InfoGeneral">
+     <property name="title">
+      <string>INFORMACION GENERAL:</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="3" colspan="4">
+       <widget class="QLineEdit" name="file_name">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="autoFillBackground">
+         <bool>true</bool>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLabel" name="label_path">
+          <property name="text">
+           <string>Ruta completa al archivo</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="0" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="label_name">
+          <property name="text">
+           <string>Nombre del archivo</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="0" column="9">
+       <widget class="QLineEdit" name="fs">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="autoFillBackground">
+         <bool>true</bool>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="7">
+       <widget class="QLabel" name="label_fs">
+        <property name="text">
+         <string>Frecuencia de muestreo</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="8">
+       <widget class="QLabel" name="label_9">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="label_5">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="10">
+       <widget class="QLabel" name="label_numc">
+        <property name="text">
+         <string>Numero de canales</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="11">
+       <widget class="QLabel" name="label_8">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="12">
+       <widget class="QLineEdit" name="numc">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="autoFillBackground">
+         <bool>true</bool>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3" colspan="10">
+       <widget class="QLineEdit" name="path">
+        <property name="autoFillBackground">
+         <bool>true</bool>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>btn_Salir</sender>
+   <signal>clicked()</signal>
+   <receiver>signal_Info</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>541</x>
+     <y>340</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>646</x>
+     <y>355</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

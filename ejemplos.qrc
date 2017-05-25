@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>octave-ejemplos/ejemplo_1.csv</file>
+        <file>octave-ejemplos/ejemplo_2.txt</file>
+        <file>octave-ejemplos/ejemplo_3.txt</file>
+        <file>octave-ejemplos/greasy.csv</file>
+        <file>octave-ejemplos/RAW.csv</file>
+    </qresource>
+</RCC>
