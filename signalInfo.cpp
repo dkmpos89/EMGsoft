@@ -1,20 +1,20 @@
-#include "signal_info.h"
-#include "ui_signal_info.h"
+#include "signalInfo.h"
+#include "ui_signalInfo.h"
 
 
-signal_Info::signal_Info(QWidget *parent) :
+signalInfo::signalInfo(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::signal_Info)
+    ui(new Ui::signalInfo)
 {
     ui->setupUi(this);
 }
 
-signal_Info::~signal_Info()
+signalInfo::~signalInfo()
 {
     delete ui;
 }
 
-void signal_Info::setData_principal(cSignal *signalPrincipal)
+void signalInfo::setData_principal(cSignal *signalPrincipal)
 {
     if(signalPrincipal!=NULL){
         ui->file_name->setText(signalPrincipal->getNombre());
@@ -30,7 +30,7 @@ void signal_Info::setData_principal(cSignal *signalPrincipal)
     }
 }
 
-void signal_Info::set_tabla_estadisticas(QVector<double> lista_datos)
+void signalInfo::set_tabla_estadisticas(QVector<double> lista_datos)
 {
 
     ui->tabla_Estadisticas->setRowCount(1);
@@ -45,7 +45,7 @@ void signal_Info::set_tabla_estadisticas(QVector<double> lista_datos)
 
 }
 
-void signal_Info::set_tabla_caracteristicas(QStringList lista_datos)
+void signalInfo::set_tabla_caracteristicas(QStringList lista_datos)
 {
     //
 }

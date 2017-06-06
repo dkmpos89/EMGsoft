@@ -33,6 +33,7 @@ public:
     bool graficarSpectrogram(QCustomPlot *cp, QVector<QVector<double> > s, int a, int b, double Fs);
     bool graficarGabor(QCustomPlot *cp, QVector<QVector<double> > s, int a, int b, double Fs);
     bool graficarWavelet(QCustomPlot *cp, QVector<QVector<double> > s, int a, int b, double Fs);
+    void guardarImagen(QCustomPlot *cp, QString name);
 private:
     QWidget *parent;
 };

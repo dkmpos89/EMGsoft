@@ -2,7 +2,7 @@
 #define CPACIENTE_H
 
 #include <QString>
-
+#include <QVariant>
 
 class cPaciente
 {
@@ -48,6 +48,7 @@ public:
     QString getFecha_ingreso() const;
     void setFecha_ingreso(const QString &value);
 
+    QMap<QString, QVariant> getMap();
 private:
     QString RUT, nombre, apellido, direccion, sexo, fecha_nacimiento, edad, fecha_ingreso, peso, estatura, actividad, descripcion;
 };

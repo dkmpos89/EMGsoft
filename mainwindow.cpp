@@ -11,9 +11,8 @@
 #include "cargadatos.h"
 #include "analisismultiples.h"
 
-#include "cproject.h"
-#include "cpaciente.h"
-#include "csesion.h"
+
+
 
 ///////////
 #include <algorithm>    // std::transform
@@ -105,6 +104,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     /* se desactiva la pestaña que no funciona --- Cesar deberia arreglar esto */
     //ui->tabTiempoFrec->setTabEnabled(1, false);
+
+    connect(this, SIGNAL(calcularMetodoReporte(int, int, int)), this, SLOT(calcularEnOctave(int, int , int)));
 
 }
 
@@ -281,15 +282,17 @@ void MainWindow::createDockWindows()
  * *****************************************************************************************************/
 void MainWindow::calcularEnOctave(int analisis, int a, int b){
 
+    qInfo()<<"calculando en octave: "<<analisis<< endl;
+
     octaveP = OctaveProcess::getInstance();
     connect( octaveP, SIGNAL( finalDataReady() ), this, SLOT( chargeData() ));
 
-    QApplication::setOverrideCursor( Qt::WaitCursor ); // Cursor de carga y espera
-    octaveP->setState(false);                       // Se pone el cerrojo al resource
+    QApplication::setOverrideCursor( Qt::WaitCursor );      // Cursor de carga y espera
+    octaveP->setState(false);                               // Se pone el cerrojo al resource
 
-    analize = analisis;                             // El analisis que viene desde el boton que se presiona.. Fourier, gabor, filtro, etc.
-    amin=ui->horizontalSlider->lowerValue();         // Rango menor del slider
-    bmax=ui->horizontalSlider->upperValue();         // Rango mayor del slider
+    analize = analisis;                                     // El analisis que viene desde el boton que se presiona.. Fourier, gabor, filtro, etc.
+    amin=ui->horizontalSlider->lowerValue();                // Rango menor del slider
+    bmax=ui->horizontalSlider->upperValue();                // Rango mayor del slider
     currentChannel = ui->comboChannel->currentIndex()+1;
 
     QStringList parametros;
@@ -312,11 +315,12 @@ void MainWindow::calcularEnOctave(int analisis, int a, int b){
         case 2:
             parametros = ConfigGlobales->getParametrosGabor();
             cmd = "OctaveGabor('"+path+"','"+sep+"','"+lineaInicio+"','"+numCanales+"','"+Fs+"','"+QString::number(a)+"','"+QString::number(b)+"','"+canalActual+"','"+parametros[0]+"','"+parametros[1]+"','"+parametros[2]+"','"+parametros[3]+"','"+parametros[4]+"','"+parametros[5]+"');\n";
+            //qInfo()<<"Comando Gabor: "<<cmd;
             break;
         case 3:
             parametros = ConfigGlobales->getParametrosWavelet();
             cmd = "OctaveWavelet('"+path+"','"+sep+"','"+lineaInicio+"','"+numCanales+"','"+Fs+"','"+QString::number(a)+"','"+QString::number(b)+"','"+canalActual+"','"+parametros[0]+"','"+parametros[1]+"','"+parametros[2]+"','"+parametros[3]+"','"+parametros[4]+"','"+parametros[5]+"');\n";
-            qInfo()<<"Comando wavelete"<<cmd;
+            //qInfo()<<"Comando wavelete"<<cmd;
             break;
         case 4:
             parametros = ConfigGlobales->getParametrosSgram();
@@ -349,164 +353,6 @@ void MainWindow::calcularEnOctave(int analisis, int a, int b){
 
 }
 
-/********************************************************************************************************
- * @name: graficarGabor()
- * @brief: Grafica los datos de la transformada de gabor tomando en cuenta que los dos ultimos valores
- *         del vector de datos corresponden a las dimensiones de la matriz de salida de octave.
- * @return: bool
- * *****************************************************************************************************/
-bool MainWindow::graficarGabor(QVector<QVector<double> > s, QCustomPlot *grafico, int a, int b)
-{
-    restaurarGrafico(grafico);
-    double fs = signalPrincipal->getFs().toDouble()*1000;
-    double aa = a/fs;
-    double bb = b/fs;
-
-    QCPColorMap *QCCM;
-    QCPColorScale *colorScale;
-    QCPMarginGroup *marginGroup;
-    grafico->addGraph();
-    grafico->yAxis->setPadding(5);
-    grafico->xAxis->setPadding(5);
-    int tam=0,filas=0,col=0,z=0;
-
-    tam = s.at(1).size();
-    col = s.at(1).at(tam-2);
-    filas = s.at(1).at(tam-1);
-
-
-    qDebug()<<"[F: graficarGabor()] Graficando Transformada de Gabor : columnas="<<col<<" ; filas="<<filas<<endl;
-
-    grafico->setInteractions(QCP::iRangeDrag|QCP::iRangeZoom);
-    grafico->xAxis->setLabel("Time (s)");
-    grafico->yAxis->setLabel("Frequency (Hz)");
-    QCCM = new QCPColorMap(grafico->xAxis, grafico->yAxis);
-
-    grafico->addPlottable(QCCM);
-
-    //Values in the x and y direction
-    QCCM->data()->setKeyRange(QCPRange(aa, bb));
-    QCCM->data()->setValueRange(QCPRange(0, signalPrincipal->getFs().toDouble()*500));
-
-    //there will be x elements in each direction.
-    QCCM->data()->setKeySize(filas);
-    QCCM->data()->setValueSize(col);
-    QCCM->setInterpolate(true);
-
-    for (int i = 0; i < filas; ++i) {
-        for (int j = 0; j < col; ++j) {
-            QCCM->data()->setCell(i, j, s.at(1).at(z));
-            z++;
-        }
-    }
-
-    colorScale = new QCPColorScale(grafico);
-    grafico->plotLayout()->addElement(0, 1, colorScale); // add it to the right of the main axis rect
-    colorScale->setType(QCPAxis::atRight); // scale shall be vertical bar with tick/axis labels right (actually atRight is already the default)
-
-    QCCM->setColorScale(colorScale); // associate the color map with the color scale
-    QCCM->setGradient(QCPColorGradient::gpJet); // set the color gradient of the color map to one of the presets:
-    QCCM->gradient().setColorInterpolation(QCPColorGradient::ciRGB);
-    QCCM->rescaleDataRange(true);
-
-    // make sure the axis rect and color scale synchronize their bottom and top margins (so they line up):
-    marginGroup = new QCPMarginGroup(grafico);
-    grafico->axisRect()->setMarginGroup(QCP::msBottom|QCP::msTop, marginGroup);
-    colorScale->setMarginGroup(QCP::msBottom|QCP::msTop, marginGroup);
-
-    qDebug()<<"tam: "<<tam;
-    qDebug()<<"columnas: "<<col;
-    qDebug()<<"filas: "<<filas;
-
-    grafico->rescaleAxes();
-    grafico->replot();
-
-    return true;
-}
-
-/********************************************************************************************************
- * @name: graficarFourier()
- * @brief: Grafica los datos de la transformada de fourier y discrimina que tipo de grafico se debe mostrar.
- * @return: void
- * *****************************************************************************************************/
-void MainWindow::graficarFourier(QVector<QVector<double>> s, QCustomPlot *grafico, int a, int b){
-    (void) a;
-    (void) b;
-    qDebug()<<"[F: graficarFourier()] Graficando Transformada de Fourier."<<s.at(1).size()<<endl;
-
-    QStringList parametros;
-    restaurarGrafico(grafico);       
-
-    grafico->addGraph();    
-    grafico->yAxis->setPadding(10);
-    grafico->xAxis->setPadding(10);
-    grafico->xAxis->setLabel("Frequency (Hz)");
-    grafico->yAxis->setLabel("Amplitude (V)");
-    grafico->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom);
-
-    parametros = ConfigGlobales->getParametrosFourier();
-    if (parametros[0]=="fourier")
-    {
-        if(parametros[1]=="impulse"){
-            grafico->graph(0)->setData(s.at(0), s.at(1));
-            grafico->graph(0)->setPen(QPen(Qt::blue));
-            //grafico->graph(0)->setLineStyle(QCPGraph::lsImpulse);
-            //grafico->graph(0)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle,Qt::blue,Qt::white,3));
-        }
-        else{
-            dibujarCurvaFrecuenciasMedia(parametros, s, grafico);
-        }
-    }
-    else if(parametros[0]=="histograma"){
-        dibujarHistograma();
-    }
-
-
-    grafico->rescaleAxes();
-    grafico->replot();
-
-}
-
-void MainWindow::graficarHistograma(QVector<QVector<double>> s, QCustomPlot *grafico){
-
-    qDebug()<<"[F: graficarHistograma()] Graficando el Histograma de Frecuencias."<<endl;
-    restaurarGrafico(grafico);
-    int tam = s.at(1).size();
-    double max = s.at(1).at(tam-1);
-    double ancho = s.at(1).at(tam-3)/max;
-
-    QCPBars *bars = new QCPBars(grafico->xAxis, grafico->yAxis);
-    bars->setWidth(ancho);
-    grafico->addPlottable(bars);
-
-    // set names and colors:
-    QPen pen;
-    bars->setName("Frecuencia de aparición");
-    pen.setColor(QColor(1, 92, 191));
-    bars->setPen(pen);
-    bars->setBrush(QColor(1, 92, 191, 50));
-
-    // prepare y axis:
-    grafico->yAxis->setPadding(10);
-    grafico->xAxis->setPadding(10);
-    grafico->yAxis->setLabel("Frequency");
-    grafico->xAxis->setLabel("Amplitude");
-    //grafico->yAxis->grid()->setSubGridVisible(true);
-
-    // Add data:
-    bars->setData(s.at(1).mid(max,tam-1), s.at(1).mid(0,max-1));
-
-    // setup legend:
-    grafico->legend->setVisible(true);
-    grafico->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignTop|Qt::AlignRight);
-    grafico->legend->setBrush(QColor(255, 255, 255, 200));
-
-    grafico->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom);
-    grafico->rescaleAxes();
-    grafico->replot();
-
-}
-
 void MainWindow::graficarPrincipal(QCustomPlot *grafico,QVector<QVector<double> > senal, int canal,int tipo, int a,int b){
 
     ui->grafico1->addGraph();
@@ -532,53 +378,6 @@ void MainWindow::graficarPrincipal(QCustomPlot *grafico,QVector<QVector<double> 
 
 }
 
-void MainWindow::graficarMovingRMS(QVector<double> s, QVector<double> t, QCustomPlot *grafico, int a, int b)
-{
-    qInfo()<<"[MovingRms] Graficando el RMS en el tiempo."<<endl;
-    restaurarGrafico(grafico);
-    grafico->addGraph();
-    grafico->graph(0)->setData(t.mid(a,b),s.mid(a,b));
-    grafico->setInteractions(QCP::iRangeDrag|QCP::iRangeZoom);
-
-    grafico->rescaleAxes();
-    grafico->replot();
-}
-
-void MainWindow::graficarMeanFrequency(QVector<double> result, double fs, int a, int b, QString tipo, QCustomPlot *graffico)
-{
-    //QCustomPlot *graffico = new QCustomPlot();
-    restaurarGrafico(graffico);
-
-    graffico->xAxis->setLabel("Time (s)");
-    graffico->yAxis->setLabel("Frequency (Hz)");
-    if(tipo=="colormap")
-    {
-        QCPColorMap *QCCM = new QCPColorMap(graffico->xAxis, graffico->yAxis);
-        graffico->addPlottable(QCCM);
-
-        //Values in the x and y direction
-        double aa = a/(fs*1000);
-        double bb = b/(fs*1000);
-        QCCM->data()->setKeyRange(QCPRange(aa, bb));
-        QCCM->data()->setValueRange(QCPRange(0, fs*500));
-
-        qInfo()<<"[MeanFrequency_AM()] Graficando el la frecuencia media en el tiempo."<<endl;
-        QCPCurve *QCC = new QCPCurve(graffico->xAxis, graffico->yAxis);
-        QCC->setData(result.mid(0,result.size()/2),result.mid(result.size()/2,-1));
-        graffico->addPlottable(QCC);
-    }else{
-        graffico->addGraph();
-        graffico->graph(0)->setData(result.mid(0,result.size()/2),result.mid(result.size()/2,-1));
-        graffico->yAxis->setRange(0,fs*500);
-        graffico->graph(0)->setPen(QPen(QColor(0, 102, 204)));
-        graffico->graph(0)->setBrush(QBrush(QColor(204, 255, 255)));
-        graffico->graph(0)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 1));
-        graffico->graph(0)->setLineStyle(QCPGraph::lsLine);
-    }
-    graffico->rescaleAxes();
-    graffico->replot();
-
-}
 /********************************************************************************************************
  * @name: restaurarGrafico()
  * @brief: Recibe un grafico 'QCustomplot' y elimina todos los residuos de graficos anteriores.
@@ -721,8 +520,10 @@ void MainWindow::copiarDatosG2G3(){
 
 bool MainWindow::levantarServicios(){
 
-    if(upDataBase() && OctaveProcess::getInstance()->init() && cSesion::getInstance()->init() )
+    if(upDataBase() && OctaveProcess::getInstance()->init() && cSesion::getInstance()->init() ){
+        session = cSesion::getInstance();
         return true;
+    }
     return false;
 }
 
@@ -769,7 +570,7 @@ void MainWindow::chargeData(){
 
     qDebug()<<"[S:chargeData()] Cargando los datos...";
     octaveP = OctaveProcess::getInstance();
-    double i = 0;
+    double i = 0, j = 0;
     int size = octaveP->getBuffer().size();                     // Tamaño de los datos a analizar
     double Fs = signalPrincipal->getFs().toDouble()*500;        // Frecuencia de muestreo
     double tick = Fs/size;                                      // Variable necesaria para poder construir el eje_x en la transformada de fourier.
@@ -783,24 +584,28 @@ void MainWindow::chargeData(){
     QVector<double> sign;
     /* fIN */
 
-    cSignal *sigActual = new cSignal();         //variable de uso local para guardar la señal que se graficara.
+    cSignal *sigActual = new cSignal();             //variable de uso local para guardar la señal que se graficara.
     QCustomPlot *graffico = new QCustomPlot();      //variable de uso local para guardar el grafico donde se mostraran los datos.
 
-    if(buttonPressed==OctaveProcess::ButtonLeft){
+
+    switch(buttonPressed){
+    case OctaveProcess::ButtonLeft:
         sigActual = signalGrafico2;
         graffico = ui->grafico2;
+        break;
+    case OctaveProcess::ButtonRight:
+        sigActual = signalGrafico3;
+        graffico = ui->grafico3;
+        break;
+    case OctaveProcess::Unknow:
+        sigActual = signalPrincipal;
+        break;
+    default:
+        sigActual = signalPrincipal;                                //En estos casos se usara la señal "resultSignal" de la señal principal para almacenar el resultado desde octave.
+        graffico = ui->grafico1;
+        break;
     }
-    else{
-        if (buttonPressed==OctaveProcess::ButtonRight) {
-            sigActual = signalGrafico3;
-            graffico = ui->grafico3;
-        }
-        else{
-            // En cualquier otro caso se usara la señal principal como contenedora de los resultados
-            sigActual = signalPrincipal;                                //En estos casos se usara la señal "resultSignal" de la señal principal para almacenar el resultado desde octave.
-            graffico = ui->grafico1;
-        }
-    }
+
     sigActual->resultSignal.clear();
     sigActual->resultSignal.resize(2);
     for ( QString s: octaveP->getBuffer() )
@@ -815,49 +620,38 @@ void MainWindow::chargeData(){
 
     qDebug()<<"[S:chargeData()] Tamaño de los datos recibidos:"<<size<<endl;
 
-
-    octaveP->setState(true);        //se quita el cerrojo al resource
+    //se quita el cerrojo al resource y desonectamos la salida de texto del octave
+    octaveP->setState(true);
     disconnect( octaveP, SIGNAL( finalDataReady() ), this, SLOT( chargeData() ));
 
     // Se discrimina para saber que se hara con los datos recibidos y se llama a la funcion correspondiente.
     switch (analize) {
     case 0:
         FNG->graficarFourier(graffico, sigActual->resultSignal, 0, Fs, ConfigGlobales->getParametrosFourier());
-        //graficarFourier(sigActual->resultSignal, graffico, 0, Fs);
         break;
     case 1:
         FNG->graficarFourier(graffico, sigActual->resultSignal, 0, Fs, ConfigGlobales->getParametrosFourier());
-        //graficarFourier(sigActual->resultSignal, graffico, 0, Fs);
         break;
     case 2:
         FNG->graficarGabor(graffico, sigActual->resultSignal, amin, bmax, sigActual->getFs().toDouble());
-        //graficarGabor(sigActual->resultSignal, graffico, amin, bmax);
         break;
     case 3:
         FNG->graficarWavelet(graffico, sigActual->resultSignal, amin, bmax, sigActual->getFs().toDouble());
-        //graficarWavelet(sigActual->resultSignal, graffico, amin, bmax);
         break;
     case 4:
         FNG->graficarSpectrogram(graffico, sigActual->resultSignal, amin, bmax, sigActual->getFs().toDouble());
-        //graficarSpectrogram(sigActual->resultSignal, graffico, amin, bmax);
         break;
     case 5:
         FNG->graficarHistograma(graffico, sigActual->resultSignal, "hist_fourier");
-        //graficarHistograma(sigActual->resultSignal, graffico); // Grafica el histograma de Fourier
         break;
     case 6:
         FNG->graficarHistograma(graffico, sigActual->resultSignal, "hist_normal");
-        //graficarHistograma(sigActual->resultSignal, graffico); // Grafica el histograma normal
         break;
     case 7:
         FNG->graficarMovingRms(graffico, sigActual->resultSignal.at(1),sigActual->readSignal.at(0), amin, bmax);
-        //graficarMovingRMS(sigActual->resultSignal.at(1),sigActual->readSignal.at(0), graffico, amin, bmax);
         break;
     case 8:
-        //graficar(sigActual->resultSignal.at(1),sigActual->readSignal.at(0), graffico, amin, bmax);
-        //QString tipo = "colormap";
         FNG->graficarMeanFrequency(graffico, sigActual->resultSignal.at(1), signalPrincipal->getFs().toDouble(), amin, bmax);
-        //graficarMeanFrequency(sigActual->resultSignal.at(1),signalPrincipal->getFs().toDouble(), amin, bmax, "line", graffico);
         break;
     case 9:
         restaurarGrafico(ui->grafico1);
@@ -892,7 +686,11 @@ void MainWindow::chargeData(){
     habilitarCampos(true);          // Se habilitan todos los botones y campos para los analisis.
 
     QApplication::restoreOverrideCursor();
-    analize = -1;  
+
+    /* LLAMADA AL METODO QUE SIGUE CALCULANDO LOS GRAFICOS */
+    j=analize;
+    if(buttonPressed==OctaveProcess::Unknow)
+        emit calcularMetodoReporte(j+1, ui->horizontalSlider->lowerValue(), ui->horizontalSlider->upperValue());
 
 }
 
@@ -1421,7 +1219,7 @@ void MainWindow::on_action_informacion_actual_sig_triggered()
 {
     // Prueba de dock para la informacion de la señal:
     if(info_signal==NULL) {
-        info_signal = new signal_Info();
+        info_signal = new signalInfo();
     }
     info_signal->setData_principal(signalPrincipal);
     info_signal->show();
@@ -1437,7 +1235,7 @@ void MainWindow::on_ButtonReplot_clicked()
     restaurarGrafico(ui->grafico1);
     int a=0,b=-1;
     int canal;
-    //double c = 1000*(signalPrincipal->getFs().toDouble());
+    //double c = signalPrincipal->resultSignal*(signalPrincipal->getFs().toDouble());
     a = ui->horizontalSlider->lowerValue();
     b = ui->horizontalSlider->upperValue();
     canal = ui->comboChannel->currentIndex()+1;
@@ -2095,36 +1893,6 @@ void MainWindow::normalize(QString tipoNorm)
     }
 }
 
-void MainWindow::chargeData2()
-{
-    qDebug()<<"[S:chargeData2()] Cargando los datos...";
-    octaveP = OctaveProcess::getInstance();
-    int size = octaveP->getBuffer().size();                     // Tamaño de los datos a analizar                                  // Variable necesaria para poder construir el eje_x en la transformada de fourier.
-    qDebug()<<"[S:chargeData2()] Tamaño de los datos recibidos:"<<size<<endl;
-
-    octaveP->setState(true);        //se quita el cerrojo al resource
-    disconnect( octaveP, SIGNAL( finalDataReady2() ), this, SLOT( chargeData2() ));
-
-    // Se discrimina para saber que se hara con los datos recibidos y se llama a la funcion correspondiente.
-    switch (analize) {
-    case 12:
-        restaurarGrafico(ui->grafico1);
-        setDatos(signalPrincipal);             // Se recarga la misma señal pero ya normalizada
-        break;
-    default:
-        break;
-    }
-
-    amin = -1;
-    bmax = -1;
-    currentChannel = -1;
-
-    habilitarCampos(true);          // Se habilitan todos los botones y campos para los analisis.
-    QApplication::restoreOverrideCursor();
-    analize = -1;
-
-}
-
 QVector<double> MainWindow::div(QVector<double> qVec, double dbl)const
 {
     std::vector<double> tmp = qVec.toStdVector();
@@ -2186,19 +1954,99 @@ void MainWindow::calcularGraficosNormalizados(cSignal *s,int canal,int a,int b)
 
 void MainWindow::on_action_doTest_triggered()
 {
+    //QPixmap imagenGrafico = ui->grafico1->grab();
+    amin = ui->horizontalSlider->lowerValue();
+    bmax = ui->horizontalSlider->upperValue();
+    QString canalActual = ui->comboChannel->currentText();
 
+    //QStringList parametros = ConfigGlobales->getParametrosWavelet();
+    //QString cmd = "OctaveWavelet('"+signalPrincipal->getPath()+"','"+signalPrincipal->getSeparador()+"','"+signalPrincipal->getLeerDesde()+"','"+signalPrincipal->getCanales()+"','"+signalPrincipal->getFs()+"','"+QString::number(amin)+"','"+QString::number(bmax)+"','"+canalActual+"','"+parametros[0]+"','"+parametros[1]+"','"+parametros[2]+"','"+parametros[3]+"','"+parametros[4]+"','"+parametros[5]+"');\n";
+
+    QStringList parametros = ConfigGlobales->getParametrosGabor();
+    QString cmd = "OctaveGabor('"+signalPrincipal->getPath()+"','"+signalPrincipal->getSeparador()+"','"+signalPrincipal->getLeerDesde()+"','"+signalPrincipal->getCanales()+"','"+signalPrincipal->getFs()+"','"+QString::number(amin)+"','"+QString::number(bmax)+"','"+canalActual+"','"+parametros[0]+"','"+parametros[1]+"','"+parametros[2]+"','"+parametros[3]+"','"+parametros[4]+"','"+parametros[5]+"');\n";
+
+    calcularMetodo(cmd, 2);
 }
 
+void MainWindow::calcularMetodo(QString cmd, int i)
+{
+    octaveP = OctaveProcess::getInstance();
+    if(octaveP->getState()){
+        octaveP->setState(false);
+        buttonPressed = OctaveProcess::Unknow;
+        analize = i;
+        connect( octaveP, SIGNAL( finalDataReady2() ), this, SLOT( chargeData() ));
+        octaveP->writeCmd2(cmd);
+        habilitarCampos(false);
+        QApplication::setOverrideCursor( Qt::WaitCursor ); // Cursor de carga y espera
+    }else{
+        QMessageBox::information(this, tr("Error"), tr("Recurso: 'Octave-cli'\nEstado: ocupado"));
+        return;
+    }
+}
 
 // lo nuevo :D
 void MainWindow::on_btnGuardarTabla_clicked()
 {
     if(info_signal==NULL) {
-        info_signal = new signal_Info();
+        info_signal = new signalInfo();
     }
     info_signal->setData_principal(signalPrincipal);
     info_signal->set_tabla_estadisticas(signalPrincipal->resultSignal.at(1));
 
     qInfo()<<"TAMAÑO del Vector: "<<signalPrincipal->resultSignal.at(1).size()<<endl;
 
+}
+
+bool MainWindow::createJson(cSesion* sesion)const{
+
+    bool result = false;
+
+    QJsonDocument json;
+    QJsonObject mainObject;
+    QMap<QString, QVariant> mapPacientes, mapProject, mapSignal;
+    mapPacientes = sesion->getCurrentPaciente()->getMap();
+    mapProject = sesion->getCurrentProject()->getMap();
+    mapSignal = sesion->getCurrentSignal()->getMap();
+    qDebug()<<"size of mapProj "<<mapProject.size();
+    qDebug()<<"size of mapPac "<<mapPacientes.size();
+    qDebug()<<"size of mapSignal "<<mapSignal.size();
+    //add all the maps in only one
+    QVariantMap::const_iterator i;
+    for (i = mapProject.constBegin(); i != mapProject.constEnd(); ++i)
+        mapPacientes.insert( i.key(), i.value() );
+    for (i = mapSignal.constBegin(); i != mapSignal.constEnd(); ++i)
+        mapPacientes.insert( i.key(), i.value() );
+
+    mainObject = QJsonObject::fromVariantMap( mapPacientes );
+    json.setObject( mainObject );
+    //save
+    QFile jsonFile("C:\\Users\\diego.campos\\Desktop\\data.json");
+    result = jsonFile.open(QFile::WriteOnly);
+    result = result && ( (jsonFile.write(json.toJson())) > -1 );
+    jsonFile.close();
+
+    return result;
+}
+
+void MainWindow::on_actionCrear_Reporte_triggered()
+{
+    octaveP = OctaveProcess::getInstance();
+    if(octaveP->getState()){
+
+        /*
+        if( createJson( session ) ){
+            qDebug()<<"listoco";
+
+        }else qDebug()<<"no listoco";
+        */
+        //octaveP->setState(false);
+        buttonPressed = OctaveProcess::Unknow;
+        habilitarCampos(false);
+        emit calcularMetodoReporte(0, ui->horizontalSlider->lowerValue(), ui->horizontalSlider->upperValue());
+
+    }else{
+        QMessageBox::information(this, tr("Error"), tr("Recurso: 'Octave-cli'\nEstado: ocupado"));
+        return;
+    }
 }

@@ -63,3 +63,11 @@ void cProject::setDescripcion(const QString &value)
     descripcion = value;
 }
 
+QMap<QString, QVariant> cProject::getMap(){
+
+    //QVariantMap fields;
+    QMap<QString, QVariant> myMap{ {"name", QVariant(this->nombre) }, {"initPrj", QVariant(this->fechaInicio)}, {"descriptionPrj", QVariant(this->descripcion)}, {"endPrj", QVariant(this->fechaTermino)} };
+    //fields.insert("Map", QVariant( myMap ) );
+    //return fields;
+    return myMap;
+}

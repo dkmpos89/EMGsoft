@@ -1,0 +1,494 @@
+mié may 31 22:06:49 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+mié may 31 22:06:49 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+mié may 31 22:06:49 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+mié may 31 22:06:49 2017  Info: 
+" ========================= [ Inicio: mié may 31 22:06:49 2017] ========================= " 
+
+mié may 31 22:06:49 2017  Info: [Info] Base de datos en ruta:  "C:/Users/diego.campos/Documents/GitHub/EGMsoft/data/dbEMG.db" 
+
+mié may 31 22:06:49 2017  Info: [Info] Octave daemon running with PID  0x197a2c38 
+
+mié may 31 22:06:49 2017  Warning: ERROR:  No se puede crear la sesion - Info:  "No query Unable to fetch row" 
+
+mié may 31 22:06:49 2017  Warning: setGeometryDp: Unable to set geometry 1366x721+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1366x705+0+63 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 905x721, maximum size: 16777215x16777215).
+mié may 31 22:26:47 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+mié may 31 22:26:47 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+mié may 31 22:26:47 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+mié may 31 22:26:47 2017  Info: 
+" ========================= [ Inicio: mié may 31 22:26:47 2017] ========================= " 
+
+mié may 31 22:26:47 2017  Info: [Info] Base de datos en ruta:  "C:/Users/diego.campos/Documents/GitHub/EGMsoft/data/dbEMG.db" 
+
+mié may 31 22:26:47 2017  Info: [Info] Octave daemon running with PID  0x19881468 
+
+mié may 31 22:26:47 2017  Warning: ERROR:  No se puede crear la sesion - Info:  "No query Unable to fetch row" 
+
+mié may 31 22:26:47 2017  Warning: setGeometryDp: Unable to set geometry 1366x721+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1366x705+0+63 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 905x721, maximum size: 16777215x16777215).
+mié may 31 22:27:32 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+mié may 31 22:27:32 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+mié may 31 22:27:32 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+mié may 31 22:27:32 2017  Info: 
+" ========================= [ Inicio: mié may 31 22:27:32 2017] ========================= " 
+
+mié may 31 22:27:32 2017  Info: [Info] Base de datos en ruta:  "C:/Users/diego.campos/Documents/GitHub/EGMsoft/data/dbEMG.db" 
+
+mié may 31 22:27:32 2017  Info: [Info] Octave daemon running with PID  0x197920e0 
+
+mié may 31 22:27:32 2017  Warning: ERROR:  No se puede crear la sesion - Info:  "No query Unable to fetch row" 
+
+mié may 31 22:27:32 2017  Warning: setGeometryDp: Unable to set geometry 1366x721+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1366x705+0+63 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 905x721, maximum size: 16777215x16777215).
+mié may 31 22:27:36 2017  Info: [F: ActionDemo_señal_greasy()] Carga de datos desde: 'Ejemplos/greasy.csv' 
+
+mié may 31 22:27:36 2017  Debug: [F: SetDatos()] Informacion de Señal:  "Path:C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv Fs:16 Canales:1 leerDesde:0 separador:;" 
+
+mié may 31 22:27:36 2017  Info: [F: leer()] Cantidad de lineas leidas:  5881 
+
+mié may 31 22:27:36 2017  Debug: [F: cargaGrafica()] Añadiendo datos de la serie Temporal (señal principal). 
+
+mié may 31 22:27:36 2017  Debug: [F: graficarPrincipal()] Graficando serie Temporal (señal principal). 
+
+mié may 31 22:27:36 2017  Debug: [F: cargaGrafica()] Habilitando y añadiendo a comboBox los canales:  "1" 
+
+mié may 31 22:28:50 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+mié may 31 22:28:50 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+mié may 31 22:28:50 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+mié may 31 22:28:50 2017  Info: 
+" ========================= [ Inicio: mié may 31 22:28:50 2017] ========================= " 
+
+mié may 31 22:28:50 2017  Info: [Info] Base de datos en ruta:  "C:/Users/diego.campos/Documents/GitHub/EGMsoft/data/dbEMG.db" 
+
+mié may 31 22:28:50 2017  Info: [Info] Octave daemon running with PID  0x198816c0 
+
+mié may 31 22:28:50 2017  Warning: ERROR:  No se puede crear la sesion - Info:  "No query Unable to fetch row" 
+
+mié may 31 22:28:50 2017  Warning: setGeometryDp: Unable to set geometry 1366x721+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1366x705+0+63 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 905x721, maximum size: 16777215x16777215).
+mié may 31 22:28:56 2017  Info: [F: ActionDemo_señal_greasy()] Carga de datos desde: 'Ejemplos/greasy.csv' 
+
+mié may 31 22:28:56 2017  Debug: [F: SetDatos()] Informacion de Señal:  "Path:C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv Fs:16 Canales:1 leerDesde:0 separador:;" 
+
+mié may 31 22:28:56 2017  Info: [F: leer()] Cantidad de lineas leidas:  5881 
+
+mié may 31 22:28:56 2017  Debug: [F: cargaGrafica()] Añadiendo datos de la serie Temporal (señal principal). 
+
+mié may 31 22:28:56 2017  Debug: [F: graficarPrincipal()] Graficando serie Temporal (señal principal). 
+
+mié may 31 22:28:56 2017  Debug: [F: cargaGrafica()] Habilitando y añadiendo a comboBox los canales:  "1" 
+
+mié may 31 22:29:06 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié may 31 22:40:13 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+mié may 31 22:40:13 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+mié may 31 22:40:13 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+mié may 31 22:40:13 2017  Info: 
+" ========================= [ Inicio: mié may 31 22:40:13 2017] ========================= " 
+
+mié may 31 22:40:13 2017  Info: [Info] Base de datos en ruta:  "C:/Users/diego.campos/Documents/GitHub/EGMsoft/data/dbEMG.db" 
+
+mié may 31 22:40:13 2017  Info: [Info] Octave daemon running with PID  0x19821b88 
+
+mié may 31 22:40:13 2017  Warning: ERROR:  No se puede crear la sesion - Info:  "No query Unable to fetch row" 
+
+mié may 31 22:40:13 2017  Warning: setGeometryDp: Unable to set geometry 1366x721+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1366x705+0+63 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 905x721, maximum size: 16777215x16777215).
+mié may 31 22:41:04 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+mié may 31 22:41:04 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+mié may 31 22:41:04 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+mié may 31 22:41:04 2017  Info: 
+" ========================= [ Inicio: mié may 31 22:41:04 2017] ========================= " 
+
+mié may 31 22:41:04 2017  Info: [Info] Base de datos en ruta:  "C:/Users/diego.campos/Documents/GitHub/EGMsoft/data/dbEMG.db" 
+
+mié may 31 22:41:04 2017  Info: [Info] Octave daemon running with PID  0x19811cd8 
+
+mié may 31 22:41:04 2017  Warning: ERROR:  No se puede crear la sesion - Info:  "No query Unable to fetch row" 
+
+mié may 31 22:41:04 2017  Warning: setGeometryDp: Unable to set geometry 1366x721+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1366x705+0+63 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 905x721, maximum size: 16777215x16777215).
+mié may 31 22:41:08 2017  Info: [F: ActionDemo_señal_greasy()] Carga de datos desde: 'Ejemplos/greasy.csv' 
+
+mié may 31 22:41:08 2017  Debug: [F: SetDatos()] Informacion de Señal:  "Path:C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv Fs:16 Canales:1 leerDesde:0 separador:;" 
+
+mié may 31 22:41:08 2017  Info: [F: leer()] Cantidad de lineas leidas:  5881 
+
+mié may 31 22:41:09 2017  Debug: [F: cargaGrafica()] Añadiendo datos de la serie Temporal (señal principal). 
+
+mié may 31 22:41:09 2017  Debug: [F: graficarPrincipal()] Graficando serie Temporal (señal principal). 
+
+mié may 31 22:41:09 2017  Debug: [F: cargaGrafica()] Habilitando y añadiendo a comboBox los canales:  "1" 
+
+mié may 31 22:41:13 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié may 31 22:44:02 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+mié may 31 22:44:02 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+mié may 31 22:44:02 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+mié may 31 22:44:02 2017  Info: 
+" ========================= [ Inicio: mié may 31 22:44:02 2017] ========================= " 
+
+mié may 31 22:44:02 2017  Info: [Info] Base de datos en ruta:  "C:/Users/diego.campos/Documents/GitHub/EGMsoft/data/dbEMG.db" 
+
+mié may 31 22:44:02 2017  Info: [Info] Octave daemon running with PID  0x197b1b70 
+
+mié may 31 22:44:02 2017  Warning: ERROR:  No se puede crear la sesion - Info:  "No query Unable to fetch row" 
+
+mié may 31 22:44:02 2017  Warning: setGeometryDp: Unable to set geometry 1366x721+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1366x705+0+63 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 905x721, maximum size: 16777215x16777215).
+mié may 31 22:44:16 2017  Info: [F: ActionDemo_señal_greasy()] Carga de datos desde: 'Ejemplos/greasy.csv' 
+
+mié may 31 22:44:16 2017  Debug: [F: SetDatos()] Informacion de Señal:  "Path:C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv Fs:16 Canales:1 leerDesde:0 separador:;" 
+
+mié may 31 22:44:16 2017  Info: [F: leer()] Cantidad de lineas leidas:  5881 
+
+mié may 31 22:44:16 2017  Debug: [F: cargaGrafica()] Añadiendo datos de la serie Temporal (señal principal). 
+
+mié may 31 22:44:16 2017  Debug: [F: graficarPrincipal()] Graficando serie Temporal (señal principal). 
+
+mié may 31 22:44:16 2017  Debug: [F: cargaGrafica()] Habilitando y añadiendo a comboBox los canales:  "1" 
+
+mié may 31 22:44:20 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié may 31 22:44:20 2017  Debug: [S:chargeData2()] Cargando los datos...
+mié may 31 22:44:20 2017  Debug: [S:chargeData2()] Tamaño de los datos recibidos: 4802 
+
+mié may 31 22:44:20 2017  Fatal: ASSERT failure in QVector<T>::at: "index out of range", file C:/Qt/Qt5.5.1/5.5/mingw492_32/include/QtCore/qvector.h, line 393
+mié may 31 22:49:23 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+mié may 31 22:49:23 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+mié may 31 22:49:23 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+mié may 31 22:49:23 2017  Info: 
+" ========================= [ Inicio: mié may 31 22:49:23 2017] ========================= " 
+
+mié may 31 22:49:23 2017  Info: [Info] Base de datos en ruta:  "C:/Users/diego.campos/Documents/GitHub/EGMsoft/data/dbEMG.db" 
+
+mié may 31 22:49:23 2017  Info: [Info] Octave daemon running with PID  0x19841c60 
+
+mié may 31 22:49:23 2017  Warning: ERROR:  No se puede crear la sesion - Info:  "No query Unable to fetch row" 
+
+mié may 31 22:49:23 2017  Warning: setGeometryDp: Unable to set geometry 1366x721+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1366x705+0+63 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 905x721, maximum size: 16777215x16777215).
+mié may 31 22:49:27 2017  Info: [F: ActionDemo_señal_greasy()] Carga de datos desde: 'Ejemplos/greasy.csv' 
+
+mié may 31 22:49:27 2017  Debug: [F: SetDatos()] Informacion de Señal:  "Path:C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv Fs:16 Canales:1 leerDesde:0 separador:;" 
+
+mié may 31 22:49:27 2017  Info: [F: leer()] Cantidad de lineas leidas:  5881 
+
+mié may 31 22:49:28 2017  Debug: [F: cargaGrafica()] Añadiendo datos de la serie Temporal (señal principal). 
+
+mié may 31 22:49:28 2017  Debug: [F: graficarPrincipal()] Graficando serie Temporal (señal principal). 
+
+mié may 31 22:49:28 2017  Debug: [F: cargaGrafica()] Habilitando y añadiendo a comboBox los canales:  "1" 
+
+mié may 31 22:49:31 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié may 31 22:49:31 2017  Debug: [S:chargeData2()] Cargando los datos...
+mié may 31 22:49:31 2017  Debug: [S:chargeData2()] Tamaño de los datos recibidos: 4802 
+
+mié may 31 22:49:31 2017  Debug: [WaveletTransform_AM()] Graficando Transformada de Wavelet : columnas= 6  ; filas= 800 
+
+mié may 31 22:50:33 2017  Info: [F: Graficar2()] Se llama a graficar con el metodo:  "Wavelet Transform" , posicion :  3 
+
+mié may 31 22:50:33 2017  Info: Comando wavelete "OctaveWavelet('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv','2','0','1','16','0','5880','1','db8','5','50','fwt','db','shannon');\n"
+mié may 31 22:50:33 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "OctaveWavelet('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv','2','0','1','16','0','5880','1','db8','5','50','fwt','db','shannon');\n" 
+
+mié may 31 22:50:33 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "octave:6>" 
+
+mié may 31 22:50:33 2017  Debug: [S:chargeData()] Cargando los datos...
+mié may 31 22:50:33 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 4803 
+
+mié may 31 22:50:33 2017  Debug: [WaveletTransform_AM()] Graficando Transformada de Wavelet : columnas= 6  ; filas= 800 
+
+mié may 31 22:51:06 2017  Info: [F: Graficar2()] Se llama a graficar con el metodo:  "Normalize" , posicion :  9 
+
+mié may 31 22:51:06 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "normSignal('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv','2','0','1','null')\n" 
+
+mié may 31 22:51:06 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié may 31 22:51:06 2017  Debug: [S:chargeData()] Cargando los datos...
+mié may 31 22:51:06 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 5881 
+
+mié may 31 22:51:06 2017  Debug: [F: SetDatos()] Informacion de Señal:  "Path:C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv Fs:16 Canales:1 leerDesde:0 separador:;" 
+
+mié may 31 22:51:06 2017  Info: [F: leer()] Cantidad de lineas leidas:  5881 
+
+mié may 31 22:51:07 2017  Debug: [F: cargaGrafica()] Añadiendo datos de la serie Temporal (señal principal). 
+
+mié may 31 22:51:07 2017  Debug: [F: graficarPrincipal()] Graficando serie Temporal (señal principal). 
+
+mié may 31 22:51:07 2017  Debug: [F: cargaGrafica()] Habilitando y añadiendo a comboBox los canales:  "1" 
+
+mié may 31 22:51:11 2017  Info: [F: Graficar3()] Se llama a graficar con el metodo:  "Discrete Fourier Transform" , posicion :  0 
+
+mié may 31 22:51:11 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "OctaveFourier('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv','2','0','1','16','0','5880','1', '0');\n" 
+
+mié may 31 22:51:12 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "octave:8>" 
+
+mié may 31 22:51:12 2017  Debug: [S:chargeData()] Cargando los datos...
+mié may 31 22:51:12 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 4098 
+
+mié may 31 22:51:12 2017  Debug: [Fourier_AM()] Graficando Transformada de Fourier. 4097 
+
+mié may 31 22:51:26 2017  Debug: [F: SetDatos()] Informacion de Señal:  "Path:C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv Fs:16 Canales:1 leerDesde:0 separador:;" 
+
+mié may 31 22:51:26 2017  Info: [F: leer()] Cantidad de lineas leidas:  5881 
+
+mié may 31 22:51:26 2017  Debug: [F: cargaGrafica()] Añadiendo datos de la serie Temporal (señal principal). 
+
+mié may 31 22:51:26 2017  Debug: [F: graficarPrincipal()] Graficando serie Temporal (señal principal). 
+
+mié may 31 22:51:26 2017  Debug: [F: cargaGrafica()] Habilitando y añadiendo a comboBox los canales:  "1" 
+
+mié may 31 23:13:47 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+mié may 31 23:13:47 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+mié may 31 23:13:47 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+mié may 31 23:13:47 2017  Info: 
+" ========================= [ Inicio: mié may 31 23:13:47 2017] ========================= " 
+
+mié may 31 23:13:47 2017  Info: [Info] Base de datos en ruta:  "C:/Users/diego.campos/Documents/GitHub/EGMsoft/data/dbEMG.db" 
+
+mié may 31 23:13:47 2017  Info: [Info] Octave daemon running with PID  0x197b1288 
+
+mié may 31 23:13:47 2017  Warning: ERROR:  No se puede crear la sesion - Info:  "No query Unable to fetch row" 
+
+mié may 31 23:13:47 2017  Warning: setGeometryDp: Unable to set geometry 1366x721+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1366x705+0+63 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 905x721, maximum size: 16777215x16777215).
+mié may 31 23:13:51 2017  Info: [F: ActionDemo_señal_greasy()] Carga de datos desde: 'Ejemplos/greasy.csv' 
+
+mié may 31 23:13:51 2017  Debug: [F: SetDatos()] Informacion de Señal:  "Path:C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv Fs:16 Canales:1 leerDesde:0 separador:;" 
+
+mié may 31 23:13:51 2017  Info: [F: leer()] Cantidad de lineas leidas:  5881 
+
+mié may 31 23:13:51 2017  Debug: [F: cargaGrafica()] Añadiendo datos de la serie Temporal (señal principal). 
+
+mié may 31 23:13:51 2017  Debug: [F: graficarPrincipal()] Graficando serie Temporal (señal principal). 
+
+mié may 31 23:13:51 2017  Debug: [F: cargaGrafica()] Habilitando y añadiendo a comboBox los canales:  "1" 
+
+mié may 31 23:13:55 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié may 31 23:13:55 2017  Debug: [S:chargeData2()] Tamaño de los datos recibidos: 4802 
+
+mié may 31 23:13:55 2017  Debug: [WaveletTransform_AM()] Graficando Transformada de Wavelet : columnas= 6  ; filas= 800 
+
+mié may 31 23:14:05 2017  Info: [F: Graficar2()] Se llama a graficar con el metodo:  "Wavelet Transform" , posicion :  3 
+
+mié may 31 23:14:05 2017  Info: Comando wavelete "OctaveWavelet('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv','2','0','1','16','0','5880','1','db8','5','50','fwt','db','shannon');\n"
+mié may 31 23:14:05 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "OctaveWavelet('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv','2','0','1','16','0','5880','1','db8','5','50','fwt','db','shannon');\n" 
+
+mié may 31 23:14:06 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié may 31 23:14:06 2017  Debug: [S:chargeData()] Cargando los datos...
+mié may 31 23:14:06 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 4802 
+
+mié may 31 23:14:06 2017  Debug: [WaveletTransform_AM()] Graficando Transformada de Wavelet : columnas= 6  ; filas= 800 
+
+mié may 31 23:14:21 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié may 31 23:14:21 2017  Debug: [S:chargeData2()] Tamaño de los datos recibidos: 4802 
+
+mié may 31 23:14:21 2017  Debug: [WaveletTransform_AM()] Graficando Transformada de Wavelet : columnas= 6  ; filas= 800 
+
+mié may 31 23:14:25 2017  Info: [F: Graficar2()] Se llama a graficar con el metodo:  "Wavelet Transform" , posicion :  3 
+
+mié may 31 23:14:25 2017  Info: Comando wavelete "OctaveWavelet('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv','2','0','1','16','1451','3368','1','db8','5','50','fwt','db','shannon');\n"
+mié may 31 23:14:25 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "OctaveWavelet('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv','2','0','1','16','1451','3368','1','db8','5','50','fwt','db','shannon');\n" 
+
+mié may 31 23:14:25 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié may 31 23:14:25 2017  Debug: [S:chargeData()] Cargando los datos...
+mié may 31 23:14:25 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 4802 
+
+mié may 31 23:14:25 2017  Debug: [WaveletTransform_AM()] Graficando Transformada de Wavelet : columnas= 6  ; filas= 800 
+
+mié may 31 23:29:39 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+mié may 31 23:29:39 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+mié may 31 23:29:39 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+mié may 31 23:29:39 2017  Info: 
+" ========================= [ Inicio: mié may 31 23:29:39 2017] ========================= " 
+
+mié may 31 23:29:39 2017  Info: [Info] Base de datos en ruta:  "C:/Users/diego.campos/Documents/GitHub/EGMsoft/data/dbEMG.db" 
+
+mié may 31 23:29:39 2017  Info: [Info] Octave daemon running with PID  0x197b2398 
+
+mié may 31 23:29:39 2017  Warning: ERROR:  No se puede crear la sesion - Info:  "No query Unable to fetch row" 
+
+mié may 31 23:29:40 2017  Warning: setGeometryDp: Unable to set geometry 1366x721+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1366x705+0+63 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 905x721, maximum size: 16777215x16777215).
+mié may 31 23:29:45 2017  Info: [F: ActionDemo_señal_greasy()] Carga de datos desde: 'Ejemplos/greasy.csv' 
+
+mié may 31 23:29:45 2017  Debug: [F: SetDatos()] Informacion de Señal:  "Path:C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv Fs:16 Canales:1 leerDesde:0 separador:;" 
+
+mié may 31 23:29:45 2017  Info: [F: leer()] Cantidad de lineas leidas:  5881 
+
+mié may 31 23:29:45 2017  Debug: [F: cargaGrafica()] Añadiendo datos de la serie Temporal (señal principal). 
+
+mié may 31 23:29:45 2017  Debug: [F: graficarPrincipal()] Graficando serie Temporal (señal principal). 
+
+mié may 31 23:29:45 2017  Debug: [F: cargaGrafica()] Habilitando y añadiendo a comboBox los canales:  "1" 
+
+mié may 31 23:29:51 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié may 31 23:29:51 2017  Debug: [S:chargeData2()] Tamaño de los datos recibidos: 60602 
+
+mié may 31 23:29:51 2017  Debug: [GaborTransform_AM()] Graficando Transformada de Gabor : columnas= 101  ; filas= 600 
+
+mié may 31 23:31:22 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+mié may 31 23:31:23 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+mié may 31 23:31:23 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+mié may 31 23:31:23 2017  Info: 
+" ========================= [ Inicio: mié may 31 23:31:23 2017] ========================= " 
+
+mié may 31 23:31:23 2017  Info: [Info] Base de datos en ruta:  "C:/Users/diego.campos/Documents/GitHub/EGMsoft/data/dbEMG.db" 
+
+mié may 31 23:31:23 2017  Info: [Info] Octave daemon running with PID  0x197a2320 
+
+mié may 31 23:31:23 2017  Warning: ERROR:  No se puede crear la sesion - Info:  "No query Unable to fetch row" 
+
+mié may 31 23:31:23 2017  Warning: setGeometryDp: Unable to set geometry 1366x721+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1366x705+0+63 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 905x721, maximum size: 16777215x16777215).
+mié may 31 23:31:27 2017  Info: [F: ActionDemo_señal_greasy()] Carga de datos desde: 'Ejemplos/greasy.csv' 
+
+mié may 31 23:31:27 2017  Debug: [F: SetDatos()] Informacion de Señal:  "Path:C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv Fs:16 Canales:1 leerDesde:0 separador:;" 
+
+mié may 31 23:31:27 2017  Info: [F: leer()] Cantidad de lineas leidas:  5881 
+
+mié may 31 23:31:27 2017  Debug: [F: cargaGrafica()] Añadiendo datos de la serie Temporal (señal principal). 
+
+mié may 31 23:31:27 2017  Debug: [F: graficarPrincipal()] Graficando serie Temporal (señal principal). 
+
+mié may 31 23:31:27 2017  Debug: [F: cargaGrafica()] Habilitando y añadiendo a comboBox los canales:  "1" 
+
+mié may 31 23:31:31 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié may 31 23:31:32 2017  Debug: [S:chargeData2()] Tamaño de los datos recibidos: 60602 
+
+mié may 31 23:31:32 2017  Debug: [GaborTransform_AM()] Graficando Transformada de Gabor : columnas= 101  ; filas= 600 
+
+mié may 31 23:44:36 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+mié may 31 23:44:36 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+mié may 31 23:44:36 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+mié may 31 23:44:36 2017  Info: 
+" ========================= [ Inicio: mié may 31 23:44:36 2017] ========================= " 
+
+mié may 31 23:44:37 2017  Info: [Info] Base de datos en ruta:  "C:/Users/diego.campos/Documents/GitHub/EGMsoft/data/dbEMG.db" 
+
+mié may 31 23:44:37 2017  Info: [Info] Octave daemon running with PID  0x19862740 
+
+mié may 31 23:44:37 2017  Warning: ERROR:  No se puede crear la sesion - Info:  "No query Unable to fetch row" 
+
+mié may 31 23:44:37 2017  Warning: setGeometryDp: Unable to set geometry 1366x721+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1366x705+0+63 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 905x721, maximum size: 16777215x16777215).
+mié may 31 23:51:39 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+mié may 31 23:51:39 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+mié may 31 23:51:39 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+mié may 31 23:51:39 2017  Info: 
+" ========================= [ Inicio: mié may 31 23:51:39 2017] ========================= " 
+
+mié may 31 23:51:39 2017  Info: [Info] Base de datos en ruta:  "C:/Users/diego.campos/Documents/GitHub/EGMsoft/data/dbEMG.db" 
+
+mié may 31 23:51:39 2017  Info: [Info] Octave daemon running with PID  0x19862950 
+
+mié may 31 23:51:39 2017  Warning: ERROR:  No se puede crear la sesion - Info:  "No query Unable to fetch row" 
+
+mié may 31 23:51:39 2017  Warning: setGeometryDp: Unable to set geometry 1366x721+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1366x705+0+63 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 905x721, maximum size: 16777215x16777215).
+mié may 31 23:52:15 2017  Info: [F: ActionDemo_señal_greasy()] Carga de datos desde: 'Ejemplos/greasy.csv' 
+
+mié may 31 23:52:15 2017  Debug: [F: SetDatos()] Informacion de Señal:  "Path:C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv Fs:16 Canales:1 leerDesde:0 separador:;" 
+
+mié may 31 23:52:15 2017  Info: [F: leer()] Cantidad de lineas leidas:  5881 
+
+mié may 31 23:52:15 2017  Debug: [F: cargaGrafica()] Añadiendo datos de la serie Temporal (señal principal). 
+
+mié may 31 23:52:15 2017  Debug: [F: graficarPrincipal()] Graficando serie Temporal (señal principal). 
+
+mié may 31 23:52:15 2017  Debug: [F: cargaGrafica()] Habilitando y añadiendo a comboBox los canales:  "1" 
+
+mié may 31 23:52:19 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié may 31 23:52:19 2017  Debug: [S:chargeData2()] Tamaño de los datos recibidos: 60602 
+
+mié may 31 23:52:19 2017  Debug: [GaborTransform_AM()] Graficando Transformada de Gabor : columnas= 101  ; filas= 600 
+
+mié may 31 23:52:19 2017  Info: "KEY: rms" "VALUE: rms" 
+
+mié may 31 23:54:16 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+mié may 31 23:54:16 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+mié may 31 23:54:16 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+mié may 31 23:54:16 2017  Info: 
+" ========================= [ Inicio: mié may 31 23:54:16 2017] ========================= " 
+
+mié may 31 23:54:16 2017  Info: [Info] Base de datos en ruta:  "C:/Users/diego.campos/Documents/GitHub/EGMsoft/data/dbEMG.db" 
+
+mié may 31 23:54:16 2017  Info: [Info] Octave daemon running with PID  0x19811d20 
+
+mié may 31 23:54:16 2017  Warning: ERROR:  No se puede crear la sesion - Info:  "No query Unable to fetch row" 
+
+mié may 31 23:54:16 2017  Warning: setGeometryDp: Unable to set geometry 1366x721+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1366x705+0+63 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 905x721, maximum size: 16777215x16777215).
+mié may 31 23:54:34 2017  Info: [F: ActionDemo_señal_greasy()] Carga de datos desde: 'Ejemplos/greasy.csv' 
+
+mié may 31 23:54:34 2017  Debug: [F: SetDatos()] Informacion de Señal:  "Path:C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv Fs:16 Canales:1 leerDesde:0 separador:;" 
+
+mié may 31 23:54:34 2017  Info: [F: leer()] Cantidad de lineas leidas:  5881 
+
+mié may 31 23:54:35 2017  Debug: [F: cargaGrafica()] Añadiendo datos de la serie Temporal (señal principal). 
+
+mié may 31 23:54:35 2017  Debug: [F: graficarPrincipal()] Graficando serie Temporal (señal principal). 
+
+mié may 31 23:54:35 2017  Debug: [F: cargaGrafica()] Habilitando y añadiendo a comboBox los canales:  "1" 
+
+mié may 31 23:54:38 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié may 31 23:54:38 2017  Debug: [S:chargeData2()] Tamaño de los datos recibidos: 60602 
+
+mié may 31 23:54:38 2017  Debug: [GaborTransform_AM()] Graficando Transformada de Gabor : columnas= 101  ; filas= 600 
+
+mié may 31 23:54:39 2017  Info: "KEY: rms" "VALUE: 1" 
+
+mié may 31 23:54:50 2017  Info: [F: CalcularDatosEstadisticos()] Comando enviado a Octave: "OctaveStatistics('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv','2','0','1','16','0','5880','1');\n" 
+
+mié may 31 23:54:50 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié may 31 23:54:50 2017  Debug: [S:chargeData()] Cargando los datos...
+mié may 31 23:54:50 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 8 
+
+mié may 31 23:54:58 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié may 31 23:54:58 2017  Debug: [S:chargeData2()] Tamaño de los datos recibidos: 60602 
+
+mié may 31 23:54:58 2017  Debug: [GaborTransform_AM()] Graficando Transformada de Gabor : columnas= 101  ; filas= 600 
+
+mié may 31 23:54:58 2017  Info: "KEY: rms" "VALUE: 0.199" 
+
+mié may 31 23:55:43 2017  Info: [F: Graficar2()] Se llama a graficar con el metodo:  "Normalize" , posicion :  9 
+
+mié may 31 23:55:43 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "normSignal('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv','2','0','1','rms')\n" 
+
+mié may 31 23:55:44 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié may 31 23:55:44 2017  Debug: [S:chargeData()] Cargando los datos...
+mié may 31 23:55:44 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 5881 
+
+mié may 31 23:55:44 2017  Debug: [F: SetDatos()] Informacion de Señal:  "Path:C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv Fs:16 Canales:1 leerDesde:0 separador:;" 
+
+mié may 31 23:55:44 2017  Info: [F: leer()] Cantidad de lineas leidas:  5881 
+
+mié may 31 23:55:44 2017  Debug: [F: cargaGrafica()] Añadiendo datos de la serie Temporal (señal principal). 
+
+mié may 31 23:55:44 2017  Debug: [F: graficarPrincipal()] Graficando serie Temporal (señal principal). 
+
+mié may 31 23:55:44 2017  Debug: [F: cargaGrafica()] Habilitando y añadiendo a comboBox los canales:  "1" 
+
+mié may 31 23:55:49 2017  Info: [F: CalcularDatosEstadisticos()] Comando enviado a Octave: "OctaveStatistics('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv','2','0','1','16','0','5880','1');\n" 
+
+mié may 31 23:55:49 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "octave:9>" 
+
+mié may 31 23:55:49 2017  Debug: [S:chargeData()] Cargando los datos...
+mié may 31 23:55:49 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 9 
+
+mié may 31 23:56:18 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié may 31 23:56:18 2017  Debug: [S:chargeData2()] Tamaño de los datos recibidos: 60602 
+
+mié may 31 23:56:18 2017  Debug: [GaborTransform_AM()] Graficando Transformada de Gabor : columnas= 101  ; filas= 600 
+
+mié may 31 23:56:18 2017  Info: "KEY: rms" "VALUE: 1" 
+
+mié may 31 23:56:37 2017  Debug: [F: SetDatos()] Informacion de Señal:  "Path:C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/greasy.csv Fs:16 Canales:1 leerDesde:0 separador:;" 
+
+mié may 31 23:56:37 2017  Info: [F: leer()] Cantidad de lineas leidas:  5881 
+
+mié may 31 23:56:37 2017  Debug: [F: cargaGrafica()] Añadiendo datos de la serie Temporal (señal principal). 
+
+mié may 31 23:56:37 2017  Debug: [F: graficarPrincipal()] Graficando serie Temporal (señal principal). 
+
+mié may 31 23:56:37 2017  Debug: [F: cargaGrafica()] Habilitando y añadiendo a comboBox los canales:  "1" 
+

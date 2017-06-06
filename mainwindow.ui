@@ -2564,6 +2564,7 @@ QPushButton:hover {
     <property name="title">
      <string>Exportar</string>
     </property>
+    <addaction name="actionCrear_Reporte"/>
    </widget>
    <widget class="QMenu" name="menuConfigurac_on">
     <property name="title">
@@ -2816,6 +2817,11 @@ QPushButton:hover {
    </property>
    <property name="text">
     <string>Demo Señal - Greasy (*.csv)</string>
+   </property>
+  </action>
+  <action name="actionCrear_Reporte">
+   <property name="text">
+    <string>Crear Reporte</string>
    </property>
   </action>
  </widget>

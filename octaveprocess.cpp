@@ -174,7 +174,7 @@ void OctaveProcess::readOctaveOutput2(){
     if(qs.contains("fin"))
     {
         qDebug()<< "[C: OctaveProcess.cpp] Sale del ciclo de lectura: "<<m_salida.last()<<endl;
-        disconnect(this, SIGNAL(readyReadStandardOutput()), this, SLOT(readOctaveOutput()));
+        disconnect(this, SIGNAL(readyReadStandardOutput()), this, SLOT(readOctaveOutput2()));
         m_salida.pop_front();            //saco el primer caracter
         m_salida.pop_back();             //saco el ultimo caracter
         emit finalDataReady2();

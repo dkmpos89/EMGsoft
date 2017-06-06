@@ -2,6 +2,7 @@
 #define CPROJECT_H
 
 #include <QString>
+#include <QVariantMap>
 
 class cProject
 {
@@ -25,6 +26,7 @@ public:
     QString getDescripcion() const;
     void setDescripcion(const QString &value);
 
+    QMap<QString, QVariant> getMap();
 private:
     QString ID, nombre, fechaInicio, fechaTermino, descripcion;
 };

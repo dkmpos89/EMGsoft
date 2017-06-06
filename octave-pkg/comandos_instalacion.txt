@@ -1,0 +1,8 @@
+## URL:
+	https://www.gnu.org/software/octave/doc/interpreter/Installing-and-Removing-Packages.html
+	
+## Desde el pkg forge
+	pkg install -forge -auto image
+
+## Desde el pakage de instalacion
+	pkg install image-2.6.1.tar.gz

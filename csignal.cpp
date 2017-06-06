@@ -52,5 +52,41 @@ void cSignal::setStatistics(double mean, double median, double stdd, double varr
     this->vnorm = norm;
     this->vmin = minn;
     this->vmax = maxx;
-    this->vnorm = range;
+    this->vrange = range;
+}
+
+QMap<QString, QVariant> cSignal::getMap(){
+
+    //QVariantMap fields;
+    QMap<QString, QVariant> myMap{
+                                    {"median", QVariant(this->vmedian)},
+                                    {"mean", QVariant(this->vmean)},
+                                    {"stdDev", QVariant(this->vstdesv)},
+                                    {"var", QVariant(this->varian)},
+                                    {"rms", QVariant(this->vrms)},
+                                    {"energy", QVariant(this->venergy)},
+                                    {"frec", QVariant(this->fs)},
+                                    {"channels", QVariant(this->canales)}
+                                  };
+    //fields.insert("Map", QVariant( myMap ) );
+    //return fields;
+    return myMap;
+}
+
+QList<Atributo*> cSignal::getAttrList()
+{
+    QList<Atributo*> lista_atributos;
+
+    lista_atributos << new Atributo("mean",QString::number(this->vmean));
+    lista_atributos << new Atributo("median",QString::number(this->vmedian));
+    lista_atributos << new Atributo("deviation",QString::number(this->vstdesv));
+    lista_atributos << new Atributo("variance",QString::number(this->varian));
+    lista_atributos << new Atributo("rms",QString::number(this->vrms));
+    lista_atributos << new Atributo("energy",QString::number(this->venergy));
+    lista_atributos << new Atributo("norm",QString::number(this->vnorm));
+    lista_atributos << new Atributo("min",QString::number(this->vmin));
+    lista_atributos << new Atributo("max",QString::number(this->vmax));
+    lista_atributos << new Atributo("range",QString::number(this->vrange));
+
+    return lista_atributos;
 }

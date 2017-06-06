@@ -7,19 +7,23 @@
 #include "qxtspanslider.h"
 #include <cargadatos.h>
 #include <winusers.h>
-#include <csignal.h>
 #include <proyecto.h>
 #include <appsettings.h>
 #include <dockindicadores.h>
 #include "filtersettings.h"
 #include <octaveprocess.h>
-#include <signal_info.h>
+#include <signalInfo.h>
 #include "database.h"
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlQueryModel>
 #include <QProcess>
 #include <QtSql/QSqlQuery>
 #include "funcionesgraficas.h"
+#include "csesion.h"
+#include "cproject.h"
+#include "cpaciente.h"
+#include "atributo.h"
+#include "csignal.h"
 
 
 namespace Ui {
@@ -43,15 +47,7 @@ public:
     bool upDataBase();
     bool leer();
     void normalize(QString tipoNorm);
-    bool graficarWavelet(QVector<QVector<double>> s, QCustomPlot *grafico, int a, int b);
-    void calcularEnOctave(int analisis, int a, int b);
-    void graficarFourier(QVector<QVector<double>> s, QCustomPlot *grafico, int a, int b);
-    bool graficarSpectrogram(QVector<QVector<double>> s, QCustomPlot *grafico, int a, int b);
-    bool graficarGabor(QVector<QVector<double>> s, QCustomPlot *grafico, int a, int b);
     void graficarPrincipal(QCustomPlot *grafico, QVector< QVector<double> > senal, int canal, int tipo, int a=0, int b=-1);
-    void graficarHistograma(QVector<QVector<double>> s, QCustomPlot *grafico);
-    void graficarMovingRMS(QVector<double> s, QVector<double> t, QCustomPlot *grafico, int a, int b);
-    void graficarMeanFrequency(QVector<double> result, double fs, int a, int b, QString tipo, QCustomPlot *graffico);
     void createDockWindows();
     void dibujarCurvaFrecuenciasMedia(QStringList parametros, QVector<QVector<double>> s, QCustomPlot *grafico);
     void dibujarHistograma();
@@ -73,17 +69,18 @@ public:
     bool ExistenModificaciones(QString act);
     bool crearScripts(QString script);
     void controlNorm(const QString normType);
-    void graffSignalNorm(const QString&);
-    //bool eventFilter(QObject *target, QEvent *event);
+    void calcularMetodo(QString cmd, int i);
+    bool createJson(cSesion *sesion) const;
 signals:
     recalcularGraficosN(cSignal *senal,int canal,int a, int b);
+    calcularMetodoReporte(int, int, int);
 
 public slots:
+    void calcularEnOctave(int analisis, int a, int b);
     void horzSliderChangedA(int value);
     void horzSliderChangedB(int value);
     void updateDock(QDockWidget *dock, bool Value, int i, int w, int h);
     void chargeData();
-    void chargeData2();
     void guardarImagenes();
     void guardarDatosTxt();    
     void graffNormalize(bool b);
@@ -132,10 +129,11 @@ private slots:
     void on_btnLimpiarTabla_clicked();
     void on_action_informacion_actual_sig_triggered();
     void on_action_doTest_triggered();
-
     void on_actionDemo_Se_al_Greasy_csv_triggered();
-
     void on_btnGuardarTabla_clicked();
+
+
+    void on_actionCrear_Reporte_triggered();
 
 private:
     Ui::MainWindow *ui;
@@ -149,12 +147,13 @@ private:
     QCPItemLine *itemA, *itemB;
     QDirModel *model;    
     OctaveProcess *octaveP;
+    cSesion* session;
 
     DataBase *db;
     QDockWidget * dock1,*dock2,*dock3 ;
     appSettings * ConfigGlobales = NULL;   // menu de configuraciones.
     filterSettings *ConfigFiltros = NULL;  // menu de configuraciones de los filtros.
-    signal_Info *info_signal = NULL;       // variable global para el widget de info de la señal actual.
+    signalInfo *info_signal = NULL;       // variable global para el widget de info de la señal actual.
 
     funcionesGraficas *FNG = new funcionesGraficas();
 };

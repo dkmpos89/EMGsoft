@@ -25,7 +25,7 @@ SOURCES += main.cpp\
     codeeditor.cpp \
     filtersettings.cpp \
     funcionesgraficas.cpp \
-    signal_info.cpp \
+    signalInfo.cpp \
     database.cpp \
     proyecto.cpp \
     cproject.cpp \
@@ -33,7 +33,9 @@ SOURCES += main.cpp\
     cproyectopaciente.cpp \
     csesion.cpp \
     cestadisticas.cpp \
-    csignal.cpp
+    csignal.cpp \
+    atributo.cpp \
+    resultados.cpp
 
 HEADERS  += mainwindow.h \
     qcustomplot.h \
@@ -49,14 +51,16 @@ HEADERS  += mainwindow.h \
     codeeditor.h \
     filtersettings.h \
     funcionesgraficas.h \
-    signal_info.h \
+    signalInfo.h \
     database.h \
     cproject.h \
     cpaciente.h \
     cproyectopaciente.h \
     csesion.h \
     cestadisticas.h \
-    csignal.h
+    csignal.h \
+    atributo.h \
+    resultados.h
 
 
 
@@ -68,7 +72,7 @@ FORMS    += mainwindow.ui \
     analisismultiples.ui \
     dockindicadores.ui \
     filtersettings.ui \
-    signal_info.ui
+    signalInfo.ui
 
 
 RESOURCES += \

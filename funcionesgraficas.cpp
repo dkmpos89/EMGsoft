@@ -191,6 +191,8 @@ bool funcionesGraficas::graficarSpectrogram(QCustomPlot *cp, QVector<QVector<dou
     grafico->rescaleAxes();
     grafico->replot();
 
+    guardarImagen(grafico,"sgram.png");
+
     return true;
 }
 
@@ -231,6 +233,8 @@ void funcionesGraficas::graficarFourier(QCustomPlot *cp, QVector<QVector<double>
 
     grafico->rescaleAxes();
     grafico->replot();
+
+    guardarImagen(grafico,"fourier.png");
 }
 
 bool funcionesGraficas::graficarGabor(QCustomPlot *cp, QVector<QVector<double> > s, int a, int b, double Fs)
@@ -300,6 +304,9 @@ bool funcionesGraficas::graficarGabor(QCustomPlot *cp, QVector<QVector<double> >
 
     grafico->rescaleAxes();
     grafico->replot();
+
+    guardarImagen(grafico,"gabor.png");
+
     return true;
 }
 
@@ -371,6 +378,8 @@ bool funcionesGraficas::graficarWavelet(QCustomPlot *cp, QVector<QVector<double>
     grafico->rescaleAxes();
     grafico->replot();
 
+    guardarImagen(grafico,"wavelet.png");
+
     return true;
 }
 
@@ -422,6 +431,8 @@ void funcionesGraficas::graficarHistograma(QCustomPlot *cp, QVector<QVector<doub
     grafico->rescaleAxes();
     grafico->replot();
 
+    guardarImagen(grafico,"histograma.png");
+
 }
 
 void funcionesGraficas::dibujarCurvaFrecuenciasMedia(QStringList parametros, QVector<QVector<double>> s, QCustomPlot *grafico){
@@ -462,6 +473,10 @@ void funcionesGraficas::dibujarCurvaFrecuenciasMedia(QStringList parametros, QVe
     grafico->graph(0)->setName("Grafico de Fourier - Frecuencias Medias");
     grafico->graph(0)->setData(s.at(0),ejex);
     grafico->graph(0)->setLineStyle(QCPGraph::lsLine);
+
+    grafico->rescaleAxes();
+    grafico->replot();
+    guardarImagen(grafico,"frecuenciaMedia.png");
 }
 
 void funcionesGraficas::graficarMovingRms(QCustomPlot *cp, QVector<double> s, QVector<double> t, int a, int b){
@@ -482,6 +497,7 @@ void funcionesGraficas::graficarMovingRms(QCustomPlot *cp, QVector<double> s, QV
 
     graffico->rescaleAxes();
     graffico->replot();
+    guardarImagen(graffico,"movingrms.png");
 }
 
 void funcionesGraficas::graficarMeanFrequency(QCustomPlot *cp, QVector<double> result, double fs, int a, int b, QString tipo)
@@ -522,6 +538,8 @@ void funcionesGraficas::graficarMeanFrequency(QCustomPlot *cp, QVector<double> r
     }
     graffico->rescaleAxes();
     graffico->replot();
+
+    guardarImagen(graffico,"frecuenciaMedia.png");
 }
 
 void funcionesGraficas::centrarGraficos(QString title, QCustomPlot *grafico, int w, int h)
@@ -543,4 +561,16 @@ void funcionesGraficas::centrarGraficos(QString title, QCustomPlot *grafico, int
     grafico->rescaleAxes();
     grafico->replot();
 
+}
+
+void funcionesGraficas::guardarImagen(QCustomPlot *cp, QString name)
+{
+    //nombres de las imagenes: gabor, wavelete, sgram, fourier,
+
+    QString path = QDir::currentPath()+"/reportes";
+    if(!QDir(path).exists())
+        QDir().mkdir(QDir::currentPath()+"/reportes");
+    QFile file(path+"/"+name);
+    file.open(QIODevice::WriteOnly);
+    cp->toPixmap(1920/3,1280/3).save(&file, "PNG");
 }

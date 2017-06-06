@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>signal_Info</class>
- <widget class="QWidget" name="signal_Info">
+ <class>signalInfo</class>
+ <widget class="QWidget" name="signalInfo">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -317,7 +317,7 @@
   <connection>
    <sender>btn_Salir</sender>
    <signal>clicked()</signal>
-   <receiver>signal_Info</receiver>
+   <receiver>signalInfo</receiver>
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">

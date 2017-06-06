@@ -140,3 +140,25 @@ void cPaciente::setFecha_ingreso(const QString &value)
 {
     fecha_ingreso = value;
 }
+
+QMap<QString, QVariant> cPaciente::getMap(){
+
+    //QVariantMap fields;
+    QMap<QString, QVariant> myMap{  {"rut", QVariant(this->RUT) },
+                                    {"name", QVariant(this->nombre)},
+                                    {"lastName", QVariant(this->apellido)},
+                                    {"address", QVariant(this->direccion)},
+                                    {"sex", QVariant(this->sexo)},
+                                    {"birthDate", QVariant(this->fecha_nacimiento)},
+                                    {"age", QVariant(this->edad)},
+                                    {"dateIn", QVariant(this->fecha_ingreso)},
+                                    {"weight", QVariant(this->peso)},
+                                    {"height", QVariant(this->estatura)},
+                                    {"activities", QVariant(this->actividad)},
+                                    {"desc", QVariant(this->descripcion)}
+                                  };
+    //fields.insert("Map", QVariant( myMap ) );
+    //return fields;
+    return myMap;
+
+}
