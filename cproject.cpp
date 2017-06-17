@@ -71,3 +71,13 @@ QMap<QString, QVariant> cProject::getMap(){
     //return fields;
     return myMap;
 }
+
+QString cProject::toString()
+{
+    QString salida = "";
+    salida.append("\t\"projectName\":\""+getNombre()+"\",\n");
+    salida.append("\t\"initPrj\":\""+getFechaInicio()+"\",\n");
+    salida.append("\t\"endPrj\":\""+getFechaTermino()+"\",\n");
+    salida.append("\t\"descriptionPrj\":\""+getDescripcion()+"\",\n");
+    return salida;
+}

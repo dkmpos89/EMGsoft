@@ -22,7 +22,6 @@
 #include "csesion.h"
 #include "cproject.h"
 #include "cpaciente.h"
-#include "atributo.h"
 #include "csignal.h"
 
 
@@ -69,8 +68,8 @@ public:
     bool ExistenModificaciones(QString act);
     bool crearScripts(QString script);
     void controlNorm(const QString normType);
-    void calcularMetodo(QString cmd, int i);
     bool createJson(cSesion *sesion) const;
+    bool createJsonTxt(cSesion *sesion) const;
 signals:
     recalcularGraficosN(cSignal *senal,int canal,int a, int b);
     calcularMetodoReporte(int, int, int);

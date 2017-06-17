@@ -10,7 +10,7 @@
 #include "codeeditor.h"
 #include "cargadatos.h"
 #include "analisismultiples.h"
-
+#include "resultados.h"
 
 
 
@@ -314,17 +314,17 @@ void MainWindow::calcularEnOctave(int analisis, int a, int b){
             break;
         case 2:
             parametros = ConfigGlobales->getParametrosGabor();
-            cmd = "OctaveGabor('"+path+"','"+sep+"','"+lineaInicio+"','"+numCanales+"','"+Fs+"','"+QString::number(a)+"','"+QString::number(b)+"','"+canalActual+"','"+parametros[0]+"','"+parametros[1]+"','"+parametros[2]+"','"+parametros[3]+"','"+parametros[4]+"','"+parametros[5]+"');\n";
+            cmd = "OctaveGabor('"+path+"','"+sep+"','"+lineaInicio+"','"+numCanales+"','"+Fs+"','"+QString::number(a)+"','"+QString::number(b)+"','"+canalActual+"','"+parametros[1]+"','"+parametros[3]+"','"+parametros[5]+"','"+parametros[7]+"','"+parametros[9]+"','"+parametros[11]+"');\n";
             //qInfo()<<"Comando Gabor: "<<cmd;
             break;
         case 3:
             parametros = ConfigGlobales->getParametrosWavelet();
-            cmd = "OctaveWavelet('"+path+"','"+sep+"','"+lineaInicio+"','"+numCanales+"','"+Fs+"','"+QString::number(a)+"','"+QString::number(b)+"','"+canalActual+"','"+parametros[0]+"','"+parametros[1]+"','"+parametros[2]+"','"+parametros[3]+"','"+parametros[4]+"','"+parametros[5]+"');\n";
+            cmd = "OctaveWavelet('"+path+"','"+sep+"','"+lineaInicio+"','"+numCanales+"','"+Fs+"','"+QString::number(a)+"','"+QString::number(b)+"','"+canalActual+"','"+parametros[1]+"','"+parametros[3]+"','"+parametros[5]+"','"+parametros[7]+"','"+parametros[9]+"','"+parametros[11]+"');\n";
             //qInfo()<<"Comando wavelete"<<cmd;
             break;
         case 4:
             parametros = ConfigGlobales->getParametrosSgram();
-            cmd = "OctaveSpectrogram('"+path+"','"+sep+"','"+lineaInicio+"','"+numCanales+"','"+Fs+"','"+QString::number(a)+"','"+QString::number(b)+"','"+canalActual+"','"+parametros[0]+"','"+parametros[1]+"','"+parametros[2]+"','"+parametros[3]+"');\n";
+            cmd = "OctaveSpectrogram('"+path+"','"+sep+"','"+lineaInicio+"','"+numCanales+"','"+Fs+"','"+QString::number(a)+"','"+QString::number(b)+"','"+canalActual+"','"+parametros[1]+"','"+parametros[3]+"','"+parametros[5]+"','"+parametros[7]+"');\n";
             break;
         case 5:
             cmd = "menuOctave('"+path+"','"+sep+"','"+lineaInicio+"','"+numCanales+"','"+Fs+"','"+QString::number(a)+"','"+QString::number(b)+"','"+canalActual+"','histf');\n";
@@ -334,15 +334,15 @@ void MainWindow::calcularEnOctave(int analisis, int a, int b){
             break;
         case 7:
             parametros = ConfigGlobales->getParametrosMovingRMS();
-            cmd = "menuOctave('"+path+"','"+sep+"','"+lineaInicio+"','"+numCanales+"','"+Fs+"','"+QString::number(a)+"','"+QString::number(b)+"','"+canalActual+"','movingrms','"+parametros[0]+"','"+parametros[1]+"');\n";
+            cmd = "menuOctave('"+path+"','"+sep+"','"+lineaInicio+"','"+numCanales+"','"+Fs+"','"+QString::number(a)+"','"+QString::number(b)+"','"+canalActual+"','movingrms','"+parametros[1]+"','"+parametros[3]+"');\n";
             break;
         case 8:
             parametros = ConfigGlobales->getParametrosMeanFrequency();
-            cmd = "menuOctave('"+path+"','"+sep+"','"+lineaInicio+"','"+numCanales+"','"+Fs+"','"+QString::number(a)+"','"+QString::number(b)+"','"+canalActual+"','meanfreq','"+parametros[0]+"','"+parametros[1]+"');\n";
+            cmd = "menuOctave('"+path+"','"+sep+"','"+lineaInicio+"','"+numCanales+"','"+Fs+"','"+QString::number(a)+"','"+QString::number(b)+"','"+canalActual+"','meanfreq','"+parametros[1]+"','"+parametros[3]+"');\n";
             break;
         case 9:
             parametros = ConfigGlobales->getParametrosNormalizacion();
-            cmd = "normSignal('"+path+"','"+sep+"','"+lineaInicio+"','"+canalActual+"','"+parametros[0]+"')\n";
+            cmd = "normSignal('"+path+"','"+sep+"','"+lineaInicio+"','"+canalActual+"','"+parametros[1]+"')\n";
             break;
         default:
             break;
@@ -689,8 +689,23 @@ void MainWindow::chargeData(){
 
     /* LLAMADA AL METODO QUE SIGUE CALCULANDO LOS GRAFICOS */
     j=analize;
-    if(buttonPressed==OctaveProcess::Unknow)
-        emit calcularMetodoReporte(j+1, ui->horizontalSlider->lowerValue(), ui->horizontalSlider->upperValue());
+    if(buttonPressed==OctaveProcess::Unknow){
+        //* Guardar los datos *//
+        QString metodo = ui->comboAnalisis2->itemText(j);
+        QString urlImage = QDir::currentPath()+"/reportes/"+ui->comboAnalisis2->itemText(j).replace(QRegExp("\\s+"),"_")+".png";
+        Resultados* ressult = new Resultados();
+        ressult->setNombreMetodo(metodo);
+        ressult->setUrlImagen(urlImage);
+        ressult->setAttributeList(ConfigGlobales->getConfig(j));
+        session->addReport(ressult);
+
+        if(analize<8){
+            habilitarCampos(false);
+            emit calcularMetodoReporte(j+1, ui->horizontalSlider->lowerValue(), ui->horizontalSlider->upperValue());
+        }else{
+            createJsonTxt(session);
+        }
+    }else{ qInfo()<<"PURA !#$%&"<<endl; }
 
 }
 
@@ -1954,7 +1969,7 @@ void MainWindow::calcularGraficosNormalizados(cSignal *s,int canal,int a,int b)
 
 void MainWindow::on_action_doTest_triggered()
 {
-    //QPixmap imagenGrafico = ui->grafico1->grab();
+/*    //QPixmap imagenGrafico = ui->grafico1->grab();
     amin = ui->horizontalSlider->lowerValue();
     bmax = ui->horizontalSlider->upperValue();
     QString canalActual = ui->comboChannel->currentText();
@@ -1963,26 +1978,30 @@ void MainWindow::on_action_doTest_triggered()
     //QString cmd = "OctaveWavelet('"+signalPrincipal->getPath()+"','"+signalPrincipal->getSeparador()+"','"+signalPrincipal->getLeerDesde()+"','"+signalPrincipal->getCanales()+"','"+signalPrincipal->getFs()+"','"+QString::number(amin)+"','"+QString::number(bmax)+"','"+canalActual+"','"+parametros[0]+"','"+parametros[1]+"','"+parametros[2]+"','"+parametros[3]+"','"+parametros[4]+"','"+parametros[5]+"');\n";
 
     QStringList parametros = ConfigGlobales->getParametrosGabor();
-    QString cmd = "OctaveGabor('"+signalPrincipal->getPath()+"','"+signalPrincipal->getSeparador()+"','"+signalPrincipal->getLeerDesde()+"','"+signalPrincipal->getCanales()+"','"+signalPrincipal->getFs()+"','"+QString::number(amin)+"','"+QString::number(bmax)+"','"+canalActual+"','"+parametros[0]+"','"+parametros[1]+"','"+parametros[2]+"','"+parametros[3]+"','"+parametros[4]+"','"+parametros[5]+"');\n";
+    QString cmd = "OctaveGabor('"+signalPrincipal->getPath()+"','"+signalPrincipal->getSeparador()+"','"+signalPrincipal->getLeerDesde()+"','"+signalPrincipal->getCanales()+"','"+signalPrincipal->getFs()+"','"+QString::number(amin)+"','"+QString::number(bmax)+"','"+canalActual+"','"+parametros[1]+"','"+parametros[3]+"','"+parametros[5]+"','"+parametros[7]+"','"+parametros[9]+"','"+parametros[11]+"');\n";
 
-    calcularMetodo(cmd, 2);
-}
+*/
+/*    QStringList lista;
+    lista<<"time"<<"2"<<"range"<<"4"<<"windows"<<"6";
+    QString metodo = "Gabor";
+    QString urlImage = "C:\\Gabor.png";
 
-void MainWindow::calcularMetodo(QString cmd, int i)
-{
-    octaveP = OctaveProcess::getInstance();
-    if(octaveP->getState()){
-        octaveP->setState(false);
-        buttonPressed = OctaveProcess::Unknow;
-        analize = i;
-        connect( octaveP, SIGNAL( finalDataReady2() ), this, SLOT( chargeData() ));
-        octaveP->writeCmd2(cmd);
-        habilitarCampos(false);
-        QApplication::setOverrideCursor( Qt::WaitCursor ); // Cursor de carga y espera
-    }else{
-        QMessageBox::information(this, tr("Error"), tr("Recurso: 'Octave-cli'\nEstado: ocupado"));
-        return;
-    }
+    Resultados* ressult = new Resultados();
+    ressult->setNombreMetodo(metodo);
+    ressult->setUrlImagen(urlImage);
+    ressult->setAttributeList(lista);
+
+    session->addReport(ressult);
+    //qInfo()<<ressult->toString()<<endl;
+    */
+
+    //createJsonTxt(session);
+
+    if( createJson( session ) ){
+        qDebug()<<"listoco";
+
+    }else qDebug()<<"no listoco";
+
 }
 
 // lo nuevo :D
@@ -2002,15 +2021,24 @@ bool MainWindow::createJson(cSesion* sesion)const{
 
     bool result = false;
 
+    QStringList lista3 = {"{'url':'C:\\Users\\diego.campos\\Desktop\\test_reportEMG\\2.png', 'attr':['atributo 1'],'method':'spectrograma'}",
+                          "{'url':'C:\\Users\\diego.campos\\Desktop\\test_reportEMG\\2.png', 'attr':['atributo 1'],'method':'spectrograma'}",
+                          "{'url':'C:\\Users\\diego.campos\\Desktop\\test_reportEMG\\2.png', 'attr':['atributo 1'],'method':'spectrograma'}"
+                         };
+
     QJsonDocument json;
     QJsonObject mainObject;
-    QMap<QString, QVariant> mapPacientes, mapProject, mapSignal;
+    QMap<QString, QVariant> mapPacientes, mapProject, mapSignal, mapReports;
+
     mapPacientes = sesion->getCurrentPaciente()->getMap();
     mapProject = sesion->getCurrentProject()->getMap();
     mapSignal = sesion->getCurrentSignal()->getMap();
+
     qDebug()<<"size of mapProj "<<mapProject.size();
     qDebug()<<"size of mapPac "<<mapPacientes.size();
     qDebug()<<"size of mapSignal "<<mapSignal.size();
+    qDebug()<<"size of mapReports "<<mapReports.size();
+
     //add all the maps in only one
     QVariantMap::const_iterator i;
     for (i = mapProject.constBegin(); i != mapProject.constEnd(); ++i)
@@ -2018,8 +2046,14 @@ bool MainWindow::createJson(cSesion* sesion)const{
     for (i = mapSignal.constBegin(); i != mapSignal.constEnd(); ++i)
         mapPacientes.insert( i.key(), i.value() );
 
+    for (i = mapReports.constBegin(); i != mapReports.constEnd(); ++i)
+        mapPacientes.insert( i.key(), i.value() );
+
     mainObject = QJsonObject::fromVariantMap( mapPacientes );
+    QJsonArray array = QJsonArray::fromStringList(lista3);
+    mainObject.insert("dataList", array );
     json.setObject( mainObject );
+
     //save
     QFile jsonFile("C:\\Users\\diego.campos\\Desktop\\data.json");
     result = jsonFile.open(QFile::WriteOnly);
@@ -2029,21 +2063,43 @@ bool MainWindow::createJson(cSesion* sesion)const{
     return result;
 }
 
+bool MainWindow::createJsonTxt(cSesion* sesion)const
+{
+    bool result = true;
+    QString stringPacientes, stringProject, stringSignal, stringReports;
+
+    stringPacientes = sesion->getCurrentPaciente()->toString();
+    stringProject = sesion->getCurrentProject()->toString();
+    stringSignal = sesion->getCurrentSignal()->toString();
+    stringReports = sesion->getRRtoString();
+
+    //qInfo()<<stringPacientes<<endl;
+
+    QFile jsonFile(QDir::currentPath()+"/reportes/data.json");
+    result = jsonFile.open(QFile::WriteOnly);
+    try {
+        jsonFile.write("{\n");
+        jsonFile.write(stringPacientes.toLatin1());
+        jsonFile.write(stringProject.toLatin1());
+        jsonFile.write(stringSignal.toLatin1());
+        jsonFile.write(stringReports.toLatin1());
+        jsonFile.write("}\n");
+    } catch (...) {
+        result = false;
+    }
+    jsonFile.close();
+
+    return result;
+
+}
+
 void MainWindow::on_actionCrear_Reporte_triggered()
 {
     octaveP = OctaveProcess::getInstance();
     if(octaveP->getState()){
-
-        /*
-        if( createJson( session ) ){
-            qDebug()<<"listoco";
-
-        }else qDebug()<<"no listoco";
-        */
-        //octaveP->setState(false);
         buttonPressed = OctaveProcess::Unknow;
         habilitarCampos(false);
-        emit calcularMetodoReporte(0, ui->horizontalSlider->lowerValue(), ui->horizontalSlider->upperValue());
+        emit calcularMetodoReporte(1, ui->horizontalSlider->lowerValue(), ui->horizontalSlider->upperValue());
 
     }else{
         QMessageBox::information(this, tr("Error"), tr("Recurso: 'Octave-cli'\nEstado: ocupado"));

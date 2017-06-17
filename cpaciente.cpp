@@ -162,3 +162,21 @@ QMap<QString, QVariant> cPaciente::getMap(){
     return myMap;
 
 }
+
+QString cPaciente::toString(){
+    QString salida = "";
+    salida.append("\t\"rut\":\""+getRUT()+"\",\n");
+    salida.append("\t\"firstName\":\""+getNombre()+"\",\n");
+    salida.append("\t\"lastName\":\""+getApellido()+"\",\n");
+    salida.append("\t\"address\":\""+getDireccion()+"\",\n");
+    salida.append("\t\"sex\":\""+getSexo()+"\",\n");
+    salida.append("\t\"birthDate\":\""+getFecha_nacimiento()+"\",\n");
+    salida.append("\t\"age\":\""+getEdad()+"\",\n");
+    salida.append("\t\"dateIn\":\""+getFecha_ingreso()+"\",\n");
+    salida.append("\t\"weight\":\""+getPeso()+"\",\n");
+    salida.append("\t\"height\":\""+getEstatura()+"\",\n");
+    salida.append("\t\"activities\":\""+getActividad()+"\",\n");
+    salida.append("\t\"desc\":\""+getDescripcion()+"\",\n");
+
+    return salida;
+}

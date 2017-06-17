@@ -1101,12 +1101,12 @@ QPushButton:hover {
                         </item>
                         <item>
                          <property name="text">
-                          <string>Histogram (Fourier)</string>
+                          <string>Histogram Fourier</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>Histogram (Normal)</string>
+                          <string>Histogram</string>
                          </property>
                         </item>
                         <item>
@@ -1523,12 +1523,12 @@ QPushButton:hover {
                         </item>
                         <item>
                          <property name="text">
-                          <string>Histogram (Fourier)</string>
+                          <string>Histogram Fourier</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>Histogram (Normal)</string>
+                          <string>Histogram</string>
                          </property>
                         </item>
                         <item>

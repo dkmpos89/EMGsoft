@@ -50,7 +50,6 @@ void appSettings::updateCostFunc(QString wavType){
 
 }
 
-
 bool appSettings::event(QEvent *event)
 {
     if (event->type() == QEvent::NonClientAreaMouseButtonDblClick) {
@@ -70,7 +69,7 @@ QStringList appSettings::getParametrosSgram(){
     if(ui->sgram_wlen->isChecked()) wlen=QString::number(ui->sgram_wlen_value->value());
     if(ui->sgram_dynr->isChecked()) dynr=QString::number(ui->sgram_dynr_value->value());
 
-    parametros<< lin<< tfr<< wlen<< dynr;
+    parametros<<"Energy of the coefficients"<< lin<<"Time-frequency resolution"<< tfr<<"Window length (ms)"<< wlen<<"Dynamical range"<< dynr;
 
     return parametros;
 }
@@ -89,7 +88,7 @@ QStringList appSettings::getParametrosWavelet(){
     if(ui->wav_dynr->isChecked())
         dynr=QString::number(ui->wav_dynr_value->value());
 
-    parametros<< Fwav<< JJ<< dynr << type << coeffScale << costFun;
+    parametros<<"Wavelet Family"<< Fwav<<"DeepLevel"<< JJ<<"Dynamical range"<< dynr <<"Type of Wavelet"<< type <<"Coefficients Scale"<< coeffScale <<"Cost Function"<< costFun;
 
     return parametros;
 }
@@ -105,7 +104,7 @@ QStringList appSettings::getParametrosGabor(){
     if(ui->gabor_cB_Dynrange->isChecked()) dynr=QString::number(ui->gabor_Dynrange_value->value());
     if(ui->gabor_cB_typeOfTransform->isChecked()) tipo="0";
 
-    parametros<<g<<a<<M<<tipo<<DWS<<dynr;
+    parametros<<"Window function"<<g<<"Length of time shift"<<a<<"Number of Modulations"<<M<<"Type Of Transform"<<tipo<<"Downsamplig factor"<<DWS<<"Dynamical Range"<<dynr;
 
     return parametros;
 }
@@ -121,7 +120,7 @@ QStringList appSettings::getParametrosFourier(){
            parametros<<"curve"<<ui->Fourier_sp_Curvevalue->text();
 
     }else if (ui->Fourier_gb_Histogram->isChecked()) {
-        parametros<<"histograma";
+        parametros<<"histograma"<<"fourier";
         //parametros<<ui->Fourier_MinSliderValue->text();
         //parametros<<ui->Fourier_MaxSliderValue->text();
     }
@@ -135,7 +134,7 @@ QStringList appSettings::getParametrosMovingRMS()
     QString wlen = ui->RMS_Length->text().replace(",",".");
     QString wolap = ui->RMS_overlap->text().replace(",",".");
 
-    parametros<<wlen<<wolap;
+    parametros<<"Window Length"<<wlen<<"Window Overlap"<<wolap;
     return parametros;
 }
 
@@ -146,7 +145,8 @@ QStringList appSettings::getParametrosMeanFrequency()
     QString wolap = ui->MeanFreq_overlap->text().replace(",",".");
 
     QString tipo = ui->comboTipo_MeanFreq->currentText();
-    parametros<<wlen<<wolap<<tipo;
+    parametros<<"Window Length"<<wlen<<"Window Overlap"<<wolap<<"Type"<<tipo;;
+
     return parametros;
 }
 
@@ -154,7 +154,7 @@ QStringList appSettings::getParametrosNormalizacion()
 {
     QStringList parametros;
     QString tipoNorm = ui->Normalize_value->currentText();
-    parametros<<tipoNorm;
+    parametros<<"Type"<<tipoNorm;
     return parametros;
 }
 
@@ -232,4 +232,39 @@ void appSettings::on_Octave_btn_OctaveWavelets_clicked()
 void appSettings::on_btn_OctavePath_clicked()
 {
     QDesktopServices::openUrl(ui->OctavePath->text());
+}
+
+QStringList appSettings::getConfig(int i)
+{
+    QStringList parametros;
+    switch (i) {
+    case 1:
+        parametros = getParametrosFourier();
+        break;
+    case 2:
+        parametros = getParametrosGabor();
+        break;
+    case 3:
+        parametros = getParametrosWavelet();
+        break;
+    case 4:
+        parametros = getParametrosSgram();
+        break;
+    case 5:
+        parametros<<"Histograma"<<"Fourier";
+        break;
+    case 6:
+        parametros<<"Histograma"<<"Clasico";
+        break;
+    case 7:
+        parametros = getParametrosMovingRMS();
+        break;
+    case 8:
+        parametros = getParametrosMeanFrequency();
+        break;
+    default:
+        parametros<<"NULL"<<"404";
+        break;
+    }
+    return parametros;
 }

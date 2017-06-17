@@ -21,7 +21,7 @@ public:
     QString getFechaTermino() const;
     void setFechaTermino(const QString &value);
 
-    QString toString() { return QString(ID+" - "+nombre+" - "+fechaInicio+" - "+fechaTermino); }
+    QString toString();
 
     QString getDescripcion() const;
     void setDescripcion(const QString &value);

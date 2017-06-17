@@ -1,0 +1,643 @@
+mié jun 7 00:16:33 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+mié jun 7 00:16:33 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+mié jun 7 00:16:33 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+mié jun 7 00:16:33 2017  Info: 
+" ========================= [ Inicio: mié jun 7 00:16:33 2017] ========================= " 
+
+mié jun 7 00:16:33 2017  Info: [Info] Base de datos en ruta:  "C:/Users/diego.campos/Documents/GitHub/EGMsoft/data/dbEMG.db" 
+
+mié jun 7 00:16:33 2017  Info: [Info] Octave daemon running with PID  0x18e70e68 
+
+mié jun 7 00:16:33 2017  Warning: ERROR:  No se puede crear la sesion - Info:  "No query Unable to fetch row" 
+
+mié jun 7 00:16:33 2017  Warning: setGeometryDp: Unable to set geometry 1366x721+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1366x705+0+63 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 905x721, maximum size: 16777215x16777215).
+mié jun 7 00:16:39 2017  Info: [F: ActionDemo_señal_1()] Carga de datos desde: 'Ejemplos/ejemplo_1.csv' 
+
+mié jun 7 00:16:39 2017  Debug: [F: SetDatos()] Informacion de Señal:  "Path:C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv Fs:1 Canales:1 leerDesde:12 separador:," 
+
+mié jun 7 00:16:39 2017  Info: [F: leer()] Cantidad de lineas leidas:  10000 
+
+mié jun 7 00:16:39 2017  Debug: [F: cargaGrafica()] Añadiendo datos de la serie Temporal (señal principal). 
+
+mié jun 7 00:16:39 2017  Debug: [F: graficarPrincipal()] Graficando serie Temporal (señal principal). 
+
+mié jun 7 00:16:39 2017  Debug: [F: cargaGrafica()] Habilitando y añadiendo a comboBox los canales:  "1" 
+
+mié jun 7 00:16:53 2017  Info: [F: captarPaciente()] Exito al cargar el paciente. 
+
+mié jun 7 00:17:06 2017  Info: calculando en octave:  1 
+
+mié jun 7 00:17:06 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "OctaveFourier('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1', '1');\n" 
+
+mié jun 7 00:17:06 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 00:17:06 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 00:17:06 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 8204 
+
+mié jun 7 00:17:06 2017  Debug: [Fourier_AM()] Graficando Transformada de Fourier. 8193 
+
+mié jun 7 00:17:06 2017  Info: "Fast Fourier Transform" 
+
+mié jun 7 00:17:06 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Fast Fourier Transform.png" 
+
+mié jun 7 00:17:06 2017  Info: calculando en octave:  2 
+
+mié jun 7 00:17:06 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "OctaveGabor('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','Window function','gauss','Length of time shift','20','Number of Modulations','200');\n" 
+
+mié jun 7 00:19:14 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+mié jun 7 00:19:15 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+mié jun 7 00:19:15 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+mié jun 7 00:19:15 2017  Info: 
+" ========================= [ Inicio: mié jun 7 00:19:15 2017] ========================= " 
+
+mié jun 7 00:19:15 2017  Info: [Info] Base de datos en ruta:  "C:/Users/diego.campos/Documents/GitHub/EGMsoft/data/dbEMG.db" 
+
+mié jun 7 00:19:15 2017  Info: [Info] Octave daemon running with PID  0x18f4e5b0 
+
+mié jun 7 00:19:15 2017  Warning: ERROR:  No se puede crear la sesion - Info:  "No query Unable to fetch row" 
+
+mié jun 7 00:19:15 2017  Warning: setGeometryDp: Unable to set geometry 1366x721+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1366x705+0+63 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 905x721, maximum size: 16777215x16777215).
+mié jun 7 00:19:26 2017  Info: [F: ActionDemo_señal_1()] Carga de datos desde: 'Ejemplos/ejemplo_1.csv' 
+
+mié jun 7 00:19:26 2017  Debug: [F: SetDatos()] Informacion de Señal:  "Path:C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv Fs:1 Canales:1 leerDesde:12 separador:," 
+
+mié jun 7 00:19:26 2017  Info: [F: leer()] Cantidad de lineas leidas:  10000 
+
+mié jun 7 00:19:26 2017  Debug: [F: cargaGrafica()] Añadiendo datos de la serie Temporal (señal principal). 
+
+mié jun 7 00:19:26 2017  Debug: [F: graficarPrincipal()] Graficando serie Temporal (señal principal). 
+
+mié jun 7 00:19:26 2017  Debug: [F: cargaGrafica()] Habilitando y añadiendo a comboBox los canales:  "1" 
+
+mié jun 7 00:19:34 2017  Info: [F: captarPaciente()] Exito al cargar el paciente. 
+
+mié jun 7 00:19:43 2017  Info: calculando en octave:  1 
+
+mié jun 7 00:19:43 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "OctaveFourier('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1', '1');\n" 
+
+mié jun 7 00:19:43 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 00:19:43 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 00:19:43 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 8194 
+
+mié jun 7 00:19:43 2017  Debug: [Fourier_AM()] Graficando Transformada de Fourier. 8193 
+
+mié jun 7 00:19:43 2017  Info: "Fast Fourier Transform" 
+
+mié jun 7 00:19:43 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Fast Fourier Transform.png" 
+
+mié jun 7 00:19:43 2017  Info: calculando en octave:  2 
+
+mié jun 7 00:19:43 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "OctaveGabor('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','gauss','20','200','0','10','90');\n" 
+
+mié jun 7 00:19:45 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 00:19:45 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 00:19:46 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 101021 
+
+mié jun 7 00:19:46 2017  Debug: [GaborTransform_AM()] Graficando Transformada de Gabor : columnas= 101  ; filas= 1000 
+
+mié jun 7 00:19:46 2017  Info: "Gabor Transform" 
+
+mié jun 7 00:19:46 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Gabor Transform.png" 
+
+mié jun 7 00:19:46 2017  Info: calculando en octave:  3 
+
+mié jun 7 00:19:46 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "OctaveWavelet('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','db8','5','50','fwt','db','shannon');\n" 
+
+mié jun 7 00:19:46 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 00:19:46 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 00:19:46 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 4803 
+
+mié jun 7 00:19:46 2017  Debug: [WaveletTransform_AM()] Graficando Transformada de Wavelet : columnas= 6  ; filas= 800 
+
+mié jun 7 00:19:47 2017  Info: "Wavelet Transform" 
+
+mié jun 7 00:19:47 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Wavelet Transform.png" 
+
+mié jun 7 00:19:47 2017  Info: calculando en octave:  4 
+
+mié jun 7 00:19:47 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "OctaveSpectrogram('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','1','1','100','100');\n" 
+
+mié jun 7 00:19:53 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 00:19:53 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 00:19:53 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 400887 
+
+mié jun 7 00:19:53 2017  Debug: [Spectrogram_AM()] Graficando ColorMap (Spectrogram) : columnas= 601  ; filas= 667 
+
+mié jun 7 00:19:53 2017  Info: "Spectrogram" 
+
+mié jun 7 00:19:53 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Spectrogram.png" 
+
+mié jun 7 00:19:53 2017  Info: calculando en octave:  5 
+
+mié jun 7 00:19:53 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "menuOctave('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','histf');\n" 
+
+mié jun 7 00:19:53 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 00:19:53 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 00:19:53 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 23 
+
+mié jun 7 00:19:53 2017  Info: [Histograma_AM()] Graficando el Histograma de Frecuencias. 
+
+mié jun 7 00:19:54 2017  Info: "Histogram Fourier" 
+
+mié jun 7 00:19:54 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Histogram Fourier.png" 
+
+mié jun 7 00:19:54 2017  Info: calculando en octave:  6 
+
+mié jun 7 00:19:54 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "menuOctave('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','histc');\n" 
+
+mié jun 7 00:19:54 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 00:19:54 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 00:19:54 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 23 
+
+mié jun 7 00:19:54 2017  Info: [Histograma_AM()] Graficando el Histograma de Frecuencias. 
+
+mié jun 7 00:19:54 2017  Info: "Histogram" 
+
+mié jun 7 00:19:54 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Histogram.png" 
+
+mié jun 7 00:19:54 2017  Info: calculando en octave:  7 
+
+mié jun 7 00:19:54 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "menuOctave('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','movingrms','1.00','0.50');\n" 
+
+mié jun 7 00:19:54 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 00:19:54 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 00:19:54 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 10000 
+
+mié jun 7 00:19:54 2017  Info: [MovingRms_AM()] Graficando el RMS en el tiempo. 
+
+mié jun 7 00:19:54 2017  Info: "MovingRms" 
+
+mié jun 7 00:19:54 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/MovingRms.png" 
+
+mié jun 7 00:19:54 2017  Info: calculando en octave:  8 
+
+mié jun 7 00:19:54 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "menuOctave('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','meanfreq','1.00','0.50');\n" 
+
+mié jun 7 00:19:54 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 00:19:54 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 00:19:54 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 41 
+
+mié jun 7 00:19:54 2017  Info: "Mean Frequency" 
+
+mié jun 7 00:19:54 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Mean Frequency.png" 
+
+mié jun 7 00:19:54 2017  Info: calculando en octave:  9 
+
+mié jun 7 00:19:54 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "normSignal('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','null')\n" 
+
+mié jun 7 00:19:55 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 00:19:55 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 00:19:55 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 10001 
+
+mié jun 7 00:19:55 2017  Debug: [F: SetDatos()] Informacion de Señal:  "Path:C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv Fs:1 Canales:1 leerDesde:12 separador:," 
+
+mié jun 7 00:19:55 2017  Info: [F: leer()] Cantidad de lineas leidas:  10000 
+
+mié jun 7 00:19:55 2017  Debug: [F: cargaGrafica()] Añadiendo datos de la serie Temporal (señal principal). 
+
+mié jun 7 00:19:55 2017  Debug: [F: graficarPrincipal()] Graficando serie Temporal (señal principal). 
+
+mié jun 7 00:19:55 2017  Debug: [F: cargaGrafica()] Habilitando y añadiendo a comboBox los canales:  "1" 
+
+mié jun 7 13:05:27 2017  Debug: [F: SetDatos()] Informacion de Señal:  "Path:C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv Fs:1 Canales:1 leerDesde:12 separador:," 
+
+mié jun 7 13:05:27 2017  Info: [F: leer()] Cantidad de lineas leidas:  10000 
+
+mié jun 7 13:05:27 2017  Debug: [F: cargaGrafica()] Añadiendo datos de la serie Temporal (señal principal). 
+
+mié jun 7 13:05:27 2017  Debug: [F: graficarPrincipal()] Graficando serie Temporal (señal principal). 
+
+mié jun 7 13:05:27 2017  Debug: [F: cargaGrafica()] Habilitando y añadiendo a comboBox los canales:  "1" 
+
+mié jun 7 13:05:44 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+mié jun 7 13:05:44 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+mié jun 7 13:05:44 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+mié jun 7 13:05:44 2017  Info: 
+" ========================= [ Inicio: mié jun 7 13:05:44 2017] ========================= " 
+
+mié jun 7 13:05:44 2017  Info: [Info] Base de datos en ruta:  "C:/Users/diego.campos/Documents/GitHub/EGMsoft/data/dbEMG.db" 
+
+mié jun 7 13:05:44 2017  Info: [Info] Octave daemon running with PID  0x18f40fa0 
+
+mié jun 7 13:05:44 2017  Warning: ERROR:  No se puede crear la sesion - Info:  "No query Unable to fetch row" 
+
+mié jun 7 13:05:44 2017  Warning: setGeometryDp: Unable to set geometry 1366x721+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1366x705+0+63 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 905x721, maximum size: 16777215x16777215).
+mié jun 7 13:05:58 2017  Info: [F: ActionDemo_señal_1()] Carga de datos desde: 'Ejemplos/ejemplo_1.csv' 
+
+mié jun 7 13:05:58 2017  Debug: [F: SetDatos()] Informacion de Señal:  "Path:C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv Fs:1 Canales:1 leerDesde:12 separador:," 
+
+mié jun 7 13:05:58 2017  Info: [F: leer()] Cantidad de lineas leidas:  10000 
+
+mié jun 7 13:05:58 2017  Debug: [F: cargaGrafica()] Añadiendo datos de la serie Temporal (señal principal). 
+
+mié jun 7 13:05:58 2017  Debug: [F: graficarPrincipal()] Graficando serie Temporal (señal principal). 
+
+mié jun 7 13:05:58 2017  Debug: [F: cargaGrafica()] Habilitando y añadiendo a comboBox los canales:  "1" 
+
+mié jun 7 13:06:05 2017  Info: [F: captarPaciente()] Exito al cargar el paciente. 
+
+mié jun 7 13:06:08 2017  Info: calculando en octave:  1 
+
+mié jun 7 13:06:08 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "OctaveFourier('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1', '1');\n" 
+
+mié jun 7 13:06:08 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 13:06:08 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 13:06:08 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 8194 
+
+mié jun 7 13:06:08 2017  Debug: [Fourier_AM()] Graficando Transformada de Fourier. 8193 
+
+mié jun 7 13:06:08 2017  Info: "Fast Fourier Transform" 
+
+mié jun 7 13:06:08 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Fast Fourier Transform.png" 
+
+mié jun 7 13:06:08 2017  Info: calculando en octave:  2 
+
+mié jun 7 13:06:08 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "OctaveGabor('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','gauss','20','200','0','10','90');\n" 
+
+mié jun 7 13:06:10 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 13:06:10 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 13:06:10 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 101003 
+
+mié jun 7 13:06:10 2017  Debug: [GaborTransform_AM()] Graficando Transformada de Gabor : columnas= 101  ; filas= 1000 
+
+mié jun 7 13:06:10 2017  Info: "Gabor Transform" 
+
+mié jun 7 13:06:10 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Gabor Transform.png" 
+
+mié jun 7 13:06:10 2017  Info: calculando en octave:  3 
+
+mié jun 7 13:06:10 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "OctaveWavelet('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','db8','5','50','fwt','db','shannon');\n" 
+
+mié jun 7 13:06:11 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "octave:7>" 
+
+mié jun 7 13:06:11 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 13:06:11 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 4804 
+
+mié jun 7 13:06:11 2017  Debug: [WaveletTransform_AM()] Graficando Transformada de Wavelet : columnas= 6  ; filas= 800 
+
+mié jun 7 13:06:11 2017  Info: "Wavelet Transform" 
+
+mié jun 7 13:06:11 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Wavelet Transform.png" 
+
+mié jun 7 13:06:11 2017  Info: calculando en octave:  4 
+
+mié jun 7 13:06:11 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "OctaveSpectrogram('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','1','1','100','100');\n" 
+
+mié jun 7 13:06:17 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 13:06:17 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 13:06:17 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 400871 
+
+mié jun 7 13:06:17 2017  Debug: [Spectrogram_AM()] Graficando ColorMap (Spectrogram) : columnas= 601  ; filas= 667 
+
+mié jun 7 13:06:17 2017  Info: "Spectrogram" 
+
+mié jun 7 13:06:17 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Spectrogram.png" 
+
+mié jun 7 13:06:17 2017  Info: calculando en octave:  5 
+
+mié jun 7 13:06:17 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "menuOctave('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','histf');\n" 
+
+mié jun 7 13:06:18 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 13:06:18 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 13:06:18 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 23 
+
+mié jun 7 13:06:18 2017  Info: [Histograma_AM()] Graficando el Histograma de Frecuencias. 
+
+mié jun 7 13:06:18 2017  Info: "Histogram Fourier" 
+
+mié jun 7 13:06:18 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Histogram Fourier.png" 
+
+mié jun 7 13:06:18 2017  Info: calculando en octave:  6 
+
+mié jun 7 13:06:18 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "menuOctave('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','histc');\n" 
+
+mié jun 7 13:06:18 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 13:06:18 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 13:06:18 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 23 
+
+mié jun 7 13:06:18 2017  Info: [Histograma_AM()] Graficando el Histograma de Frecuencias. 
+
+mié jun 7 13:06:18 2017  Info: "Histogram" 
+
+mié jun 7 13:06:18 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Histogram.png" 
+
+mié jun 7 13:06:18 2017  Info: calculando en octave:  7 
+
+mié jun 7 13:06:18 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "menuOctave('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','movingrms','1.00','0.50');\n" 
+
+mié jun 7 13:06:18 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 13:06:18 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 13:06:18 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 10000 
+
+mié jun 7 13:06:18 2017  Info: [MovingRms_AM()] Graficando el RMS en el tiempo. 
+
+mié jun 7 13:06:18 2017  Info: "MovingRms" 
+
+mié jun 7 13:06:18 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/MovingRms.png" 
+
+mié jun 7 13:06:18 2017  Info: calculando en octave:  8 
+
+mié jun 7 13:06:18 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "menuOctave('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','meanfreq','1.00','0.50');\n" 
+
+mié jun 7 13:06:18 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 13:06:18 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 13:06:18 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 41 
+
+mié jun 7 13:07:36 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+mié jun 7 13:07:36 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+mié jun 7 13:07:36 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+mié jun 7 13:07:36 2017  Info: 
+" ========================= [ Inicio: mié jun 7 13:07:36 2017] ========================= " 
+
+mié jun 7 13:07:36 2017  Info: [Info] Base de datos en ruta:  "C:/Users/diego.campos/Documents/GitHub/EGMsoft/data/dbEMG.db" 
+
+mié jun 7 13:07:36 2017  Info: [Info] Octave daemon running with PID  0x18f7f7b0 
+
+mié jun 7 13:07:36 2017  Warning: ERROR:  No se puede crear la sesion - Info:  "No query Unable to fetch row" 
+
+mié jun 7 13:07:37 2017  Warning: setGeometryDp: Unable to set geometry 1366x721+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1366x705+0+63 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 905x721, maximum size: 16777215x16777215).
+mié jun 7 13:07:41 2017  Info: [F: ActionDemo_señal_1()] Carga de datos desde: 'Ejemplos/ejemplo_1.csv' 
+
+mié jun 7 13:07:41 2017  Debug: [F: SetDatos()] Informacion de Señal:  "Path:C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv Fs:1 Canales:1 leerDesde:12 separador:," 
+
+mié jun 7 13:07:41 2017  Info: [F: leer()] Cantidad de lineas leidas:  10000 
+
+mié jun 7 13:07:42 2017  Debug: [F: cargaGrafica()] Añadiendo datos de la serie Temporal (señal principal). 
+
+mié jun 7 13:07:42 2017  Debug: [F: graficarPrincipal()] Graficando serie Temporal (señal principal). 
+
+mié jun 7 13:07:42 2017  Debug: [F: cargaGrafica()] Habilitando y añadiendo a comboBox los canales:  "1" 
+
+mié jun 7 13:11:02 2017  Info: [F: captarPaciente()] Exito al cargar el paciente. 
+
+mié jun 7 13:11:04 2017  Info: calculando en octave:  1 
+
+mié jun 7 13:11:04 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "OctaveFourier('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1', '1');\n" 
+
+mié jun 7 13:11:04 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 13:11:04 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 13:11:04 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 8193 
+
+mié jun 7 13:11:04 2017  Debug: [Fourier_AM()] Graficando Transformada de Fourier. 8193 
+
+mié jun 7 13:11:05 2017  Info: "Fast Fourier Transform" 
+
+mié jun 7 13:11:05 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Fast Fourier Transform.png" 
+
+mié jun 7 13:11:05 2017  Info: calculando en octave:  2 
+
+mié jun 7 13:11:05 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "OctaveGabor('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','gauss','20','200','0','10','90');\n" 
+
+mié jun 7 13:11:06 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 13:11:06 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 13:11:07 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 101008 
+
+mié jun 7 13:11:07 2017  Debug: [GaborTransform_AM()] Graficando Transformada de Gabor : columnas= 101  ; filas= 1000 
+
+mié jun 7 13:11:07 2017  Info: "Gabor Transform" 
+
+mié jun 7 13:11:07 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Gabor Transform.png" 
+
+mié jun 7 13:11:07 2017  Info: calculando en octave:  3 
+
+mié jun 7 13:11:07 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "OctaveWavelet('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','db8','5','50','fwt','db','shannon');\n" 
+
+mié jun 7 13:11:07 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 13:11:07 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 13:11:07 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 4803 
+
+mié jun 7 13:11:07 2017  Debug: [WaveletTransform_AM()] Graficando Transformada de Wavelet : columnas= 6  ; filas= 800 
+
+mié jun 7 13:11:08 2017  Info: "Wavelet Transform" 
+
+mié jun 7 13:11:08 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Wavelet Transform.png" 
+
+mié jun 7 13:11:08 2017  Info: calculando en octave:  4 
+
+mié jun 7 13:11:08 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "OctaveSpectrogram('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','1','1','100','100');\n" 
+
+mié jun 7 13:11:13 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 13:11:13 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 13:11:14 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 400871 
+
+mié jun 7 13:11:14 2017  Debug: [Spectrogram_AM()] Graficando ColorMap (Spectrogram) : columnas= 601  ; filas= 667 
+
+mié jun 7 13:11:14 2017  Info: "Spectrogram" 
+
+mié jun 7 13:11:14 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Spectrogram.png" 
+
+mié jun 7 13:11:14 2017  Info: calculando en octave:  5 
+
+mié jun 7 13:11:14 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "menuOctave('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','histf');\n" 
+
+mié jun 7 13:11:14 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "octave:9>" 
+
+mié jun 7 13:11:14 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 13:11:14 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 24 
+
+mié jun 7 13:11:14 2017  Info: [Histograma_AM()] Graficando el Histograma de Frecuencias. 
+
+mié jun 7 13:11:14 2017  Info: "Histogram Fourier" 
+
+mié jun 7 13:11:14 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Histogram Fourier.png" 
+
+mié jun 7 13:11:14 2017  Info: calculando en octave:  6 
+
+mié jun 7 13:11:14 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "menuOctave('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','histc');\n" 
+
+mié jun 7 13:11:14 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 13:11:14 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 13:11:14 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 22 
+
+mié jun 7 13:11:14 2017  Info: [Histograma_AM()] Graficando el Histograma de Frecuencias. 
+
+mié jun 7 13:11:14 2017  Info: "Histogram" 
+
+mié jun 7 13:11:14 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Histogram.png" 
+
+mié jun 7 13:11:14 2017  Info: calculando en octave:  7 
+
+mié jun 7 13:11:14 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "menuOctave('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','movingrms','1.00','0.50');\n" 
+
+mié jun 7 13:11:15 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "octave:11>" 
+
+mié jun 7 13:11:15 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 13:11:15 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 10001 
+
+mié jun 7 13:11:15 2017  Info: [MovingRms_AM()] Graficando el RMS en el tiempo. 
+
+mié jun 7 13:11:15 2017  Info: "MovingRms" 
+
+mié jun 7 13:11:15 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/MovingRms.png" 
+
+mié jun 7 13:11:15 2017  Info: calculando en octave:  8 
+
+mié jun 7 13:11:15 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "menuOctave('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','meanfreq','1.00','0.50');\n" 
+
+mié jun 7 13:11:15 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 13:11:15 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 13:11:15 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 40 
+
+mié jun 7 14:32:16 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+mié jun 7 14:32:16 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+mié jun 7 14:32:16 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+mié jun 7 14:32:16 2017  Info: 
+" ========================= [ Inicio: mié jun 7 14:32:16 2017] ========================= " 
+
+mié jun 7 14:32:17 2017  Info: [Info] Base de datos en ruta:  "C:/Users/diego.campos/Documents/GitHub/EGMsoft/data/dbEMG.db" 
+
+mié jun 7 14:32:17 2017  Info: [Info] Octave daemon running with PID  0x18e5f138 
+
+mié jun 7 14:32:17 2017  Warning: ERROR:  No se puede crear la sesion - Info:  "No query Unable to fetch row" 
+
+mié jun 7 14:32:17 2017  Warning: setGeometryDp: Unable to set geometry 1366x721+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1366x705+0+63 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 905x721, maximum size: 16777215x16777215).
+mié jun 7 14:33:07 2017  Info: [F: ActionDemo_señal_1()] Carga de datos desde: 'Ejemplos/ejemplo_1.csv' 
+
+mié jun 7 14:33:07 2017  Debug: [F: SetDatos()] Informacion de Señal:  "Path:C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv Fs:1 Canales:1 leerDesde:12 separador:," 
+
+mié jun 7 14:33:07 2017  Info: [F: leer()] Cantidad de lineas leidas:  10000 
+
+mié jun 7 14:33:08 2017  Debug: [F: cargaGrafica()] Añadiendo datos de la serie Temporal (señal principal). 
+
+mié jun 7 14:33:08 2017  Debug: [F: graficarPrincipal()] Graficando serie Temporal (señal principal). 
+
+mié jun 7 14:33:08 2017  Debug: [F: cargaGrafica()] Habilitando y añadiendo a comboBox los canales:  "1" 
+
+mié jun 7 14:33:15 2017  Info: [F: captarPaciente()] Exito al cargar el paciente. 
+
+mié jun 7 14:33:18 2017  Info: calculando en octave:  1 
+
+mié jun 7 14:33:18 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "OctaveFourier('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1', '1');\n" 
+
+mié jun 7 14:33:18 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 14:33:18 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 14:33:18 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 8193 
+
+mié jun 7 14:33:18 2017  Debug: [Fourier_AM()] Graficando Transformada de Fourier. 8193 
+
+mié jun 7 14:33:18 2017  Info: "Fast Fourier Transform" 
+
+mié jun 7 14:33:18 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Fast_Fourier_Transform.png" 
+
+mié jun 7 14:33:18 2017  Info: calculando en octave:  2 
+
+mié jun 7 14:33:18 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "OctaveGabor('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','gauss','20','200','0','10','90');\n" 
+
+mié jun 7 14:33:21 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 14:33:21 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 14:33:21 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 101003 
+
+mié jun 7 14:33:21 2017  Debug: [GaborTransform_AM()] Graficando Transformada de Gabor : columnas= 101  ; filas= 1000 
+
+mié jun 7 14:33:21 2017  Info: "Gabor Transform" 
+
+mié jun 7 14:33:21 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Gabor_Transform.png" 
+
+mié jun 7 14:33:21 2017  Info: calculando en octave:  3 
+
+mié jun 7 14:33:21 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "OctaveWavelet('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','db8','5','50','fwt','db','shannon');\n" 
+
+mié jun 7 14:33:22 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 14:33:22 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 14:33:22 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 4803 
+
+mié jun 7 14:33:22 2017  Debug: [WaveletTransform_AM()] Graficando Transformada de Wavelet : columnas= 6  ; filas= 800 
+
+mié jun 7 14:33:23 2017  Info: "Wavelet Transform" 
+
+mié jun 7 14:33:23 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Wavelet_Transform.png" 
+
+mié jun 7 14:33:23 2017  Info: calculando en octave:  4 
+
+mié jun 7 14:33:23 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "OctaveSpectrogram('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','1','1','100','100');\n" 
+
+mié jun 7 14:33:29 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 14:33:29 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 14:33:30 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 400870 
+
+mié jun 7 14:33:30 2017  Debug: [Spectrogram_AM()] Graficando ColorMap (Spectrogram) : columnas= 601  ; filas= 667 
+
+mié jun 7 14:33:30 2017  Info: "Spectrogram" 
+
+mié jun 7 14:33:30 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Spectrogram.png" 
+
+mié jun 7 14:33:30 2017  Info: calculando en octave:  5 
+
+mié jun 7 14:33:30 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "menuOctave('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','histf');\n" 
+
+mié jun 7 14:33:30 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "octave:9>" 
+
+mié jun 7 14:33:30 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 14:33:30 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 24 
+
+mié jun 7 14:33:30 2017  Info: [Histograma_AM()] Graficando el Histograma de Frecuencias. 
+
+mié jun 7 14:33:30 2017  Info: "Histogram Fourier" 
+
+mié jun 7 14:33:30 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Histogram_Fourier.png" 
+
+mié jun 7 14:33:30 2017  Info: calculando en octave:  6 
+
+mié jun 7 14:33:30 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "menuOctave('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','histc');\n" 
+
+mié jun 7 14:33:30 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 14:33:30 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 14:33:30 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 22 
+
+mié jun 7 14:33:30 2017  Info: [Histograma_AM()] Graficando el Histograma de Frecuencias. 
+
+mié jun 7 14:33:30 2017  Info: "Histogram" 
+
+mié jun 7 14:33:30 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/Histogram.png" 
+
+mié jun 7 14:33:30 2017  Info: calculando en octave:  7 
+
+mié jun 7 14:33:30 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "menuOctave('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','movingrms','1.00','0.50');\n" 
+
+mié jun 7 14:33:31 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 14:33:31 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 14:33:31 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 10000 
+
+mié jun 7 14:33:31 2017  Info: [MovingRms_AM()] Graficando el RMS en el tiempo. 
+
+mié jun 7 14:33:31 2017  Info: "MovingRms" 
+
+mié jun 7 14:33:31 2017  Info: "C:/Users/diego.campos/Documents/GitHub/EGMsoft/reportes/MovingRms.png" 
+
+mié jun 7 14:33:31 2017  Info: calculando en octave:  8 
+
+mié jun 7 14:33:31 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "menuOctave('C:/Users/diego.campos/Documents/GitHub/EGMsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1','meanfreq','1.00','0.50');\n" 
+
+mié jun 7 14:33:31 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+mié jun 7 14:33:31 2017  Debug: [S:chargeData()] Cargando los datos...
+mié jun 7 14:33:31 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 41 
+

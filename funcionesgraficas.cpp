@@ -40,7 +40,7 @@ void funcionesGraficas::cargaGrafica(QCheckBox *checkBox,QCustomPlot *grafico, Q
 {    
     cBox->clear();
     if( leer(signal)==true){
-        qInfo()<<"[cargandoGraficas_AM()] Añadiendo datos de la serie Temporal."<<endl;
+        qInfo()<<"[cargandoGraficas] Añadiendo datos de la serie Temporal."<<endl;
         graficarPrincipal(grafico,signal->readSignal,canal,plot);
 
         QString itm;
@@ -51,7 +51,7 @@ void funcionesGraficas::cargaGrafica(QCheckBox *checkBox,QCustomPlot *grafico, Q
         }
         habilitarCampos(true,grafico,cBox,checkBox);
     }else
-        qCritical()<<"[cargandoGraficas_AM()] Error: No se logro la leer el archivo."<<endl;
+        qCritical()<<"[cargandoGraficas] Error: No se logro la leer el archivo."<<endl;
 
     cBox->setCurrentIndex(canal-1);
 }
@@ -61,7 +61,7 @@ bool funcionesGraficas::leer(cSignal *signal)
     QFile fin(signal->getPath());
 
     if (!fin.open(QIODevice::ReadOnly | QIODevice::Text)){
-        qDebug()<<"[leer_AM()] Error al abrir el archivo en: "<<signal->getPath()<<endl;
+        qDebug()<<"[leer] Error al abrir el archivo en: "<<signal->getPath()<<endl;
         return false;
     }
     QTextStream in(&fin);
@@ -77,7 +77,7 @@ bool funcionesGraficas::leer(cSignal *signal)
 
     if((strList.size())!= canales)
     {
-        qCritical()<<"[leer_AM()] El Numero de canales del archivo no coincide."<<endl;
+        qCritical()<<"[leer] El Numero de canales del archivo no coincide."<<endl;
         return false;
     }
 
@@ -91,7 +91,7 @@ bool funcionesGraficas::leer(cSignal *signal)
         strList = line.split(signal->getSeparador());
     }
 
-    qInfo()<<"[leer_AM()] Cantidad de lineas leidas: "<<cont<<endl;
+    qInfo()<<"[leer] Cantidad de lineas leidas: "<<cont<<endl;
     signal->setSizeIntervalo(cont-1);
 
     return true;
@@ -103,13 +103,13 @@ void funcionesGraficas::graficarPrincipal(QCustomPlot *grafico, QVector<QVector<
     grafico->addGraph();
     switch (tipo){
         case plot:
-                qInfo()<<"[graficarPrincipal_AM()] Graficando serie Temporal."<<endl;
+                qInfo()<<"[graficarPrincipal] Graficando serie Temporal."<<endl;
                 grafico->graph(0)->setData(senal.at(0).mid(a,b),senal.at(canal).mid(a,b));
                 grafico->setInteractions(QCP::iRangeDrag|QCP::iRangeZoom|QCP::iSelectItems);
                 break;
 
         default:
-                qDebug()<<"[graficarPrincipal_AM()] Error en el tipo de grafico."<<endl;
+                qDebug()<<"[graficarPrincipal] Error en el tipo de grafico."<<endl;
 
     }
     grafico->rescaleAxes();
@@ -150,7 +150,7 @@ bool funcionesGraficas::graficarSpectrogram(QCustomPlot *cp, QVector<QVector<dou
     filas = s.at(1).at(tam-1);
 
 
-    qDebug()<<"[Spectrogram_AM()] Graficando ColorMap (Spectrogram) : columnas="<<col<<" ; filas="<<filas<<endl;
+    qDebug()<<"[Spectrogram] Graficando ColorMap (Spectrogram) : columnas="<<col<<" ; filas="<<filas<<endl;
 
     grafico->setInteractions(QCP::iRangeDrag|QCP::iRangeZoom);
     grafico->xAxis->setLabel("Time (s)");
@@ -191,7 +191,7 @@ bool funcionesGraficas::graficarSpectrogram(QCustomPlot *cp, QVector<QVector<dou
     grafico->rescaleAxes();
     grafico->replot();
 
-    guardarImagen(grafico,"sgram.png");
+    guardarImagen(grafico,"Spectrogram.png");
 
     return true;
 }
@@ -207,7 +207,7 @@ void funcionesGraficas::graficarFourier(QCustomPlot *cp, QVector<QVector<double>
         grafico = cp;
     restaurarGrafico(grafico);
 
-    qDebug()<<"[Fourier_AM()] Graficando Transformada de Fourier."<<s.at(1).size()<<endl;
+    qDebug()<<"[Fourier] Graficando Transformada de Fourier."<<s.at(1).size()<<endl;
 
     grafico->addGraph();
     grafico->yAxis->setPadding(10);
@@ -234,7 +234,7 @@ void funcionesGraficas::graficarFourier(QCustomPlot *cp, QVector<QVector<double>
     grafico->rescaleAxes();
     grafico->replot();
 
-    guardarImagen(grafico,"fourier.png");
+    guardarImagen(grafico,"Fast_Fourier_Transform.png");
 }
 
 bool funcionesGraficas::graficarGabor(QCustomPlot *cp, QVector<QVector<double> > s, int a, int b, double Fs)
@@ -264,7 +264,7 @@ bool funcionesGraficas::graficarGabor(QCustomPlot *cp, QVector<QVector<double> >
     filas = s.at(1).at(tam-1);
 
 
-    qDebug()<<"[GaborTransform_AM()] Graficando Transformada de Gabor : columnas="<<col<<" ; filas="<<filas<<endl;
+    qDebug()<<"[GaborTransform] Graficando Transformada de Gabor : columnas="<<col<<" ; filas="<<filas<<endl;
 
     grafico->setInteractions(QCP::iRangeDrag);
     grafico->xAxis->setLabel("Time (s)");
@@ -305,7 +305,7 @@ bool funcionesGraficas::graficarGabor(QCustomPlot *cp, QVector<QVector<double> >
     grafico->rescaleAxes();
     grafico->replot();
 
-    guardarImagen(grafico,"gabor.png");
+    guardarImagen(grafico,"Gabor_Transform.png");
 
     return true;
 }
@@ -337,7 +337,7 @@ bool funcionesGraficas::graficarWavelet(QCustomPlot *cp, QVector<QVector<double>
     filas = s.at(1).at(tam-1);
 
 
-    qDebug()<<"[WaveletTransform_AM()] Graficando Transformada de Wavelet : columnas="<<col<<" ; filas="<<filas<<endl;
+    qDebug()<<"[WaveletTransform] Graficando Transformada de Wavelet : columnas="<<col<<" ; filas="<<filas<<endl;
 
     grafico->setInteractions(QCP::iRangeDrag);
     grafico->xAxis->setLabel("Time (s)");
@@ -378,13 +378,14 @@ bool funcionesGraficas::graficarWavelet(QCustomPlot *cp, QVector<QVector<double>
     grafico->rescaleAxes();
     grafico->replot();
 
-    guardarImagen(grafico,"wavelet.png");
+    guardarImagen(grafico,"Wavelet_Transform.png");
 
     return true;
 }
 
 void funcionesGraficas::graficarHistograma(QCustomPlot *cp, QVector<QVector<double>> s, QString tipo)
 {
+    QString nombreGrafico = "";
     QCustomPlot *grafico;
     if(cp==NULL){
         grafico = new QCustomPlot();
@@ -393,7 +394,7 @@ void funcionesGraficas::graficarHistograma(QCustomPlot *cp, QVector<QVector<doub
         grafico = cp;
     restaurarGrafico(grafico);
 
-    qInfo()<<"[Histograma_AM()] Graficando el Histograma de Frecuencias."<<endl;
+    qInfo()<<"[Histograma] Graficando el Histograma de Frecuencias."<<endl;
     int tam = s.at(1).size();
     double max = s.at(1).at(tam-1);
     double ancho = s.at(1).at(tam-3)/max;
@@ -411,9 +412,11 @@ void funcionesGraficas::graficarHistograma(QCustomPlot *cp, QVector<QVector<doub
 
     // prepare y axis:
     if(tipo=="hist_normal"){
+        nombreGrafico = "Histogram.png";
         grafico->yAxis->setLabel("[V]");
         grafico->xAxis->setLabel("[n]");
     }else{
+        nombreGrafico = "Histogram_Fourier.png";
         grafico->yAxis->setLabel("Frequency");
         grafico->xAxis->setLabel("Amplitude");
     }
@@ -431,7 +434,7 @@ void funcionesGraficas::graficarHistograma(QCustomPlot *cp, QVector<QVector<doub
     grafico->rescaleAxes();
     grafico->replot();
 
-    guardarImagen(grafico,"histograma.png");
+    guardarImagen(grafico,nombreGrafico);
 
 }
 
@@ -476,7 +479,7 @@ void funcionesGraficas::dibujarCurvaFrecuenciasMedia(QStringList parametros, QVe
 
     grafico->rescaleAxes();
     grafico->replot();
-    guardarImagen(grafico,"frecuenciaMedia.png");
+    guardarImagen(grafico,"Mean_Frequency.png");
 }
 
 void funcionesGraficas::graficarMovingRms(QCustomPlot *cp, QVector<double> s, QVector<double> t, int a, int b){
@@ -489,7 +492,7 @@ void funcionesGraficas::graficarMovingRms(QCustomPlot *cp, QVector<double> s, QV
         graffico = cp;
     restaurarGrafico(graffico);
 
-    qInfo()<<"[MovingRms_AM()] Graficando el RMS en el tiempo."<<endl;
+    qInfo()<<"[MovingRms] Graficando el RMS en el tiempo."<<endl;
     graffico->addGraph();
 
     graffico->graph(0)->setData(t.mid(a,b),s.mid(a,b));
@@ -497,7 +500,7 @@ void funcionesGraficas::graficarMovingRms(QCustomPlot *cp, QVector<double> s, QV
 
     graffico->rescaleAxes();
     graffico->replot();
-    guardarImagen(graffico,"movingrms.png");
+    guardarImagen(graffico,"MovingRms.png");
 }
 
 void funcionesGraficas::graficarMeanFrequency(QCustomPlot *cp, QVector<double> result, double fs, int a, int b, QString tipo)
@@ -510,6 +513,7 @@ void funcionesGraficas::graficarMeanFrequency(QCustomPlot *cp, QVector<double> r
         graffico = cp;
     restaurarGrafico(graffico);
 
+    qInfo()<<"[MeanFrequency] Graficando el la frecuencia media en el tiempo."<<endl;
     graffico->xAxis->setLabel("Time (s)");
     graffico->yAxis->setLabel("Frequency (Hz)");
     if(tipo=="colormap")
@@ -522,8 +526,6 @@ void funcionesGraficas::graficarMeanFrequency(QCustomPlot *cp, QVector<double> r
         double bb = b/(fs*1000);
         QCCM->data()->setKeyRange(QCPRange(aa, bb));
         QCCM->data()->setValueRange(QCPRange(0, fs*500));
-
-        qInfo()<<"[MeanFrequency_AM()] Graficando el la frecuencia media en el tiempo."<<endl;
         QCPCurve *QCC = new QCPCurve(graffico->xAxis, graffico->yAxis);
         QCC->setData(result.mid(0,result.size()/2),result.mid(result.size()/2,-1));
         graffico->addPlottable(QCC);
@@ -539,7 +541,7 @@ void funcionesGraficas::graficarMeanFrequency(QCustomPlot *cp, QVector<double> r
     graffico->rescaleAxes();
     graffico->replot();
 
-    guardarImagen(graffico,"frecuenciaMedia.png");
+    guardarImagen(graffico,"Mean_Frequency.png");
 }
 
 void funcionesGraficas::centrarGraficos(QString title, QCustomPlot *grafico, int w, int h)

@@ -7,7 +7,6 @@
 #include <QList>
 #include <QVector2D>
 #include <QDebug>
-#include "atributo.h"
 
 class cSignal
 {
@@ -61,8 +60,37 @@ public:
     void setMetodo(QString s){metodo=s;}
     void setStatistics(double mean, double median, double stdd, double varr, double rmss, double energy, double norm, double minn, double maxx, double range);
     QString toString();
-    QList<Atributo *> getAttrList();
     QMap<QString, QVariant> getMap();
+    double getVmean() const;
+    void setVmean(double value);
+
+    double getVmedian() const;
+    void setVmedian(double value);
+
+    double getVstdesv() const;
+    void setVstdesv(double value);
+
+    double getVarian() const;
+    void setVarian(double value);
+
+    double getVrms() const;
+    void setVrms(double value);
+
+    double getVenergy() const;
+    void setVenergy(double value);
+
+    double getVnorm() const;
+    void setVnorm(double value);
+
+    double getVmin() const;
+    void setVmin(double value);
+
+    double getVmax() const;
+    void setVmax(double value);
+
+    double getVrange() const;
+    void setVrange(double value);
+
 private:
     QString path,fs,canales,leerDesde,separador,n_separador,metodo,nombre;
     int sizeIntervalo;

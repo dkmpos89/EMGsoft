@@ -22,7 +22,7 @@ public:
     QString getDireccion() const;
     void setDireccion(const QString &value);
 
-    QString toString() { return QString(RUT+" - "+nombre+" - "+apellido+" - "+direccion); }
+    //QString toString() { return QString(RUT+" - "+nombre+" - "+apellido+" - "+direccion); }
 
     QString getSexo() const;
     void setSexo(const QString &value);
@@ -49,6 +49,8 @@ public:
     void setFecha_ingreso(const QString &value);
 
     QMap<QString, QVariant> getMap();
+
+    QString toString();
 private:
     QString RUT, nombre, apellido, direccion, sexo, fecha_nacimiento, edad, fecha_ingreso, peso, estatura, actividad, descripcion;
 };

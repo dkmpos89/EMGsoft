@@ -175,7 +175,7 @@ void AnalisisMultiples::on_actionSpectrogram_triggered()
             QStringList parametros = ConfigGlobales->getParametrosSgram();
             QString cmd = "OctaveSpectrogram('"+listSignals[indCBox]->getPath()+"','"+listSignals[indCBox]->getSeparador()+"','"+listSignals[indCBox]->getLeerDesde()+"','"+listSignals[indCBox]->getCanales()+"','"+listSignals[indCBox]->getFs()+"','"+QString::number(min)+"','"+QString::number(max)+"','"+QString::number(canalActual)+"','"+parametros[0]+"','"+parametros[1]+"','"+parametros[2]+"','"+parametros[3]+"');\n";
 
-            qInfo()<<"[Spectrogram_AM()] Comando enviado a Octave:"<<cmd<<endl;
+            qInfo()<<"[Spectrogram] Comando enviado a Octave:"<<cmd<<endl;
             octaveP->writeCmd(cmd);
             return;
         }else{
@@ -207,7 +207,7 @@ void AnalisisMultiples::on_actionFourier_triggered()
 
             QString cmd = "OctaveFourier('"+listSignals[indCBox]->getPath()+"','"+listSignals[indCBox]->getSeparador()+"','"+listSignals[indCBox]->getLeerDesde()+"','"+listSignals[indCBox]->getCanales()+"','"+listSignals[indCBox]->getFs()+"','"+QString::number(min)+"','"+QString::number(max)+"','"+QString::number(canalActual)+"','0');\n";
 
-            qInfo()<<"[Fourier_AM()] Comando enviado a Octave:"<<cmd<<endl;
+            qInfo()<<"[Fourier] Comando enviado a Octave:"<<cmd<<endl;
             octaveP->writeCmd(cmd);
             return;
         }else{
@@ -240,7 +240,7 @@ void AnalisisMultiples::on_actionGabor_Transform_triggered()
             QStringList parametros = ConfigGlobales->getParametrosGabor();
             QString cmd = "OctaveGabor('"+listSignals[indCBox]->getPath()+"','"+listSignals[indCBox]->getSeparador()+"','"+listSignals[indCBox]->getLeerDesde()+"','"+listSignals[indCBox]->getCanales()+"','"+listSignals[indCBox]->getFs()+"','"+QString::number(min)+"','"+QString::number(max)+"','"+QString::number(canalActual)+"','"+parametros[0]+"','"+parametros[1]+"','"+parametros[2]+"','"+parametros[3]+"','"+parametros[4]+"','"+parametros[5]+"');\n";
 
-            qInfo()<<"[Gabor_Transform_AM()] Comando enviado a Octave:"<<cmd<<endl;
+            qInfo()<<"[Gabor_Transform] Comando enviado a Octave:"<<cmd<<endl;
             octaveP->writeCmd(cmd);
             return;
         }else{
@@ -273,7 +273,7 @@ void AnalisisMultiples::on_actionWavelet_Transform_triggered()
             QStringList parametros = ConfigGlobales->getParametrosWavelet();
             QString cmd = "OctaveWavelet('"+listSignals[indCBox]->getPath()+"','"+listSignals[indCBox]->getSeparador()+"','"+listSignals[indCBox]->getLeerDesde()+"','"+listSignals[indCBox]->getCanales()+"','"+listSignals[indCBox]->getFs()+"','"+QString::number(min)+"','"+QString::number(max)+"','"+QString::number(canalActual)+"','"+parametros[0]+"','"+parametros[1]+"','"+parametros[2]+"','"+parametros[3]+"','"+parametros[4]+"','"+parametros[5]+"');\n";
 
-            qInfo()<<"[Wavelet_Transform_AM()] Comando enviado a Octave:"<<cmd<<endl;
+            qInfo()<<"[Wavelet_Transform] Comando enviado a Octave:"<<cmd<<endl;
             octaveP->writeCmd(cmd);
             return;
         }else{
@@ -305,7 +305,7 @@ void AnalisisMultiples::on_actionHistogram_triggered()
 
             QString cmd = "menuOctave('"+listSignals[indCBox]->getPath()+"','"+listSignals[indCBox]->getSeparador()+"','"+listSignals[indCBox]->getLeerDesde()+"','"+listSignals[indCBox]->getCanales()+"','"+listSignals[indCBox]->getFs()+"','"+QString::number(min)+"','"+QString::number(max)+"','"+QString::number(canalActual)+"','histc');\n";
 
-            qInfo()<<"[Histogram_AM()] Comando enviado a Octave:"<<cmd<<endl;
+            qInfo()<<"[Histogram] Comando enviado a Octave:"<<cmd<<endl;
             octaveP->writeCmd(cmd);
             return;
         }else{
@@ -338,7 +338,7 @@ void AnalisisMultiples::on_actionMoovingRms_triggered()
             QStringList parametros = ConfigGlobales->getParametrosMovingRMS();
             QString cmd = "menuOctave('"+listSignals[indCBox]->getPath()+"','"+listSignals[indCBox]->getSeparador()+"','"+listSignals[indCBox]->getLeerDesde()+"','"+listSignals[indCBox]->getCanales()+"','"+listSignals[indCBox]->getFs()+"','"+QString::number(min)+"','"+QString::number(max)+"','"+QString::number(canalActual)+"','movingrms','"+parametros[0]+"','"+parametros[1]+"');\n";
 
-            qInfo()<<"[MoovingRms_AM()] Comando enviado a Octave:"<<cmd<<endl;
+            qInfo()<<"[MoovingRms] Comando enviado a Octave:"<<cmd<<endl;
             octaveP->writeCmd(cmd);
             return;
         }else{
@@ -371,7 +371,7 @@ void AnalisisMultiples::on_actionMean_Frequency_triggered()
             QStringList parametros = ConfigGlobales->getParametrosMeanFrequency();
             QString cmd = "menuOctave('"+listSignals[indCBox]->getPath()+"','"+listSignals[indCBox]->getSeparador()+"','"+listSignals[indCBox]->getLeerDesde()+"','"+listSignals[indCBox]->getCanales()+"','"+listSignals[indCBox]->getFs()+"','"+QString::number(min)+"','"+QString::number(max)+"','"+QString::number(canalActual)+"','meanfreq','"+parametros[0]+"','"+parametros[1]+"');\n";
 
-            qInfo()<<"[Mean_Frequency_AM()] Comando enviado a Octave:"<<cmd<<endl;
+            qInfo()<<"[Mean_Frequency] Comando enviado a Octave:"<<cmd<<endl;
             octaveP->writeCmd(cmd);
             return;
         }else{
@@ -427,7 +427,7 @@ void AnalisisMultiples::updateSBoxRedLine(int value, int item)
 }
 
 void AnalisisMultiples::chargeData(){
-    qInfo()<<"[chargeData_AM()] Cargando los datos..."<<endl;
+    qInfo()<<"[chargeData] Cargando los datos..."<<endl;
     double i = 0;
     QStringList parametros;
     int size = OctaveProcess::getInstance()->getBuffer().size();     // Tamaño de los datos a analizar
@@ -452,7 +452,7 @@ void AnalisisMultiples::chargeData(){
         }
     }
 
-    qInfo()<<"[chargeData_AM()] Tamaño de los datos recibidos:"<<size<<endl;
+    qInfo()<<"[chargeData] Tamaño de los datos recibidos:"<<size<<endl;
 
 
 //    // Se discrimina para saber que se hara con los datos recibidos y se llama a la funcion correspondiente.

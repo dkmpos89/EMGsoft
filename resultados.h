@@ -2,7 +2,6 @@
 #define RESULTADOS_H
 
 #include <QObject>
-#include "atributo.h"
 
 class Resultados
 {
@@ -12,16 +11,18 @@ public:
     QString getNombreMetodo() const;
     void setNombreMetodo(const QString &value);
 
-    QString getGraficoResultado() const;
-    void setGraficoResultado(const QString &value);
+    QString getUrlImagen() const;
+    void setUrlImagen(const QString &value);
 
-    QList<Atributo> getListaAtttrConfig() const;
-    void setListaAtttrConfig(const QList<Atributo> &value);
+    QStringList getAttributeList() const;
+    void setAttributeList(const QStringList &value);
+
+    QString toString();
 
 private:
     QString nombreMetodo;               // nombre del analisis.
-    QString graficoResultado;           // ruta hacia la imagen del analisis.
-    QList<Atributo> listaAtttrConfig;   //contiene las configuraciones que se usaron para calcular el analisis.
+    QString urlImagen;                  // ruta hacia la imagen del analisis.
+    QStringList attrList;               //contiene las configuraciones que se usaron para calcular el analisis.
 };
 
 #endif // RESULTADOS_H

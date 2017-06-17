@@ -32,6 +32,7 @@ public:
     QStringList getParametrosMeanFrequency();
     QStringList getParametrosWavelet();
     QStringList getParametrosNormalizacion();
+    QStringList getConfig(int i);
 private slots:
     void on_btnOctave_liberarRecurso_clicked();
     void on_btnOctave_reloadRecurso_clicked();

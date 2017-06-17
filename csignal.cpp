@@ -26,14 +26,6 @@ cSignal::cSignal(QString p, QString f, QString c, QString l){
     leerDesde=l;
 }
 
-QString cSignal::toString(){
-
-    QString str="Path:"+path+" Fs:"+fs+
-            " Canales:"+canales+" leerDesde:"+leerDesde+
-            " separador:"+separador;
-    return str;
-}
-
 void cSignal::showSignal(){
     int tamRow=readSignal.size();
     int tamCol=readSignal[0].size();
@@ -73,20 +65,115 @@ QMap<QString, QVariant> cSignal::getMap(){
     return myMap;
 }
 
-QList<Atributo*> cSignal::getAttrList()
+double cSignal::getVmean() const
 {
-    QList<Atributo*> lista_atributos;
+    return vmean;
+}
 
-    lista_atributos << new Atributo("mean",QString::number(this->vmean));
-    lista_atributos << new Atributo("median",QString::number(this->vmedian));
-    lista_atributos << new Atributo("deviation",QString::number(this->vstdesv));
-    lista_atributos << new Atributo("variance",QString::number(this->varian));
-    lista_atributos << new Atributo("rms",QString::number(this->vrms));
-    lista_atributos << new Atributo("energy",QString::number(this->venergy));
-    lista_atributos << new Atributo("norm",QString::number(this->vnorm));
-    lista_atributos << new Atributo("min",QString::number(this->vmin));
-    lista_atributos << new Atributo("max",QString::number(this->vmax));
-    lista_atributos << new Atributo("range",QString::number(this->vrange));
+void cSignal::setVmean(double value)
+{
+    vmean = value;
+}
 
-    return lista_atributos;
+double cSignal::getVmedian() const
+{
+    return vmedian;
+}
+
+void cSignal::setVmedian(double value)
+{
+    vmedian = value;
+}
+
+double cSignal::getVstdesv() const
+{
+    return vstdesv;
+}
+
+void cSignal::setVstdesv(double value)
+{
+    vstdesv = value;
+}
+
+double cSignal::getVarian() const
+{
+    return varian;
+}
+
+void cSignal::setVarian(double value)
+{
+    varian = value;
+}
+
+double cSignal::getVrms() const
+{
+    return vrms;
+}
+
+void cSignal::setVrms(double value)
+{
+    vrms = value;
+}
+
+double cSignal::getVenergy() const
+{
+    return venergy;
+}
+
+void cSignal::setVenergy(double value)
+{
+    venergy = value;
+}
+
+double cSignal::getVnorm() const
+{
+    return vnorm;
+}
+
+void cSignal::setVnorm(double value)
+{
+    vnorm = value;
+}
+
+double cSignal::getVmin() const
+{
+    return vmin;
+}
+
+void cSignal::setVmin(double value)
+{
+    vmin = value;
+}
+
+double cSignal::getVmax() const
+{
+    return vmax;
+}
+
+void cSignal::setVmax(double value)
+{
+    vmax = value;
+}
+
+double cSignal::getVrange() const
+{
+    return vrange;
+}
+
+void cSignal::setVrange(double value)
+{
+    vrange = value;
+}
+
+QString cSignal::toString(){
+
+    QString str = "";
+    str.append("\t\"median\":\""+QString::number(getVmedian())+"\",\n");
+    str.append("\t\"mean\":\""+QString::number(getVmean())+"\",\n");
+    str.append("\t\"stdDev\":\""+QString::number(getVstdesv())+"\",\n");
+    str.append("\t\"var\":\""+QString::number(getVarian())+"\",\n");
+    str.append("\t\"rms\":\""+QString::number(getVrms())+"\",\n");
+    str.append("\t\"energy\":\""+QString::number(getVenergy())+"\",\n");
+    str.append("\t\"frec\":\""+getFs()+"\",\n");
+    return str;
 }

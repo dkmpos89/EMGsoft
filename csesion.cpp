@@ -77,5 +77,25 @@ void cSesion::setCurrentProject(cProject *value)
     currentProject = value;
 }
 
+void cSesion::addReport(Resultados* result)
+{
+    resultadosReportes.append(result);
+}
 
+QString cSesion::getRRtoString()
+{
+    int count = resultadosReportes.size();
+    QString str = "\t\"dataList\":[";
+    for (int var = 0; var < count; ++var)
+    {
+        str.append(resultadosReportes[var]->toString());
+        if(var+1 < count)
+            str.append(",");
+    }
+    str.append("\n\t");
+    str.append("]\n");
+
+    return str;
+
+}
 

@@ -5,6 +5,7 @@
 #include "cproject.h"
 #include "cpaciente.h"
 #include "csignal.h"
+#include "resultados.h"
 
 class cSesion
 {
@@ -20,9 +21,10 @@ public:
 
     cSignal *getCurrentSignal() const;
     void setCurrentSignal(cSignal *value);
-
     bool init();
 
+    void addReport(Resultados *result);
+    QString getRRtoString();
 private:
     explicit cSesion();
     bool getState();
@@ -30,6 +32,7 @@ private:
     cProject *currentProject;
     cPaciente *currentPaciente;
     cSignal *currentSignal;
+    QList<Resultados*> resultadosReportes; // la funcion getRRtoString() devuelve esta variable en forma de string
 
     QString sesion_id;
     QString sesion_fecha;

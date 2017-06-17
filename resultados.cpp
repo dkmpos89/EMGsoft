@@ -1,4 +1,6 @@
 #include "resultados.h"
+#include <QDebug>
+
 
 Resultados::Resultados()
 {
@@ -15,23 +17,41 @@ void Resultados::setNombreMetodo(const QString &value)
     nombreMetodo = value;
 }
 
-QString Resultados::getGraficoResultado() const
+QString Resultados::getUrlImagen() const
 {
-    return graficoResultado;
+    return urlImagen;
 }
 
-void Resultados::setGraficoResultado(const QString &value)
+void Resultados::setUrlImagen(const QString &value)
 {
-    graficoResultado = value;
+    urlImagen = value;
 }
 
-QList<Atributo> Resultados::getListaAtttrConfig() const
+QStringList Resultados::getAttributeList() const
 {
-    return listaAtttrConfig;
+    return attrList;
 }
 
-void Resultados::setListaAtttrConfig(const QList<Atributo> &value)
+void Resultados::setAttributeList(const QStringList &value)
 {
-    listaAtttrConfig = value;
+    attrList = value;
+}
+
+QString Resultados::toString()
+{
+    int count = attrList.size();
+
+    QString str = "\n\t\t{";
+    str.append("\"url\":\""+getUrlImagen()+"\",\"method\":\""+getNombreMetodo()+"\",\"attr\":");
+    str.append("[");
+    for (int var = 0; var < count; var+=2)
+    {
+        str.append("\""+attrList[var]+" : "+attrList[var+1]+"\"");
+        if(var+2 < count )
+            str.append(",");
+    }
+    str.append("]");
+    str.append("}");
+    return str;
 }
 
