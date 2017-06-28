@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="testReport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9978fb58-59f2-403f-96e5-806da0f11754">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="352"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="dataset1" uuid="c467533c-6e70-4540-a335-7c6b6dd85876">
+		<field name="url" class="java.lang.String"/>
+		<field name="method" class="java.lang.String"/>
+		<field name="attr" class="java.util.List"/>
+	</subDataset>
+	<parameter name="dataList" class="java.util.List">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="name" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["Cesar"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="lastName" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["Bustamante"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="address" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["Federico Froebel"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="sex" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["Masculino"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="rut" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["17170594-0"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="birthDate" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["agosto 26 88"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="age" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[28]]></defaultValueExpression>
+	</parameter>
+	<parameter name="weight" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[1.85]]></defaultValueExpression>
+	</parameter>
+	<parameter name="height" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[1.5]]></defaultValueExpression>
+	</parameter>
+	<parameter name="dateIn" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["26/02/99"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="activities" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["sedentario"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="description" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["gordo"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="namePrj" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["proyecto power"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="initPrj" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["34/54/68"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="endPrj" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["15/56/68"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="descriptionPrj" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["examen en las zonas z"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="frec" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["1 khz"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="mean" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[25.3]]></defaultValueExpression>
+	</parameter>
+	<parameter name="energy" class="java.lang.Float" isForPrompting="false">
+		<defaultValueExpression><![CDATA[98.2]]></defaultValueExpression>
+	</parameter>
+	<parameter name="median" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[15.3]]></defaultValueExpression>
+	</parameter>
+	<parameter name="dev" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[45.3]]></defaultValueExpression>
+	</parameter>
+	<parameter name="channels" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[2]]></defaultValueExpression>
+	</parameter>
+	<parameter name="var" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[0.8]]></defaultValueExpression>
+	</parameter>
+	<parameter name="rms" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[15.3]]></defaultValueExpression>
+	</parameter>
+	<parameter name="channel" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[2]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[System.getProperty("user.dir")]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="141" y="11" width="276" height="39" uuid="914d1309-14b6-481e-a895-8855cdb5d177"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Georgia" size="24"/>
+				</textElement>
+				<text><![CDATA[REPORTE PROYECTO]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="11" width="153" height="12" forecolor="#CCCCCC" uuid="d1e5651c-1daf-4a94-bde6-90330a27709c"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Laboratorio Biomecanica UCM]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="561" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="403" uuid="905485e4-e001-4690-a990-77adc30e1c07"/>
+				<frame>
+					<reportElement x="13" y="11" width="528" height="187" uuid="a87e10aa-3dcb-4cdb-bfcc-47e98d29c8be"/>
+					<staticText>
+						<reportElement mode="Opaque" x="1" y="0" width="140" height="20" backcolor="#CCCCCC" uuid="840528d5-e737-4d2d-bc55-dfb36778c5e8"/>
+						<textElement textAlignment="Justified">
+							<font size="14" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Datos del Paciente]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="59" y="38" width="469" height="20" uuid="fde7154a-54d2-4960-81fa-ffd19758d3d5"/>
+						<textFieldExpression><![CDATA[$P{name}+" "+$P{lastName}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="58" y="59" width="301" height="20" uuid="cc4e634e-832e-495e-8879-fb9bbd2321a9"/>
+						<textFieldExpression><![CDATA[$P{address}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="436" y="79" width="92" height="20" uuid="fa821907-49ff-4ae8-85df-6363e08fcce5"/>
+						<textFieldExpression><![CDATA[$P{sex}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="261" y="119" width="143" height="20" uuid="85f91cc6-29b7-4e56-a5c8-2d0d76f65b71"/>
+						<textFieldExpression><![CDATA[$P{rut}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="261" y="139" width="141" height="20" uuid="07e4a9c4-1a35-4228-8530-213dc7064ae1"/>
+						<textFieldExpression><![CDATA[$P{birthDate}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="59" y="119" width="100" height="20" uuid="b2e24390-5282-47d0-a374-43ab9e24aebd"/>
+						<textFieldExpression><![CDATA[$P{age}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="59" y="78" width="100" height="20" uuid="2346aae3-513a-468b-882a-51b8a28d6668"/>
+						<textFieldExpression><![CDATA[$P{weight}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="259" y="79" width="100" height="20" uuid="01b82bdc-643a-4a4a-b0de-b66e80000363"/>
+						<textFieldExpression><![CDATA[$P{height}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="59" y="139" width="100" height="20" uuid="806edacd-e6bf-4648-912a-a69c60b6e9dc"/>
+						<textFieldExpression><![CDATA[$P{dateIn}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="59" y="159" width="343" height="20" uuid="a7e739b6-1a5d-49ca-8375-7abd3ff2f2c9"/>
+						<textFieldExpression><![CDATA[$P{activities}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="58" y="99" width="470" height="20" uuid="3f91de77-9d37-4794-a22b-dc247549bf12"/>
+						<textFieldExpression><![CDATA[$P{description}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="2" y="38" width="57" height="20" uuid="0d0975bf-55d1-41da-bd13-cf63cce7dbe4"/>
+						<textElement textAlignment="Justified"/>
+						<text><![CDATA[Nombre]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="2" y="59" width="57" height="20" uuid="67e5881c-4736-4363-827a-0cb169daa43f"/>
+						<textElement textAlignment="Justified"/>
+						<text><![CDATA[Direccion]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="1" y="78" width="57" height="20" uuid="ec5fc067-e637-423a-8d06-d47a53527e38"/>
+						<textElement textAlignment="Justified"/>
+						<text><![CDATA[Peso]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="1" y="99" width="57" height="20" uuid="f12b9ac2-8ad5-47a6-99ab-7475e01b0cac"/>
+						<textElement textAlignment="Justified"/>
+						<text><![CDATA[Description]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="202" y="79" width="57" height="20" uuid="ff1b8d3a-7593-4778-8263-d16d9a06df4b"/>
+						<textElement textAlignment="Justified"/>
+						<text><![CDATA[Peso]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="402" y="79" width="34" height="20" uuid="91a6e81d-4b50-4192-b434-7274f1ec67f1"/>
+						<textElement textAlignment="Justified"/>
+						<text><![CDATA[Peso]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="2" y="119" width="57" height="20" uuid="d54261a9-d949-4f22-b057-67dd2d466b2e"/>
+						<textElement textAlignment="Justified"/>
+						<text><![CDATA[Edad]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="202" y="119" width="59" height="20" uuid="61f93bb3-d193-46af-8c77-f594de8ac91d"/>
+						<textElement textAlignment="Justified"/>
+						<text><![CDATA[Rut]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="2" y="139" width="57" height="20" uuid="3eb0b3af-20db-4034-acee-c7c34f82c853"/>
+						<textElement textAlignment="Justified"/>
+						<text><![CDATA[Ingreso]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="2" y="159" width="57" height="20" uuid="e512fe8a-40d4-49e5-9e02-0256b209ec14"/>
+						<textElement textAlignment="Justified"/>
+						<text><![CDATA[Actividad]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="202" y="139" width="59" height="20" uuid="ae0568ff-8dc3-45ba-be8e-29e32751c1fb"/>
+						<textElement textAlignment="Justified"/>
+						<text><![CDATA[Nacimiento]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="13" y="198" width="528" height="99" uuid="3a94ab5d-8f41-477b-9ff9-ad91a8fdfc33"/>
+					<staticText>
+						<reportElement mode="Opaque" x="0" y="0" width="140" height="20" backcolor="#CCCCCC" uuid="797e76a5-17e1-4814-94c9-5d60e0a092da"/>
+						<textElement textAlignment="Justified">
+							<font size="14" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Proyecto]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="67" y="32" width="461" height="20" uuid="de9fc7c6-a8bf-4a15-bba1-3521cd142f5c"/>
+						<textFieldExpression><![CDATA[$P{namePrj}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="2" y="32" width="65" height="20" uuid="b58b3bc9-8b4d-4a09-bcd5-0373dd18d6f1"/>
+						<textElement textAlignment="Justified"/>
+						<text><![CDATA[Nombre]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="2" y="52" width="65" height="20" uuid="c84e5e39-aede-4640-bf3f-8b1a76a83ca8"/>
+						<textElement textAlignment="Justified"/>
+						<text><![CDATA[Fecha Inicio]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="239" y="52" width="65" height="20" uuid="88863909-5c37-4b84-9f5f-f76d5691723f"/>
+						<textElement textAlignment="Justified"/>
+						<text><![CDATA[Termino]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="67" y="52" width="135" height="20" uuid="ac5813b9-546c-4380-afee-1a5225ea179d"/>
+						<textFieldExpression><![CDATA[$P{initPrj}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="304" y="52" width="194" height="20" uuid="8e695f3d-6263-4d2d-906d-faab0cdf3f79"/>
+						<textFieldExpression><![CDATA[$P{endPrj}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="67" y="72" width="461" height="20" uuid="182f9136-89a8-46d7-b2b6-437c1ebc3956"/>
+						<textFieldExpression><![CDATA[$P{descriptionPrj}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="2" y="72" width="65" height="20" uuid="8ef1a501-d9fb-41c0-b46f-deb884d7e28d"/>
+						<textElement textAlignment="Justified"/>
+						<text><![CDATA[Descripcion]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="14" y="297" width="528" height="99" uuid="8d61c90c-e898-48ce-b127-d1b93f3276f2"/>
+					<staticText>
+						<reportElement mode="Opaque" x="0" y="0" width="140" height="20" backcolor="#CCCCCC" uuid="f3e46450-b33a-490a-96ff-b75c95581d25"/>
+						<textElement textAlignment="Justified">
+							<font size="14" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Señal]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="2" y="33" width="65" height="20" uuid="18ebec12-f2d3-4468-99f6-42f4296e4125"/>
+						<textElement textAlignment="Justified"/>
+						<text><![CDATA[Frecuencia]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="195" y="33" width="65" height="20" uuid="c5052a2a-b84a-45b8-948b-e14657a824db"/>
+						<textElement textAlignment="Justified"/>
+						<text><![CDATA[Mediana]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="67" y="33" width="99" height="20" uuid="bf934f83-cbf3-405b-b5f8-6d1e04cba92f"/>
+						<textFieldExpression><![CDATA[$P{frec}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="260" y="33" width="72" height="20" uuid="9d1f54b7-c643-48a3-beee-e3c7183f1321"/>
+						<textFieldExpression><![CDATA[$P{median}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="67" y="53" width="99" height="20" uuid="d870be44-e619-46e0-b6da-b7e45b07f7e2"/>
+						<textFieldExpression><![CDATA[$P{mean}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="2" y="53" width="65" height="20" uuid="1117071b-1fc7-4f03-b701-5e70063730e4"/>
+						<textElement textAlignment="Justified"/>
+						<text><![CDATA[Media]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="195" y="53" width="65" height="20" uuid="c1357989-7ca9-4c41-8f2f-0ec7d31c0901"/>
+						<textElement textAlignment="Justified"/>
+						<text><![CDATA[desviacion]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="260" y="53" width="72" height="20" uuid="c89085ca-15d9-4560-9125-b0539f931421"/>
+						<textFieldExpression><![CDATA[$P{dev}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="440" y="53" width="72" height="20" uuid="01a11a27-bd6b-4d38-841e-fc1ce046cfd0"/>
+						<textFieldExpression><![CDATA[$P{var}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="375" y="53" width="65" height="20" uuid="105a87de-03b9-4572-be3c-0b8607ebcadd"/>
+						<textElement textAlignment="Justified"/>
+						<text><![CDATA[varianza]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="375" y="33" width="65" height="20" uuid="fa44cf13-6ee6-44fd-8d2c-dc75a483e227"/>
+						<textElement textAlignment="Justified"/>
+						<text><![CDATA[rms]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="440" y="33" width="72" height="20" uuid="198bafff-648f-46ca-a450-0bb4e1c6ab47"/>
+						<textFieldExpression><![CDATA[$P{rms}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="375" y="73" width="65" height="20" uuid="197072bd-ac7c-4644-b546-376d6c2ce51a"/>
+						<textElement textAlignment="Justified"/>
+						<text><![CDATA[Canal]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="67" y="73" width="99" height="20" uuid="603d7292-fa56-4dd3-a876-1e003f3b9736"/>
+						<textFieldExpression><![CDATA[$P{energy}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="440" y="73" width="72" height="20" uuid="ebf2d1cc-400b-40c5-bc19-b829b5db5c56"/>
+						<textFieldExpression><![CDATA[$P{channel}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="260" y="73" width="72" height="20" uuid="acc1bd69-b5ec-4595-bc0a-b7655f635085"/>
+						<textFieldExpression><![CDATA[$P{channels}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="2" y="73" width="65" height="20" uuid="94050aa9-9c04-4fd6-9956-5a9e9d280888"/>
+						<textElement textAlignment="Justified"/>
+						<text><![CDATA[Energy]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="195" y="73" width="65" height="20" uuid="ef6100f2-394d-4789-bc10-4f2f262de4b2"/>
+						<textElement textAlignment="Justified"/>
+						<text><![CDATA[Canales]]></text>
+					</staticText>
+				</frame>
+			</frame>
+			<frame>
+				<reportElement x="16" y="413" width="539" height="138" uuid="60a9433e-f8dd-43b3-a372-9f02c00bc5b4"/>
+				<componentElement>
+					<reportElement x="0" y="11" width="526" height="127" uuid="98b0b828-b225-421f-87e7-6ffceade9430"/>
+					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+						<datasetRun subDataset="dataset1" uuid="a5fb7059-bece-477b-a8d7-89dbd966ffa8">
+							<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{dataList})]]></dataSourceExpression>
+						</datasetRun>
+						<jr:listContents height="127" width="526">
+							<subreport>
+								<reportElement x="13" y="34" width="167" height="69" uuid="884039a8-db3d-4d72-8ed5-c4be03eeffba"/>
+								<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource( $F{attr} )]]></dataSourceExpression>
+								<subreportExpression><![CDATA[System.getProperty("user.dir") + "\\testReport_subreport1.jasper"]]></subreportExpression>
+							</subreport>
+							<textField>
+								<reportElement x="0" y="0" width="180" height="20" uuid="0a07f32b-aab2-4267-8f35-24872adf8365"/>
+								<textFieldExpression><![CDATA["Metodo "+$F{method}.capitalize()]]></textFieldExpression>
+							</textField>
+							<image>
+								<reportElement x="209" y="20" width="301" height="96" uuid="bbc0ddd5-382e-4db1-a916-2274a47c5571"/>
+								<imageExpression><![CDATA[$F{url}]]></imageExpression>
+							</image>
+						</jr:listContents>
+					</jr:list>
+				</componentElement>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="0" width="137" height="20" uuid="da89ed64-21d9-4547-81d4-7e2a16e0350d"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="454" y="0" width="99" height="20" uuid="2eec9213-e51b-4021-8757-a8e0bd011bab"/>
+				<textFieldExpression><![CDATA["Pagina "+$V{PAGE_NUMBER}+" de "+ $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

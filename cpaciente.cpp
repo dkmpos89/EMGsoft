@@ -166,7 +166,7 @@ QMap<QString, QVariant> cPaciente::getMap(){
 QString cPaciente::toString(){
     QString salida = "";
     salida.append("\t\"rut\":\""+getRUT()+"\",\n");
-    salida.append("\t\"firstName\":\""+getNombre()+"\",\n");
+    salida.append("\t\"name\":\""+getNombre()+"\",\n");
     salida.append("\t\"lastName\":\""+getApellido()+"\",\n");
     salida.append("\t\"address\":\""+getDireccion()+"\",\n");
     salida.append("\t\"sex\":\""+getSexo()+"\",\n");

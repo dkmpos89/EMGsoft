@@ -23,6 +23,8 @@ public:
 
     QString toString();
 
+    bool isValid();
+
     QString getDescripcion() const;
     void setDescripcion(const QString &value);
 

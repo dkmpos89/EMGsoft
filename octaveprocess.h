@@ -13,7 +13,7 @@ class OctaveProcess : public QProcess
 {
   Q_OBJECT
 public:
-  enum buttonPressed { ButtonLeft, ButtonRight, Unknow };
+  enum buttonPressed { ButtonLeft, ButtonRight, Unknow, Other };
 
   static OctaveProcess* getInstance();
   ~OctaveProcess();

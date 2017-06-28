@@ -1,8 +1,12 @@
 #include "cproject.h"
+#include <QDebug>
 
 cProject::cProject()
 {
-
+    this->nombre = "";
+    this->fechaInicio = "";
+    this->fechaTermino = "";
+    this->descripcion = "";
 }
 
 cProject::cProject(QString nombre, QString fechaInicio, QString fechaTermino, QString descripcion)
@@ -75,9 +79,16 @@ QMap<QString, QVariant> cProject::getMap(){
 QString cProject::toString()
 {
     QString salida = "";
-    salida.append("\t\"projectName\":\""+getNombre()+"\",\n");
+    salida.append("\t\"namePrj\":\""+getNombre()+"\",\n");
     salida.append("\t\"initPrj\":\""+getFechaInicio()+"\",\n");
     salida.append("\t\"endPrj\":\""+getFechaTermino()+"\",\n");
     salida.append("\t\"descriptionPrj\":\""+getDescripcion()+"\",\n");
     return salida;
+}
+
+bool cProject::isValid(){
+    bool ret = !(this->nombre.isEmpty()) && !(this->ID.isEmpty()) && !(this->fechaTermino.isEmpty()) && !(this->fechaInicio.isEmpty()) && !(this->descripcion.isEmpty());
+    qDebug()<<"cProject "<<ret ;
+    return ret;
+
 }

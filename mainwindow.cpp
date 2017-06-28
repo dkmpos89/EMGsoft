@@ -22,7 +22,7 @@
 //globales utiles
 int graff = MainWindow::none;
 int analize = -1;
-OctaveProcess::buttonPressed buttonPressed = OctaveProcess::Unknow;
+OctaveProcess::buttonPressed buttonPressed = OctaveProcess::Other;
 CodeEditor *logg;
 int currentChannel = -1;
 int amin = -1;
@@ -705,7 +705,7 @@ void MainWindow::chargeData(){
         }else{
             createJsonTxt(session);
         }
-    }else{ qInfo()<<"PURA !#$%&"<<endl; }
+    }
 
 }
 
@@ -2075,30 +2075,62 @@ bool MainWindow::createJsonTxt(cSesion* sesion)const
 
     //qInfo()<<stringPacientes<<endl;
 
-    QFile jsonFile(QDir::currentPath()+"/reportes/data.json");
-    result = jsonFile.open(QFile::WriteOnly);
+
     try {
+        QFile jsonFile(QDir::currentPath()+"/reportes/data.json");
+        result = jsonFile.open(QFile::WriteOnly);
         jsonFile.write("{\n");
         jsonFile.write(stringPacientes.toLatin1());
         jsonFile.write(stringProject.toLatin1());
         jsonFile.write(stringSignal.toLatin1());
         jsonFile.write(stringReports.toLatin1());
         jsonFile.write("}\n");
+        jsonFile.close();
+        ///////////////
+        QProcess* proc = new QProcess();
+        proc->setProgram("cmd");
+        proc->start();
+        proc->waitForStarted();
+        if( proc->state() == QProcess::Running ){
+            const QString args = "groovy -cp ./libs/* reporteEMG.groovy\n";
+            qDebug()<< args;
+            QString cmd = "cd "+QDir::currentPath()+"\\reportes\n";
+            cmd.replace("/","\\");
+
+            proc->write(cmd.toLatin1());
+            proc->waitForFinished();
+            proc->write(args.toLatin1());
+            proc->waitForFinished();
+            qDebug()<<proc->readAll();
+            proc->kill();
+            proc->close();
+            delete proc;
+        }else
+            qDebug()<<"no se inicio el proceso de cmd";
+
+
     } catch (...) {
         result = false;
     }
-    jsonFile.close();
+
 
     return result;
 
 }
 
-void MainWindow::on_actionCrear_Reporte_triggered()
-{
+void MainWindow::on_actionCrear_Reporte_triggered(){
+
+    if( !session->isValid() || (session->getCurrentProject() == nullptr) || (session->getCurrentSignal() == nullptr) || (session->getCurrentPaciente() == nullptr) ){
+        QMessageBox::information(this, tr("Error"), tr("Para generar el reporte debes cargar el Proyecto, el Paciente y la Señal"));
+        return;
+       }
+
     octaveP = OctaveProcess::getInstance();
-    if(octaveP->getState()){
+    if( octaveP->getState() ){
+        session->getResultadosReportes().clear();
         buttonPressed = OctaveProcess::Unknow;
         habilitarCampos(false);
+        //1 es el analisis de donde comienza
         emit calcularMetodoReporte(1, ui->horizontalSlider->lowerValue(), ui->horizontalSlider->upperValue());
 
     }else{

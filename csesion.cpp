@@ -23,6 +23,16 @@ bool cSesion::getState()
     return true;
 }
 
+QList<Resultados *> cSesion::getResultadosReportes()
+{
+    return resultadosReportes;
+}
+
+void cSesion::setResultadosReportes(const QList<Resultados *> &value)
+{
+    resultadosReportes = value;
+}
+
 cSesion *cSesion::getInstance()
 {
     if( Singleton == nullptr )
@@ -96,6 +106,14 @@ QString cSesion::getRRtoString()
     str.append("]\n");
 
     return str;
+
+}
+
+bool cSesion::isValid(){
+
+    bool ret = this->currentPaciente && this->currentProject && this->currentSignal;
+    qDebug()<<"csesion "<<ret;
+    return ret;
 
 }
 

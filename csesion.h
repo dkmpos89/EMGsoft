@@ -25,6 +25,10 @@ public:
 
     void addReport(Resultados *result);
     QString getRRtoString();
+    bool isValid();
+    QList<Resultados *> getResultadosReportes();
+    void setResultadosReportes(const QList<Resultados *> &value);
+
 private:
     explicit cSesion();
     bool getState();
