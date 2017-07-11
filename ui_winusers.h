@@ -1134,11 +1134,11 @@ public:
 #ifndef QT_NO_WHATSTHIS
         BtnEditar->setWhatsThis(QApplication::translate("winUsers", "<html><head/><body><p>Editar Registro</p></body></html>", 0));
 #endif // QT_NO_WHATSTHIS
-        BtnEditar->setText(QString());
+        BtnEditar->setText(QApplication::translate("winUsers", "Editar", 0));
         label->setText(QString());
-        btnIniciarSesion->setText(QString());
+        btnIniciarSesion->setText(QApplication::translate("winUsers", "Abrir", 0));
         tabAgregar_Search->setPlaceholderText(QApplication::translate("winUsers", "Ingrese RUT, Nombres o Apellidos.", 0));
-        btn_ActualizarTabUs->setText(QString());
+        btn_ActualizarTabUs->setText(QApplication::translate("winUsers", "Refresh", 0));
         label_23->setText(QApplication::translate("winUsers", "Buscar:", 0));
 #ifndef QT_NO_TOOLTIP
         BtnEliminar->setToolTip(QApplication::translate("winUsers", "<html><head/><body><p>Eliminar</p></body></html>", 0));
@@ -1146,7 +1146,7 @@ public:
 #ifndef QT_NO_WHATSTHIS
         BtnEliminar->setWhatsThis(QApplication::translate("winUsers", "<html><head/><body><p>Eliminar Registro</p></body></html>", 0));
 #endif // QT_NO_WHATSTHIS
-        BtnEliminar->setText(QString());
+        BtnEliminar->setText(QApplication::translate("winUsers", "Eliminar", 0));
         tabUsuarios->setTabText(tabUsuarios->indexOf(tab_Usuarios), QApplication::translate("winUsers", "Usuarios", 0));
         label_25->setText(QApplication::translate("winUsers", "Extra:", 0));
 #ifndef QT_NO_TOOLTIP

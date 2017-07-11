@@ -63,6 +63,7 @@ public:
     //bool newSesion();
     void actComentariosRecientes();
     bool event(QEvent *event);
+    bool eventFilter(QObject *object, QEvent *event);
 
     bool crearEjemplos(int numEjemplo, QString path, QString archivo);
     bool ExistenModificaciones(QString act);
@@ -70,6 +71,7 @@ public:
     void controlNorm(const QString normType);
     bool createJson(cSesion *sesion) const;
     bool createJsonTxt(cSesion *sesion) const;
+
 signals:
     recalcularGraficosN(cSignal *senal,int canal,int a, int b);
     calcularMetodoReporte(int, int, int);

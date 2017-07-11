@@ -42,9 +42,9 @@
 #include <QtWidgets/QToolButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <codeeditor.h>
 #include <qcustomplot.h>
 #include <qxtspanslider.h>
-#include "codeeditor.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -80,9 +80,6 @@ public:
     QAction *actionCrear_Reporte;
     QWidget *centralWidget;
     QGridLayout *gridLayout_10;
-    QTabWidget *tabPrincipal;
-    QWidget *tabVP;
-    QGridLayout *gridLayout_21;
     QVBoxLayout *verticalLayout_3;
     QHBoxLayout *horizontalLayout;
     QWidget *InfoProyecto;
@@ -124,10 +121,10 @@ public:
     QWidget *page;
     QGridLayout *gridLayout_3;
     QLabel *rutlabel;
-    QLabel *label_6;
     QPushButton *iniciarSession;
-    QLineEdit *rutSesion;
+    QLabel *label_6;
     QToolButton *btnListaUsuarios;
+    QLineEdit *rutSesion;
     QWidget *page_2;
     QFormLayout *formLayout;
     QGridLayout *gridLayoutPanleUsuario;
@@ -146,28 +143,45 @@ public:
     QTabWidget *tabTiempoFrec;
     QWidget *tabAB;
     QGridLayout *gridLayout_13;
+    QWidget *toolBoxGrafico3;
+    QGridLayout *gridLayout_21;
+    QComboBox *comboAnalisis3;
+    QPushButton *ButtonGraficar3;
+    QFrame *line_6;
+    QHBoxLayout *horizontalLayout_11;
+    QLabel *label_SaveG3;
+    QToolButton *btnSaveImageG3;
+    QToolButton *btnSaveDataG3;
+    QHBoxLayout *horizontalLayout_10;
+    QLabel *label_17;
+    QSpacerItem *horizontalSpacer_8;
+    QCheckBox *in_enca_3;
+    QSpacerItem *horizontalSpacer_7;
+    QFrame *line_7;
+    QComboBox *comboFiltros_3;
+    QHBoxLayout *horizontalLayout_12;
+    QPushButton *btn_AplicarFiltro3;
+    QToolButton *toolBtn_Filtros3;
     QHBoxLayout *horizontalLayout_3;
-    QToolBox *toolBoxGrafico2;
-    QWidget *page_10;
-    QGridLayout *gridLayout_8;
-    QVBoxLayout *verticalLayout_2;
-    QComboBox *comboAnalisis2;
-    QPushButton *ButtonGraficar2;
+    QWidget *toolBoxGrafico2;
     QGridLayout *gridLayout_15;
-    QSpacerItem *horizontalSpacer;
-    QLabel *label_SaveG2;
-    QToolButton *btnSaveImageG2;
-    QCheckBox *in_enca_2;
-    QSpacerItem *horizontalSpacer_4;
-    QSpacerItem *horizontalSpacer_6;
-    QToolButton *btnSaveDataG2;
-    QLabel *label_16;
-    QWidget *page_11;
-    QGridLayout *gridLayout_5;
-    QComboBox *comboFiltros_2;
     QHBoxLayout *horizontalLayout_6;
     QPushButton *btn_AplicarFiltro2;
     QToolButton *toolBtn_Filtros2;
+    QHBoxLayout *horizontalLayout_8;
+    QLabel *label_SaveG2;
+    QToolButton *btnSaveImageG2;
+    QToolButton *btnSaveDataG2;
+    QHBoxLayout *horizontalLayout_9;
+    QLabel *label_16;
+    QSpacerItem *horizontalSpacer_6;
+    QCheckBox *in_enca_2;
+    QSpacerItem *horizontalSpacer_4;
+    QPushButton *ButtonGraficar2;
+    QFrame *line_4;
+    QComboBox *comboFiltros_2;
+    QComboBox *comboAnalisis2;
+    QFrame *line_5;
     QHBoxLayout *horizontalLayout_2;
     QWidget *ContenedorGrafico2;
     QGridLayout *gridLayout_12;
@@ -175,27 +189,6 @@ public:
     QWidget *ContenedorGrafico3;
     QGridLayout *gridLayout_14;
     QCustomPlot *grafico3;
-    QToolBox *toolBoxGrafico3;
-    QWidget *page_17;
-    QGridLayout *gridLayout_7;
-    QVBoxLayout *verticalLayout_4;
-    QComboBox *comboAnalisis3;
-    QPushButton *ButtonGraficar3;
-    QGridLayout *gridLayout_16;
-    QSpacerItem *horizontalSpacer_7;
-    QSpacerItem *horizontalSpacer_3;
-    QLabel *label_SaveG3;
-    QToolButton *btnSaveImageG3;
-    QSpacerItem *horizontalSpacer_8;
-    QToolButton *btnSaveDataG3;
-    QCheckBox *in_enca_3;
-    QLabel *label_17;
-    QWidget *page_21;
-    QGridLayout *gridLayout_17;
-    QComboBox *comboFiltros_3;
-    QHBoxLayout *horizontalLayout_7;
-    QPushButton *btn_AplicarFiltro3;
-    QToolButton *toolBtn_Filtros3;
     QWidget *tabAE;
     QGridLayout *gridLayout_24;
     QDockWidget *dockGraficosNorm;
@@ -250,6 +243,18 @@ public:
     QVBoxLayout *verticalLayout_5;
     QLabel *label_5;
     QPlainTextEdit *TextoSalida;
+    QTabWidget *tabPrincipal;
+    QWidget *tabVP;
+    QToolBox *toolBoxGrafico2_old;
+    QWidget *page_10;
+    QGridLayout *gridLayout_8;
+    QWidget *page_11;
+    QGridLayout *gridLayout_5;
+    QToolBox *toolBoxGrafico3_old;
+    QWidget *page_17;
+    QGridLayout *gridLayout_7;
+    QWidget *page_21;
+    QGridLayout *gridLayout_17;
     QWidget *tabNYC;
     QGridLayout *gridLayout_22;
     QHBoxLayout *horizontalLayout_5;
@@ -282,7 +287,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(976, 717);
+        MainWindow->resize(913, 1085);
         MainWindow->setMaximumSize(QSize(16777215, 16777215));
         QFont font;
         font.setPointSize(10);
@@ -452,16 +457,6 @@ public:
         gridLayout_10->setSpacing(6);
         gridLayout_10->setContentsMargins(11, 11, 11, 11);
         gridLayout_10->setObjectName(QStringLiteral("gridLayout_10"));
-        tabPrincipal = new QTabWidget(centralWidget);
-        tabPrincipal->setObjectName(QStringLiteral("tabPrincipal"));
-        tabPrincipal->setEnabled(true);
-        tabPrincipal->setFont(font);
-        tabVP = new QWidget();
-        tabVP->setObjectName(QStringLiteral("tabVP"));
-        gridLayout_21 = new QGridLayout(tabVP);
-        gridLayout_21->setSpacing(6);
-        gridLayout_21->setContentsMargins(11, 11, 11, 11);
-        gridLayout_21->setObjectName(QStringLiteral("gridLayout_21"));
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
@@ -469,10 +464,13 @@ public:
         horizontalLayout->setSpacing(6);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setSizeConstraint(QLayout::SetDefaultConstraint);
-        InfoProyecto = new QWidget(tabVP);
+        InfoProyecto = new QWidget(centralWidget);
         InfoProyecto->setObjectName(QStringLiteral("InfoProyecto"));
-        InfoProyecto->setMinimumSize(QSize(0, 0));
-        InfoProyecto->setMaximumSize(QSize(250, 16777215));
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(InfoProyecto->sizePolicy().hasHeightForWidth());
+        InfoProyecto->setSizePolicy(sizePolicy);
         InfoProyecto->setStyleSheet(QLatin1String("QWidget#InfoProyecto {\n"
 "     border: 1px solid gray;\n"
 "     border-radius: 2px;\n"
@@ -567,11 +565,11 @@ public:
 
         label_2 = new QLabel(groupBox);
         label_2->setObjectName(QStringLiteral("label_2"));
-        QSizePolicy sizePolicy(QSizePolicy::Maximum, QSizePolicy::Preferred);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
-        label_2->setSizePolicy(sizePolicy);
+        QSizePolicy sizePolicy1(QSizePolicy::Maximum, QSizePolicy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
+        label_2->setSizePolicy(sizePolicy1);
         label_2->setMaximumSize(QSize(40, 20));
         label_2->setFont(font);
 
@@ -579,8 +577,8 @@ public:
 
         label_19 = new QLabel(groupBox);
         label_19->setObjectName(QStringLiteral("label_19"));
-        sizePolicy.setHeightForWidth(label_19->sizePolicy().hasHeightForWidth());
-        label_19->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(label_19->sizePolicy().hasHeightForWidth());
+        label_19->setSizePolicy(sizePolicy1);
         label_19->setMaximumSize(QSize(60, 40));
         label_19->setFont(font);
 
@@ -588,8 +586,8 @@ public:
 
         label_3 = new QLabel(groupBox);
         label_3->setObjectName(QStringLiteral("label_3"));
-        sizePolicy.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
-        label_3->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
+        label_3->setSizePolicy(sizePolicy1);
         label_3->setMaximumSize(QSize(40, 20));
         label_3->setFont(font);
 
@@ -609,22 +607,22 @@ public:
 
         label_20 = new QLabel(groupBox);
         label_20->setObjectName(QStringLiteral("label_20"));
-        sizePolicy.setHeightForWidth(label_20->sizePolicy().hasHeightForWidth());
-        label_20->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(label_20->sizePolicy().hasHeightForWidth());
+        label_20->setSizePolicy(sizePolicy1);
 
         gridLayout_2->addWidget(label_20, 1, 2, 1, 1);
 
         label_18 = new QLabel(groupBox);
         label_18->setObjectName(QStringLiteral("label_18"));
-        sizePolicy.setHeightForWidth(label_18->sizePolicy().hasHeightForWidth());
-        label_18->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(label_18->sizePolicy().hasHeightForWidth());
+        label_18->setSizePolicy(sizePolicy1);
 
         gridLayout_2->addWidget(label_18, 0, 2, 1, 1);
 
         label_21 = new QLabel(groupBox);
         label_21->setObjectName(QStringLiteral("label_21"));
-        sizePolicy.setHeightForWidth(label_21->sizePolicy().hasHeightForWidth());
-        label_21->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(label_21->sizePolicy().hasHeightForWidth());
+        label_21->setSizePolicy(sizePolicy1);
 
         gridLayout_2->addWidget(label_21, 2, 2, 1, 1);
 
@@ -654,21 +652,21 @@ public:
         gridLayout_4 = new QGridLayout();
         gridLayout_4->setSpacing(6);
         gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
-        ButtonReplot = new QPushButton(tabVP);
+        ButtonReplot = new QPushButton(centralWidget);
         ButtonReplot->setObjectName(QStringLiteral("ButtonReplot"));
         ButtonReplot->setEnabled(false);
         ButtonReplot->setStyleSheet(QStringLiteral(""));
 
         gridLayout_4->addWidget(ButtonReplot, 1, 1, 1, 1);
 
-        label_4 = new QLabel(tabVP);
+        label_4 = new QLabel(centralWidget);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setFont(font1);
         label_4->setAlignment(Qt::AlignCenter);
 
         gridLayout_4->addWidget(label_4, 1, 2, 1, 1);
 
-        horizontalSlider = new QxtSpanSlider(tabVP);
+        horizontalSlider = new QxtSpanSlider(centralWidget);
         horizontalSlider->setObjectName(QStringLiteral("horizontalSlider"));
         horizontalSlider->setEnabled(false);
         horizontalSlider->setMaximumSize(QSize(16777215, 20));
@@ -681,17 +679,20 @@ public:
 
         gridLayout_4->addWidget(horizontalSlider, 1, 3, 1, 3);
 
-        ButtonPlot = new QPushButton(tabVP);
+        ButtonPlot = new QPushButton(centralWidget);
         ButtonPlot->setObjectName(QStringLiteral("ButtonPlot"));
         ButtonPlot->setEnabled(false);
         ButtonPlot->setStyleSheet(QStringLiteral(""));
 
         gridLayout_4->addWidget(ButtonPlot, 1, 0, 1, 1);
 
-        ContenedorGrafico1 = new QWidget(tabVP);
+        ContenedorGrafico1 = new QWidget(centralWidget);
         ContenedorGrafico1->setObjectName(QStringLiteral("ContenedorGrafico1"));
-        ContenedorGrafico1->setMinimumSize(QSize(0, 260));
-        ContenedorGrafico1->setMaximumSize(QSize(16777215, 16777215));
+        QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Expanding);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(ContenedorGrafico1->sizePolicy().hasHeightForWidth());
+        ContenedorGrafico1->setSizePolicy(sizePolicy2);
         ContenedorGrafico1->setFont(font);
         ContenedorGrafico1->setStyleSheet(QLatin1String("QWidget {\n"
 "     border: 1px solid gray;\n"
@@ -703,7 +704,8 @@ public:
         gridLayout_9->setObjectName(QStringLiteral("gridLayout_9"));
         grafico1 = new QCustomPlot(ContenedorGrafico1);
         grafico1->setObjectName(QStringLiteral("grafico1"));
-        grafico1->setMaximumSize(QSize(16777215, 16777215));
+        sizePolicy2.setHeightForWidth(grafico1->sizePolicy().hasHeightForWidth());
+        grafico1->setSizePolicy(sizePolicy2);
         grafico1->setFont(font);
 
         gridLayout_9->addWidget(grafico1, 2, 0, 1, 2);
@@ -711,7 +713,7 @@ public:
 
         gridLayout_4->addWidget(ContenedorGrafico1, 0, 0, 1, 10);
 
-        btnCloseG1 = new QToolButton(tabVP);
+        btnCloseG1 = new QToolButton(centralWidget);
         btnCloseG1->setObjectName(QStringLiteral("btnCloseG1"));
         btnCloseG1->setEnabled(false);
         btnCloseG1->setMinimumSize(QSize(27, 27));
@@ -721,7 +723,7 @@ public:
 
         gridLayout_4->addWidget(btnCloseG1, 1, 9, 1, 1);
 
-        btnOpenG1 = new QToolButton(tabVP);
+        btnOpenG1 = new QToolButton(centralWidget);
         btnOpenG1->setObjectName(QStringLiteral("btnOpenG1"));
         btnOpenG1->setEnabled(true);
         btnOpenG1->setMinimumSize(QSize(27, 27));
@@ -735,7 +737,7 @@ public:
 
         gridLayout_4->addWidget(btnOpenG1, 1, 6, 1, 1);
 
-        btnSaveImageG1 = new QToolButton(tabVP);
+        btnSaveImageG1 = new QToolButton(centralWidget);
         btnSaveImageG1->setObjectName(QStringLiteral("btnSaveImageG1"));
         btnSaveImageG1->setEnabled(false);
         btnSaveImageG1->setMinimumSize(QSize(27, 27));
@@ -745,7 +747,7 @@ public:
 
         gridLayout_4->addWidget(btnSaveImageG1, 1, 8, 1, 1);
 
-        btnExportarG1 = new QToolButton(tabVP);
+        btnExportarG1 = new QToolButton(centralWidget);
         btnExportarG1->setObjectName(QStringLiteral("btnExportarG1"));
         btnExportarG1->setEnabled(false);
         QIcon icon24;
@@ -758,15 +760,13 @@ public:
 
         horizontalLayout->addLayout(gridLayout_4);
 
-        swSesion = new QStackedWidget(tabVP);
+        swSesion = new QStackedWidget(centralWidget);
         swSesion->setObjectName(QStringLiteral("swSesion"));
-        QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(swSesion->sizePolicy().hasHeightForWidth());
-        swSesion->setSizePolicy(sizePolicy1);
-        swSesion->setMinimumSize(QSize(0, 300));
-        swSesion->setMaximumSize(QSize(250, 16777215));
+        QSizePolicy sizePolicy3(QSizePolicy::Preferred, QSizePolicy::Ignored);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(swSesion->sizePolicy().hasHeightForWidth());
+        swSesion->setSizePolicy(sizePolicy3);
         swSesion->setStyleSheet(QLatin1String("QStackedWidget {\n"
 "     border: 1px solid gray;\n"
 "     border-radius: 2px;\n"
@@ -784,6 +784,14 @@ public:
 
         gridLayout_3->addWidget(rutlabel, 1, 0, 1, 1);
 
+        iniciarSession = new QPushButton(page);
+        iniciarSession->setObjectName(QStringLiteral("iniciarSession"));
+        QFont font2;
+        font2.setFamily(QStringLiteral("Arial"));
+        iniciarSession->setFont(font2);
+
+        gridLayout_3->addWidget(iniciarSession, 3, 0, 1, 1);
+
         label_6 = new QLabel(page);
         label_6->setObjectName(QStringLiteral("label_6"));
         label_6->setEnabled(false);
@@ -792,13 +800,12 @@ public:
 
         gridLayout_3->addWidget(label_6, 4, 0, 1, 2);
 
-        iniciarSession = new QPushButton(page);
-        iniciarSession->setObjectName(QStringLiteral("iniciarSession"));
-        QFont font2;
-        font2.setFamily(QStringLiteral("Arial"));
-        iniciarSession->setFont(font2);
+        btnListaUsuarios = new QToolButton(page);
+        btnListaUsuarios->setObjectName(QStringLiteral("btnListaUsuarios"));
+        btnListaUsuarios->setFont(font);
+        btnListaUsuarios->setIcon(icon1);
 
-        gridLayout_3->addWidget(iniciarSession, 3, 0, 1, 1);
+        gridLayout_3->addWidget(btnListaUsuarios, 3, 1, 1, 1);
 
         rutSesion = new QLineEdit(page);
         rutSesion->setObjectName(QStringLiteral("rutSesion"));
@@ -808,13 +815,6 @@ public:
         rutSesion->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
 
         gridLayout_3->addWidget(rutSesion, 2, 0, 1, 2);
-
-        btnListaUsuarios = new QToolButton(page);
-        btnListaUsuarios->setObjectName(QStringLiteral("btnListaUsuarios"));
-        btnListaUsuarios->setFont(font);
-        btnListaUsuarios->setIcon(icon1);
-
-        gridLayout_3->addWidget(btnListaUsuarios, 3, 1, 1, 1);
 
         swSesion->addWidget(page);
         page_2 = new QWidget();
@@ -925,9 +925,13 @@ public:
 
         verticalLayout_3->addLayout(horizontalLayout);
 
-        tabTiempoFrec = new QTabWidget(tabVP);
+        tabTiempoFrec = new QTabWidget(centralWidget);
         tabTiempoFrec->setObjectName(QStringLiteral("tabTiempoFrec"));
-        tabTiempoFrec->setMinimumSize(QSize(0, 300));
+        QSizePolicy sizePolicy4(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy4.setHorizontalStretch(0);
+        sizePolicy4.setVerticalStretch(0);
+        sizePolicy4.setHeightForWidth(tabTiempoFrec->sizePolicy().hasHeightForWidth());
+        tabTiempoFrec->setSizePolicy(sizePolicy4);
         tabTiempoFrec->setFont(font);
         tabTiempoFrec->setStyleSheet(QLatin1String("QTabWidget#tabTiempoFrec \n"
 "{\n"
@@ -939,137 +943,176 @@ public:
         gridLayout_13->setSpacing(6);
         gridLayout_13->setContentsMargins(11, 11, 11, 11);
         gridLayout_13->setObjectName(QStringLiteral("gridLayout_13"));
+        toolBoxGrafico3 = new QWidget(tabAB);
+        toolBoxGrafico3->setObjectName(QStringLiteral("toolBoxGrafico3"));
+        toolBoxGrafico3->setEnabled(false);
+        QSizePolicy sizePolicy5(QSizePolicy::Fixed, QSizePolicy::Preferred);
+        sizePolicy5.setHorizontalStretch(0);
+        sizePolicy5.setVerticalStretch(0);
+        sizePolicy5.setHeightForWidth(toolBoxGrafico3->sizePolicy().hasHeightForWidth());
+        toolBoxGrafico3->setSizePolicy(sizePolicy5);
+        gridLayout_21 = new QGridLayout(toolBoxGrafico3);
+        gridLayout_21->setSpacing(6);
+        gridLayout_21->setContentsMargins(11, 11, 11, 11);
+        gridLayout_21->setObjectName(QStringLiteral("gridLayout_21"));
+        comboAnalisis3 = new QComboBox(toolBoxGrafico3);
+        QIcon icon25;
+        icon25.addFile(QStringLiteral(":/imagenes/arrowApply.png"), QSize(), QIcon::Normal, QIcon::Off);
+        comboAnalisis3->addItem(icon25, QString());
+        comboAnalisis3->addItem(icon25, QString());
+        comboAnalisis3->addItem(icon25, QString());
+        comboAnalisis3->addItem(icon25, QString());
+        comboAnalisis3->addItem(icon25, QString());
+        comboAnalisis3->addItem(icon25, QString());
+        comboAnalisis3->addItem(icon25, QString());
+        comboAnalisis3->addItem(icon25, QString());
+        comboAnalisis3->addItem(icon25, QString());
+        comboAnalisis3->addItem(icon25, QString());
+        comboAnalisis3->setObjectName(QStringLiteral("comboAnalisis3"));
+        comboAnalisis3->setMinimumSize(QSize(0, 30));
+
+        gridLayout_21->addWidget(comboAnalisis3, 0, 0, 1, 1);
+
+        ButtonGraficar3 = new QPushButton(toolBoxGrafico3);
+        ButtonGraficar3->setObjectName(QStringLiteral("ButtonGraficar3"));
+        ButtonGraficar3->setMinimumSize(QSize(0, 30));
+        ButtonGraficar3->setStyleSheet(QStringLiteral(""));
+
+        gridLayout_21->addWidget(ButtonGraficar3, 1, 0, 1, 1);
+
+        line_6 = new QFrame(toolBoxGrafico3);
+        line_6->setObjectName(QStringLiteral("line_6"));
+        line_6->setFrameShape(QFrame::HLine);
+        line_6->setFrameShadow(QFrame::Sunken);
+
+        gridLayout_21->addWidget(line_6, 2, 0, 1, 1);
+
+        horizontalLayout_11 = new QHBoxLayout();
+        horizontalLayout_11->setSpacing(6);
+        horizontalLayout_11->setObjectName(QStringLiteral("horizontalLayout_11"));
+        label_SaveG3 = new QLabel(toolBoxGrafico3);
+        label_SaveG3->setObjectName(QStringLiteral("label_SaveG3"));
+
+        horizontalLayout_11->addWidget(label_SaveG3);
+
+        btnSaveImageG3 = new QToolButton(toolBoxGrafico3);
+        btnSaveImageG3->setObjectName(QStringLiteral("btnSaveImageG3"));
+        QIcon icon26;
+        icon26.addFile(QStringLiteral(":/imagenes/020.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnSaveImageG3->setIcon(icon26);
+        btnSaveImageG3->setIconSize(QSize(60, 60));
+        btnSaveImageG3->setAutoRepeat(false);
+        btnSaveImageG3->setAutoRaise(false);
+
+        horizontalLayout_11->addWidget(btnSaveImageG3);
+
+        btnSaveDataG3 = new QToolButton(toolBoxGrafico3);
+        btnSaveDataG3->setObjectName(QStringLiteral("btnSaveDataG3"));
+        QIcon icon27;
+        icon27.addFile(QStringLiteral(":/imagenes/csv_txt.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnSaveDataG3->setIcon(icon27);
+        btnSaveDataG3->setIconSize(QSize(60, 60));
+        btnSaveDataG3->setAutoRepeat(false);
+        btnSaveDataG3->setAutoRaise(false);
+
+        horizontalLayout_11->addWidget(btnSaveDataG3);
+
+
+        gridLayout_21->addLayout(horizontalLayout_11, 3, 0, 1, 1);
+
+        horizontalLayout_10 = new QHBoxLayout();
+        horizontalLayout_10->setSpacing(6);
+        horizontalLayout_10->setObjectName(QStringLiteral("horizontalLayout_10"));
+        label_17 = new QLabel(toolBoxGrafico3);
+        label_17->setObjectName(QStringLiteral("label_17"));
+
+        horizontalLayout_10->addWidget(label_17);
+
+        horizontalSpacer_8 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_10->addItem(horizontalSpacer_8);
+
+        in_enca_3 = new QCheckBox(toolBoxGrafico3);
+        in_enca_3->setObjectName(QStringLiteral("in_enca_3"));
+
+        horizontalLayout_10->addWidget(in_enca_3);
+
+        horizontalSpacer_7 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_10->addItem(horizontalSpacer_7);
+
+
+        gridLayout_21->addLayout(horizontalLayout_10, 4, 0, 1, 1);
+
+        line_7 = new QFrame(toolBoxGrafico3);
+        line_7->setObjectName(QStringLiteral("line_7"));
+        line_7->setFrameShape(QFrame::HLine);
+        line_7->setFrameShadow(QFrame::Sunken);
+
+        gridLayout_21->addWidget(line_7, 5, 0, 1, 1);
+
+        comboFiltros_3 = new QComboBox(toolBoxGrafico3);
+        comboFiltros_3->addItem(icon25, QString());
+        comboFiltros_3->addItem(icon25, QString());
+        comboFiltros_3->addItem(icon25, QString());
+        comboFiltros_3->addItem(icon25, QString());
+        comboFiltros_3->addItem(icon25, QString());
+        comboFiltros_3->addItem(icon25, QString());
+        comboFiltros_3->addItem(icon25, QString());
+        comboFiltros_3->addItem(icon25, QString());
+        comboFiltros_3->setObjectName(QStringLiteral("comboFiltros_3"));
+        comboFiltros_3->setMinimumSize(QSize(0, 30));
+        comboFiltros_3->setIconSize(QSize(35, 20));
+        comboFiltros_3->setDuplicatesEnabled(false);
+        comboFiltros_3->setFrame(true);
+
+        gridLayout_21->addWidget(comboFiltros_3, 6, 0, 1, 1);
+
+        horizontalLayout_12 = new QHBoxLayout();
+        horizontalLayout_12->setSpacing(6);
+        horizontalLayout_12->setObjectName(QStringLiteral("horizontalLayout_12"));
+        btn_AplicarFiltro3 = new QPushButton(toolBoxGrafico3);
+        btn_AplicarFiltro3->setObjectName(QStringLiteral("btn_AplicarFiltro3"));
+        btn_AplicarFiltro3->setMinimumSize(QSize(0, 30));
+
+        horizontalLayout_12->addWidget(btn_AplicarFiltro3);
+
+        toolBtn_Filtros3 = new QToolButton(toolBoxGrafico3);
+        toolBtn_Filtros3->setObjectName(QStringLiteral("toolBtn_Filtros3"));
+        toolBtn_Filtros3->setIcon(icon12);
+        toolBtn_Filtros3->setIconSize(QSize(30, 30));
+        toolBtn_Filtros3->setAutoRaise(false);
+
+        horizontalLayout_12->addWidget(toolBtn_Filtros3);
+
+
+        gridLayout_21->addLayout(horizontalLayout_12, 7, 0, 1, 1);
+
+
+        gridLayout_13->addWidget(toolBoxGrafico3, 0, 1, 1, 1);
+
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        toolBoxGrafico2 = new QToolBox(tabAB);
+        toolBoxGrafico2 = new QWidget(tabAB);
         toolBoxGrafico2->setObjectName(QStringLiteral("toolBoxGrafico2"));
         toolBoxGrafico2->setEnabled(false);
-        QSizePolicy sizePolicy2(QSizePolicy::Minimum, QSizePolicy::Minimum);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(toolBoxGrafico2->sizePolicy().hasHeightForWidth());
-        toolBoxGrafico2->setSizePolicy(sizePolicy2);
-        toolBoxGrafico2->setMaximumSize(QSize(210, 16777215));
-        toolBoxGrafico2->setAutoFillBackground(false);
-        page_10 = new QWidget();
-        page_10->setObjectName(QStringLiteral("page_10"));
-        page_10->setGeometry(QRect(0, 0, 210, 197));
-        gridLayout_8 = new QGridLayout(page_10);
-        gridLayout_8->setSpacing(6);
-        gridLayout_8->setContentsMargins(11, 11, 11, 11);
-        gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setSpacing(6);
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        comboAnalisis2 = new QComboBox(page_10);
-        comboAnalisis2->setObjectName(QStringLiteral("comboAnalisis2"));
-
-        verticalLayout_2->addWidget(comboAnalisis2);
-
-        ButtonGraficar2 = new QPushButton(page_10);
-        ButtonGraficar2->setObjectName(QStringLiteral("ButtonGraficar2"));
-        ButtonGraficar2->setMinimumSize(QSize(0, 30));
-        ButtonGraficar2->setStyleSheet(QStringLiteral(""));
-
-        verticalLayout_2->addWidget(ButtonGraficar2);
-
-
-        gridLayout_8->addLayout(verticalLayout_2, 0, 0, 1, 1);
-
-        gridLayout_15 = new QGridLayout();
+        sizePolicy5.setHeightForWidth(toolBoxGrafico2->sizePolicy().hasHeightForWidth());
+        toolBoxGrafico2->setSizePolicy(sizePolicy5);
+        gridLayout_15 = new QGridLayout(toolBoxGrafico2);
         gridLayout_15->setSpacing(6);
+        gridLayout_15->setContentsMargins(11, 11, 11, 11);
         gridLayout_15->setObjectName(QStringLiteral("gridLayout_15"));
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_15->addItem(horizontalSpacer, 1, 0, 1, 1);
-
-        label_SaveG2 = new QLabel(page_10);
-        label_SaveG2->setObjectName(QStringLiteral("label_SaveG2"));
-
-        gridLayout_15->addWidget(label_SaveG2, 0, 0, 1, 1);
-
-        btnSaveImageG2 = new QToolButton(page_10);
-        btnSaveImageG2->setObjectName(QStringLiteral("btnSaveImageG2"));
-        QIcon icon25;
-        icon25.addFile(QStringLiteral(":/imagenes/020.png"), QSize(), QIcon::Normal, QIcon::Off);
-        btnSaveImageG2->setIcon(icon25);
-        btnSaveImageG2->setIconSize(QSize(60, 60));
-        btnSaveImageG2->setAutoRaise(true);
-
-        gridLayout_15->addWidget(btnSaveImageG2, 0, 1, 2, 1);
-
-        in_enca_2 = new QCheckBox(page_10);
-        in_enca_2->setObjectName(QStringLiteral("in_enca_2"));
-        in_enca_2->setMaximumSize(QSize(20, 16777215));
-
-        gridLayout_15->addWidget(in_enca_2, 2, 3, 1, 1);
-
-        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_15->addItem(horizontalSpacer_4, 2, 4, 1, 1);
-
-        horizontalSpacer_6 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_15->addItem(horizontalSpacer_6, 2, 2, 1, 1);
-
-        btnSaveDataG2 = new QToolButton(page_10);
-        btnSaveDataG2->setObjectName(QStringLiteral("btnSaveDataG2"));
-        btnSaveDataG2->setMinimumSize(QSize(50, 50));
-        QIcon icon26;
-        icon26.addFile(QStringLiteral(":/imagenes/csv_txt.png"), QSize(), QIcon::Normal, QIcon::Off);
-        btnSaveDataG2->setIcon(icon26);
-        btnSaveDataG2->setIconSize(QSize(60, 60));
-        btnSaveDataG2->setAutoRepeat(false);
-        btnSaveDataG2->setAutoRaise(true);
-
-        gridLayout_15->addWidget(btnSaveDataG2, 0, 2, 2, 3);
-
-        label_16 = new QLabel(page_10);
-        label_16->setObjectName(QStringLiteral("label_16"));
-
-        gridLayout_15->addWidget(label_16, 2, 0, 1, 2);
-
-
-        gridLayout_8->addLayout(gridLayout_15, 1, 0, 1, 1);
-
-        toolBoxGrafico2->addItem(page_10, QStringLiteral("Metodos"));
-        page_11 = new QWidget();
-        page_11->setObjectName(QStringLiteral("page_11"));
-        page_11->setGeometry(QRect(0, 0, 210, 197));
-        gridLayout_5 = new QGridLayout(page_11);
-        gridLayout_5->setSpacing(6);
-        gridLayout_5->setContentsMargins(11, 11, 11, 11);
-        gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
-        comboFiltros_2 = new QComboBox(page_11);
-        QIcon icon27;
-        icon27.addFile(QStringLiteral(":/imagenes/arrowApply.png"), QSize(), QIcon::Normal, QIcon::Off);
-        comboFiltros_2->addItem(icon27, QString());
-        comboFiltros_2->addItem(icon27, QString());
-        comboFiltros_2->addItem(icon27, QString());
-        comboFiltros_2->addItem(icon27, QString());
-        comboFiltros_2->addItem(icon27, QString());
-        comboFiltros_2->addItem(icon27, QString());
-        comboFiltros_2->addItem(icon27, QString());
-        comboFiltros_2->addItem(icon27, QString());
-        comboFiltros_2->setObjectName(QStringLiteral("comboFiltros_2"));
-        comboFiltros_2->setMinimumSize(QSize(0, 30));
-        comboFiltros_2->setIconSize(QSize(35, 20));
-        comboFiltros_2->setDuplicatesEnabled(false);
-        comboFiltros_2->setFrame(true);
-
-        gridLayout_5->addWidget(comboFiltros_2, 0, 0, 1, 1);
-
         horizontalLayout_6 = new QHBoxLayout();
         horizontalLayout_6->setSpacing(6);
         horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
-        btn_AplicarFiltro2 = new QPushButton(page_11);
+        btn_AplicarFiltro2 = new QPushButton(toolBoxGrafico2);
         btn_AplicarFiltro2->setObjectName(QStringLiteral("btn_AplicarFiltro2"));
-        btn_AplicarFiltro2->setMinimumSize(QSize(0, 40));
+        btn_AplicarFiltro2->setMinimumSize(QSize(0, 30));
 
         horizontalLayout_6->addWidget(btn_AplicarFiltro2);
 
-        toolBtn_Filtros2 = new QToolButton(page_11);
+        toolBtn_Filtros2 = new QToolButton(toolBoxGrafico2);
         toolBtn_Filtros2->setObjectName(QStringLiteral("toolBtn_Filtros2"));
         toolBtn_Filtros2->setIcon(icon12);
         toolBtn_Filtros2->setIconSize(QSize(30, 30));
@@ -1078,9 +1121,115 @@ public:
         horizontalLayout_6->addWidget(toolBtn_Filtros2);
 
 
-        gridLayout_5->addLayout(horizontalLayout_6, 1, 0, 1, 1);
+        gridLayout_15->addLayout(horizontalLayout_6, 8, 0, 1, 2);
 
-        toolBoxGrafico2->addItem(page_11, QStringLiteral("Filtros"));
+        horizontalLayout_8 = new QHBoxLayout();
+        horizontalLayout_8->setSpacing(6);
+        horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
+        label_SaveG2 = new QLabel(toolBoxGrafico2);
+        label_SaveG2->setObjectName(QStringLiteral("label_SaveG2"));
+
+        horizontalLayout_8->addWidget(label_SaveG2);
+
+        btnSaveImageG2 = new QToolButton(toolBoxGrafico2);
+        btnSaveImageG2->setObjectName(QStringLiteral("btnSaveImageG2"));
+        btnSaveImageG2->setIcon(icon26);
+        btnSaveImageG2->setIconSize(QSize(60, 60));
+        btnSaveImageG2->setAutoRaise(false);
+
+        horizontalLayout_8->addWidget(btnSaveImageG2);
+
+        btnSaveDataG2 = new QToolButton(toolBoxGrafico2);
+        btnSaveDataG2->setObjectName(QStringLiteral("btnSaveDataG2"));
+        btnSaveDataG2->setIcon(icon27);
+        btnSaveDataG2->setIconSize(QSize(60, 60));
+        btnSaveDataG2->setAutoRepeat(false);
+        btnSaveDataG2->setAutoRaise(false);
+
+        horizontalLayout_8->addWidget(btnSaveDataG2);
+
+
+        gridLayout_15->addLayout(horizontalLayout_8, 4, 0, 1, 2);
+
+        horizontalLayout_9 = new QHBoxLayout();
+        horizontalLayout_9->setSpacing(6);
+        horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
+        label_16 = new QLabel(toolBoxGrafico2);
+        label_16->setObjectName(QStringLiteral("label_16"));
+
+        horizontalLayout_9->addWidget(label_16);
+
+        horizontalSpacer_6 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_9->addItem(horizontalSpacer_6);
+
+        in_enca_2 = new QCheckBox(toolBoxGrafico2);
+        in_enca_2->setObjectName(QStringLiteral("in_enca_2"));
+        in_enca_2->setMaximumSize(QSize(20, 16777215));
+
+        horizontalLayout_9->addWidget(in_enca_2);
+
+        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_9->addItem(horizontalSpacer_4);
+
+
+        gridLayout_15->addLayout(horizontalLayout_9, 5, 0, 1, 2);
+
+        ButtonGraficar2 = new QPushButton(toolBoxGrafico2);
+        ButtonGraficar2->setObjectName(QStringLiteral("ButtonGraficar2"));
+        ButtonGraficar2->setMinimumSize(QSize(0, 30));
+        ButtonGraficar2->setStyleSheet(QStringLiteral(""));
+
+        gridLayout_15->addWidget(ButtonGraficar2, 1, 0, 2, 2);
+
+        line_4 = new QFrame(toolBoxGrafico2);
+        line_4->setObjectName(QStringLiteral("line_4"));
+        line_4->setFrameShape(QFrame::HLine);
+        line_4->setFrameShadow(QFrame::Sunken);
+
+        gridLayout_15->addWidget(line_4, 6, 0, 1, 2);
+
+        comboFiltros_2 = new QComboBox(toolBoxGrafico2);
+        comboFiltros_2->addItem(icon25, QString());
+        comboFiltros_2->addItem(icon25, QString());
+        comboFiltros_2->addItem(icon25, QString());
+        comboFiltros_2->addItem(icon25, QString());
+        comboFiltros_2->addItem(icon25, QString());
+        comboFiltros_2->addItem(icon25, QString());
+        comboFiltros_2->addItem(icon25, QString());
+        comboFiltros_2->addItem(icon25, QString());
+        comboFiltros_2->setObjectName(QStringLiteral("comboFiltros_2"));
+        comboFiltros_2->setMinimumSize(QSize(0, 30));
+        comboFiltros_2->setIconSize(QSize(35, 20));
+        comboFiltros_2->setDuplicatesEnabled(false);
+        comboFiltros_2->setFrame(true);
+
+        gridLayout_15->addWidget(comboFiltros_2, 7, 0, 1, 2);
+
+        comboAnalisis2 = new QComboBox(toolBoxGrafico2);
+        comboAnalisis2->addItem(icon25, QString());
+        comboAnalisis2->addItem(icon25, QString());
+        comboAnalisis2->addItem(icon25, QString());
+        comboAnalisis2->addItem(icon25, QString());
+        comboAnalisis2->addItem(icon25, QString());
+        comboAnalisis2->addItem(icon25, QString());
+        comboAnalisis2->addItem(icon25, QString());
+        comboAnalisis2->addItem(icon25, QString());
+        comboAnalisis2->addItem(icon25, QString());
+        comboAnalisis2->addItem(icon25, QString());
+        comboAnalisis2->setObjectName(QStringLiteral("comboAnalisis2"));
+        comboAnalisis2->setMinimumSize(QSize(0, 30));
+
+        gridLayout_15->addWidget(comboAnalisis2, 0, 0, 1, 2);
+
+        line_5 = new QFrame(toolBoxGrafico2);
+        line_5->setObjectName(QStringLiteral("line_5"));
+        line_5->setFrameShape(QFrame::HLine);
+        line_5->setFrameShadow(QFrame::Sunken);
+
+        gridLayout_15->addWidget(line_5, 3, 0, 1, 2);
+
 
         horizontalLayout_3->addWidget(toolBoxGrafico2);
 
@@ -1099,6 +1248,11 @@ public:
         gridLayout_12->setObjectName(QStringLiteral("gridLayout_12"));
         grafico2 = new QCustomPlot(ContenedorGrafico2);
         grafico2->setObjectName(QStringLiteral("grafico2"));
+        QSizePolicy sizePolicy6(QSizePolicy::Expanding, QSizePolicy::Preferred);
+        sizePolicy6.setHorizontalStretch(0);
+        sizePolicy6.setVerticalStretch(0);
+        sizePolicy6.setHeightForWidth(grafico2->sizePolicy().hasHeightForWidth());
+        grafico2->setSizePolicy(sizePolicy6);
         QFont font3;
         font3.setPointSize(8);
         grafico2->setFont(font3);
@@ -1120,6 +1274,8 @@ public:
         gridLayout_14->setObjectName(QStringLiteral("gridLayout_14"));
         grafico3 = new QCustomPlot(ContenedorGrafico3);
         grafico3->setObjectName(QStringLiteral("grafico3"));
+        sizePolicy6.setHeightForWidth(grafico3->sizePolicy().hasHeightForWidth());
+        grafico3->setSizePolicy(sizePolicy6);
         grafico3->setFont(font3);
 
         gridLayout_14->addWidget(grafico3, 0, 0, 1, 1);
@@ -1129,139 +1285,6 @@ public:
 
 
         horizontalLayout_3->addLayout(horizontalLayout_2);
-
-        toolBoxGrafico3 = new QToolBox(tabAB);
-        toolBoxGrafico3->setObjectName(QStringLiteral("toolBoxGrafico3"));
-        toolBoxGrafico3->setEnabled(false);
-        sizePolicy2.setHeightForWidth(toolBoxGrafico3->sizePolicy().hasHeightForWidth());
-        toolBoxGrafico3->setSizePolicy(sizePolicy2);
-        toolBoxGrafico3->setMaximumSize(QSize(210, 16777215));
-        page_17 = new QWidget();
-        page_17->setObjectName(QStringLiteral("page_17"));
-        page_17->setGeometry(QRect(0, 0, 210, 197));
-        gridLayout_7 = new QGridLayout(page_17);
-        gridLayout_7->setSpacing(6);
-        gridLayout_7->setContentsMargins(11, 11, 11, 11);
-        gridLayout_7->setObjectName(QStringLiteral("gridLayout_7"));
-        verticalLayout_4 = new QVBoxLayout();
-        verticalLayout_4->setSpacing(6);
-        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
-        comboAnalisis3 = new QComboBox(page_17);
-        comboAnalisis3->setObjectName(QStringLiteral("comboAnalisis3"));
-
-        verticalLayout_4->addWidget(comboAnalisis3);
-
-        ButtonGraficar3 = new QPushButton(page_17);
-        ButtonGraficar3->setObjectName(QStringLiteral("ButtonGraficar3"));
-        ButtonGraficar3->setMinimumSize(QSize(0, 30));
-        ButtonGraficar3->setStyleSheet(QStringLiteral(""));
-
-        verticalLayout_4->addWidget(ButtonGraficar3);
-
-
-        gridLayout_7->addLayout(verticalLayout_4, 0, 0, 1, 1);
-
-        gridLayout_16 = new QGridLayout();
-        gridLayout_16->setSpacing(6);
-        gridLayout_16->setObjectName(QStringLiteral("gridLayout_16"));
-        horizontalSpacer_7 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_16->addItem(horizontalSpacer_7, 3, 4, 1, 1);
-
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_16->addItem(horizontalSpacer_3, 1, 0, 1, 1);
-
-        label_SaveG3 = new QLabel(page_17);
-        label_SaveG3->setObjectName(QStringLiteral("label_SaveG3"));
-
-        gridLayout_16->addWidget(label_SaveG3, 0, 0, 1, 1);
-
-        btnSaveImageG3 = new QToolButton(page_17);
-        btnSaveImageG3->setObjectName(QStringLiteral("btnSaveImageG3"));
-        btnSaveImageG3->setMinimumSize(QSize(50, 50));
-        btnSaveImageG3->setIcon(icon25);
-        btnSaveImageG3->setIconSize(QSize(60, 60));
-        btnSaveImageG3->setAutoRepeat(false);
-        btnSaveImageG3->setAutoRaise(true);
-
-        gridLayout_16->addWidget(btnSaveImageG3, 0, 1, 2, 1);
-
-        horizontalSpacer_8 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_16->addItem(horizontalSpacer_8, 3, 2, 1, 1);
-
-        btnSaveDataG3 = new QToolButton(page_17);
-        btnSaveDataG3->setObjectName(QStringLiteral("btnSaveDataG3"));
-        btnSaveDataG3->setMinimumSize(QSize(50, 50));
-        btnSaveDataG3->setIcon(icon26);
-        btnSaveDataG3->setIconSize(QSize(60, 60));
-        btnSaveDataG3->setAutoRepeat(false);
-        btnSaveDataG3->setAutoRaise(true);
-
-        gridLayout_16->addWidget(btnSaveDataG3, 0, 2, 2, 3);
-
-        in_enca_3 = new QCheckBox(page_17);
-        in_enca_3->setObjectName(QStringLiteral("in_enca_3"));
-
-        gridLayout_16->addWidget(in_enca_3, 3, 3, 1, 1);
-
-        label_17 = new QLabel(page_17);
-        label_17->setObjectName(QStringLiteral("label_17"));
-
-        gridLayout_16->addWidget(label_17, 3, 0, 1, 2);
-
-
-        gridLayout_7->addLayout(gridLayout_16, 1, 0, 1, 1);
-
-        toolBoxGrafico3->addItem(page_17, QStringLiteral("Metodos"));
-        page_21 = new QWidget();
-        page_21->setObjectName(QStringLiteral("page_21"));
-        page_21->setGeometry(QRect(0, 0, 210, 197));
-        gridLayout_17 = new QGridLayout(page_21);
-        gridLayout_17->setSpacing(6);
-        gridLayout_17->setContentsMargins(11, 11, 11, 11);
-        gridLayout_17->setObjectName(QStringLiteral("gridLayout_17"));
-        comboFiltros_3 = new QComboBox(page_21);
-        comboFiltros_3->addItem(icon27, QString());
-        comboFiltros_3->addItem(icon27, QString());
-        comboFiltros_3->addItem(icon27, QString());
-        comboFiltros_3->addItem(icon27, QString());
-        comboFiltros_3->addItem(icon27, QString());
-        comboFiltros_3->addItem(icon27, QString());
-        comboFiltros_3->addItem(icon27, QString());
-        comboFiltros_3->addItem(icon27, QString());
-        comboFiltros_3->setObjectName(QStringLiteral("comboFiltros_3"));
-        comboFiltros_3->setMinimumSize(QSize(0, 30));
-        comboFiltros_3->setIconSize(QSize(35, 20));
-        comboFiltros_3->setDuplicatesEnabled(false);
-        comboFiltros_3->setFrame(true);
-
-        gridLayout_17->addWidget(comboFiltros_3, 0, 0, 1, 1);
-
-        horizontalLayout_7 = new QHBoxLayout();
-        horizontalLayout_7->setSpacing(6);
-        horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
-        btn_AplicarFiltro3 = new QPushButton(page_21);
-        btn_AplicarFiltro3->setObjectName(QStringLiteral("btn_AplicarFiltro3"));
-        btn_AplicarFiltro3->setMinimumSize(QSize(0, 40));
-
-        horizontalLayout_7->addWidget(btn_AplicarFiltro3);
-
-        toolBtn_Filtros3 = new QToolButton(page_21);
-        toolBtn_Filtros3->setObjectName(QStringLiteral("toolBtn_Filtros3"));
-        toolBtn_Filtros3->setIcon(icon12);
-        toolBtn_Filtros3->setIconSize(QSize(30, 30));
-        toolBtn_Filtros3->setAutoRaise(false);
-
-        horizontalLayout_7->addWidget(toolBtn_Filtros3);
-
-
-        gridLayout_17->addLayout(horizontalLayout_7, 1, 0, 1, 1);
-
-        toolBoxGrafico3->addItem(page_21, QStringLiteral("Filtros"));
-
-        horizontalLayout_3->addWidget(toolBoxGrafico3);
 
 
         gridLayout_13->addLayout(horizontalLayout_3, 0, 0, 1, 1);
@@ -1275,11 +1298,11 @@ public:
         gridLayout_24->setObjectName(QStringLiteral("gridLayout_24"));
         dockGraficosNorm = new QDockWidget(tabAE);
         dockGraficosNorm->setObjectName(QStringLiteral("dockGraficosNorm"));
-        QSizePolicy sizePolicy3(QSizePolicy::Maximum, QSizePolicy::Maximum);
-        sizePolicy3.setHorizontalStretch(1);
-        sizePolicy3.setVerticalStretch(1);
-        sizePolicy3.setHeightForWidth(dockGraficosNorm->sizePolicy().hasHeightForWidth());
-        dockGraficosNorm->setSizePolicy(sizePolicy3);
+        QSizePolicy sizePolicy7(QSizePolicy::Maximum, QSizePolicy::Maximum);
+        sizePolicy7.setHorizontalStretch(1);
+        sizePolicy7.setVerticalStretch(1);
+        sizePolicy7.setHeightForWidth(dockGraficosNorm->sizePolicy().hasHeightForWidth());
+        dockGraficosNorm->setSizePolicy(sizePolicy7);
         graficoNorm = new QCustomPlot();
         graficoNorm->setObjectName(QStringLiteral("graficoNorm"));
         dockGraficosNorm->setWidget(graficoNorm);
@@ -1591,9 +1614,66 @@ public:
         verticalLayout_3->addWidget(tabTiempoFrec);
 
 
-        gridLayout_21->addLayout(verticalLayout_3, 0, 0, 1, 1);
+        gridLayout_10->addLayout(verticalLayout_3, 0, 0, 1, 1);
 
+        tabPrincipal = new QTabWidget(centralWidget);
+        tabPrincipal->setObjectName(QStringLiteral("tabPrincipal"));
+        tabPrincipal->setEnabled(true);
+        tabPrincipal->setFont(font);
+        tabVP = new QWidget();
+        tabVP->setObjectName(QStringLiteral("tabVP"));
+        toolBoxGrafico2_old = new QToolBox(tabVP);
+        toolBoxGrafico2_old->setObjectName(QStringLiteral("toolBoxGrafico2_old"));
+        toolBoxGrafico2_old->setEnabled(true);
+        toolBoxGrafico2_old->setGeometry(QRect(310, 10, 203, 281));
+        sizePolicy5.setHeightForWidth(toolBoxGrafico2_old->sizePolicy().hasHeightForWidth());
+        toolBoxGrafico2_old->setSizePolicy(sizePolicy5);
+        toolBoxGrafico2_old->setMaximumSize(QSize(210, 16777215));
+        toolBoxGrafico2_old->setAutoFillBackground(false);
+        page_10 = new QWidget();
+        page_10->setObjectName(QStringLiteral("page_10"));
+        page_10->setGeometry(QRect(0, 0, 203, 227));
+        gridLayout_8 = new QGridLayout(page_10);
+        gridLayout_8->setSpacing(6);
+        gridLayout_8->setContentsMargins(11, 11, 11, 11);
+        gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
+        toolBoxGrafico2_old->addItem(page_10, QStringLiteral("Metodos"));
+        page_11 = new QWidget();
+        page_11->setObjectName(QStringLiteral("page_11"));
+        page_11->setGeometry(QRect(0, 0, 203, 227));
+        gridLayout_5 = new QGridLayout(page_11);
+        gridLayout_5->setSpacing(6);
+        gridLayout_5->setContentsMargins(11, 11, 11, 11);
+        gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
+        toolBoxGrafico2_old->addItem(page_11, QStringLiteral("Filtros"));
+        toolBoxGrafico3_old = new QToolBox(tabVP);
+        toolBoxGrafico3_old->setObjectName(QStringLiteral("toolBoxGrafico3_old"));
+        toolBoxGrafico3_old->setEnabled(true);
+        toolBoxGrafico3_old->setGeometry(QRect(80, 10, 198, 285));
+        sizePolicy5.setHeightForWidth(toolBoxGrafico3_old->sizePolicy().hasHeightForWidth());
+        toolBoxGrafico3_old->setSizePolicy(sizePolicy5);
+        page_17 = new QWidget();
+        page_17->setObjectName(QStringLiteral("page_17"));
+        page_17->setGeometry(QRect(0, 0, 198, 231));
+        gridLayout_7 = new QGridLayout(page_17);
+        gridLayout_7->setSpacing(6);
+        gridLayout_7->setContentsMargins(11, 11, 11, 11);
+        gridLayout_7->setObjectName(QStringLiteral("gridLayout_7"));
+        toolBoxGrafico3_old->addItem(page_17, QStringLiteral("Metodos"));
+        page_21 = new QWidget();
+        page_21->setObjectName(QStringLiteral("page_21"));
+        page_21->setGeometry(QRect(0, 0, 198, 231));
+        gridLayout_17 = new QGridLayout(page_21);
+        gridLayout_17->setSpacing(6);
+        gridLayout_17->setContentsMargins(11, 11, 11, 11);
+        gridLayout_17->setObjectName(QStringLiteral("gridLayout_17"));
+        toolBoxGrafico3_old->addItem(page_21, QStringLiteral("Filtros"));
         tabPrincipal->addTab(tabVP, QString());
+        toolBoxGrafico2_old->raise();
+        toolBoxGrafico2_old->raise();
+        toolBoxGrafico2_old->raise();
+        toolBoxGrafico3_old->raise();
+        toolBoxGrafico3_old->raise();
         tabNYC = new QWidget();
         tabNYC->setObjectName(QStringLiteral("tabNYC"));
         gridLayout_22 = new QGridLayout(tabNYC);
@@ -1663,11 +1743,8 @@ public:
         verticalLayout_7->setObjectName(QStringLiteral("verticalLayout_7"));
         notasComentarios = new QPlainTextEdit(tabNYC);
         notasComentarios->setObjectName(QStringLiteral("notasComentarios"));
-        QSizePolicy sizePolicy4(QSizePolicy::Preferred, QSizePolicy::Expanding);
-        sizePolicy4.setHorizontalStretch(0);
-        sizePolicy4.setVerticalStretch(0);
-        sizePolicy4.setHeightForWidth(notasComentarios->sizePolicy().hasHeightForWidth());
-        notasComentarios->setSizePolicy(sizePolicy4);
+        sizePolicy2.setHeightForWidth(notasComentarios->sizePolicy().hasHeightForWidth());
+        notasComentarios->setSizePolicy(sizePolicy2);
         notasComentarios->setMaximumSize(QSize(16777215, 16777215));
 
         verticalLayout_7->addWidget(notasComentarios);
@@ -1703,12 +1780,12 @@ public:
 
         tabPrincipal->addTab(tabNYC, QString());
 
-        gridLayout_10->addWidget(tabPrincipal, 0, 0, 1, 1);
+        gridLayout_10->addWidget(tabPrincipal, 1, 0, 1, 1);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 976, 21));
+        menuBar->setGeometry(QRect(0, 0, 913, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         menuExport = new QMenu(menuBar);
@@ -1786,11 +1863,11 @@ public:
         retranslateUi(MainWindow);
         QObject::connect(actionExit, SIGNAL(triggered()), MainWindow, SLOT(close()));
 
-        tabPrincipal->setCurrentIndex(0);
         swSesion->setCurrentIndex(0);
         tabTiempoFrec->setCurrentIndex(0);
-        toolBoxGrafico2->setCurrentIndex(0);
-        toolBoxGrafico3->setCurrentIndex(0);
+        tabPrincipal->setCurrentIndex(0);
+        toolBoxGrafico2_old->setCurrentIndex(1);
+        toolBoxGrafico3_old->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1864,13 +1941,13 @@ public:
 #endif // QT_NO_TOOLTIP
         btnExportarG1->setText(QApplication::translate("MainWindow", "...", 0));
         rutlabel->setText(QApplication::translate("MainWindow", "RUT:", 0));
-        label_6->setText(QString());
         iniciarSession->setText(QApplication::translate("MainWindow", "Ingresar", 0));
+        label_6->setText(QString());
+        btnListaUsuarios->setText(QString());
 #ifndef QT_NO_TOOLTIP
         rutSesion->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p>Ej: &quot;11.222.333-K&quot;</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
         rutSesion->setPlaceholderText(QApplication::translate("MainWindow", "Ej: 10.999.888-7", 0));
-        btnListaUsuarios->setText(QString());
         imagenUsuario->setText(QString());
         sesionNombre->setText(QString());
         label_rut->setText(QApplication::translate("MainWindow", "RUT:", 0));
@@ -1882,58 +1959,23 @@ public:
         sesionDireccion->setText(QString());
         label_sexo->setText(QApplication::translate("MainWindow", "SEXO:", 0));
         label_Historial->setText(QApplication::translate("MainWindow", "Historial:", 0));
-        comboAnalisis2->clear();
-        comboAnalisis2->insertItems(0, QStringList()
-         << QApplication::translate("MainWindow", "Discrete Fourier Transform", 0)
-         << QApplication::translate("MainWindow", "Fast Fourier Transform", 0)
-         << QApplication::translate("MainWindow", "Gabor Transform", 0)
-         << QApplication::translate("MainWindow", "Wavelet Transform", 0)
-         << QApplication::translate("MainWindow", "Spectrogram", 0)
-         << QApplication::translate("MainWindow", "Histogram Fourier", 0)
-         << QApplication::translate("MainWindow", "Histogram", 0)
-         << QApplication::translate("MainWindow", "MovingRms", 0)
-         << QApplication::translate("MainWindow", "Mean Frequency", 0)
-         << QApplication::translate("MainWindow", "Normalize", 0)
-        );
-        ButtonGraficar2->setText(QApplication::translate("MainWindow", "Graficar", 0));
-        label_SaveG2->setText(QApplication::translate("MainWindow", "Exportar:", 0));
-        btnSaveImageG2->setText(QString());
-        in_enca_2->setText(QString());
-        btnSaveDataG2->setText(QApplication::translate("MainWindow", "...", 0));
-        label_16->setText(QApplication::translate("MainWindow", "Incluir encabezado:", 0));
-        toolBoxGrafico2->setItemText(toolBoxGrafico2->indexOf(page_10), QApplication::translate("MainWindow", "Metodos", 0));
-        comboFiltros_2->setItemText(0, QApplication::translate("MainWindow", "Pasa Bajo", 0));
-        comboFiltros_2->setItemText(1, QApplication::translate("MainWindow", "Pasa Alto", 0));
-        comboFiltros_2->setItemText(2, QApplication::translate("MainWindow", "Pasa Banda", 0));
-        comboFiltros_2->setItemText(3, QApplication::translate("MainWindow", "Elimina Banda", 0));
-        comboFiltros_2->setItemText(4, QApplication::translate("MainWindow", "Filtro Notch", 0));
-        comboFiltros_2->setItemText(5, QApplication::translate("MainWindow", "Pasa Bajo - Butterworth  ", 0));
-        comboFiltros_2->setItemText(6, QApplication::translate("MainWindow", "Filtro de Gabor", 0));
-        comboFiltros_2->setItemText(7, QApplication::translate("MainWindow", "Filtro de Wavelet", 0));
+        comboAnalisis3->setItemText(0, QApplication::translate("MainWindow", "Discrete Fourier Transform", 0));
+        comboAnalisis3->setItemText(1, QApplication::translate("MainWindow", "Fast Fourier Transform", 0));
+        comboAnalisis3->setItemText(2, QApplication::translate("MainWindow", "Gabor Transform", 0));
+        comboAnalisis3->setItemText(3, QApplication::translate("MainWindow", "Wavelet Transform", 0));
+        comboAnalisis3->setItemText(4, QApplication::translate("MainWindow", "Spectrogram", 0));
+        comboAnalisis3->setItemText(5, QApplication::translate("MainWindow", "Histogram Fourier", 0));
+        comboAnalisis3->setItemText(6, QApplication::translate("MainWindow", "Histogram", 0));
+        comboAnalisis3->setItemText(7, QApplication::translate("MainWindow", "MovingRms", 0));
+        comboAnalisis3->setItemText(8, QApplication::translate("MainWindow", "Mean Frequency", 0));
+        comboAnalisis3->setItemText(9, QApplication::translate("MainWindow", "Normalize", 0));
 
-        btn_AplicarFiltro2->setText(QApplication::translate("MainWindow", "Aplicar Filtro", 0));
-        toolBtn_Filtros2->setText(QApplication::translate("MainWindow", "...", 0));
-        toolBoxGrafico2->setItemText(toolBoxGrafico2->indexOf(page_11), QApplication::translate("MainWindow", "Filtros", 0));
-        comboAnalisis3->clear();
-        comboAnalisis3->insertItems(0, QStringList()
-         << QApplication::translate("MainWindow", "Discrete Fourier Transform", 0)
-         << QApplication::translate("MainWindow", "Fast Fourier Transform", 0)
-         << QApplication::translate("MainWindow", "Gabor Transform", 0)
-         << QApplication::translate("MainWindow", "Wavelet Transform", 0)
-         << QApplication::translate("MainWindow", "Spectrogram", 0)
-         << QApplication::translate("MainWindow", "Histogram Fourier", 0)
-         << QApplication::translate("MainWindow", "Histogram", 0)
-         << QApplication::translate("MainWindow", "MovingRms", 0)
-         << QApplication::translate("MainWindow", "Mean Frequency", 0)
-         << QApplication::translate("MainWindow", "Normalize", 0)
-        );
         ButtonGraficar3->setText(QApplication::translate("MainWindow", "Graficar", 0));
         label_SaveG3->setText(QApplication::translate("MainWindow", "Exportar:", 0));
         btnSaveImageG3->setText(QString());
         btnSaveDataG3->setText(QApplication::translate("MainWindow", "...", 0));
-        in_enca_3->setText(QString());
         label_17->setText(QApplication::translate("MainWindow", "Incluir encabezado:", 0));
-        toolBoxGrafico3->setItemText(toolBoxGrafico3->indexOf(page_17), QApplication::translate("MainWindow", "Metodos", 0));
+        in_enca_3->setText(QString());
         comboFiltros_3->setItemText(0, QApplication::translate("MainWindow", "Pasa Bajo", 0));
         comboFiltros_3->setItemText(1, QApplication::translate("MainWindow", "Pasa Alto", 0));
         comboFiltros_3->setItemText(2, QApplication::translate("MainWindow", "Pasa Banda", 0));
@@ -1945,7 +1987,34 @@ public:
 
         btn_AplicarFiltro3->setText(QApplication::translate("MainWindow", "Aplicar Filtro", 0));
         toolBtn_Filtros3->setText(QApplication::translate("MainWindow", "...", 0));
-        toolBoxGrafico3->setItemText(toolBoxGrafico3->indexOf(page_21), QApplication::translate("MainWindow", "Filtros", 0));
+        btn_AplicarFiltro2->setText(QApplication::translate("MainWindow", "Aplicar Filtro", 0));
+        toolBtn_Filtros2->setText(QApplication::translate("MainWindow", "...", 0));
+        label_SaveG2->setText(QApplication::translate("MainWindow", "Exportar:", 0));
+        btnSaveImageG2->setText(QString());
+        btnSaveDataG2->setText(QApplication::translate("MainWindow", "...", 0));
+        label_16->setText(QApplication::translate("MainWindow", "Incluir encabezado:", 0));
+        in_enca_2->setText(QString());
+        ButtonGraficar2->setText(QApplication::translate("MainWindow", "Graficar", 0));
+        comboFiltros_2->setItemText(0, QApplication::translate("MainWindow", "Pasa Bajo", 0));
+        comboFiltros_2->setItemText(1, QApplication::translate("MainWindow", "Pasa Alto", 0));
+        comboFiltros_2->setItemText(2, QApplication::translate("MainWindow", "Pasa Banda", 0));
+        comboFiltros_2->setItemText(3, QApplication::translate("MainWindow", "Elimina Banda", 0));
+        comboFiltros_2->setItemText(4, QApplication::translate("MainWindow", "Filtro Notch", 0));
+        comboFiltros_2->setItemText(5, QApplication::translate("MainWindow", "Pasa Bajo - Butterworth  ", 0));
+        comboFiltros_2->setItemText(6, QApplication::translate("MainWindow", "Filtro de Gabor", 0));
+        comboFiltros_2->setItemText(7, QApplication::translate("MainWindow", "Filtro de Wavelet", 0));
+
+        comboAnalisis2->setItemText(0, QApplication::translate("MainWindow", "Discrete Fourier Transform", 0));
+        comboAnalisis2->setItemText(1, QApplication::translate("MainWindow", "Fast Fourier Transform", 0));
+        comboAnalisis2->setItemText(2, QApplication::translate("MainWindow", "Gabor Transform", 0));
+        comboAnalisis2->setItemText(3, QApplication::translate("MainWindow", "Wavelet Transform", 0));
+        comboAnalisis2->setItemText(4, QApplication::translate("MainWindow", "Spectrogram", 0));
+        comboAnalisis2->setItemText(5, QApplication::translate("MainWindow", "Histogram Fourier", 0));
+        comboAnalisis2->setItemText(6, QApplication::translate("MainWindow", "Histogram", 0));
+        comboAnalisis2->setItemText(7, QApplication::translate("MainWindow", "MovingRms", 0));
+        comboAnalisis2->setItemText(8, QApplication::translate("MainWindow", "Mean Frequency", 0));
+        comboAnalisis2->setItemText(9, QApplication::translate("MainWindow", "Normalize", 0));
+
         tabTiempoFrec->setTabText(tabTiempoFrec->indexOf(tabAB), QApplication::translate("MainWindow", "Analisis Visual", 0));
         dockGraficosNorm->setWindowTitle(QApplication::translate("MainWindow", "Graficos - Se\303\261al Normalizada", 0));
         groupBox_5->setTitle(QApplication::translate("MainWindow", "Normalized by:", 0));
@@ -1991,6 +2060,10 @@ public:
         label_7->setText(QApplication::translate("MainWindow", "Log de eventos del sistema:", 0));
         label_5->setText(QApplication::translate("MainWindow", "Contenido del archivo actual:", 0));
         tabTiempoFrec->setTabText(tabTiempoFrec->indexOf(tabInfo), QApplication::translate("MainWindow", "Log and Info", 0));
+        toolBoxGrafico2_old->setItemText(toolBoxGrafico2_old->indexOf(page_10), QApplication::translate("MainWindow", "Metodos", 0));
+        toolBoxGrafico2_old->setItemText(toolBoxGrafico2_old->indexOf(page_11), QApplication::translate("MainWindow", "Filtros", 0));
+        toolBoxGrafico3_old->setItemText(toolBoxGrafico3_old->indexOf(page_17), QApplication::translate("MainWindow", "Metodos", 0));
+        toolBoxGrafico3_old->setItemText(toolBoxGrafico3_old->indexOf(page_21), QApplication::translate("MainWindow", "Filtros", 0));
         tabPrincipal->setTabText(tabPrincipal->indexOf(tabVP), QApplication::translate("MainWindow", "Ventana Principal", 0));
         infoComentarios->setText(QApplication::translate("MainWindow", "* En esta seccion podras agregar Notas y Comentarios que se almacenaran automaticamente en la sesion actual.", 0));
         infoComentarios_2->setText(QApplication::translate("MainWindow", "* A la derecha se muestra un Historial de los comentarios previamente ingresados.", 0));

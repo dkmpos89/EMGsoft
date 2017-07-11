@@ -30,7 +30,7 @@ DataBase::DataBase()
 
     if( db.open()){
         showError( QSqlError(), QString("[Info] Abriendo... Database was opened successfully!") );
-        qInfo()<<"[Info] Base de datos en ruta: "<<dbName<<endl;
+        qInfo()<<"Base de datos en ruta: "<<dbName<<endl;
         if( !exist )
             executeScript( query );
     }else
@@ -53,14 +53,14 @@ void DataBase::executeScript(QSqlQuery query){
        for( QString it : all ){
            bool result = query.exec(it);
            if( result ){
-               qInfo()<<"CREATE TABLE: "<<it.split(" ")[2]<<" : TRUE"<<endl;
+               qDebug()<<"CREATE TABLE: "<<it.split(" ")[2]<<" : TRUE"<<endl;
            }else
-               qInfo()<<query.lastError().text()<<endl;
+               qCritical()<<query.lastError().text()<<endl;
        }
        scriptFile.close();
-       qDebug()<<"EnHoraBuena!!! la estructura de la base de datos ha sido creada satisfactoriamente";
+       qInfo()<<"EnHoraBuena!!! la estructura de la base de datos ha sido creada satisfactoriamente"<<endl;
     }else
-       qDebug()<<"Lastima! archivo no se ha logrado abrir => la estructura de la base de datos no ha sido creada, Joto!";
+       qWarning()<<"Lastima! archivo no se ha logrado abrir => la estructura de la base de datos no ha sido creada, Joto!"<<endl;
 
 }
 
@@ -127,7 +127,7 @@ bool DataBase::getProyectos(QString name)
         result = query.exec();
         setState(true);
     }else{
-        qWarning()<<"ERROR: "<<endl<<"    Recurso: 'Base de Datos'  -  Estado: ocupado"<<endl;
+        qWarning()<<endl<<" Recurso: 'Base de Datos'  -  Estado: ocupado"<<endl;
     }
     return result;
 }
@@ -148,9 +148,9 @@ bool DataBase::insertProyecto(cProject *cp)
             result = query.exec();
             setState(true);
         }else
-            qWarning()<<"[ERROR:] Formulario de registro de proyecto incompleto. (El NOMBRE del proyecto es OBLIGATORIO)"<<endl;
+            qWarning()<<"Formulario de registro de proyecto incompleto. (El NOMBRE del proyecto es OBLIGATORIO)"<<endl;
     }else{
-        qWarning()<<"ERROR: "<<endl<<"    Recurso: 'Base de Datos'  -  Estado: ocupado"<<endl;
+        qWarning()<<" Recurso: 'Base de Datos'  -  Estado: ocupado"<<endl;
     }
     return result;
 
@@ -167,7 +167,7 @@ bool DataBase::borrarProyecto(QString id)
         result = query.exec();
         setState(true);
     }else{
-        qWarning()<<"ERROR: "<<endl<<"    Recurso: 'Base de Datos'  -  Estado: ocupado"<<endl;
+        qWarning()<<" Recurso: 'Base de Datos'  -  Estado: ocupado"<<endl;
     }
     return result;
 }
@@ -193,7 +193,7 @@ bool DataBase::getPacientes(const QString rut)
         result = query.exec();
         setState(true);
     }else{
-        qWarning()<<"ERROR: "<<endl<<"    Recurso: 'Base de Datos'  -  Estado: ocupado"<<endl;
+        qWarning()<<" Recurso: 'Base de Datos'  -  Estado: ocupado"<<endl;
     }
     return result;
 }
@@ -234,7 +234,7 @@ bool DataBase::borrarPaciente(QString rut)
         result = query.exec();
         setState( result );
     }else{
-        qWarning()<<"ERROR: "<<endl<<"    Recurso: 'Base de Datos'  -  Estado: ocupado"<<endl;
+        qWarning()<<" Recurso: 'Base de Datos'  -  Estado: ocupado"<<endl;
     }
     return result;
 }
@@ -262,9 +262,9 @@ bool DataBase::insertPaciente(cPaciente *cp)
             result = query.exec();
             setState(true);
         }else
-            qWarning()<<"[ERROR:] Formulario de registro de paciente incompleto. (RUT Y NOMBRE SON CAMPOS OBLIGATORIOS)"<<endl;
+            qWarning()<<"Formulario de registro de paciente incompleto. (RUT Y NOMBRE SON CAMPOS OBLIGATORIOS)"<<endl;
     }else{
-        qWarning()<<"ERROR: "<<endl<<"    Recurso: 'Base de Datos'  -  Estado: ocupado"<<endl;
+        qWarning()<<" Recurso: 'Base de Datos'  -  Estado: ocupado"<<endl;
     }
     return result;
 
@@ -292,7 +292,7 @@ bool DataBase::updatePaciente(cPaciente *cp)
         result = query.exec();
         setState(true);
     }else{
-        qWarning()<<"ERROR: "<<endl<<"    Recurso: 'Base de Datos'  -  Estado: ocupado"<<endl;
+        qWarning()<<"    Recurso: 'Base de Datos'  -  Estado: ocupado"<<endl;
     }
     return result;
 }
@@ -310,10 +310,10 @@ QString DataBase::crearSesion()
             return query.next() ? query.value(0).toString() : "";
         }
         else
-            qWarning()<<"ERROR: "<<"No se puede crear la sesion - Info: "<<query.lastError().text()<<endl;
+            qWarning()<<"No se puede crear la sesion - Info: "<<query.lastError().text()<<endl;
         setState(true);
     }else
-        qWarning()<<"ERROR: "<<endl<<"    Recurso: 'Base de Datos'  -  Estado: ocupado"<<endl;
+        qWarning()<<" Recurso: 'Base de Datos'  -  Estado: ocupado"<<endl;
     return nullptr;
 }
 

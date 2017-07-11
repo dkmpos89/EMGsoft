@@ -81,7 +81,7 @@ QPushButton:hover {
 }</string>
            </property>
            <property name="text">
-            <string/>
+            <string>Editar</string>
            </property>
            <property name="icon">
             <iconset resource="images.qrc">
@@ -138,7 +138,7 @@ QPushButton:hover {
 }</string>
            </property>
            <property name="text">
-            <string/>
+            <string>Abrir</string>
            </property>
            <property name="icon">
             <iconset resource="images.qrc">
@@ -186,7 +186,7 @@ QPushButton:hover {
 }</string>
            </property>
            <property name="text">
-            <string/>
+            <string>Refresh</string>
            </property>
            <property name="icon">
             <iconset resource="images.qrc">
@@ -265,7 +265,7 @@ QPushButton:hover {
 }</string>
            </property>
            <property name="text">
-            <string/>
+            <string>Eliminar</string>
            </property>
            <property name="icon">
             <iconset resource="images.qrc">

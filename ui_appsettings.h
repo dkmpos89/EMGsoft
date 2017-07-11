@@ -24,6 +24,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPlainTextEdit>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSpinBox>
@@ -152,7 +153,6 @@ public:
     QLabel *coeff_scale_label_2;
     QSpacerItem *verticalSpacer_8;
     QWidget *tab;
-    QGridLayout *gridLayout_24;
     QGroupBox *gbMeanFrequency;
     QGridLayout *gridLayout_23;
     QVBoxLayout *verticalLayout_11;
@@ -195,13 +195,17 @@ public:
     QComboBox *Normalize_value;
     QSpacerItem *verticalSpacer_9;
     QTextEdit *Normalize_Description;
+    QHBoxLayout *horizontalLayout_13;
+    QSpacerItem *horizontalSpacer;
+    QPushButton *btnAceptarConfig;
+    QSpacerItem *horizontalSpacer_2;
 
     void setupUi(QDockWidget *appSettings)
     {
         if (appSettings->objectName().isEmpty())
             appSettings->setObjectName(QStringLiteral("appSettings"));
-        appSettings->resize(545, 426);
-        appSettings->setMinimumSize(QSize(520, 426));
+        appSettings->resize(605, 450);
+        appSettings->setMinimumSize(QSize(605, 426));
         appSettings->setMaximumSize(QSize(524287, 524287));
         QFont font;
         font.setPointSize(10);
@@ -863,10 +867,9 @@ public:
         tabConfig->addTab(tab_twavelets, QString());
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
-        gridLayout_24 = new QGridLayout(tab);
-        gridLayout_24->setObjectName(QStringLiteral("gridLayout_24"));
         gbMeanFrequency = new QGroupBox(tab);
         gbMeanFrequency->setObjectName(QStringLiteral("gbMeanFrequency"));
+        gbMeanFrequency->setGeometry(QRect(9, 99, 553, 84));
         gridLayout_23 = new QGridLayout(gbMeanFrequency);
         gridLayout_23->setObjectName(QStringLiteral("gridLayout_23"));
         verticalLayout_11 = new QVBoxLayout();
@@ -951,11 +954,9 @@ public:
 
         gridLayout_23->addItem(horizontalSpacer_11, 0, 4, 1, 1);
 
-
-        gridLayout_24->addWidget(gbMeanFrequency, 1, 0, 1, 2);
-
         gbMovingRMS = new QGroupBox(tab);
         gbMovingRMS->setObjectName(QStringLiteral("gbMovingRMS"));
+        gbMovingRMS->setGeometry(QRect(9, 9, 496, 84));
         gridLayout_12 = new QGridLayout(gbMovingRMS);
         gridLayout_12->setObjectName(QStringLiteral("gridLayout_12"));
         horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
@@ -1028,11 +1029,9 @@ public:
 
         gridLayout_12->addItem(horizontalSpacer_4, 0, 0, 1, 1);
 
-
-        gridLayout_24->addWidget(gbMovingRMS, 0, 0, 1, 2);
-
         gbNormalize = new QGroupBox(tab);
         gbNormalize->setObjectName(QStringLiteral("gbNormalize"));
+        gbNormalize->setGeometry(QRect(9, 189, 553, 151));
         gridLayout_13 = new QGridLayout(gbNormalize);
         gridLayout_13->setObjectName(QStringLiteral("gridLayout_13"));
         verticalLayout_5 = new QVBoxLayout();
@@ -1072,12 +1071,27 @@ public:
 
         gridLayout_13->addWidget(Normalize_Description, 0, 1, 1, 1);
 
-
-        gridLayout_24->addWidget(gbNormalize, 2, 0, 1, 2);
-
         tabConfig->addTab(tab, QString());
 
         gridLayout_7->addWidget(tabConfig, 0, 0, 1, 1);
+
+        horizontalLayout_13 = new QHBoxLayout();
+        horizontalLayout_13->setObjectName(QStringLiteral("horizontalLayout_13"));
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_13->addItem(horizontalSpacer);
+
+        btnAceptarConfig = new QPushButton(dockWidgetContents);
+        btnAceptarConfig->setObjectName(QStringLiteral("btnAceptarConfig"));
+
+        horizontalLayout_13->addWidget(btnAceptarConfig);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_13->addItem(horizontalSpacer_2);
+
+
+        gridLayout_7->addLayout(horizontalLayout_13, 1, 0, 1, 1);
 
         appSettings->setWidget(dockWidgetContents);
 
@@ -1087,8 +1101,9 @@ public:
         QObject::connect(wav_dynr, SIGNAL(clicked(bool)), wav_dynr_value, SLOT(setEnabled(bool)));
         QObject::connect(gabor_cB_DownSam, SIGNAL(clicked(bool)), gabor_DownSam_value, SLOT(setEnabled(bool)));
         QObject::connect(gabor_cB_Dynrange, SIGNAL(clicked(bool)), gabor_Dynrange_value, SLOT(setEnabled(bool)));
+        QObject::connect(btnAceptarConfig, SIGNAL(clicked()), appSettings, SLOT(close()));
 
-        tabConfig->setCurrentIndex(6);
+        tabConfig->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(appSettings);
@@ -1364,6 +1379,7 @@ public:
 "<td style=\" vertical-align:top;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size:14px; color:#333333;\">Do NOT normalize, output is identical to input.</span></p></td></tr></table></body></html>", 0));
         tabConfig->setTabText(tabConfig->indexOf(tab), QApplication::translate("appSettings", "Otros", 0));
+        btnAceptarConfig->setText(QApplication::translate("appSettings", "Aceptar", 0));
     } // retranslateUi
 
 };

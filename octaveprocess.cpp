@@ -71,14 +71,14 @@ bool OctaveProcess::init()
     //this->setWorkingDirectory( WORKING_DIR );
 
     if( this->state() == QProcess::Running ){
-        qInfo()<< "[Info] Octave daemon running with PID " << this->pid() <<endl;
+        qInfo()<< "Octave daemon running with PID " << this->pid() <<endl;
         this->write("cd "+WORKING_DIR.toUtf8());
         this->write("pkg load signal\n");
         this->write("pkg load ltfat\n");
         return true;
     }
     else{
-        qInfo()<< "[Info] : Octave daemon is not running " << endl;
+        qCritical()<< "Octave daemon is not running " << endl;
         return false;
     }
 }
@@ -139,7 +139,7 @@ void OctaveProcess::readOctaveOutput() {
     {
     //if( m_salida.last() == "octave:3>" || m_salida.last() == ">>" || m_salida.last() == "fin") {
 
-        qDebug()<< "[C: OctaveProcess.cpp] Sale del ciclo de lectura: "<<m_salida.last()<<endl;
+        qDebug()<< "Sale del ciclo de lectura: "<<m_salida.last()<<endl;
         disconnect(this, SIGNAL(readyReadStandardOutput()), this, SLOT(readOctaveOutput()));
         m_salida.pop_front();            //saco el primer caracter
         m_salida.pop_back();             //saco el ultimo caracter
@@ -173,7 +173,7 @@ void OctaveProcess::readOctaveOutput2(){
 
     if(qs.contains("fin"))
     {
-        qDebug()<< "[C: OctaveProcess.cpp] Sale del ciclo de lectura: "<<m_salida.last()<<endl;
+        qDebug()<< "Sale del ciclo de lectura: "<<m_salida.last()<<endl;
         disconnect(this, SIGNAL(readyReadStandardOutput()), this, SLOT(readOctaveOutput2()));
         m_salida.pop_front();            //saco el primer caracter
         m_salida.pop_back();             //saco el ultimo caracter

@@ -36,39 +36,35 @@ int bmax = -1;
  * *****************************************************************************************************/
 void formatMessageOutput(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
-    (void)context;
-    QString filename = "logFile_"+QDateTime(QDate().currentDate()).toString("dd-MM-yyyy")+"_.txt";
+    QString filename = QDateTime(QDate().currentDate()).toString("dd-MM-yyyy")+"-log.txt";
     QFile logFile(filename);
 
     if (logFile.open(QIODevice::Append | QIODevice::Text))
     {
         QTextStream streamer(&logFile);
+        QByteArray localMsg = msg.toLocal8Bit();
 
+        QString line = "";
         switch (type)
         {
             case QtDebugMsg:
-                streamer << QDateTime::currentDateTime().toString() <<"  Debug: " << msg <<  "\n";
-
-                //qDebug(localMsg);
+                line = QString(QDateTime::currentDateTime().toString("dd-MM-yyyy") +" [ D E B U G ] : %1 %2").arg( QString(context.function), QString(localMsg.constData()));
                 break;
             case QtWarningMsg:
-                streamer << QDateTime::currentDateTime().toString() <<"  Warning: " << msg <<  "\n";
-                //qWarning(localMsg);
+                line = QString(QDateTime::currentDateTime().toString("dd-MM-yyyy") +" [  WARNING  ] : %1 %2").arg( QString(context.function), QString(localMsg.constData()));
                 break;
             case QtCriticalMsg:
-                streamer << QDateTime::currentDateTime().toString() <<"  Critical: " << msg <<  "\n";
-                //qCritical(localMsg);
+                line = QString(QDateTime::currentDateTime().toString("dd-MM-yyyy") +" [  CRITICAL ] : %1 %2").arg( QString(context.function), QString(localMsg.constData()));
                 break;
             case QtFatalMsg:
-                streamer << QDateTime::currentDateTime().toString() <<"  Fatal: " << msg <<  "\n";
-                //qFatal(localMsg);
+                line = QString(QDateTime::currentDateTime().toString("dd-MM-yyyy") +" [ E R R O R ] : %1 %2").arg( QString(context.function), QString(localMsg.constData()));
                 break;
             case QtInfoMsg:
-                streamer << QDateTime::currentDateTime().toString() <<"  Info: " << msg <<  "\n";
-                //qInfo(localMsg);
+                line = QString(QDateTime::currentDateTime().toString("dd-MM-yyyy") +" [  I N F O  ] : %1 %2").arg( QString(context.function), QString(localMsg.constData()));
                 break;
         }
-        logg->appendPlainText(QDateTime::currentDateTime().toString()+" :: "+msg);
+        streamer << line<<"\n";
+        logg->appendPlainText(line.replace("\n",""));
         logFile.close();
     }
 }
@@ -76,11 +72,15 @@ void formatMessageOutput(QtMsgType type, const QMessageLogContext &context, cons
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow), octaveP( OctaveProcess::getInstance() ){
 
     ui->setupUi(this);
+
     logg = ui->codeEditor_Log;
+    ui->ContenedorGrafico1->installEventFilter(this);
+    ui->ContenedorGrafico2->installEventFilter(this);
+    ui->ContenedorGrafico3->installEventFilter(this);
 
     configuracionesIniciales(); // Aqui van todas las configuraciones que cargan al inicio del software!       
 
-    qInfo()<<endl<<" ========================= [ Inicio: "+QDateTime::currentDateTime().toString()+"] ========================= "<<endl;
+    qInfo()<<"[     L O G  -  I N I C I O    ] :"<<endl;
 
     connect(ui->horizontalSlider, SIGNAL(lowerValueChanged(int)), this, SLOT(horzSliderChangedA(int)));
     connect(ui->horizontalSlider, SIGNAL(upperValueChanged(int)), this, SLOT(horzSliderChangedB(int)));
@@ -102,11 +102,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect( ui->radioEnergy, SIGNAL( toggled(bool) ), this, SLOT( graffNormalize(bool)) );
     connect( ui->radioNorm, SIGNAL( toggled(bool) ), this, SLOT( graffNormalize(bool)) );
 
-    /* se desactiva la pestaña que no funciona --- Cesar deberia arreglar esto */
-    //ui->tabTiempoFrec->setTabEnabled(1, false);
-
     connect(this, SIGNAL(calcularMetodoReporte(int, int, int)), this, SLOT(calcularEnOctave(int, int , int)));
 
+    ui->tabPrincipal->setVisible(false);
 }
 
 MainWindow::~MainWindow(){
@@ -128,15 +126,6 @@ MainWindow::~MainWindow(){
  * *****************************************************************************************************/
 bool MainWindow::event(QEvent *event)
 {
-    if (event->type() == QEvent::WindowStateChange || event->type() == QEvent::Resize ) {
-        if(!dock1->isFloating())
-            updateDock(dock1, false, 1, ui->ContenedorGrafico1->geometry().width(), ui->ContenedorGrafico1->geometry().height());
-        if(!dock2->isFloating())
-            updateDock(dock2, false, 2, ui->ContenedorGrafico2->geometry().width(), ui->ContenedorGrafico2->geometry().height());
-        if(!dock3->isFloating())
-            updateDock(dock3, false, 3, ui->ContenedorGrafico3->geometry().width(), ui->ContenedorGrafico3->geometry().height());
-       return true;
-    }
     if(event->type() == QEvent::Close){
         if(Historial->size()>1)
         {
@@ -154,6 +143,22 @@ bool MainWindow::event(QEvent *event)
         }
     }
     return QWidget::event(event);
+}
+
+bool MainWindow::eventFilter(QObject *object, QEvent *event)
+{
+    (void)object;
+    if (event->type() == QEvent::Resize ) {
+        //QDockWidget *dock = qobject_cast<QDock*>(object);
+        if(!dock1->isFloating())
+            updateDock(dock1, false, 1, ui->ContenedorGrafico1->geometry().width(), ui->ContenedorGrafico1->geometry().height());
+        if(!dock2->isFloating())
+            updateDock(dock2, false, 2, ui->ContenedorGrafico2->geometry().width(), ui->ContenedorGrafico2->geometry().height());
+        if(!dock3->isFloating())
+            updateDock(dock3, false, 3, ui->ContenedorGrafico3->geometry().width(), ui->ContenedorGrafico3->geometry().height());
+       return true;
+    }
+    return false;
 }
 
 /********************************************************************************************************
@@ -248,14 +253,66 @@ void MainWindow::createDockWindows()
     PanelIndicadores->setObjectName("Indicadores de Estado");
     PanelIndicadores->setFloating(true);
     PanelIndicadores->setOctave(octaveP); //Le pasamos el proceso de octave al panel de indicadores
-
     ui->menuVer->addAction(PanelIndicadores->toggleViewAction());
-    //PanelIndicadores->hide();
     connect(PanelIndicadores, SIGNAL(clickConfiguracion()),this, SLOT(on_actionParametros_Generales_triggered()));
 
     // se agregan al menu "ver" las tablas y graficos creadas en dock widgets
     ui->menuVer->addAction(ui->dockTablaEstadisticas->toggleViewAction());
     ui->menuVer->addAction(ui->dockGraficosNorm->toggleViewAction());
+
+    ui->menuVer->addSeparator();
+    // Dock para los proyectos //
+    QDockWidget* dockProyectos = new QDockWidget("Informacion del proyecto", this);
+    dockProyectos->setWidget(ui->InfoProyecto);
+    dockProyectos->setFeatures(dockProyectos->features() & ~(QDockWidget::DockWidgetFloatable | QDockWidget::DockWidgetMovable) | QDockWidget::DockWidgetVerticalTitleBar);
+    dockProyectos->setAllowedAreas(Qt::LeftDockWidgetArea);
+    ui->menuVer->addAction(dockProyectos->toggleViewAction());
+    addDockWidget(Qt::LeftDockWidgetArea, dockProyectos);
+
+    // Dock para los usuarios //
+    QDockWidget* dockSession = new QDockWidget("Informacion del paciente", this);
+    dockSession->setWidget(ui->swSesion);
+    dockSession->setFeatures(dockSession->features() & ~(QDockWidget::DockWidgetFloatable | QDockWidget::DockWidgetMovable) | QDockWidget::DockWidgetVerticalTitleBar);
+    dockSession->setAllowedAreas(Qt::RightDockWidgetArea);
+    ui->menuVer->addAction(dockSession->toggleViewAction());
+    addDockWidget(Qt::RightDockWidgetArea, dockSession);
+
+// Dock para los Analisis
+    QDockWidget* dockAnalisis = new QDockWidget("Analisis Tiempo-Frecuencia", this);
+    dockAnalisis->setWidget(ui->tabTiempoFrec);
+    dockAnalisis->setFeatures(dockAnalisis->features() & ~(QDockWidget::DockWidgetFloatable | QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable) | QDockWidget::DockWidgetVerticalTitleBar);
+    dockAnalisis->setAllowedAreas(Qt::BottomDockWidgetArea);
+    ui->menuVer->addAction(dockAnalisis->toggleViewAction());
+    addDockWidget(Qt::BottomDockWidgetArea, dockAnalisis);
+
+
+    ui->menuVer->addSeparator();
+    // Dock para los logs en la parte inferior desactivado al inicio//
+    QDockWidget* dockLog = new QDockWidget("Console", this);
+    dockLog->setFeatures(dockLog->features() & ~(QDockWidget::DockWidgetFloatable | QDockWidget::DockWidgetMovable) | QDockWidget::DockWidgetVerticalTitleBar );
+    dockLog->setAllowedAreas(Qt::BottomDockWidgetArea);
+    QPlainTextEdit* console = new QPlainTextEdit();
+    console->setReadOnly(true);
+    console->setFont(QFont("MS Shell Dlg 2",10));
+
+    QMainWindow* inner = new QMainWindow(dockLog);
+    inner->setWindowFlags(Qt::Widget);
+    QToolBar* toolBar = new QToolBar(inner);
+    toolBar->setAllowedAreas(Qt::LeftToolBarArea);
+    toolBar->setMovable(false);
+
+    inner->addToolBar(Qt::LeftToolBarArea,toolBar);
+    inner->setCentralWidget(console);
+
+    dockLog->setWidget(inner);
+    dockLog->setWindowTitle("Console");
+    //dockLog->toggleViewAction()->setIcon(QIcon(":/imagenes/cmd.png"));
+    dockLog->toggleViewAction()->setShortcut(QKeySequence("Ctrl+K"));
+    dockLog->setVisible(false);
+    ui->menuVer->addAction(dockLog->toggleViewAction());
+    addDockWidget(Qt::BottomDockWidgetArea, dockLog);
+
+    splitDockWidget(dockAnalisis, dockLog, Qt::Vertical);
 
 //    /* PRUEBA */
 //    QDockWidget *dock = new QDockWidget(tr("Customers"), this);
@@ -271,6 +328,8 @@ void MainWindow::createDockWindows()
 //    dock->setWidget(customerList);
 //    addDockWidget(Qt::RightDockWidgetArea, dock);
 //    ui->menuVer->addAction(dock->toggleViewAction());
+
+
 }
 
 /********************************************************************************************************
