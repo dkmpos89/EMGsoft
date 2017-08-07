@@ -78,9 +78,10 @@ public:
     QAction *action_informacion_actual_sig;
     QAction *actionDemo_Se_al_Greasy_csv;
     QAction *actionCrear_Reporte;
+    QAction *actionInsertar_Usuario_de_prueba;
+    QAction *actionInsertar_Proyecto_de_prueba;
     QWidget *centralWidget;
-    QGridLayout *gridLayout_10;
-    QVBoxLayout *verticalLayout_3;
+    QGridLayout *gridLayout_13;
     QHBoxLayout *horizontalLayout;
     QWidget *InfoProyecto;
     QGridLayout *gridLayout_18;
@@ -142,27 +143,7 @@ public:
     QLabel *label_Historial;
     QTabWidget *tabTiempoFrec;
     QWidget *tabAB;
-    QGridLayout *gridLayout_13;
-    QWidget *toolBoxGrafico3;
-    QGridLayout *gridLayout_21;
-    QComboBox *comboAnalisis3;
-    QPushButton *ButtonGraficar3;
-    QFrame *line_6;
-    QHBoxLayout *horizontalLayout_11;
-    QLabel *label_SaveG3;
-    QToolButton *btnSaveImageG3;
-    QToolButton *btnSaveDataG3;
-    QHBoxLayout *horizontalLayout_10;
-    QLabel *label_17;
-    QSpacerItem *horizontalSpacer_8;
-    QCheckBox *in_enca_3;
-    QSpacerItem *horizontalSpacer_7;
-    QFrame *line_7;
-    QComboBox *comboFiltros_3;
-    QHBoxLayout *horizontalLayout_12;
-    QPushButton *btn_AplicarFiltro3;
-    QToolButton *toolBtn_Filtros3;
-    QHBoxLayout *horizontalLayout_3;
+    QGridLayout *gridLayout_10;
     QWidget *toolBoxGrafico2;
     QGridLayout *gridLayout_15;
     QHBoxLayout *horizontalLayout_6;
@@ -189,6 +170,25 @@ public:
     QWidget *ContenedorGrafico3;
     QGridLayout *gridLayout_14;
     QCustomPlot *grafico3;
+    QWidget *toolBoxGrafico3;
+    QGridLayout *gridLayout_21;
+    QComboBox *comboAnalisis3;
+    QPushButton *ButtonGraficar3;
+    QFrame *line_6;
+    QHBoxLayout *horizontalLayout_11;
+    QLabel *label_SaveG3;
+    QToolButton *btnSaveImageG3;
+    QToolButton *btnSaveDataG3;
+    QHBoxLayout *horizontalLayout_10;
+    QLabel *label_17;
+    QSpacerItem *horizontalSpacer_8;
+    QCheckBox *in_enca_3;
+    QSpacerItem *horizontalSpacer_7;
+    QFrame *line_7;
+    QComboBox *comboFiltros_3;
+    QHBoxLayout *horizontalLayout_12;
+    QPushButton *btn_AplicarFiltro3;
+    QToolButton *toolBtn_Filtros3;
     QWidget *tabAE;
     QGridLayout *gridLayout_24;
     QDockWidget *dockGraficosNorm;
@@ -274,7 +274,6 @@ public:
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuExport;
-    QMenu *menuAdministrar;
     QMenu *menuHelp;
     QMenu *menuDesarrollador;
     QMenu *menu_Ejemplos;
@@ -287,7 +286,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(913, 1085);
+        MainWindow->resize(907, 1085);
         MainWindow->setMaximumSize(QSize(16777215, 16777215));
         QFont font;
         font.setPointSize(10);
@@ -361,21 +360,24 @@ public:
         actionCrear->setIcon(icon5);
         actionManual_de_Usuario = new QAction(MainWindow);
         actionManual_de_Usuario->setObjectName(QStringLiteral("actionManual_de_Usuario"));
+        QIcon icon6;
+        icon6.addFile(QStringLiteral(":/imagenes/txt.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        actionManual_de_Usuario->setIcon(icon6);
         actionAbout_Qt_creator = new QAction(MainWindow);
         actionAbout_Qt_creator->setObjectName(QStringLiteral("actionAbout_Qt_creator"));
-        QIcon icon6;
-        icon6.addFile(QStringLiteral(":/imagenes/qt.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionAbout_Qt_creator->setIcon(icon6);
+        QIcon icon7;
+        icon7.addFile(QStringLiteral(":/imagenes/qt.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionAbout_Qt_creator->setIcon(icon7);
         actionReportar_Bug = new QAction(MainWindow);
         actionReportar_Bug->setObjectName(QStringLiteral("actionReportar_Bug"));
-        QIcon icon7;
-        icon7.addFile(QStringLiteral(":/imagenes/bug.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionReportar_Bug->setIcon(icon7);
+        QIcon icon8;
+        icon8.addFile(QStringLiteral(":/imagenes/bug.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionReportar_Bug->setIcon(icon8);
         actionAbrir_2 = new QAction(MainWindow);
         actionAbrir_2->setObjectName(QStringLiteral("actionAbrir_2"));
-        QIcon icon8;
-        icon8.addFile(QStringLiteral(":/imagenes/3D-Design-Alt.ico"), QSize(), QIcon::Normal, QIcon::Off);
-        actionAbrir_2->setIcon(icon8);
+        QIcon icon9;
+        icon9.addFile(QStringLiteral(":/imagenes/3D-Design-Alt.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        actionAbrir_2->setIcon(icon9);
         actionBD = new QAction(MainWindow);
         actionBD->setObjectName(QStringLiteral("actionBD"));
         actionOctave = new QAction(MainWindow);
@@ -384,82 +386,90 @@ public:
         actionFiltros->setObjectName(QStringLiteral("actionFiltros"));
         actionExit = new QAction(MainWindow);
         actionExit->setObjectName(QStringLiteral("actionExit"));
-        QIcon icon9;
-        icon9.addFile(QStringLiteral(":/imagenes/closeAll.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionExit->setIcon(icon9);
+        QIcon icon10;
+        icon10.addFile(QStringLiteral(":/imagenes/closeAll.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionExit->setIcon(icon10);
         action_doTest = new QAction(MainWindow);
         action_doTest->setObjectName(QStringLiteral("action_doTest"));
-        QIcon icon10;
-        icon10.addFile(QStringLiteral(":/imagenes/console.png"), QSize(), QIcon::Normal, QIcon::Off);
-        action_doTest->setIcon(icon10);
+        QIcon icon11;
+        icon11.addFile(QStringLiteral(":/imagenes/console.png"), QSize(), QIcon::Normal, QIcon::Off);
+        action_doTest->setIcon(icon11);
         actionBase_de_Datos = new QAction(MainWindow);
         actionBase_de_Datos->setObjectName(QStringLiteral("actionBase_de_Datos"));
-        QIcon icon11;
-        icon11.addFile(QStringLiteral(":/imagenes/logoSqlite.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionBase_de_Datos->setIcon(icon11);
+        QIcon icon12;
+        icon12.addFile(QStringLiteral(":/imagenes/logoSqlite.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionBase_de_Datos->setIcon(icon12);
         actionSpectrogram = new QAction(MainWindow);
         actionSpectrogram->setObjectName(QStringLiteral("actionSpectrogram"));
         actionParametros_Generales = new QAction(MainWindow);
         actionParametros_Generales->setObjectName(QStringLiteral("actionParametros_Generales"));
-        QIcon icon12;
-        icon12.addFile(QStringLiteral(":/imagenes/Gear.ico"), QSize(), QIcon::Normal, QIcon::Off);
-        actionParametros_Generales->setIcon(icon12);
+        QIcon icon13;
+        icon13.addFile(QStringLiteral(":/imagenes/Gear.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        actionParametros_Generales->setIcon(icon13);
         actionCerrar_se_al = new QAction(MainWindow);
         actionCerrar_se_al->setObjectName(QStringLiteral("actionCerrar_se_al"));
-        QIcon icon13;
-        icon13.addFile(QStringLiteral(":/imagenes/Task Manager.ico"), QSize(), QIcon::Normal, QIcon::Off);
-        actionCerrar_se_al->setIcon(icon13);
+        QIcon icon14;
+        icon14.addFile(QStringLiteral(":/imagenes/Task Manager.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        actionCerrar_se_al->setIcon(icon14);
         actionDemo_Se_al_1_csv = new QAction(MainWindow);
         actionDemo_Se_al_1_csv->setObjectName(QStringLiteral("actionDemo_Se_al_1_csv"));
-        QIcon icon14;
-        icon14.addFile(QStringLiteral(":/imagenes/1.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionDemo_Se_al_1_csv->setIcon(icon14);
+        QIcon icon15;
+        icon15.addFile(QStringLiteral(":/imagenes/1.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionDemo_Se_al_1_csv->setIcon(icon15);
         actionDemo_Se_al_2_txt = new QAction(MainWindow);
         actionDemo_Se_al_2_txt->setObjectName(QStringLiteral("actionDemo_Se_al_2_txt"));
-        QIcon icon15;
-        icon15.addFile(QStringLiteral(":/imagenes/2.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionDemo_Se_al_2_txt->setIcon(icon15);
+        QIcon icon16;
+        icon16.addFile(QStringLiteral(":/imagenes/2.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionDemo_Se_al_2_txt->setIcon(icon16);
         actionAnalisis_Multiple = new QAction(MainWindow);
         actionAnalisis_Multiple->setObjectName(QStringLiteral("actionAnalisis_Multiple"));
-        QIcon icon16;
-        icon16.addFile(QStringLiteral(":/imagenes/AnalisisMultiple.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionAnalisis_Multiple->setIcon(icon16);
+        QIcon icon17;
+        icon17.addFile(QStringLiteral(":/imagenes/AnalisisMultiple.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionAnalisis_Multiple->setIcon(icon17);
         actionUndo = new QAction(MainWindow);
         actionUndo->setObjectName(QStringLiteral("actionUndo"));
-        QIcon icon17;
-        icon17.addFile(QStringLiteral(":/imagenes/045.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionUndo->setIcon(icon17);
+        QIcon icon18;
+        icon18.addFile(QStringLiteral(":/imagenes/045.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionUndo->setIcon(icon18);
         actionRedoOriginal = new QAction(MainWindow);
         actionRedoOriginal->setObjectName(QStringLiteral("actionRedoOriginal"));
-        QIcon icon18;
-        icon18.addFile(QStringLiteral(":/imagenes/026.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionRedoOriginal->setIcon(icon18);
+        QIcon icon19;
+        icon19.addFile(QStringLiteral(":/imagenes/026.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionRedoOriginal->setIcon(icon19);
         actionDemo_Se_al_3_csv = new QAction(MainWindow);
         actionDemo_Se_al_3_csv->setObjectName(QStringLiteral("actionDemo_Se_al_3_csv"));
-        QIcon icon19;
-        icon19.addFile(QStringLiteral(":/imagenes/3.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionDemo_Se_al_3_csv->setIcon(icon19);
+        QIcon icon20;
+        icon20.addFile(QStringLiteral(":/imagenes/3.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionDemo_Se_al_3_csv->setIcon(icon20);
         action_informacion_actual_sig = new QAction(MainWindow);
         action_informacion_actual_sig->setObjectName(QStringLiteral("action_informacion_actual_sig"));
-        QIcon icon20;
-        icon20.addFile(QStringLiteral(":/imagenes/graph_statistics.png"), QSize(), QIcon::Normal, QIcon::Off);
-        action_informacion_actual_sig->setIcon(icon20);
+        QIcon icon21;
+        icon21.addFile(QStringLiteral(":/imagenes/graph_statistics.png"), QSize(), QIcon::Normal, QIcon::Off);
+        action_informacion_actual_sig->setIcon(icon21);
         actionDemo_Se_al_Greasy_csv = new QAction(MainWindow);
         actionDemo_Se_al_Greasy_csv->setObjectName(QStringLiteral("actionDemo_Se_al_Greasy_csv"));
-        QIcon icon21;
-        icon21.addFile(QStringLiteral(":/imagenes/4.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionDemo_Se_al_Greasy_csv->setIcon(icon21);
+        QIcon icon22;
+        icon22.addFile(QStringLiteral(":/imagenes/4.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionDemo_Se_al_Greasy_csv->setIcon(icon22);
         actionCrear_Reporte = new QAction(MainWindow);
         actionCrear_Reporte->setObjectName(QStringLiteral("actionCrear_Reporte"));
+        QIcon icon23;
+        icon23.addFile(QStringLiteral(":/imagenes/printer.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        actionCrear_Reporte->setIcon(icon23);
+        actionInsertar_Usuario_de_prueba = new QAction(MainWindow);
+        actionInsertar_Usuario_de_prueba->setObjectName(QStringLiteral("actionInsertar_Usuario_de_prueba"));
+        QIcon icon24;
+        icon24.addFile(QStringLiteral(":/imagenes/001.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionInsertar_Usuario_de_prueba->setIcon(icon24);
+        actionInsertar_Proyecto_de_prueba = new QAction(MainWindow);
+        actionInsertar_Proyecto_de_prueba->setObjectName(QStringLiteral("actionInsertar_Proyecto_de_prueba"));
+        actionInsertar_Proyecto_de_prueba->setIcon(icon14);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        gridLayout_10 = new QGridLayout(centralWidget);
-        gridLayout_10->setSpacing(6);
-        gridLayout_10->setContentsMargins(11, 11, 11, 11);
-        gridLayout_10->setObjectName(QStringLiteral("gridLayout_10"));
-        verticalLayout_3 = new QVBoxLayout();
-        verticalLayout_3->setSpacing(6);
-        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        gridLayout_13 = new QGridLayout(centralWidget);
+        gridLayout_13->setSpacing(6);
+        gridLayout_13->setContentsMargins(11, 11, 11, 11);
+        gridLayout_13->setObjectName(QStringLiteral("gridLayout_13"));
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
@@ -718,7 +728,7 @@ public:
         btnCloseG1->setEnabled(false);
         btnCloseG1->setMinimumSize(QSize(27, 27));
         btnCloseG1->setMaximumSize(QSize(27, 27));
-        btnCloseG1->setIcon(icon9);
+        btnCloseG1->setIcon(icon10);
         btnCloseG1->setIconSize(QSize(20, 20));
 
         gridLayout_4->addWidget(btnCloseG1, 1, 9, 1, 1);
@@ -729,9 +739,9 @@ public:
         btnOpenG1->setMinimumSize(QSize(27, 27));
         btnOpenG1->setMaximumSize(QSize(27, 27));
         btnOpenG1->setLayoutDirection(Qt::LeftToRight);
-        QIcon icon22;
-        icon22.addFile(QStringLiteral(":/imagenes/open.ico"), QSize(), QIcon::Normal, QIcon::Off);
-        btnOpenG1->setIcon(icon22);
+        QIcon icon25;
+        icon25.addFile(QStringLiteral(":/imagenes/open.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        btnOpenG1->setIcon(icon25);
         btnOpenG1->setIconSize(QSize(20, 20));
         btnOpenG1->setAutoRaise(false);
 
@@ -741,18 +751,18 @@ public:
         btnSaveImageG1->setObjectName(QStringLiteral("btnSaveImageG1"));
         btnSaveImageG1->setEnabled(false);
         btnSaveImageG1->setMinimumSize(QSize(27, 27));
-        QIcon icon23;
-        icon23.addFile(QStringLiteral(":/imagenes/save_as.ico"), QSize(), QIcon::Normal, QIcon::Off);
-        btnSaveImageG1->setIcon(icon23);
+        QIcon icon26;
+        icon26.addFile(QStringLiteral(":/imagenes/save_as.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        btnSaveImageG1->setIcon(icon26);
 
         gridLayout_4->addWidget(btnSaveImageG1, 1, 8, 1, 1);
 
         btnExportarG1 = new QToolButton(centralWidget);
         btnExportarG1->setObjectName(QStringLiteral("btnExportarG1"));
         btnExportarG1->setEnabled(false);
-        QIcon icon24;
-        icon24.addFile(QStringLiteral(":/imagenes/guardar-archivo.ico"), QSize(), QIcon::Normal, QIcon::Off);
-        btnExportarG1->setIcon(icon24);
+        QIcon icon27;
+        icon27.addFile(QStringLiteral(":/imagenes/guardar-archivo.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        btnExportarG1->setIcon(icon27);
         btnExportarG1->setIconSize(QSize(20, 20));
 
         gridLayout_4->addWidget(btnExportarG1, 1, 7, 1, 1);
@@ -923,7 +933,7 @@ public:
         horizontalLayout->addWidget(swSesion);
 
 
-        verticalLayout_3->addLayout(horizontalLayout);
+        gridLayout_13->addLayout(horizontalLayout, 0, 0, 1, 1);
 
         tabTiempoFrec = new QTabWidget(centralWidget);
         tabTiempoFrec->setObjectName(QStringLiteral("tabTiempoFrec"));
@@ -939,164 +949,16 @@ public:
 "}"));
         tabAB = new QWidget();
         tabAB->setObjectName(QStringLiteral("tabAB"));
-        gridLayout_13 = new QGridLayout(tabAB);
-        gridLayout_13->setSpacing(6);
-        gridLayout_13->setContentsMargins(11, 11, 11, 11);
-        gridLayout_13->setObjectName(QStringLiteral("gridLayout_13"));
-        toolBoxGrafico3 = new QWidget(tabAB);
-        toolBoxGrafico3->setObjectName(QStringLiteral("toolBoxGrafico3"));
-        toolBoxGrafico3->setEnabled(false);
-        QSizePolicy sizePolicy5(QSizePolicy::Fixed, QSizePolicy::Preferred);
-        sizePolicy5.setHorizontalStretch(0);
-        sizePolicy5.setVerticalStretch(0);
-        sizePolicy5.setHeightForWidth(toolBoxGrafico3->sizePolicy().hasHeightForWidth());
-        toolBoxGrafico3->setSizePolicy(sizePolicy5);
-        gridLayout_21 = new QGridLayout(toolBoxGrafico3);
-        gridLayout_21->setSpacing(6);
-        gridLayout_21->setContentsMargins(11, 11, 11, 11);
-        gridLayout_21->setObjectName(QStringLiteral("gridLayout_21"));
-        comboAnalisis3 = new QComboBox(toolBoxGrafico3);
-        QIcon icon25;
-        icon25.addFile(QStringLiteral(":/imagenes/arrowApply.png"), QSize(), QIcon::Normal, QIcon::Off);
-        comboAnalisis3->addItem(icon25, QString());
-        comboAnalisis3->addItem(icon25, QString());
-        comboAnalisis3->addItem(icon25, QString());
-        comboAnalisis3->addItem(icon25, QString());
-        comboAnalisis3->addItem(icon25, QString());
-        comboAnalisis3->addItem(icon25, QString());
-        comboAnalisis3->addItem(icon25, QString());
-        comboAnalisis3->addItem(icon25, QString());
-        comboAnalisis3->addItem(icon25, QString());
-        comboAnalisis3->addItem(icon25, QString());
-        comboAnalisis3->setObjectName(QStringLiteral("comboAnalisis3"));
-        comboAnalisis3->setMinimumSize(QSize(0, 30));
-
-        gridLayout_21->addWidget(comboAnalisis3, 0, 0, 1, 1);
-
-        ButtonGraficar3 = new QPushButton(toolBoxGrafico3);
-        ButtonGraficar3->setObjectName(QStringLiteral("ButtonGraficar3"));
-        ButtonGraficar3->setMinimumSize(QSize(0, 30));
-        ButtonGraficar3->setStyleSheet(QStringLiteral(""));
-
-        gridLayout_21->addWidget(ButtonGraficar3, 1, 0, 1, 1);
-
-        line_6 = new QFrame(toolBoxGrafico3);
-        line_6->setObjectName(QStringLiteral("line_6"));
-        line_6->setFrameShape(QFrame::HLine);
-        line_6->setFrameShadow(QFrame::Sunken);
-
-        gridLayout_21->addWidget(line_6, 2, 0, 1, 1);
-
-        horizontalLayout_11 = new QHBoxLayout();
-        horizontalLayout_11->setSpacing(6);
-        horizontalLayout_11->setObjectName(QStringLiteral("horizontalLayout_11"));
-        label_SaveG3 = new QLabel(toolBoxGrafico3);
-        label_SaveG3->setObjectName(QStringLiteral("label_SaveG3"));
-
-        horizontalLayout_11->addWidget(label_SaveG3);
-
-        btnSaveImageG3 = new QToolButton(toolBoxGrafico3);
-        btnSaveImageG3->setObjectName(QStringLiteral("btnSaveImageG3"));
-        QIcon icon26;
-        icon26.addFile(QStringLiteral(":/imagenes/020.png"), QSize(), QIcon::Normal, QIcon::Off);
-        btnSaveImageG3->setIcon(icon26);
-        btnSaveImageG3->setIconSize(QSize(60, 60));
-        btnSaveImageG3->setAutoRepeat(false);
-        btnSaveImageG3->setAutoRaise(false);
-
-        horizontalLayout_11->addWidget(btnSaveImageG3);
-
-        btnSaveDataG3 = new QToolButton(toolBoxGrafico3);
-        btnSaveDataG3->setObjectName(QStringLiteral("btnSaveDataG3"));
-        QIcon icon27;
-        icon27.addFile(QStringLiteral(":/imagenes/csv_txt.png"), QSize(), QIcon::Normal, QIcon::Off);
-        btnSaveDataG3->setIcon(icon27);
-        btnSaveDataG3->setIconSize(QSize(60, 60));
-        btnSaveDataG3->setAutoRepeat(false);
-        btnSaveDataG3->setAutoRaise(false);
-
-        horizontalLayout_11->addWidget(btnSaveDataG3);
-
-
-        gridLayout_21->addLayout(horizontalLayout_11, 3, 0, 1, 1);
-
-        horizontalLayout_10 = new QHBoxLayout();
-        horizontalLayout_10->setSpacing(6);
-        horizontalLayout_10->setObjectName(QStringLiteral("horizontalLayout_10"));
-        label_17 = new QLabel(toolBoxGrafico3);
-        label_17->setObjectName(QStringLiteral("label_17"));
-
-        horizontalLayout_10->addWidget(label_17);
-
-        horizontalSpacer_8 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_10->addItem(horizontalSpacer_8);
-
-        in_enca_3 = new QCheckBox(toolBoxGrafico3);
-        in_enca_3->setObjectName(QStringLiteral("in_enca_3"));
-
-        horizontalLayout_10->addWidget(in_enca_3);
-
-        horizontalSpacer_7 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_10->addItem(horizontalSpacer_7);
-
-
-        gridLayout_21->addLayout(horizontalLayout_10, 4, 0, 1, 1);
-
-        line_7 = new QFrame(toolBoxGrafico3);
-        line_7->setObjectName(QStringLiteral("line_7"));
-        line_7->setFrameShape(QFrame::HLine);
-        line_7->setFrameShadow(QFrame::Sunken);
-
-        gridLayout_21->addWidget(line_7, 5, 0, 1, 1);
-
-        comboFiltros_3 = new QComboBox(toolBoxGrafico3);
-        comboFiltros_3->addItem(icon25, QString());
-        comboFiltros_3->addItem(icon25, QString());
-        comboFiltros_3->addItem(icon25, QString());
-        comboFiltros_3->addItem(icon25, QString());
-        comboFiltros_3->addItem(icon25, QString());
-        comboFiltros_3->addItem(icon25, QString());
-        comboFiltros_3->addItem(icon25, QString());
-        comboFiltros_3->addItem(icon25, QString());
-        comboFiltros_3->setObjectName(QStringLiteral("comboFiltros_3"));
-        comboFiltros_3->setMinimumSize(QSize(0, 30));
-        comboFiltros_3->setIconSize(QSize(35, 20));
-        comboFiltros_3->setDuplicatesEnabled(false);
-        comboFiltros_3->setFrame(true);
-
-        gridLayout_21->addWidget(comboFiltros_3, 6, 0, 1, 1);
-
-        horizontalLayout_12 = new QHBoxLayout();
-        horizontalLayout_12->setSpacing(6);
-        horizontalLayout_12->setObjectName(QStringLiteral("horizontalLayout_12"));
-        btn_AplicarFiltro3 = new QPushButton(toolBoxGrafico3);
-        btn_AplicarFiltro3->setObjectName(QStringLiteral("btn_AplicarFiltro3"));
-        btn_AplicarFiltro3->setMinimumSize(QSize(0, 30));
-
-        horizontalLayout_12->addWidget(btn_AplicarFiltro3);
-
-        toolBtn_Filtros3 = new QToolButton(toolBoxGrafico3);
-        toolBtn_Filtros3->setObjectName(QStringLiteral("toolBtn_Filtros3"));
-        toolBtn_Filtros3->setIcon(icon12);
-        toolBtn_Filtros3->setIconSize(QSize(30, 30));
-        toolBtn_Filtros3->setAutoRaise(false);
-
-        horizontalLayout_12->addWidget(toolBtn_Filtros3);
-
-
-        gridLayout_21->addLayout(horizontalLayout_12, 7, 0, 1, 1);
-
-
-        gridLayout_13->addWidget(toolBoxGrafico3, 0, 1, 1, 1);
-
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setSpacing(6);
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        gridLayout_10 = new QGridLayout(tabAB);
+        gridLayout_10->setSpacing(6);
+        gridLayout_10->setContentsMargins(11, 11, 11, 11);
+        gridLayout_10->setObjectName(QStringLiteral("gridLayout_10"));
         toolBoxGrafico2 = new QWidget(tabAB);
         toolBoxGrafico2->setObjectName(QStringLiteral("toolBoxGrafico2"));
         toolBoxGrafico2->setEnabled(false);
+        QSizePolicy sizePolicy5(QSizePolicy::Fixed, QSizePolicy::Preferred);
+        sizePolicy5.setHorizontalStretch(0);
+        sizePolicy5.setVerticalStretch(0);
         sizePolicy5.setHeightForWidth(toolBoxGrafico2->sizePolicy().hasHeightForWidth());
         toolBoxGrafico2->setSizePolicy(sizePolicy5);
         gridLayout_15 = new QGridLayout(toolBoxGrafico2);
@@ -1114,7 +976,7 @@ public:
 
         toolBtn_Filtros2 = new QToolButton(toolBoxGrafico2);
         toolBtn_Filtros2->setObjectName(QStringLiteral("toolBtn_Filtros2"));
-        toolBtn_Filtros2->setIcon(icon12);
+        toolBtn_Filtros2->setIcon(icon13);
         toolBtn_Filtros2->setIconSize(QSize(30, 30));
         toolBtn_Filtros2->setAutoRaise(false);
 
@@ -1133,7 +995,9 @@ public:
 
         btnSaveImageG2 = new QToolButton(toolBoxGrafico2);
         btnSaveImageG2->setObjectName(QStringLiteral("btnSaveImageG2"));
-        btnSaveImageG2->setIcon(icon26);
+        QIcon icon28;
+        icon28.addFile(QStringLiteral(":/imagenes/020.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnSaveImageG2->setIcon(icon28);
         btnSaveImageG2->setIconSize(QSize(60, 60));
         btnSaveImageG2->setAutoRaise(false);
 
@@ -1141,7 +1005,9 @@ public:
 
         btnSaveDataG2 = new QToolButton(toolBoxGrafico2);
         btnSaveDataG2->setObjectName(QStringLiteral("btnSaveDataG2"));
-        btnSaveDataG2->setIcon(icon27);
+        QIcon icon29;
+        icon29.addFile(QStringLiteral(":/imagenes/csv_txt.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnSaveDataG2->setIcon(icon29);
         btnSaveDataG2->setIconSize(QSize(60, 60));
         btnSaveDataG2->setAutoRepeat(false);
         btnSaveDataG2->setAutoRaise(false);
@@ -1191,14 +1057,16 @@ public:
         gridLayout_15->addWidget(line_4, 6, 0, 1, 2);
 
         comboFiltros_2 = new QComboBox(toolBoxGrafico2);
-        comboFiltros_2->addItem(icon25, QString());
-        comboFiltros_2->addItem(icon25, QString());
-        comboFiltros_2->addItem(icon25, QString());
-        comboFiltros_2->addItem(icon25, QString());
-        comboFiltros_2->addItem(icon25, QString());
-        comboFiltros_2->addItem(icon25, QString());
-        comboFiltros_2->addItem(icon25, QString());
-        comboFiltros_2->addItem(icon25, QString());
+        QIcon icon30;
+        icon30.addFile(QStringLiteral(":/imagenes/arrowApply.png"), QSize(), QIcon::Normal, QIcon::Off);
+        comboFiltros_2->addItem(icon30, QString());
+        comboFiltros_2->addItem(icon30, QString());
+        comboFiltros_2->addItem(icon30, QString());
+        comboFiltros_2->addItem(icon30, QString());
+        comboFiltros_2->addItem(icon30, QString());
+        comboFiltros_2->addItem(icon30, QString());
+        comboFiltros_2->addItem(icon30, QString());
+        comboFiltros_2->addItem(icon30, QString());
         comboFiltros_2->setObjectName(QStringLiteral("comboFiltros_2"));
         comboFiltros_2->setMinimumSize(QSize(0, 30));
         comboFiltros_2->setIconSize(QSize(35, 20));
@@ -1208,16 +1076,16 @@ public:
         gridLayout_15->addWidget(comboFiltros_2, 7, 0, 1, 2);
 
         comboAnalisis2 = new QComboBox(toolBoxGrafico2);
-        comboAnalisis2->addItem(icon25, QString());
-        comboAnalisis2->addItem(icon25, QString());
-        comboAnalisis2->addItem(icon25, QString());
-        comboAnalisis2->addItem(icon25, QString());
-        comboAnalisis2->addItem(icon25, QString());
-        comboAnalisis2->addItem(icon25, QString());
-        comboAnalisis2->addItem(icon25, QString());
-        comboAnalisis2->addItem(icon25, QString());
-        comboAnalisis2->addItem(icon25, QString());
-        comboAnalisis2->addItem(icon25, QString());
+        comboAnalisis2->addItem(icon30, QString());
+        comboAnalisis2->addItem(icon30, QString());
+        comboAnalisis2->addItem(icon30, QString());
+        comboAnalisis2->addItem(icon30, QString());
+        comboAnalisis2->addItem(icon30, QString());
+        comboAnalisis2->addItem(icon30, QString());
+        comboAnalisis2->addItem(icon30, QString());
+        comboAnalisis2->addItem(icon30, QString());
+        comboAnalisis2->addItem(icon30, QString());
+        comboAnalisis2->addItem(icon30, QString());
         comboAnalisis2->setObjectName(QStringLiteral("comboAnalisis2"));
         comboAnalisis2->setMinimumSize(QSize(0, 30));
 
@@ -1231,7 +1099,7 @@ public:
         gridLayout_15->addWidget(line_5, 3, 0, 1, 2);
 
 
-        horizontalLayout_3->addWidget(toolBoxGrafico2);
+        gridLayout_10->addWidget(toolBoxGrafico2, 0, 0, 1, 1);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
@@ -1284,10 +1152,146 @@ public:
         horizontalLayout_2->addWidget(ContenedorGrafico3);
 
 
-        horizontalLayout_3->addLayout(horizontalLayout_2);
+        gridLayout_10->addLayout(horizontalLayout_2, 0, 1, 1, 1);
+
+        toolBoxGrafico3 = new QWidget(tabAB);
+        toolBoxGrafico3->setObjectName(QStringLiteral("toolBoxGrafico3"));
+        toolBoxGrafico3->setEnabled(false);
+        sizePolicy5.setHeightForWidth(toolBoxGrafico3->sizePolicy().hasHeightForWidth());
+        toolBoxGrafico3->setSizePolicy(sizePolicy5);
+        gridLayout_21 = new QGridLayout(toolBoxGrafico3);
+        gridLayout_21->setSpacing(6);
+        gridLayout_21->setContentsMargins(11, 11, 11, 11);
+        gridLayout_21->setObjectName(QStringLiteral("gridLayout_21"));
+        comboAnalisis3 = new QComboBox(toolBoxGrafico3);
+        comboAnalisis3->addItem(icon30, QString());
+        comboAnalisis3->addItem(icon30, QString());
+        comboAnalisis3->addItem(icon30, QString());
+        comboAnalisis3->addItem(icon30, QString());
+        comboAnalisis3->addItem(icon30, QString());
+        comboAnalisis3->addItem(icon30, QString());
+        comboAnalisis3->addItem(icon30, QString());
+        comboAnalisis3->addItem(icon30, QString());
+        comboAnalisis3->addItem(icon30, QString());
+        comboAnalisis3->addItem(icon30, QString());
+        comboAnalisis3->setObjectName(QStringLiteral("comboAnalisis3"));
+        comboAnalisis3->setMinimumSize(QSize(0, 30));
+
+        gridLayout_21->addWidget(comboAnalisis3, 0, 0, 1, 1);
+
+        ButtonGraficar3 = new QPushButton(toolBoxGrafico3);
+        ButtonGraficar3->setObjectName(QStringLiteral("ButtonGraficar3"));
+        ButtonGraficar3->setMinimumSize(QSize(0, 30));
+        ButtonGraficar3->setStyleSheet(QStringLiteral(""));
+
+        gridLayout_21->addWidget(ButtonGraficar3, 1, 0, 1, 1);
+
+        line_6 = new QFrame(toolBoxGrafico3);
+        line_6->setObjectName(QStringLiteral("line_6"));
+        line_6->setFrameShape(QFrame::HLine);
+        line_6->setFrameShadow(QFrame::Sunken);
+
+        gridLayout_21->addWidget(line_6, 2, 0, 1, 1);
+
+        horizontalLayout_11 = new QHBoxLayout();
+        horizontalLayout_11->setSpacing(6);
+        horizontalLayout_11->setObjectName(QStringLiteral("horizontalLayout_11"));
+        label_SaveG3 = new QLabel(toolBoxGrafico3);
+        label_SaveG3->setObjectName(QStringLiteral("label_SaveG3"));
+
+        horizontalLayout_11->addWidget(label_SaveG3);
+
+        btnSaveImageG3 = new QToolButton(toolBoxGrafico3);
+        btnSaveImageG3->setObjectName(QStringLiteral("btnSaveImageG3"));
+        btnSaveImageG3->setIcon(icon28);
+        btnSaveImageG3->setIconSize(QSize(60, 60));
+        btnSaveImageG3->setAutoRepeat(false);
+        btnSaveImageG3->setAutoRaise(false);
+
+        horizontalLayout_11->addWidget(btnSaveImageG3);
+
+        btnSaveDataG3 = new QToolButton(toolBoxGrafico3);
+        btnSaveDataG3->setObjectName(QStringLiteral("btnSaveDataG3"));
+        btnSaveDataG3->setIcon(icon29);
+        btnSaveDataG3->setIconSize(QSize(60, 60));
+        btnSaveDataG3->setAutoRepeat(false);
+        btnSaveDataG3->setAutoRaise(false);
+
+        horizontalLayout_11->addWidget(btnSaveDataG3);
 
 
-        gridLayout_13->addLayout(horizontalLayout_3, 0, 0, 1, 1);
+        gridLayout_21->addLayout(horizontalLayout_11, 3, 0, 1, 1);
+
+        horizontalLayout_10 = new QHBoxLayout();
+        horizontalLayout_10->setSpacing(6);
+        horizontalLayout_10->setObjectName(QStringLiteral("horizontalLayout_10"));
+        label_17 = new QLabel(toolBoxGrafico3);
+        label_17->setObjectName(QStringLiteral("label_17"));
+
+        horizontalLayout_10->addWidget(label_17);
+
+        horizontalSpacer_8 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_10->addItem(horizontalSpacer_8);
+
+        in_enca_3 = new QCheckBox(toolBoxGrafico3);
+        in_enca_3->setObjectName(QStringLiteral("in_enca_3"));
+
+        horizontalLayout_10->addWidget(in_enca_3);
+
+        horizontalSpacer_7 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_10->addItem(horizontalSpacer_7);
+
+
+        gridLayout_21->addLayout(horizontalLayout_10, 4, 0, 1, 1);
+
+        line_7 = new QFrame(toolBoxGrafico3);
+        line_7->setObjectName(QStringLiteral("line_7"));
+        line_7->setFrameShape(QFrame::HLine);
+        line_7->setFrameShadow(QFrame::Sunken);
+
+        gridLayout_21->addWidget(line_7, 5, 0, 1, 1);
+
+        comboFiltros_3 = new QComboBox(toolBoxGrafico3);
+        comboFiltros_3->addItem(icon30, QString());
+        comboFiltros_3->addItem(icon30, QString());
+        comboFiltros_3->addItem(icon30, QString());
+        comboFiltros_3->addItem(icon30, QString());
+        comboFiltros_3->addItem(icon30, QString());
+        comboFiltros_3->addItem(icon30, QString());
+        comboFiltros_3->addItem(icon30, QString());
+        comboFiltros_3->addItem(icon30, QString());
+        comboFiltros_3->setObjectName(QStringLiteral("comboFiltros_3"));
+        comboFiltros_3->setMinimumSize(QSize(0, 30));
+        comboFiltros_3->setIconSize(QSize(35, 20));
+        comboFiltros_3->setDuplicatesEnabled(false);
+        comboFiltros_3->setFrame(true);
+
+        gridLayout_21->addWidget(comboFiltros_3, 6, 0, 1, 1);
+
+        horizontalLayout_12 = new QHBoxLayout();
+        horizontalLayout_12->setSpacing(6);
+        horizontalLayout_12->setObjectName(QStringLiteral("horizontalLayout_12"));
+        btn_AplicarFiltro3 = new QPushButton(toolBoxGrafico3);
+        btn_AplicarFiltro3->setObjectName(QStringLiteral("btn_AplicarFiltro3"));
+        btn_AplicarFiltro3->setMinimumSize(QSize(0, 30));
+
+        horizontalLayout_12->addWidget(btn_AplicarFiltro3);
+
+        toolBtn_Filtros3 = new QToolButton(toolBoxGrafico3);
+        toolBtn_Filtros3->setObjectName(QStringLiteral("toolBtn_Filtros3"));
+        toolBtn_Filtros3->setIcon(icon13);
+        toolBtn_Filtros3->setIconSize(QSize(30, 30));
+        toolBtn_Filtros3->setAutoRaise(false);
+
+        horizontalLayout_12->addWidget(toolBtn_Filtros3);
+
+
+        gridLayout_21->addLayout(horizontalLayout_12, 7, 0, 1, 1);
+
+
+        gridLayout_10->addWidget(toolBoxGrafico3, 0, 2, 1, 1);
 
         tabTiempoFrec->addTab(tabAB, QString());
         tabAE = new QWidget();
@@ -1550,7 +1554,7 @@ public:
         btnGuardarTabla = new QPushButton(dockWidgetContents);
         btnGuardarTabla->setObjectName(QStringLiteral("btnGuardarTabla"));
         btnGuardarTabla->setEnabled(false);
-        btnGuardarTabla->setIcon(icon23);
+        btnGuardarTabla->setIcon(icon26);
 
         horizontalLayout_4->addWidget(btnGuardarTabla);
 
@@ -1611,10 +1615,7 @@ public:
 
         tabTiempoFrec->addTab(tabInfo, QString());
 
-        verticalLayout_3->addWidget(tabTiempoFrec);
-
-
-        gridLayout_10->addLayout(verticalLayout_3, 0, 0, 1, 1);
+        gridLayout_13->addWidget(tabTiempoFrec, 1, 0, 1, 1);
 
         tabPrincipal = new QTabWidget(centralWidget);
         tabPrincipal->setObjectName(QStringLiteral("tabPrincipal"));
@@ -1669,11 +1670,6 @@ public:
         gridLayout_17->setObjectName(QStringLiteral("gridLayout_17"));
         toolBoxGrafico3_old->addItem(page_21, QStringLiteral("Filtros"));
         tabPrincipal->addTab(tabVP, QString());
-        toolBoxGrafico2_old->raise();
-        toolBoxGrafico2_old->raise();
-        toolBoxGrafico2_old->raise();
-        toolBoxGrafico3_old->raise();
-        toolBoxGrafico3_old->raise();
         tabNYC = new QWidget();
         tabNYC->setObjectName(QStringLiteral("tabNYC"));
         gridLayout_22 = new QGridLayout(tabNYC);
@@ -1711,9 +1707,9 @@ public:
         gridLayout_20->setObjectName(QStringLiteral("gridLayout_20"));
         btnSearchComents = new QToolButton(tabNYC);
         btnSearchComents->setObjectName(QStringLiteral("btnSearchComents"));
-        QIcon icon28;
-        icon28.addFile(QStringLiteral(":/imagenes/magnifyingglass.ico"), QSize(), QIcon::Normal, QIcon::Off);
-        btnSearchComents->setIcon(icon28);
+        QIcon icon31;
+        icon31.addFile(QStringLiteral(":/imagenes/magnifyingglass.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        btnSearchComents->setIcon(icon31);
         btnSearchComents->setIconSize(QSize(40, 20));
 
         gridLayout_20->addWidget(btnSearchComents, 2, 2, 1, 1);
@@ -1780,30 +1776,25 @@ public:
 
         tabPrincipal->addTab(tabNYC, QString());
 
-        gridLayout_10->addWidget(tabPrincipal, 1, 0, 1, 1);
+        gridLayout_13->addWidget(tabPrincipal, 2, 0, 1, 1);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 913, 21));
+        menuBar->setGeometry(QRect(0, 0, 907, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         menuExport = new QMenu(menuBar);
         menuExport->setObjectName(QStringLiteral("menuExport"));
-        menuAdministrar = new QMenu(menuExport);
-        menuAdministrar->setObjectName(QStringLiteral("menuAdministrar"));
-        QIcon icon29;
-        icon29.addFile(QStringLiteral(":/imagenes/graph.ico"), QSize(), QIcon::Normal, QIcon::Off);
-        menuAdministrar->setIcon(icon29);
         menuHelp = new QMenu(menuBar);
         menuHelp->setObjectName(QStringLiteral("menuHelp"));
         menuDesarrollador = new QMenu(menuHelp);
         menuDesarrollador->setObjectName(QStringLiteral("menuDesarrollador"));
         menu_Ejemplos = new QMenu(menuHelp);
         menu_Ejemplos->setObjectName(QStringLiteral("menu_Ejemplos"));
-        QIcon icon30;
-        icon30.addFile(QStringLiteral(":/imagenes/ejemplos.png"), QSize(), QIcon::Normal, QIcon::Off);
-        menu_Ejemplos->setIcon(icon30);
+        QIcon icon32;
+        icon32.addFile(QStringLiteral(":/imagenes/ejemplos.png"), QSize(), QIcon::Normal, QIcon::Off);
+        menu_Ejemplos->setIcon(icon32);
         menuExportar = new QMenu(menuBar);
         menuExportar->setObjectName(QStringLiteral("menuExportar"));
         menuConfigurac_on = new QMenu(menuBar);
@@ -1830,9 +1821,8 @@ public:
         menuFile->addSeparator();
         menuFile->addAction(actionExit);
         menuExport->addSeparator();
-        menuExport->addAction(menuAdministrar->menuAction());
-        menuAdministrar->addAction(actionCrear);
-        menuAdministrar->addAction(actionAbrir_2);
+        menuExport->addAction(actionAbrir_2);
+        menuExport->addAction(actionCrear);
         menuHelp->addAction(menu_Ejemplos->menuAction());
         menuHelp->addAction(actionManual_de_Usuario);
         menuHelp->addSeparator();
@@ -1844,6 +1834,8 @@ public:
         menuDesarrollador->addAction(actionBase_de_Datos);
         menuDesarrollador->addAction(action_doTest);
         menuDesarrollador->addSeparator();
+        menuDesarrollador->addAction(actionInsertar_Usuario_de_prueba);
+        menuDesarrollador->addAction(actionInsertar_Proyecto_de_prueba);
         menu_Ejemplos->addAction(actionDemo_Se_al_1_csv);
         menu_Ejemplos->addAction(actionDemo_Se_al_2_txt);
         menu_Ejemplos->addAction(actionDemo_Se_al_3_csv);
@@ -1907,6 +1899,8 @@ public:
         action_informacion_actual_sig->setText(QApplication::translate("MainWindow", "Informacion Se\303\261al Actual", 0));
         actionDemo_Se_al_Greasy_csv->setText(QApplication::translate("MainWindow", "Demo Se\303\261al - Greasy (*.csv)", 0));
         actionCrear_Reporte->setText(QApplication::translate("MainWindow", "Crear Reporte", 0));
+        actionInsertar_Usuario_de_prueba->setText(QApplication::translate("MainWindow", "Insertar Usuario de prueba", 0));
+        actionInsertar_Proyecto_de_prueba->setText(QApplication::translate("MainWindow", "Insertar Proyecto de prueba", 0));
         groupBox_3->setTitle(QString());
         label->setText(QApplication::translate("MainWindow", "Canal Actual : ", 0));
         groupBox->setTitle(QString());
@@ -1959,34 +1953,6 @@ public:
         sesionDireccion->setText(QString());
         label_sexo->setText(QApplication::translate("MainWindow", "SEXO:", 0));
         label_Historial->setText(QApplication::translate("MainWindow", "Historial:", 0));
-        comboAnalisis3->setItemText(0, QApplication::translate("MainWindow", "Discrete Fourier Transform", 0));
-        comboAnalisis3->setItemText(1, QApplication::translate("MainWindow", "Fast Fourier Transform", 0));
-        comboAnalisis3->setItemText(2, QApplication::translate("MainWindow", "Gabor Transform", 0));
-        comboAnalisis3->setItemText(3, QApplication::translate("MainWindow", "Wavelet Transform", 0));
-        comboAnalisis3->setItemText(4, QApplication::translate("MainWindow", "Spectrogram", 0));
-        comboAnalisis3->setItemText(5, QApplication::translate("MainWindow", "Histogram Fourier", 0));
-        comboAnalisis3->setItemText(6, QApplication::translate("MainWindow", "Histogram", 0));
-        comboAnalisis3->setItemText(7, QApplication::translate("MainWindow", "MovingRms", 0));
-        comboAnalisis3->setItemText(8, QApplication::translate("MainWindow", "Mean Frequency", 0));
-        comboAnalisis3->setItemText(9, QApplication::translate("MainWindow", "Normalize", 0));
-
-        ButtonGraficar3->setText(QApplication::translate("MainWindow", "Graficar", 0));
-        label_SaveG3->setText(QApplication::translate("MainWindow", "Exportar:", 0));
-        btnSaveImageG3->setText(QString());
-        btnSaveDataG3->setText(QApplication::translate("MainWindow", "...", 0));
-        label_17->setText(QApplication::translate("MainWindow", "Incluir encabezado:", 0));
-        in_enca_3->setText(QString());
-        comboFiltros_3->setItemText(0, QApplication::translate("MainWindow", "Pasa Bajo", 0));
-        comboFiltros_3->setItemText(1, QApplication::translate("MainWindow", "Pasa Alto", 0));
-        comboFiltros_3->setItemText(2, QApplication::translate("MainWindow", "Pasa Banda", 0));
-        comboFiltros_3->setItemText(3, QApplication::translate("MainWindow", "Elimina Banda", 0));
-        comboFiltros_3->setItemText(4, QApplication::translate("MainWindow", "Filtro Notch", 0));
-        comboFiltros_3->setItemText(5, QApplication::translate("MainWindow", "Pasa Bajo - Butterworth", 0));
-        comboFiltros_3->setItemText(6, QApplication::translate("MainWindow", "Filtro de Gabor", 0));
-        comboFiltros_3->setItemText(7, QApplication::translate("MainWindow", "Filtro de Wavelet", 0));
-
-        btn_AplicarFiltro3->setText(QApplication::translate("MainWindow", "Aplicar Filtro", 0));
-        toolBtn_Filtros3->setText(QApplication::translate("MainWindow", "...", 0));
         btn_AplicarFiltro2->setText(QApplication::translate("MainWindow", "Aplicar Filtro", 0));
         toolBtn_Filtros2->setText(QApplication::translate("MainWindow", "...", 0));
         label_SaveG2->setText(QApplication::translate("MainWindow", "Exportar:", 0));
@@ -2015,6 +1981,34 @@ public:
         comboAnalisis2->setItemText(8, QApplication::translate("MainWindow", "Mean Frequency", 0));
         comboAnalisis2->setItemText(9, QApplication::translate("MainWindow", "Normalize", 0));
 
+        comboAnalisis3->setItemText(0, QApplication::translate("MainWindow", "Discrete Fourier Transform", 0));
+        comboAnalisis3->setItemText(1, QApplication::translate("MainWindow", "Fast Fourier Transform", 0));
+        comboAnalisis3->setItemText(2, QApplication::translate("MainWindow", "Gabor Transform", 0));
+        comboAnalisis3->setItemText(3, QApplication::translate("MainWindow", "Wavelet Transform", 0));
+        comboAnalisis3->setItemText(4, QApplication::translate("MainWindow", "Spectrogram", 0));
+        comboAnalisis3->setItemText(5, QApplication::translate("MainWindow", "Histogram Fourier", 0));
+        comboAnalisis3->setItemText(6, QApplication::translate("MainWindow", "Histogram", 0));
+        comboAnalisis3->setItemText(7, QApplication::translate("MainWindow", "MovingRms", 0));
+        comboAnalisis3->setItemText(8, QApplication::translate("MainWindow", "Mean Frequency", 0));
+        comboAnalisis3->setItemText(9, QApplication::translate("MainWindow", "Normalize", 0));
+
+        ButtonGraficar3->setText(QApplication::translate("MainWindow", "Graficar", 0));
+        label_SaveG3->setText(QApplication::translate("MainWindow", "Exportar:", 0));
+        btnSaveImageG3->setText(QString());
+        btnSaveDataG3->setText(QApplication::translate("MainWindow", "...", 0));
+        label_17->setText(QApplication::translate("MainWindow", "Incluir encabezado:", 0));
+        in_enca_3->setText(QString());
+        comboFiltros_3->setItemText(0, QApplication::translate("MainWindow", "Pasa Bajo", 0));
+        comboFiltros_3->setItemText(1, QApplication::translate("MainWindow", "Pasa Alto", 0));
+        comboFiltros_3->setItemText(2, QApplication::translate("MainWindow", "Pasa Banda", 0));
+        comboFiltros_3->setItemText(3, QApplication::translate("MainWindow", "Elimina Banda", 0));
+        comboFiltros_3->setItemText(4, QApplication::translate("MainWindow", "Filtro Notch", 0));
+        comboFiltros_3->setItemText(5, QApplication::translate("MainWindow", "Pasa Bajo - Butterworth", 0));
+        comboFiltros_3->setItemText(6, QApplication::translate("MainWindow", "Filtro de Gabor", 0));
+        comboFiltros_3->setItemText(7, QApplication::translate("MainWindow", "Filtro de Wavelet", 0));
+
+        btn_AplicarFiltro3->setText(QApplication::translate("MainWindow", "Aplicar Filtro", 0));
+        toolBtn_Filtros3->setText(QApplication::translate("MainWindow", "...", 0));
         tabTiempoFrec->setTabText(tabTiempoFrec->indexOf(tabAB), QApplication::translate("MainWindow", "Analisis Visual", 0));
         dockGraficosNorm->setWindowTitle(QApplication::translate("MainWindow", "Graficos - Se\303\261al Normalizada", 0));
         groupBox_5->setTitle(QApplication::translate("MainWindow", "Normalized by:", 0));
@@ -2077,7 +2071,6 @@ public:
         tabPrincipal->setTabText(tabPrincipal->indexOf(tabNYC), QApplication::translate("MainWindow", "Notas y Comentarios", 0));
         menuFile->setTitle(QApplication::translate("MainWindow", "Archivos", 0));
         menuExport->setTitle(QApplication::translate("MainWindow", "Proyectos", 0));
-        menuAdministrar->setTitle(QApplication::translate("MainWindow", "Administrar", 0));
         menuHelp->setTitle(QApplication::translate("MainWindow", "Ayuda", 0));
         menuDesarrollador->setTitle(QApplication::translate("MainWindow", "Desarrollador", 0));
         menu_Ejemplos->setTitle(QApplication::translate("MainWindow", "&Ejemplos", 0));

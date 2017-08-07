@@ -5,6 +5,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    a.setStyle("WindowsVista");
     MainWindow w;   
     QMessageBox msgBox;
 

@@ -166,16 +166,6 @@ QString appSettings::getBDtext(){
     return ui->bd_scripts->toPlainText();
 }
 
-void appSettings::on_btnOctave_liberarRecurso_clicked()
-{
-    OctaveProcess::getInstance()->setState(true);
-}
-
-void appSettings::on_btnOctave_reloadRecurso_clicked()
-{
-    OctaveProcess::getInstance()->init();
-}
-
 void appSettings::crearPrevisualizacion(QString str)
 {
     QString archivo = ":/scripts/"+str;

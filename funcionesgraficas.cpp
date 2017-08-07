@@ -567,6 +567,8 @@ void funcionesGraficas::centrarGraficos(QString title, QCustomPlot *grafico, int
 
 void funcionesGraficas::guardarImagen(QCustomPlot *cp, QString name)
 {
+    double ancho = 1920/3;
+    double alto = 1280/3;
     //nombres de las imagenes: gabor, wavelete, sgram, fourier,
 
     QString path = QDir::currentPath()+"/reportes";
@@ -574,5 +576,5 @@ void funcionesGraficas::guardarImagen(QCustomPlot *cp, QString name)
         QDir().mkdir(QDir::currentPath()+"/reportes");
     QFile file(path+"/"+name);
     file.open(QIODevice::WriteOnly);
-    cp->toPixmap(1920/3,1280/3).save(&file, "PNG");
+    cp->toPixmap(ancho,alto).save(&file, "PNG");
 }

@@ -34,8 +34,6 @@ public:
     QStringList getParametrosNormalizacion();
     QStringList getConfig(int i);
 private slots:
-    void on_btnOctave_liberarRecurso_clicked();
-    void on_btnOctave_reloadRecurso_clicked();
     void on_Octave_btn_menuOctave_clicked();
     void on_Octave_btn_OctaveFourier_clicked();
     void on_Octave_btn_OctaveSpectrogram_clicked();

@@ -1,0 +1,67 @@
+13-07-2017 [  WARNING  ] : void qt_png_warning(png_structp, png_const_charp) libpng warning: iCCP: known incorrect sRGB profile
+13-07-2017 [ D E B U G ] : MainWindow::MainWindow(QWidget*) [    L O G  -  I N I C I O    ] 
+13-07-2017 [  I N F O  ] : DataBase::DataBase() Base de datos en ruta:  "C:/Users/diego.campos/Documents/GitHub/EMGsoft/data/dbEMG.db" 
+13-07-2017 [  I N F O  ] : bool OctaveProcess::init() Octave daemon running with PID  0x18541138 
+13-07-2017 [  WARNING  ] : QString DataBase::crearSesion() No se puede crear la sesion - Info:  "No query Unable to fetch row" 
+13-07-2017 [  WARNING  ] : void QWindowsWindow::setGeometryDp(const QRect&) setGeometryDp: Unable to set geometry 963x1085+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  963x741+8+31 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 963x604, maximum size: 16777215x16777215).
+13-07-2017 [  I N F O  ] : void MainWindow::on_actionDemo_Se_al_1_csv_triggered() [F: ActionDemo_se?al_1()] Carga de datos desde: 'Ejemplos/ejemplo_1.csv' 
+13-07-2017 [ D E B U G ] : void MainWindow::setDatos(cSignal*) [F: SetDatos()] Informacion de Se?al:  "\t\"median\":\"1\",\n\t\"mean\":\"1\",\n\t\"stdDev\":\"1\",\n\t\"var\":\"1\",\n\t\"rms\":\"1\",\n\t\"energy\":\"1\",\n\t\"frec\":\"1\",\n" 
+13-07-2017 [  I N F O  ] : bool MainWindow::leer() [F: leer()] Cantidad de lineas leidas:  10000 
+13-07-2017 [ D E B U G ] : void MainWindow::cargaGrafica(int) [F: cargaGrafica()] A?adiendo datos de la serie Temporal (se?al principal). 
+13-07-2017 [ D E B U G ] : void MainWindow::graficarPrincipal(QCustomPlot*, QVector<QVector<double> >, int, int, int, int) [F: graficarPrincipal()] Graficando serie Temporal (se?al principal). 
+13-07-2017 [ D E B U G ] : void MainWindow::cargaGrafica(int) [F: cargaGrafica()] Habilitando y a?adiendo a comboBox los canales:  "1" 
+13-07-2017 [  I N F O  ] : void MainWindow::guardarDatosTxt() Guardando los datos de la se?al... 
+13-07-2017 [ E R R O R ] : void qt_assert_x(const char*, const char*, const char*, int) ASSERT failure in QVector<T>::at: "index out of range", file C:/Qt/Qt5.5.1/5.5/mingw492_32/include/QtCore/qvector.h, line 393
+13-07-2017 [  WARNING  ] : void qt_png_warning(png_structp, png_const_charp) libpng warning: iCCP: known incorrect sRGB profile
+13-07-2017 [ D E B U G ] : MainWindow::MainWindow(QWidget*) [    L O G  -  I N I C I O    ] 
+13-07-2017 [  I N F O  ] : DataBase::DataBase() Base de datos en ruta:  "C:/Users/diego.campos/Documents/GitHub/EMGsoft/data/dbEMG.db" 
+13-07-2017 [  I N F O  ] : bool OctaveProcess::init() Octave daemon running with PID  0x18552b90 
+13-07-2017 [  WARNING  ] : QString DataBase::crearSesion() No se puede crear la sesion - Info:  "No query Unable to fetch row" 
+13-07-2017 [  WARNING  ] : void QWindowsWindow::setGeometryDp(const QRect&) setGeometryDp: Unable to set geometry 963x1085+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  963x741+8+31 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 963x604, maximum size: 16777215x16777215).
+13-07-2017 [  I N F O  ] : void MainWindow::on_actionDemo_Se_al_1_csv_triggered() [F: ActionDemo_se?al_1()] Carga de datos desde: 'Ejemplos/ejemplo_1.csv' 
+13-07-2017 [ D E B U G ] : void MainWindow::setDatos(cSignal*) [F: SetDatos()] Informacion de Se?al:  "\t\"median\":\"1\",\n\t\"mean\":\"1\",\n\t\"stdDev\":\"1\",\n\t\"var\":\"1\",\n\t\"rms\":\"1\",\n\t\"energy\":\"1\",\n\t\"frec\":\"1\",\n" 
+13-07-2017 [  I N F O  ] : bool MainWindow::leer() [F: leer()] Cantidad de lineas leidas:  10000 
+13-07-2017 [ D E B U G ] : void MainWindow::cargaGrafica(int) [F: cargaGrafica()] A?adiendo datos de la serie Temporal (se?al principal). 
+13-07-2017 [ D E B U G ] : void MainWindow::graficarPrincipal(QCustomPlot*, QVector<QVector<double> >, int, int, int, int) [F: graficarPrincipal()] Graficando serie Temporal (se?al principal). 
+13-07-2017 [ D E B U G ] : void MainWindow::cargaGrafica(int) [F: cargaGrafica()] Habilitando y a?adiendo a comboBox los canales:  "1" 
+13-07-2017 [  I N F O  ] : void MainWindow::on_ButtonGraficar2_clicked() [F: Graficar2()] Se llama a graficar con el metodo:  "Discrete Fourier Transform" , posicion :  0 
+13-07-2017 [  I N F O  ] : void MainWindow::calcularEnOctave(int, int, int) calculando en octave:  0 
+13-07-2017 [ D E B U G ] : void MainWindow::calcularEnOctave(int, int, int) [F: calcularEnOctave()] Comando enviado a Octave: "OctaveFourier('C:/Users/diego.campos/Documents/GitHub/EMGsoft/ejemplos/ejemplo_1.csv','1','12','1','1','0','9999','1', '0');\n" 
+13-07-2017 [ D E B U G ] : void OctaveProcess::readOctaveOutput() Sale del ciclo de lectura:  "fin" 
+13-07-2017 [ D E B U G ] : void MainWindow::chargeData() [S:chargeData()] Cargando los datos...
+13-07-2017 [ D E B U G ] : void MainWindow::chargeData() [S:chargeData()] Tama?o de los datos recibidos: 8203 
+13-07-2017 [ D E B U G ] : void funcionesGraficas::graficarFourier(QCustomPlot*, QVector<QVector<double> >, int, int, QStringList) [Fourier] Graficando Transformada de Fourier. 8193 
+13-07-2017 [  I N F O  ] : void MainWindow::on_actionDemo_Se_al_1_csv_triggered() [F: ActionDemo_se?al_1()] Carga de datos desde: 'Ejemplos/ejemplo_1.csv' 
+13-07-2017 [ D E B U G ] : void MainWindow::setDatos(cSignal*) [F: SetDatos()] Informacion de Se?al:  "\t\"median\":\"1\",\n\t\"mean\":\"1\",\n\t\"stdDev\":\"1\",\n\t\"var\":\"1\",\n\t\"rms\":\"1\",\n\t\"energy\":\"1\",\n\t\"frec\":\"1\",\n" 
+13-07-2017 [  I N F O  ] : bool MainWindow::leer() [F: leer()] Cantidad de lineas leidas:  10000 
+13-07-2017 [ D E B U G ] : void MainWindow::cargaGrafica(int) [F: cargaGrafica()] A?adiendo datos de la serie Temporal (se?al principal). 
+13-07-2017 [ D E B U G ] : void MainWindow::graficarPrincipal(QCustomPlot*, QVector<QVector<double> >, int, int, int, int) [F: graficarPrincipal()] Graficando serie Temporal (se?al principal). 
+13-07-2017 [ D E B U G ] : void MainWindow::cargaGrafica(int) [F: cargaGrafica()] Habilitando y a?adiendo a comboBox los canales:  "1" 
+13-07-2017 [  I N F O  ] : void MainWindow::guardarDatosTxt() Guardando los datos de la se?al... 
+13-07-2017 [ E R R O R ] : void qt_assert_x(const char*, const char*, const char*, int) ASSERT failure in QVector<T>::at: "index out of range", file C:/Qt/Qt5.5.1/5.5/mingw492_32/include/QtCore/qvector.h, line 393
+13-07-2017 [  WARNING  ] : void qt_png_warning(png_structp, png_const_charp) libpng warning: iCCP: known incorrect sRGB profile
+13-07-2017 [ D E B U G ] : MainWindow::MainWindow(QWidget*) [    L O G  -  I N I C I O    ] 
+13-07-2017 [  I N F O  ] : DataBase::DataBase() Base de datos en ruta:  "C:/Users/diego.campos/Documents/GitHub/EMGsoft/data/dbEMG.db" 
+13-07-2017 [  I N F O  ] : bool OctaveProcess::init() Octave daemon running with PID  0x185e33b8 
+13-07-2017 [  WARNING  ] : QString DataBase::crearSesion() No se puede crear la sesion - Info:  "No query Unable to fetch row" 
+13-07-2017 [  WARNING  ] : void QWindowsWindow::setGeometryDp(const QRect&) setGeometryDp: Unable to set geometry 963x1085+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  963x741+8+31 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 963x604, maximum size: 16777215x16777215).
+13-07-2017 [  I N F O  ] : void MainWindow::on_actionDemo_Se_al_1_csv_triggered() [F: ActionDemo_se?al_1()] Carga de datos desde: 'Ejemplos/ejemplo_1.csv' 
+13-07-2017 [ D E B U G ] : void MainWindow::setDatos(cSignal*) [F: SetDatos()] Informacion de Se?al:  "\t\"median\":\"1\",\n\t\"mean\":\"1\",\n\t\"stdDev\":\"1\",\n\t\"var\":\"1\",\n\t\"rms\":\"1\",\n\t\"energy\":\"1\",\n\t\"frec\":\"1\",\n" 
+13-07-2017 [  I N F O  ] : bool MainWindow::leer() [F: leer()] Cantidad de lineas leidas:  10000 
+13-07-2017 [ D E B U G ] : void MainWindow::cargaGrafica(int) [F: cargaGrafica()] A?adiendo datos de la serie Temporal (se?al principal). 
+13-07-2017 [ D E B U G ] : void MainWindow::graficarPrincipal(QCustomPlot*, QVector<QVector<double> >, int, int, int, int) [F: graficarPrincipal()] Graficando serie Temporal (se?al principal). 
+13-07-2017 [ D E B U G ] : void MainWindow::cargaGrafica(int) [F: cargaGrafica()] Habilitando y a?adiendo a comboBox los canales:  "1" 
+13-07-2017 [  I N F O  ] : void MainWindow::on_btn_AplicarFiltro2_clicked() [B]: AplicarFiltro2()] Comando enviado a Octave: "OctaveFiltros('C:/Users/diego.campos/Documents/GitHub/EMGsoft/ejemplos/ejemplo_1.csv','1','12','1','1','1','100','low','100','');\n" 
+13-07-2017 [ D E B U G ] : void OctaveProcess::readOctaveOutput() Sale del ciclo de lectura:  "fin" 
+13-07-2017 [ D E B U G ] : void MainWindow::chargeData() [S:chargeData()] Cargando los datos...
+13-07-2017 [ D E B U G ] : void MainWindow::chargeData() [S:chargeData()] Tama?o de los datos recibidos: 10001 
+13-07-2017 [ D E B U G ] : void MainWindow::setDatos(cSignal*) [F: SetDatos()] Informacion de Se?al:  "\t\"median\":\"1\",\n\t\"mean\":\"1\",\n\t\"stdDev\":\"1\",\n\t\"var\":\"1\",\n\t\"rms\":\"1\",\n\t\"energy\":\"1\",\n\t\"frec\":\"1\",\n" 
+13-07-2017 [  I N F O  ] : bool MainWindow::leer() [F: leer()] Cantidad de lineas leidas:  10000 
+13-07-2017 [ D E B U G ] : void MainWindow::cargaGrafica(int) [F: cargaGrafica()] A?adiendo datos de la serie Temporal (se?al principal). 
+13-07-2017 [ D E B U G ] : void MainWindow::graficarPrincipal(QCustomPlot*, QVector<QVector<double> >, int, int, int, int) [F: graficarPrincipal()] Graficando serie Temporal (se?al principal). 
+13-07-2017 [ D E B U G ] : void MainWindow::cargaGrafica(int) [F: cargaGrafica()] Habilitando y a?adiendo a comboBox los canales:  "1" 
+13-07-2017 [ D E B U G ] : void MainWindow::setDatos(cSignal*) [F: SetDatos()] Informacion de Se?al:  "\t\"median\":\"1\",\n\t\"mean\":\"1\",\n\t\"stdDev\":\"1\",\n\t\"var\":\"1\",\n\t\"rms\":\"1\",\n\t\"energy\":\"1\",\n\t\"frec\":\"1\",\n" 
+13-07-2017 [  I N F O  ] : bool MainWindow::leer() [F: leer()] Cantidad de lineas leidas:  10000 
+13-07-2017 [ D E B U G ] : void MainWindow::cargaGrafica(int) [F: cargaGrafica()] A?adiendo datos de la serie Temporal (se?al principal). 
+13-07-2017 [ D E B U G ] : void MainWindow::graficarPrincipal(QCustomPlot*, QVector<QVector<double> >, int, int, int, int) [F: graficarPrincipal()] Graficando serie Temporal (se?al principal). 
+13-07-2017 [ D E B U G ] : void MainWindow::cargaGrafica(int) [F: cargaGrafica()] Habilitando y a?adiendo a comboBox los canales:  "1" 

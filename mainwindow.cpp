@@ -20,6 +20,8 @@
 
 
 //globales utiles
+double ancho = 1920/3;
+double alto = 1280/3;
 int graff = MainWindow::none;
 int analize = -1;
 OctaveProcess::buttonPressed buttonPressed = OctaveProcess::Other;
@@ -63,8 +65,9 @@ void formatMessageOutput(QtMsgType type, const QMessageLogContext &context, cons
                 line = QString(QDateTime::currentDateTime().toString("dd-MM-yyyy") +" [  I N F O  ] : %1 %2").arg( QString(context.function), QString(localMsg.constData()));
                 break;
         }
-        streamer << line<<"\n";
-        logg->appendPlainText(line.replace("\n",""));
+        line.replace("\n","");
+        streamer << line <<"\n";
+        logg->appendPlainText(line.toLatin1());
         logFile.close();
     }
 }
@@ -72,7 +75,6 @@ void formatMessageOutput(QtMsgType type, const QMessageLogContext &context, cons
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow), octaveP( OctaveProcess::getInstance() ){
 
     ui->setupUi(this);
-
     logg = ui->codeEditor_Log;
     ui->ContenedorGrafico1->installEventFilter(this);
     ui->ContenedorGrafico2->installEventFilter(this);
@@ -80,7 +82,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     configuracionesIniciales(); // Aqui van todas las configuraciones que cargan al inicio del software!       
 
-    qInfo()<<"[     L O G  -  I N I C I O    ] :"<<endl;
+    qDebug()<<"[    L O G  -  I N I C I O    ]"<<endl;
 
     connect(ui->horizontalSlider, SIGNAL(lowerValueChanged(int)), this, SLOT(horzSliderChangedA(int)));
     connect(ui->horizontalSlider, SIGNAL(upperValueChanged(int)), this, SLOT(horzSliderChangedB(int)));
@@ -306,6 +308,7 @@ void MainWindow::createDockWindows()
 
     dockLog->setWidget(inner);
     dockLog->setWindowTitle("Console");
+    dockLog->setMaximumHeight(100);
     //dockLog->toggleViewAction()->setIcon(QIcon(":/imagenes/cmd.png"));
     dockLog->toggleViewAction()->setShortcut(QKeySequence("Ctrl+K"));
     dockLog->setVisible(false);
@@ -1047,17 +1050,17 @@ void MainWindow::guardarImagenes()
     }
 
     if(selectedFilter.contains("PNG"))
-        graf->savePng(path,1920,1280);
+        graf->savePng(path,ancho,alto);
     if(selectedFilter.contains("JPG"))
-        graf->saveJpg(path,1920,1280);
+        graf->saveJpg(path,ancho,alto);
     if(selectedFilter.contains("PDF"))
-        graf->savePdf(path,false,1920,1280);
+        graf->savePdf(path,false,ancho,alto);
 
 }
 
 void MainWindow::guardarDatosTxt()
 {
-    bool in_enca = false;
+    bool in_enca = false; //incluir encabezado en el archivo de salida
     cSignal *sig;
     QVector<double> time;
 
@@ -1068,25 +1071,30 @@ void MainWindow::guardarDatosTxt()
 
     if(path.isEmpty()) return;
 
-
-    if( pushButton == ui->btnSaveDataG2 ){
-        if(ui->in_enca_2->isChecked()) in_enca = true;
-        sig = signalGrafico2;
-        time = signalGrafico2->resultSignal.at(0);
-        seg = signalGrafico2->resultSignal.at(1);
-
-    }else {
-        if(ui->in_enca_3->isChecked()) in_enca = true;
-        sig = signalGrafico3;
-        time = signalGrafico3->resultSignal.at(0);
-        seg = signalGrafico3->resultSignal.at(1);
+    qInfo()<<"Guardando los datos de la señal..."<<endl;
+    try{
+        if( pushButton == ui->btnSaveDataG2 ){
+            if(ui->in_enca_2->isChecked()) in_enca = true;
+            sig = signalGrafico2;
+            time = signalGrafico2->resultSignal.at(0);
+            seg = signalGrafico2->resultSignal.at(1);
+        }else {
+            if(ui->in_enca_3->isChecked()) in_enca = true;
+            sig = signalGrafico3;
+            time = signalGrafico3->resultSignal.at(0);
+            seg = signalGrafico3->resultSignal.at(1);
+        }
+    }catch(...){
+        QMessageBox::information(this, tr("Informacion"), tr("No existen datos para guardar"));
+        qCritical()<<"No es posible guardar datos de la señal actual, posiblemente aun no se ha realizado un analisis"<<endl;
+        return;
     }
 
     QFile file(path);
 
     if( !file.open(QIODevice::WriteOnly) )
     {
-        QMessageBox::critical(this, tr("Error"), tr("No se pudo guardar el archivo."));
+        QMessageBox::critical(this, tr("ERROR"), tr("Fallo al guardar el archivo."));
         return;
     }else{
 
@@ -1111,6 +1119,7 @@ void MainWindow::guardarDatosTxt()
 
         file.flush();
         file.close();
+        qInfo()<<"Datos guardados en: "<<path<<endl;
     }
 }
 
