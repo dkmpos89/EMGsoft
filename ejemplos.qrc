@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>ejemplos/ejemplo_1.csv</file>
+        <file>ejemplos/ejemplo_2.txt</file>
+        <file>ejemplos/RAW.csv</file>
+        <file>ejemplos/greasy.csv</file>
+    </qresource>
+</RCC>

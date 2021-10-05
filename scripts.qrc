@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>scripts/menuOctave.m</file>
+        <file>scripts/normSignal.m</file>
+        <file>scripts/OctaveFiltros.m</file>
+        <file>scripts/OctaveFourier.m</file>
+        <file>scripts/OctaveGabor.m</file>
+        <file>scripts/OctaveSpectrogram.m</file>
+        <file>scripts/OctaveStatistics.m</file>
+        <file>data/dbScript.sql</file>
+        <file>data/dbScript - full.sql</file>
+    </qresource>
+</RCC>

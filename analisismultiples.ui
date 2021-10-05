@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AnalisisMultiples</class>
+ <widget class="QMainWindow" name="AnalisisMultiples">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>878</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_11">
+    <item row="0" column="0">
+     <widget class="QGroupBox" name="groupBox_Signals">
+      <property name="title">
+       <string/>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_6">
+       <item row="2" column="0" colspan="2">
+        <layout class="QGridLayout" name="gridLayout_8">
+         <item row="0" column="0">
+          <widget class="QCheckBox" name="checkBox_signal2">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>13</width>
+             <height>13</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QWidget" name="contenedorGrafico2" native="true">
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="0" column="0">
+             <widget class="QDockWidget" name="dockSignal_2">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <widget class="QCustomPlot" name="Signal_2"/>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QToolButton" name="abrir_s2">
+             <property name="minimumSize">
+              <size>
+               <width>70</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>70</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="images.qrc">
+               <normaloff>:/imagenes/2.png</normaloff>:/imagenes/2.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="autoRaise">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="cBox_canalS2">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>70</width>
+               <height>20</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QDoubleSpinBox" name="MinSBox">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="decimals">
+            <number>4</number>
+           </property>
+           <property name="maximum">
+            <double>10000000.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>(s)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QxtSpanSlider" name="SliderGraficosAM">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="MaxSBox">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="decimals">
+            <number>4</number>
+           </property>
+           <property name="maximum">
+            <double>10000000.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>(s)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="2">
+        <layout class="QGridLayout" name="gridLayout_5">
+         <item row="0" column="0">
+          <widget class="QCheckBox" name="checkBox_signal1">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>13</width>
+             <height>13</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>8</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QWidget" name="contenedorGrafico1" native="true">
+           <layout class="QGridLayout" name="gridLayout">
+            <item row="0" column="0">
+             <widget class="QDockWidget" name="dockSignal_1">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="features">
+               <set>QDockWidget::AllDockWidgetFeatures</set>
+              </property>
+              <widget class="QCustomPlot" name="Signal_1"/>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QToolButton" name="abrir_s1">
+             <property name="minimumSize">
+              <size>
+               <width>70</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>70</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="images.qrc">
+               <normaloff>:/imagenes/1.png</normaloff>:/imagenes/1.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="checkable">
+              <bool>false</bool>
+             </property>
+             <property name="autoRaise">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="cBox_canalS1">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>70</width>
+               <height>20</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="0" colspan="2">
+        <layout class="QGridLayout" name="gridLayout_9">
+         <item row="0" column="0">
+          <widget class="QCheckBox" name="checkBox_signal3">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>13</width>
+             <height>13</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QWidget" name="contenedorGrafico3" native="true">
+           <layout class="QGridLayout" name="gridLayout_3">
+            <item row="0" column="0">
+             <widget class="QDockWidget" name="dockSignal_3">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <widget class="QCustomPlot" name="Signal_3"/>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QToolButton" name="abrir_s3">
+             <property name="minimumSize">
+              <size>
+               <width>70</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>70</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="images.qrc">
+               <normaloff>:/imagenes/3.png</normaloff>:/imagenes/3.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="autoRaise">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="cBox_canalS3">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>70</width>
+               <height>20</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item row="4" column="0" colspan="2">
+        <layout class="QGridLayout" name="gridLayout_10">
+         <item row="0" column="1">
+          <widget class="QWidget" name="contenedorGrafico4" native="true">
+           <layout class="QGridLayout" name="gridLayout_4">
+            <item row="0" column="0">
+             <widget class="QDockWidget" name="dockSignal_4">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <widget class="QCustomPlot" name="Signal_4"/>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QToolButton" name="abrir_s4">
+             <property name="minimumSize">
+              <size>
+               <width>70</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>70</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="images.qrc">
+               <normaloff>:/imagenes/4.png</normaloff>:/imagenes/4.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="autoRaise">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="cBox_canalS4">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>70</width>
+               <height>20</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="0" column="0">
+          <widget class="QCheckBox" name="checkBox_signal4">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>13</width>
+             <height>13</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>878</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArchivo">
+    <property name="title">
+     <string>Archivo</string>
+    </property>
+    <addaction name="actionSalir"/>
+   </widget>
+   <widget class="QMenu" name="menuVer">
+    <property name="title">
+     <string>Opciones</string>
+    </property>
+    <addaction name="actionReplot"/>
+    <addaction name="actionShow_Graphs"/>
+   </widget>
+   <widget class="QMenu" name="menuAnalisis">
+    <property name="title">
+     <string>Analisis</string>
+    </property>
+    <addaction name="actionFourier"/>
+    <addaction name="actionSpectrogram"/>
+    <addaction name="actionHistogram"/>
+    <addaction name="actionGabor_Transform"/>
+    <addaction name="actionWavelet_Transform"/>
+    <addaction name="actionMoovingRms"/>
+    <addaction name="actionMean_Frequency"/>
+   </widget>
+   <addaction name="menuArchivo"/>
+   <addaction name="menuVer"/>
+   <addaction name="menuAnalisis"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="BarraHerramientas">
+   <property name="windowTitle">
+    <string>toolBar_2</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionReplot"/>
+   <addaction name="actionShow_Graphs"/>
+   <addaction name="separator"/>
+   <addaction name="separator"/>
+   <addaction name="actionFourier"/>
+   <addaction name="actionSpectrogram"/>
+   <addaction name="actionGabor_Transform"/>
+   <addaction name="actionWavelet_Transform"/>
+   <addaction name="actionHistogram"/>
+   <addaction name="actionMoovingRms"/>
+   <addaction name="separator"/>
+   <addaction name="actionMean_Frequency"/>
+   <addaction name="separator"/>
+   <addaction name="actionSalir"/>
+   <addaction name="separator"/>
+  </widget>
+  <action name="actionSalir">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/closeAll.png</normaloff>:/imagenes/closeAll.png</iconset>
+   </property>
+   <property name="text">
+    <string>Salir</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionReplot">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/replot_Icono.png</normaloff>:/imagenes/replot_Icono.png</iconset>
+   </property>
+   <property name="text">
+    <string>Replot</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionFourier">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/fourier_ico.png</normaloff>:/imagenes/fourier_ico.png</iconset>
+   </property>
+   <property name="text">
+    <string>Fourier Transform</string>
+   </property>
+  </action>
+  <action name="actionSpectrogram">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/sgram.png</normaloff>:/imagenes/sgram.png</iconset>
+   </property>
+   <property name="text">
+    <string>Spectrogram</string>
+   </property>
+  </action>
+  <action name="actionHistogram">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/graph_statistics.png</normaloff>:/imagenes/graph_statistics.png</iconset>
+   </property>
+   <property name="text">
+    <string>Histogram</string>
+   </property>
+  </action>
+  <action name="actionGabor_Transform">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/loading_2.gif</normaloff>:/imagenes/loading_2.gif</iconset>
+   </property>
+   <property name="text">
+    <string>Gabor Transform</string>
+   </property>
+  </action>
+  <action name="actionWavelet_Transform">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/026.png</normaloff>:/imagenes/026.png</iconset>
+   </property>
+   <property name="text">
+    <string>Wavelet Transform</string>
+   </property>
+  </action>
+  <action name="actionShow_Graphs">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/view.png</normaloff>:/imagenes/view.png</iconset>
+   </property>
+   <property name="text">
+    <string>Show Graphs</string>
+   </property>
+  </action>
+  <action name="actionMoovingRms">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/console.png</normaloff>:/imagenes/console.png</iconset>
+   </property>
+   <property name="text">
+    <string>MoovingRms</string>
+   </property>
+  </action>
+  <action name="actionMean_Frequency">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/imagenes/Task Manager.ico</normaloff>:/imagenes/Task Manager.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Mean Frequency</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header location="global">qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QxtSpanSlider</class>
+   <extends>QSlider</extends>
+   <header location="global">qxtspanslider.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionSalir</sender>
+   <signal>triggered()</signal>
+   <receiver>AnalisisMultiples</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>438</x>
+     <y>239</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

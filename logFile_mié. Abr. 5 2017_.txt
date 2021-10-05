@@ -1,0 +1,35 @@
+mié. Abr. 5 00:19:03 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+mié. Abr. 5 00:19:03 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+mié. Abr. 5 00:19:03 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+mié. Abr. 5 00:19:03 2017  Info: 
+" ========================= [ Inicio: mié. Abr. 5 00:19:03 2017] ========================= " 
+
+mié. Abr. 5 00:19:04 2017  Info: [Info] Base de datos en ruta:  "C:/Users/Cesar.Bustamante/Documents/GitHub/Tesis/data/dbEMG.db" 
+
+mié. Abr. 5 00:19:04 2017  Info: CREATE TABLE:  "\"SESION\""  : TRUE 
+
+mié. Abr. 5 00:19:04 2017  Info: CREATE TABLE:  "\"PROYECTO\""  : TRUE 
+
+mié. Abr. 5 00:19:04 2017  Info: CREATE TABLE:  "\"ProyPac\""  : TRUE 
+
+mié. Abr. 5 00:19:04 2017  Info: CREATE TABLE:  "\"PACIENTES\""  : TRUE 
+
+mié. Abr. 5 00:19:04 2017  Info: CREATE TABLE:  "\"SIGNAL\""  : TRUE 
+
+mié. Abr. 5 00:19:04 2017  Info: CREATE TABLE:  "\"ESTADISTICAS\""  : TRUE 
+
+mié. Abr. 5 00:19:04 2017  Info: "No query Unable to fetch row" 
+
+mié. Abr. 5 00:19:04 2017  Debug: EnHoraBuena!!! la estructura de la base de datos ha sido creada satisfactoriamente
+mié. Abr. 5 00:19:04 2017  Info: [Info] : Octave daemon is not running  
+
+mié. Abr. 5 23:19:16 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+mié. Abr. 5 23:19:16 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+mié. Abr. 5 23:19:16 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+mié. Abr. 5 23:19:16 2017  Info: 
+" ========================= [ Inicio: mié. Abr. 5 23:19:16 2017] ========================= " 
+
+mié. Abr. 5 23:19:17 2017  Info: [Info] Base de datos en ruta:  "C:/Users/Cesar.Bustamante/Documents/GitHub/Tesis/data/dbEMG.db" 
+
+mié. Abr. 5 23:19:17 2017  Info: [Info] : Octave daemon is not running  
+

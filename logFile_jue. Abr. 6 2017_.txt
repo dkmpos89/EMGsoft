@@ -1,0 +1,82 @@
+jue. Abr. 6 21:26:19 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+jue. Abr. 6 21:26:19 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+jue. Abr. 6 21:26:19 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+jue. Abr. 6 21:26:19 2017  Info: 
+" ========================= [ Inicio: jue. Abr. 6 21:26:19 2017] ========================= " 
+
+jue. Abr. 6 21:26:19 2017  Info: [Info] Base de datos en ruta:  "C:/Users/Cesar.Bustamante/Documents/GitHub/Tesis/data/dbEMG.db" 
+
+jue. Abr. 6 21:26:19 2017  Info: [Info] : Octave daemon is not running  
+
+jue. Abr. 6 22:05:19 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+jue. Abr. 6 22:05:19 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+jue. Abr. 6 22:05:19 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+jue. Abr. 6 22:05:19 2017  Info: 
+" ========================= [ Inicio: jue. Abr. 6 22:05:19 2017] ========================= " 
+
+jue. Abr. 6 22:05:19 2017  Info: [Info] Base de datos en ruta:  "C:/Users/Cesar.Bustamante/Documents/GitHub/Tesis/data/dbEMG.db" 
+
+jue. Abr. 6 22:05:19 2017  Info: [Info] Octave daemon running with PID  0x3b5cd40 
+
+jue. Abr. 6 22:05:20 2017  Warning: setGeometryDp: Unable to set geometry 1366x721+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1366x705+0+23 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 905x721, maximum size: 16777215x16777215).
+jue. Abr. 6 22:05:30 2017  Info: [F: DemoSeñal_2()] Carga de datos desde: 'Ejemplos/ejemplo_2.txt' 
+
+jue. Abr. 6 22:05:30 2017  Debug: [F: SetDatos()] Informacion de Señal:  "Path:C:/Users/Cesar.Bustamante/Documents/GitHub/Tesis/ejemplos/ejemplo_2.txt Fs:1 Canales:1 leerDesde:0 separador: " 
+
+jue. Abr. 6 22:05:30 2017  Info: [F: leer()] Cantidad de lineas leidas:  3000 
+
+jue. Abr. 6 22:05:30 2017  Debug: [F: cargaGrafica()] Añadiendo datos de la serie Temporal (señal principal). 
+
+jue. Abr. 6 22:05:30 2017  Debug: [F: graficarPrincipal()] Graficando serie Temporal (señal principal). 
+
+jue. Abr. 6 22:05:30 2017  Debug: [F: cargaGrafica()] Habilitando y añadiendo a comboBox los canales:  "1" 
+
+jue. Abr. 6 22:05:30 2017  Info: [F: CalcularDatosEstadisticos()] Comando enviado a Octave: "OctaveStatistics('C:/Users/Cesar.Bustamante/Documents/GitHub/Tesis/ejemplos/ejemplo_2.txt',' ','0','1','1','0','2999','1');\n" 
+
+jue. Abr. 6 22:05:31 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+jue. Abr. 6 22:05:31 2017  Debug: [S:chargeData()] Cargando los datos...
+jue. Abr. 6 22:05:31 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 8 
+
+jue. Abr. 6 22:05:37 2017  Info: [F: Graficar2()] Se llama a graficar con el metodo:  "Spectrogram" , posicion :  4 
+
+jue. Abr. 6 22:05:37 2017  Debug: [F: calcularEnOctave()] Comando enviado a Octave: "OctaveSpectrogram('C:/Users/Cesar.Bustamante/Documents/GitHub/Tesis/ejemplos/ejemplo_2.txt','0','0','1','1','0','2999','1','1','1','100');\n" 
+
+jue. Abr. 6 22:05:41 2017  Debug: [C: OctaveProcess.cpp] Sale del ciclo de lectura:  "fin" 
+
+jue. Abr. 6 22:05:41 2017  Debug: [S:chargeData()] Cargando los datos...
+jue. Abr. 6 22:05:41 2017  Debug: [S:chargeData()] Tamaño de los datos recibidos: 300508 
+
+jue. Abr. 6 22:05:41 2017  Debug: [F: graficarSpectrogram()] Graficando ColorMap (Spectrogram) : columnas= 601  ; filas= 500 
+
+jue. Abr. 6 22:05:41 2017  Debug: tam:  300502
+jue. Abr. 6 22:05:41 2017  Debug: columnas:  601
+jue. Abr. 6 22:05:41 2017  Debug: filas:  500
+jue. Abr. 6 22:06:20 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+jue. Abr. 6 22:06:20 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+jue. Abr. 6 22:06:20 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+jue. Abr. 6 22:06:20 2017  Info: 
+" ========================= [ Inicio: jue. Abr. 6 22:06:20 2017] ========================= " 
+
+jue. Abr. 6 22:06:20 2017  Info: [Info] Base de datos en ruta:  "C:/Users/Cesar.Bustamante/Documents/GitHub/Tesis/data/dbEMG.db" 
+
+jue. Abr. 6 22:06:20 2017  Info: [Info] Octave daemon running with PID  0x3afd340 
+
+jue. Abr. 6 22:06:20 2017  Warning: setGeometryDp: Unable to set geometry 1366x721+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1366x705+0+23 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 905x721, maximum size: 16777215x16777215).
+jue. Abr. 6 22:06:27 2017  Warning: ERROR:  No se puede crear la sesion - Info:  "No query Unable to fetch row" 
+
+jue. Abr. 6 22:07:18 2017  Critical: [B: iniciarSesion()] Base de datos no disponible en estos momentos. 
+
+jue. Abr. 6 22:07:22 2017  Critical: [B: iniciarSesion()] Base de datos no disponible en estos momentos. 
+
+jue. Abr. 6 22:33:05 2017  Warning: libpng warning: iCCP: known incorrect sRGB profile
+jue. Abr. 6 22:33:05 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_liberarRecurso_clicked()
+jue. Abr. 6 22:33:05 2017  Warning: QMetaObject::connectSlotsByName: No matching signal for on_btnOctave_reloadRecurso_clicked()
+jue. Abr. 6 22:33:05 2017  Info: 
+" ========================= [ Inicio: jue. Abr. 6 22:33:05 2017] ========================= " 
+
+jue. Abr. 6 22:33:05 2017  Info: [Info] Base de datos en ruta:  "C:/Users/Cesar.Bustamante/Documents/GitHub/Tesis/data/dbEMG.db" 
+
+jue. Abr. 6 22:33:05 2017  Info: [Info] Octave daemon running with PID  0x3b4e800 
+
+jue. Abr. 6 22:33:05 2017  Warning: setGeometryDp: Unable to set geometry 1366x721+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1366x705+0+23 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 905x721, maximum size: 16777215x16777215).
